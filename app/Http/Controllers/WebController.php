@@ -11,4 +11,11 @@
                 //
             ]);
         }
+
+        /** Carga el panel de administracion. */
+        public function panel(){
+            return view('web.panel', [
+                //
+            ]);
+        }
     }

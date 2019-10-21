@@ -7,11 +7,15 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
+        <!-- Bootstrap 4.3.1-->
+
+        <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
+
         <!-- Mi CSS -->
         <link href="{{asset('css/WhatsApp.css')}}" rel="stylesheet">
         <link href="{{asset('css/PopUpNotification.css')}}" rel="stylesheet">
         <link href="{{ asset('css/Navmenu.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/index.css') }}" rel="stylesheet">       
         @yield('css')
 
         <title>@yield('titulo')</title>
@@ -46,6 +50,9 @@
         </footer>
 
         <!-- Mi JS -->
+        <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery-popper/jquery-3.4.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery-popper/popper.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/PopUpNotification.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/Navmenu.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>

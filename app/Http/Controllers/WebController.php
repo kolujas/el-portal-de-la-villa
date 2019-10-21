@@ -18,4 +18,11 @@
                 //
             ]);
         }
+
+        /** Carga el panel de administracion en la seccion de personalizar la web. */
+        public function personalizar(){
+            return view('web.personalizar', [
+                //
+            ]);
+        }
     }

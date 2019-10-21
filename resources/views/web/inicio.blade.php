@@ -9,7 +9,7 @@
 @endsection
 
 @section('nav')
-    @component('components.nav.inicio')
+    @component('components.nav.global')
     @endcomponent
 @endsection
 

@@ -14,7 +14,12 @@
 @endsection
 
 @section('main')
-    <!---->
+    <div class="accesos">
+        <ul>
+            <li><a href="/panel/personalizar">Personalizar Web</a></li>
+            <li><a href="/panel/eventos">Eventos</a></li>
+        </ul>
+    </div>
 @endsection
 
 @section('footer')
@@ -23,6 +28,5 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{asset('js/Banner.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/web/panel.js')}}"></script>
 @endsection

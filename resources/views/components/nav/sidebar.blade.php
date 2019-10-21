@@ -3,13 +3,6 @@
         <a href="#" class="sidebar-button">
             <i class="fas fa-times text-white"></i>
         </a>
-
-        <div class="search-bar">
-            <label class="search-label" for="sidebar-search-bar">
-                <i class="search-icon fas fa-search"></i>
-            </label>
-            <input class="search-input" id="sidebar-search-bar" type="text" placeholder="Search...">
-        </div>
     </div>
 
     <div class="sidebar-content">

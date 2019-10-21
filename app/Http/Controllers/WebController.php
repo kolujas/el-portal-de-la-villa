@@ -6,6 +6,12 @@
 
     class WebController extends Controller{
         /** Carga la seccion principal. */
+        public function construccion(){
+            return view('web.construccion', [
+                //
+            ]);
+        }
+
         public function inicio(){
             return view('web.inicio', [
                 //

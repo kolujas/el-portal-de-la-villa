@@ -14,7 +14,6 @@
 @endsection
 
 @section('main')
-    <!---->
 @endsection
 
 @section('footer')

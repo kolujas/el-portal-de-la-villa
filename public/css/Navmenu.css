@@ -1,9 +1,14 @@
 .nav-menu{
+    --primary-color: #222;
+    --secundary-color: #ddd;
+    --neon-color: #32B1DA;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     height: 4.6rem;
+    background: var(--primary-color);
+    font-family: verdana;
 }
 
 .nav-menu .nav-row{
@@ -12,10 +17,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .nav-menu .nav-title{
     flex-basis: 100%;
+    color: var(--secundary-color);
+    text-decoration: none;
 }
 
 .nav-menu .nav-title h1{
@@ -23,6 +31,7 @@
     padding-right: 1rem;
     text-align: right;
     line-height: 4.6rem;
+    font-size: 1rem;
 }
 
 .nav-menu .menu-list{
@@ -34,31 +43,9 @@
 }
 
 .nav-menu .nav-search-bar{
-    display: flex;
-    flex-wrap: wrap;
-    width: 25%;
-    background: #dddddd;
-    border-radius: .25rem;
-    overflow: hidden;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    display: none;
 }
 
-.nav-menu .nav-search-bar .nav-search-label{
-    flex-basis: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-}
-
-.nav-menu .nav-search-bar .nav-search-input{
-    flex-basis: calc(100% - 50px);
-    height: 2.3rem;
-    line-height: 2.3rem;
-    border: none;
-    padding: .5rem;
-    outline: none;
-}
 
 /* Collapsable */
 .collapsable{
@@ -92,7 +79,7 @@
 }
 
 .collapsable .collapsable-menu{
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid var(--secundary-color);
     padding: 0 .5rem;
 }
 
@@ -116,12 +103,16 @@
     left: 0;
     height: 100%;
     padding: 0 1rem;
+    color: var(--secundary-color);
+    text-decoration: none;
 }
 
 .sidebar .sidebar-header .sidebar-button{
     right: 0;
     height: 2rem;
     padding-right: 1rem;
+    color: var(--secundary-color);
+    text-decoration: none;
 }
 
 .sidebar.opened .sidebar-header .sidebar-button::before{
@@ -139,13 +130,13 @@
     left: 0;
     width: 75%;
     height: 100%;
-    background-color: #222;
+    background: var(--primary-color);
     transition: 500ms;
     z-index: 10;
 }
 
 .sidebar.opened{
-    box-shadow: 0 0 19px #32B1DA;
+    box-shadow: 0 0 19px var(--neon-color);
 }
 
 .sidebar.closed{
@@ -158,14 +149,14 @@
     height: fit-content;
     padding: 1rem;
     padding-top: 2rem;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid var(--secundary-color);
 }
 
 .sidebar .sidebar-header .search-bar{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background: #dddddd;
+    background: var(--secundary-color);
     border-radius: .25rem;
     overflow: hidden;
 }
@@ -178,8 +169,20 @@
     margin: 0;
 }
 
+.sidebar .sidebar-header .search-bar .search-label{
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.sidebar .sidebar-header .search-bar .search-label .search-icon{
+    color: var(--primary-color);
+}
+
 .sidebar .sidebar-header .search-bar .search-input{
-    flex-basis: calc(100% - 50px);
+    flex-basis: calc(100% - (50px + 1rem));
     height: 2.3rem;
     line-height: 2.3rem;
     border: none;
@@ -195,10 +198,11 @@
 .sidebar .sidebar-content .sidebar-menu{
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .sidebar .sidebar-content .sidebar-menu li{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--secundary-color);
 }
 
 .sidebar .sidebar-content .sidebar-menu li:last-child{
@@ -209,18 +213,13 @@
     height: 2.3rem;
     line-height: 2.3rem;
     padding: 0;
+    color: var(--secundary-color);
+    text-decoration: none;
 }
 
 .sidebar .sidebar-footer{
     padding: 1rem;
-    border-top: 1px solid #dddddd;
-}
-
-.sidebar .sidebar-footer .text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.3rem;
+    border-top: 1px solid var(--secundary-color);
 }
 
 .sidebar .sidebar-footer .footer-menu{
@@ -230,6 +229,20 @@
     justify-content: space-around;
     text-align: center;
     font-size: .8rem;
+    list-style: none;
+}
+
+.sidebar .sidebar-footer .footer-menu .footer-link{
+    color: var(--secundary-color);
+    text-decoration: none;
+}
+
+.sidebar .sidebar-footer .footer-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    color: var(--secundary-color);
 }
 
 /* MD */
@@ -242,48 +255,67 @@
 
 /* LG */
 @media(min-width: 1024px){
+    .nav-menu{
+        height: fit-content;
+    }
+
     .nav-menu .nav-title{
-        flex-basis: 25%;
+        flex-basis: 33%;
     }
 
     .nav-menu .nav-title h1{
-        padding-left: 1rem;
         text-align: left;
     }
 
-    /* .nav-menu .nav-search-bar{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        background: #dddddd;
-        border-radius: .25rem;
-        overflow: hidden;
+    .nav-menu .nav-row:first-of-type{
+        justify-content: flex-start;
+        height: 4.6rem;
+    }
+
+    .nav-menu .nav-row{
+        height: 3.3rem;
+        padding: .5rem 1rem;
     }
     
-    .nav-menu .nav-search-bar .search-label{
+    .nav-menu .nav-search-bar{
+        display: flex;
+        flex-wrap: wrap;
+        width: 25%;
+        height: 100%;
+        background: var(--secundary-color);
+        border-radius: .25rem;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    }
+
+    .nav-menu .nav-search-bar .nav-search-label{
         flex-basis: 50px;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
     }
-    
-    .nav-menu .nav-search-bar .search-input{
-        flex-basis: calc(100% - 50px);
-        height: 2.3rem;
-        line-height: 2.3rem;
+
+    .nav-menu .nav-search-bar .nav-search-input{
+        flex-basis: calc(100% - (50px + 1rem));
         border: none;
         padding: .5rem;
-    } */
+        outline: none;
+    }
 
     .nav-menu .menu-list{
         display: flex;
+        list-style: none;
     }
 
     .nav-menu .menu-list .nav-link{
         display: flex;
         align-items: center;
         height: 100%;
+        color: var(--secundary-color);
+        text-decoration: none;
+        margin-left: 1rem;
     }
 
     /* Collapsable */
@@ -317,7 +349,7 @@
         left: -50%;
         right: -50%;
         height: fit-content;
-        background: #222222;
+        background: var(--primary-color)222;
         border: none;
         padding: .5rem 1rem;
         border-radius: .25rem;
@@ -334,7 +366,7 @@
         height: 25px;
         margin: auto;
         clip-path: polygon(50% 50%, 100% 100%, 0% 100%);
-        background: #222222;
+        background: var(--primary-color)222;
     }
 
     .collapsable .collapsable-menu li{

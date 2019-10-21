@@ -6,7 +6,7 @@
 
         <div class="search-bar">
             <label class="search-label" for="sidebar-search-bar">
-                <i class="fas fa-search text-white"></i>
+                <i class="search-icon fas fa-search"></i>
             </label>
             <input class="search-input" id="sidebar-search-bar" type="text" placeholder="Search...">
         </div>
@@ -31,6 +31,6 @@
             <li><a href="#" class="footer-link text-white">Politica y Privacidad</a></li>
             <li><a href="#" class="footer-link text-white">Terminos legales</a></li>
         </ul>
-        <div class="text text-white">©2019 Archimak</div>
+        <div class="footer-text">©2019 Archimak</div>
     </div>
 </div>

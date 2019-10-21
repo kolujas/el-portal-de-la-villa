@@ -15,13 +15,13 @@
     <div class="sidebar-content">
         <ul class="sidebar-menu">
             <li><a href="/#categorias" class="nav-link text-white">
-                Categorias
+                El Hotel
             </a></li>
             <li><a href="/#contecto" class="nav-link text-white">
-                Contacto
+                Galeria
             </a></li>
             <li><a href="/ayuda" class="nav-link text-white">
-                Ayuda
+                Contacto
             </a></li>
         </ul>
     </div>

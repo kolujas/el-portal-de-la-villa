@@ -1,0 +1,357 @@
+.nav-menu{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 4.6rem;
+}
+
+.nav-menu .nav-row{
+    flex-basis: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav-menu .nav-title{
+    flex-basis: 100%;
+}
+
+.nav-menu .nav-title h1{
+    margin: 0;
+    padding-right: 1rem;
+    text-align: right;
+    line-height: 4.6rem;
+}
+
+.nav-menu .menu-list{
+    width: fit-content;
+    display: none;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu .nav-search-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+    background: #dddddd;
+    border-radius: .25rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+
+.nav-menu .nav-search-bar .nav-search-label{
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-menu .nav-search-bar .nav-search-input{
+    flex-basis: calc(100% - 50px);
+    height: 2.3rem;
+    line-height: 2.3rem;
+    border: none;
+    padding: .5rem;
+    outline: none;
+}
+
+/* Collapsable */
+.collapsable{
+    overflow: hidden;
+    transition: 500ms;
+    height: auto;
+    z-index: 9;
+}
+
+.collapsable.closed{
+    height: 2.3rem;
+}
+
+.collapsable .collapsable-button{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.3rem;
+    line-height: 2.3rem;
+}
+
+.collapsable .collapsable-button i{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+}
+
+.collapsable .collapsable-menu{
+    border-top: 1px solid #dddddd;
+    padding: 0 .5rem;
+}
+
+.collapsable .collapsable-menu .collapsable-link{
+    display: block;
+    width: 100%;
+    height: 2.3rem;
+    line-height: 2.3rem;
+}
+
+/* Sidebar */
+.nav-menu .sidebar-button{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-menu > .sidebar-button{
+    left: 0;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.sidebar .sidebar-header .sidebar-button{
+    right: 0;
+    height: 2rem;
+    padding-right: 1rem;
+}
+
+.sidebar.opened .sidebar-header .sidebar-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 25vw;
+    height: 100vh;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background-color: #222;
+    transition: 500ms;
+    z-index: 10;
+}
+
+.sidebar.opened{
+    box-shadow: 0 0 19px #32B1DA;
+}
+
+.sidebar.closed{
+    transform: translateX(-100%);
+}
+
+.sidebar .sidebar-header{
+    width: 100%;
+    position: relative;
+    height: fit-content;
+    padding: 1rem;
+    padding-top: 2rem;
+    border-bottom: 1px solid #dddddd;
+}
+
+.sidebar .sidebar-header .search-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background: #dddddd;
+    border-radius: .25rem;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-header .search-bar .search-label{
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.sidebar .sidebar-header .search-bar .search-input{
+    flex-basis: calc(100% - 50px);
+    height: 2.3rem;
+    line-height: 2.3rem;
+    border: none;
+    padding: .5rem;
+}
+
+.sidebar .sidebar-content{
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+}
+
+.sidebar .sidebar-content .sidebar-menu{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar .sidebar-content .sidebar-menu li{
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar .sidebar-content .sidebar-menu li:last-child{
+    border: none;
+}
+
+.sidebar .sidebar-content .sidebar-menu .nav-link{
+    height: 2.3rem;
+    line-height: 2.3rem;
+    padding: 0;
+}
+
+.sidebar .sidebar-footer{
+    padding: 1rem;
+    border-top: 1px solid #dddddd;
+}
+
+.sidebar .sidebar-footer .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+}
+
+.sidebar .sidebar-footer .footer-menu{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: .8rem;
+}
+
+/* MD */
+@media(min-width: 768px){
+    /* Sidebar */
+    .sidebar{
+        width: 50%;
+    }
+}
+
+/* LG */
+@media(min-width: 1024px){
+    .nav-menu .nav-title{
+        flex-basis: 25%;
+    }
+
+    .nav-menu .nav-title h1{
+        padding-left: 1rem;
+        text-align: left;
+    }
+
+    /* .nav-menu .nav-search-bar{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        background: #dddddd;
+        border-radius: .25rem;
+        overflow: hidden;
+    }
+    
+    .nav-menu .nav-search-bar .search-label{
+        flex-basis: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .nav-menu .nav-search-bar .search-input{
+        flex-basis: calc(100% - 50px);
+        height: 2.3rem;
+        line-height: 2.3rem;
+        border: none;
+        padding: .5rem;
+    } */
+
+    .nav-menu .menu-list{
+        display: flex;
+    }
+
+    .nav-menu .menu-list .nav-link{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* Collapsable */
+    .collapsable{
+        position: relative;
+    }
+
+    .collapsable.closed{
+        height: 100%;
+    }
+
+    .collapsable:hover,
+    .collapsable.opened{
+        overflow: visible;
+    }
+
+    .collapsable .collapsable-button{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: .5rem 1rem;
+    }
+
+    .collapsable .collapsable-button i{
+        position: relative;
+    }
+
+    .collapsable .collapsable-menu{
+        position: absolute;
+        top: 100%;
+        left: -50%;
+        right: -50%;
+        height: fit-content;
+        background: #222222;
+        border: none;
+        padding: .5rem 1rem;
+        border-radius: .25rem;
+    }
+
+    .collapsable:hover .collapsable-menu::before,
+    .collapsable.opened .collapsable-menu::before{
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        width: 25px;
+        height: 25px;
+        margin: auto;
+        clip-path: polygon(50% 50%, 100% 100%, 0% 100%);
+        background: #222222;
+    }
+
+    .collapsable .collapsable-menu li{
+        border-bottom: 1px solid white;
+    }
+
+    .collapsable .collapsable-menu li:last-of-type{
+        border: none;
+    }
+
+    /* Sidebar */
+    .nav-menu .sidebar-button{
+        display: none;
+    }
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
+}

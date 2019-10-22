@@ -54,9 +54,9 @@
         </footer>
 
         <!-- Mi JS -->
-        <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery-popper/jquery-3.4.1.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery-popper/popper.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>        
         <script type="text/javascript" src="{{ asset('js/PopUpNotification.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/Navmenu.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>

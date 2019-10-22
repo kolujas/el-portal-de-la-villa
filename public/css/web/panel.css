@@ -1,0 +1,92 @@
+.panel{
+    flex-wrap: wrap;
+}
+
+.tabs .tab-menu{
+    flex-basis: 100%;
+    background: var(--terceary-color);
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.tabs .tab-menu ul{
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.tabs .tab-menu li{
+    flex-basis: 100%;
+    height: 4rem;
+}
+
+.tabs .tab-menu .tab-button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.tabs .tab-menu .tab-button .tab-icon{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: transparent;
+    transition: 500ms;
+    border-radius: 50%;
+}
+
+.tabs .tab-menu .tab-button.opened .tab-icon{
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    background: #9F9F9F;
+    z-index: 3;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px;
+}
+
+.tabs .tab-menu .tab-button .tab-text{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: 500ms;
+}
+
+.tabs .tab-menu .tab-button.opened .tab-text{
+    background: #9F9F9F;
+}
+
+.tabs .tab-body {
+    flex-basis: 100%;
+    overflow: hidden;
+    border: 3px dashed var(--terceary-color);
+    border-top: none;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+/* MD */
+@media(min-width: 768px){
+    /**/
+}
+
+/* LG */
+@media(min-width: 1024px){
+    /**/
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
+}

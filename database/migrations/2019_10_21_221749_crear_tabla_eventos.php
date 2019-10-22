@@ -16,7 +16,8 @@
                 $table->text('descripcion');
                 $table->date('fecha');
                 $table->string('organizador', 200);
-                $table->string('pdf');
+                $table->string('imagen');
+                $table->string('url');
                 $table->unsignedInteger('id_usuario');
                 $table->timestamps();
             });

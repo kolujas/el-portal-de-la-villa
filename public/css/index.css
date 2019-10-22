@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     --primary-color: #0D4A7B;
     --secundary-color: #197C3E;
@@ -17,10 +23,6 @@ body{
 
 .nav-menu .nav-row:first-of-type{
     justify-content: center;
-}
-
-.nav-menu .nav-title{
-    flex-basis: 50%;
 }
 
 .nav-menu > .sidebar-button{
@@ -46,4 +48,22 @@ body{
 
 .sidebar .sidebar-content .sidebar-menu .nav-link{
     color: var(--primary-color);
+}
+
+/* MD */
+@media(min-width: 768px){
+    /**/
+}
+
+/* LG */
+@media(min-width: 1024px){
+    /* Navmenu */
+    .nav-menu .nav-title{
+        flex-basis: 50%;
+    }
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
 }

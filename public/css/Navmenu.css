@@ -7,14 +7,20 @@
     flex-wrap: wrap;
     justify-content: space-between;
     height: 4.6rem;
+    max-height: 4.6rem;
     background: var(--primary-color);
     font-family: verdana;
+}
+
+.nav-menu .nav-row:first-of-type{
+    display: flex;
+    overflow: hidden;
 }
 
 .nav-menu .nav-row{
     flex-basis: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: border-box;
@@ -275,6 +281,7 @@
     }
 
     .nav-menu .nav-row{
+        display: flex;
         height: 3.3rem;
         padding: .5rem 1rem;
     }

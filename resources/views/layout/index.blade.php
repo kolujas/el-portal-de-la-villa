@@ -7,8 +7,7 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
-        <!-- Bootstrap 4.3.1-->
-
+        <!-- Bootstrap Ukit -->
         <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Mi CSS -->
@@ -49,10 +48,12 @@
             @yield('footer')
         </footer>
 
-        <!-- Mi JS -->
-        <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+        <!-- Bootstrap Ukit -->
         <script type="text/javascript" src="{{ asset('js/jquery-popper/jquery-3.4.1.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery-popper/popper.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+
+        <!-- Mi JS -->
         <script type="text/javascript" src="{{ asset('js/PopUpNotification.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/Navmenu.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>

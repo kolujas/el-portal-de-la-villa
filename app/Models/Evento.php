@@ -13,7 +13,7 @@
 
         /** @var array Los atributos que se van a cargar de forma masiva. */
         protected $fillable = [
-            'titulo', 'descripcion', 'fecha', 'organizador', 'pdf', 'id_usuario',
+            'titulo', 'descripcion', 'fecha', 'organizador', 'imagen', 'url', 'id_usuario',
         ];
         
         /** Trae el Usuario que coincidan con el PK. */
@@ -28,13 +28,13 @@
                 'descripcion' => 'required',
                 'fecha' => 'required|date',
                 'organizador' => 'required|min:2|max:200',
-                'pdf' => 'required|mimetypes:application/pdf',
+                'url' => 'required|url',
             ],'editar' => [
                 'titulo' => 'required|min:3|max:150',
                 'descripcion' => 'required',
                 'fecha' => 'required|date',
                 'organizador' => 'required|min:2|max:200',
-                'pdf' => 'sometimes|mimetypes:application/pdf',
+                'url' => 'sometimes|url',
             ]
         ];
     }

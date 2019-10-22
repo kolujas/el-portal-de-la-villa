@@ -41,13 +41,9 @@
                 'organizador.required' => 'El organizador del evento no puede estar vacío.',
                 'organizador.min' => 'El organizador del evento debe tener al menos :min caracteres.',
                 'organizador.max' => 'El organizador del evento no puede tener más de :max caracteres.',
-                'pdf.required' => 'El PDF del evento es obligatoria.',
-                'pdf.mimetypes' => 'El PDF del evento debe ser un PDF valido.',
+                'url.required' => 'La URL del evento es obligatoria.',
+                'url.url' => 'La URL del evento debe ser una URL valida.',
             ]);
-            
-            if($request->hasFile('pdf')){				
-                $inputData['pdf'] = $request->file('pdf')->store('eventos');
-            }
             
             $inputData['id_usuario'] = Auth::id();
             

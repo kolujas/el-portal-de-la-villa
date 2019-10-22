@@ -1,17 +1,79 @@
+h1{
+    padding-top: .9rem;
+    margin: 0;
+    height: 5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;;
+}
+
 .background-construction{
-    background: url('/img/construction.jpg') no-repeat center center;
+    background: url('/img/construction.jpg');
     height: 100vh;
     width: 100%;
     background-size: cover;
+    display: flex;
+    justify-content: center;
 }
 
-.bg-card{
+.text-div{
     background-color: transparent;
     color: #fff;
     border: none;
-    font-size: 1.65rem;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 30%;
+    margin: auto;
+    width: 100%;
+}
+
+.card-text{
+    font-family: var(--fuente-encabezados);
 }
 
 .background-construction .contacto{
-    margin-top: 7rem;
+    margin-top: 1rem;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+/* MD */
+
+@media(min-width: 768px){
+
+    h1{
+        font-size: 1.7rem;
+    }
+
+    .text-div{
+        font-size: 2.2rem;
+        bottom: 43%;
+    }
+
+    .background-construction .contacto{
+        font-size: 1.8rem;
+    }
+}
+
+/* LG */
+@media(min-width: 1024px){
+    /**/
+}
+
+/* XL */
+@media(min-width: 1200px){
+    h1{
+        padding-top: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .text-div{
+        font-size: 2.7rem;
+        bottom: 45%;
+        
+    }
+
+    .background-construction .contacto{
+        font-size: 2rem;
+    }
 }

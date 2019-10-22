@@ -3,6 +3,7 @@ body{
     --secundary-color: #197C3E;
     --terceary-color: #C6C6C6;
     --fourthary-color: #222222;
+    --fuente-encabezados: 'Quicksand', sans-serif;
     min-height: 100vh;
     margin: 0;
 }

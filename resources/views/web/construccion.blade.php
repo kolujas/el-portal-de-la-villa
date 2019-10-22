@@ -6,6 +6,11 @@
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        
+        <!-- Fuentes -->
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 
         <!-- Bootstrap 4.3.1-->
 
@@ -20,19 +25,19 @@
     </head>
 
     <body>
-            
-            
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="background-construction">
-                    <div class="card bg-card mt-4 mx-auto text-center" style="width: 18rem;">
-                        <div class="card-body">
-                            <p class="card-text">Sitio en construcción, pronto estará listo</p>
+                    <h1>El portal de la villa</h1>
+                        <div class="text-div card mt-4 m-auto text-center">
+                            <div class="card-body frase">
+                                <p class="card-text">El sitio estará listo pronto</p>
+                            </div>
+                            <div class="card-body contacto">
+                                <p class="card-text">hola@digitalo.com.ar</p>
+                            </div>
                         </div>
-                        <div class="card-body mx-auto contacto">
-                            <p class="card-text">hola@digitalo.com.ar</p>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>

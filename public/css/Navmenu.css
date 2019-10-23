@@ -1,6 +1,6 @@
 .nav-menu{
     --primary-color: #222;
-    --secundary-color: #ddd;
+    --secondary-color: #ddd;
     --neon-color: #32B1DA;
     position: relative;
     display: flex;
@@ -26,9 +26,13 @@
     box-sizing: border-box;
 }
 
+.nav-menu .nav-row:first-of-type{
+    overflow: hidden;
+}
+
 .nav-menu .nav-title{
     flex-basis: 100%;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -85,7 +89,7 @@
 }
 
 .collapsable .collapsable-menu{
-    border-top: 1px solid var(--secundary-color);
+    border-top: 1px solid var(--secondary-color);
     padding: 0 .5rem;
 }
 
@@ -109,7 +113,7 @@
     left: 0;
     height: 100%;
     padding: 0 1rem;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -117,7 +121,7 @@
     right: 0;
     height: 2rem;
     padding-right: 1rem;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -156,14 +160,14 @@
     padding: 1rem;
     padding-top: 2rem;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--secundary-color);
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 .sidebar .sidebar-header .search-bar{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background: var(--secundary-color);
+    background: var(--secondary-color);
     border-radius: .25rem;
     overflow: hidden;
 }
@@ -210,7 +214,7 @@
 }
 
 .sidebar .sidebar-content .sidebar-menu li{
-    border-bottom: 1px solid var(--secundary-color);
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 .sidebar .sidebar-content .sidebar-menu li:last-child{
@@ -221,13 +225,13 @@
     height: 2.3rem;
     line-height: 2.3rem;
     padding: 0;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
 .sidebar .sidebar-footer{
     padding: 1rem;
-    border-top: 1px solid var(--secundary-color);
+    border-top: 1px solid var(--secondary-color);
 }
 
 .sidebar .sidebar-footer .footer-menu{
@@ -241,7 +245,7 @@
 }
 
 .sidebar .sidebar-footer .footer-menu .footer-link{
-    color: var(--secundary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -250,7 +254,7 @@
     align-items: center;
     justify-content: center;
     height: 2.3rem;
-    color: var(--secundary-color);
+    color: var(--secondary-color);
 }
 
 /* MD */
@@ -291,7 +295,7 @@
         flex-wrap: wrap;
         width: 25%;
         height: 100%;
-        background: var(--secundary-color);
+        background: var(--secondary-color);
         border-radius: .25rem;
         overflow: hidden;
         box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
@@ -322,7 +326,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-        color: var(--secundary-color);
+        color: var(--secondary-color);
         text-decoration: none;
         margin-left: 1rem;
     }

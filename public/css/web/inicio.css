@@ -1,0 +1,72 @@
+.container-fluid{
+    padding: 0;
+}
+
+.banner-div{
+    height: 40vh;
+    width: 100%;
+    background: url('/img/construction.jpg') no-repeat;
+    padding: 0;
+    position: relative;
+}
+
+.black-background{
+    height: 40vh;
+    filter: opacity(0.1);
+}
+
+.jumbotron-banner{
+    flex-wrap: wrap;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    
+}
+
+.jumbotron-banner p{
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.facebook-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    color: #4C6EF5;
+    position: absolute;
+    right: 20px;
+    bottom: 7.5rem;
+}
+
+.instagram-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    color: #F783AC;
+    position: absolute;
+    right: 22px;
+    bottom: 5rem;
+}
+
+
+/* MD */
+
+@media(min-width: 768px){
+
+}
+
+/* LG */
+@media(min-width: 1024px){
+    .banner-div{
+        height: 100vh;
+    }
+
+    .black-background{
+        height: 100vh;
+        filter: opacity(0.1);
+    }    
+}
+
+/* XL */
+@media(min-width: 1200px){
+    
+}

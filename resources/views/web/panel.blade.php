@@ -32,74 +32,78 @@
             </ul>
         </div>
         <div class="tab-body">
-            <div id="personalizar" class="tab-content">
-                <div class="title">
-                    <h2>Banner principal</h2>
-                </div>
-                <div class="content">
-                    <div class="titulo">
-                        <h3>Título</h3>
+            <div id="personalizar" class="tab-content opened p-2">
+                <section>
+                    <div class="title">
+                        <h2 class="mb-2 p-2">Banner principal</h2>
                     </div>
-                    <div class="descripcion">
-                        <p>Descripción</p>
+                    <div class="content mb-2 p-2">
+                        <div class="titulo">
+                            <h3 class="mb-2">Título</h3>
+                        </div>
+                        <div class="descripcion">
+                            <p class="mb-2">Descripción</p>
+                        </div>
+                        <div class="imagen mb-2">
+                            <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                        </div>
+                        <div class="boton d-flex justify-content-end">
+                            <button class="edit btn" type="submit">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="imagen">
-                        <img src="{{asset('/img/construccion.jpg')}}" alt="Imagen por defecto">
+                    <div class="content mb-2 p-2">
+                        <div class="titulo">
+                            <h3 class="mb-2">Título</h3>
+                        </div>
+                        <div class="descripcion">
+                            <p class="mb-2">Descripción</p>
+                        </div>
+                        <div class="imagen mb-2">
+                            <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                        </div>
+                        <div class="boton d-flex justify-content-end">
+                            <button class="edit btn" type="submit">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="button">
-                        <button class="edit btn" type="submit">
-                            <i class="fas fa-pen"></i>
-                        </button>
+                    <div class="content mb-2 p-2">
+                        <div class="titulo">
+                            <h3 class="mb-2">Título</h3>
+                        </div>
+                        <div class="descripcion">
+                            <p class="mb-2">Descripción</p>
+                        </div>
+                        <div class="imagen mb-2">
+                            <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                        </div>
+                        <div class="boton d-flex justify-content-end">
+                            <button class="edit btn" type="submit">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="content">
-                    <div class="titulo">
-                        <h3>Título</h3>
+                </section>
+                <section>
+                    <div class="title">
+                        <h2 class="my-2 p-2">Información inicial</h2>
                     </div>
-                    <div class="descripcion">
-                        <p>Descripción</p>
+                    <div class="content mb-2 p-2">
+                        <div class="titulo">
+                            <h3 class="mb-2">Título</h3>
+                        </div>
+                        <div class="descripcion">
+                            <p class="mb-2">Descripción</p>
+                        </div>
+                        <div class="boton d-flex justify-content-end">
+                            <button class="edit btn" type="submit">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="imagen">
-                        <img src="{{asset('/img/construccion.jpg')}}" alt="Imagen por defecto">
-                    </div>
-                    <div class="button">
-                        <button class="edit btn" type="submit">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="titulo">
-                        <h3>Título</h3>
-                    </div>
-                    <div class="descripcion">
-                        <p>Descripción</p>
-                    </div>
-                    <div class="imagen">
-                        <img src="{{asset('/img/construccion.jpg')}}" alt="Imagen por defecto">
-                    </div>
-                    <div class="button">
-                        <button class="edit btn" type="submit">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="title">
-                    <h2>Información inicial</h2>
-                </div>
-                <div class="content">
-                    <div class="titulo">
-                        <h3>Título</h3>
-                    </div>
-                    <div class="descripcion">
-                        <p>Descripción</p>
-                    </div>
-                    <div class="button">
-                        <button class="edit btn" type="submit">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                    </div>
-                </div>
+                </section>
                 <!-- <form action="#">
                     <div class="input-group">
                         <label for="titulo">Título</label>
@@ -168,7 +172,7 @@
                             <td>Lorem, ipsum</td>
                             <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quis quasi numquam libero temporibus pariatur, aliquam recusandae praesentium labore cum quos culpa odio? Excepturi, tenetur! Doloribus, corrupti? Quibusdam, excepturi illum!</td>
                             <td>{{now()}}</td>
-                            <td><img src="{{asset('/img/construccion.jpg')}}" alt="Imagen por defecto"></td>
+                            <td><img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto"></td>
                             <td>Nadie</td>
                             <td>https://andatealamierda.com.ar</td>
                         </tr>

@@ -7,6 +7,9 @@
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 
+        <!-- Fuentes -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
         <!-- Bootstrap Ukit -->
         <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 

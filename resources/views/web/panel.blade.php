@@ -32,57 +32,78 @@
             </ul>
         </div>
         <div class="tab-body">
-            <div id="personalizar" class="tab-content opened p-2">
+            <div id="personalizar" class="personalizar tab-content opened p-2 pt-md-0">
                 <section>
                     <div class="title">
                         <h2 class="mb-2 p-2">Banner principal</h2>
                     </div>
-                    <div class="content mb-2 p-2">
-                        <div class="titulo">
-                            <h3 class="mb-2">Título</h3>
+                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
                         </div>
-                        <div class="descripcion">
-                            <p class="mb-2">Descripción</p>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
                         </div>
-                        <div class="imagen mb-2">
-                            <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                        </div>
-                        <div class="boton d-flex justify-content-end">
-                            <button class="edit btn" type="submit">
-                                <i class="fas fa-pen"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="content mb-2 p-2">
-                        <div class="titulo">
-                            <h3 class="mb-2">Título</h3>
-                        </div>
-                        <div class="descripcion">
-                            <p class="mb-2">Descripción</p>
-                        </div>
-                        <div class="imagen mb-2">
-                            <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                        </div>
-                        <div class="boton d-flex justify-content-end">
-                            <button class="edit btn" type="submit">
-                                <i class="fas fa-pen"></i>
-                            </button>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-end">
+                                <button class="edit btn p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="content mb-2 p-2">
-                        <div class="titulo">
-                            <h3 class="mb-2">Título</h3>
+                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
                         </div>
-                        <div class="descripcion">
-                            <p class="mb-2">Descripción</p>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
                         </div>
-                        <div class="imagen mb-2">
-                            <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-end">
+                                <button class="edit btn p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="boton d-flex justify-content-end">
-                            <button class="edit btn" type="submit">
-                                <i class="fas fa-pen"></i>
-                            </button>
+                    </div>
+                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
+                        </div>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
+                        </div>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-end">
+                                <button class="edit btn p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -90,94 +111,137 @@
                     <div class="title">
                         <h2 class="my-2 p-2">Información inicial</h2>
                     </div>
-                    <div class="content mb-2 p-2">
-                        <div class="titulo">
-                            <h3 class="mb-2">Título</h3>
+                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="informacion col-12">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
                         </div>
-                        <div class="descripcion">
-                            <p class="mb-2">Descripción</p>
-                        </div>
-                        <div class="boton d-flex justify-content-end">
-                            <button class="edit btn" type="submit">
-                                <i class="fas fa-pen"></i>
-                            </button>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-end">
+                                <button class="edit btn p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <!-- <form action="#">
-                    <div class="input-group">
-                        <label for="titulo">Título</label>
-                        <input id="titulo" name="titulo" type="text" placeholder="Título">
-                        <div @if($errors->has('titulo'))
-                                class="invalid-tooltip showed"
-                            @else
-                                class="invalid-tooltip"
-                            @endif>
-                            @if($errors->has('titulo'))
-                                {{ $errors->first('titulo') }}
-                            @endif
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="descripcion">Descripción</label>
-                        <textarea id="descripcion" name="descripcion" cols="30" rows="10" placeholder="Descripción"></textarea>
-                        <div @if($errors->has('descripcion'))
-                                class="invalid-tooltip showed"
-                            @else
-                                class="invalid-tooltip"
-                            @endif>
-                            @if($errors->has('descripcion'))
-                                {{ $errors->first('descripcion') }}
-                            @endif
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <input id="file" type="file" name="imagen">
-                        <button class="waves-effect" id="btnFile" type="button">Archivo</button>
-                        <span id="texto">No se eligió ningún archivo</span>
-                        <div @if($errors->has('imagen'))
-                                class="invalid-tooltip showed"
-                            @else
-                                class="invalid-tooltip"
-                            @endif>
-                            @if($errors->has('imagen'))
-                                {{ $errors->first('imagen') }}
-                            @endif
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <button class="btn" type="submit">
-                            <i class="fas fa-check"></i>
-                        </button>
-                    </div>
-                </form> -->
             </div>
-            <div id="galerias" class="tab-content">
+            <div id="galerias" class="galerias tab-content">
                 <!---->
             </div>
-            <div id="eventos" class="tab-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Descripción</th>
-                            <th>Fecha</th>
-                            <th>Organizador</th>
-                            <th>Imagen</th>
-                            <th>Url</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Lorem, ipsum</td>
-                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quis quasi numquam libero temporibus pariatur, aliquam recusandae praesentium labore cum quos culpa odio? Excepturi, tenetur! Doloribus, corrupti? Quibusdam, excepturi illum!</td>
-                            <td>{{now()}}</td>
-                            <td><img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto"></td>
-                            <td>Nadie</td>
-                            <td>https://andatealamierda.com.ar</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div id="eventos" class="eventos tab-content px-2 pb-2">
+                <section>
+                    <div class="title">
+                        <h2 class="my-2 p-2 mt-md-0">Eventos creados</h2>
+                    </div>
+                    <div class="button">
+                        <button class="create btn p-2" type="submit">
+                            <span class="button-text mr-2">Agregar</span>
+                            <i class="button-icon fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="content row d-md-flex justify-content-md-end p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                                <h4 class="mb-2">Organizador</h4>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
+                            <div class="datos pt-2">
+                                <p class="mb-2">{{now()}}</p>
+                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">https://google.com.ar</a></p>
+                            </div>
+                        </div>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
+                        </div>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-between">
+                                <button class="edit btn mr-2 p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                                <button class="trash btn p-2" type="submit">
+                                    <span class="button-text mr-2">Borrar</span>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content row d-md-flex justify-content-md-end p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                                <h4 class="mb-2">Organizador</h4>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
+                            <div class="datos pt-2">
+                                <p class="mb-2">{{now()}}</p>
+                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">https://google.com.ar</a></p>
+                            </div>
+                        </div>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
+                        </div>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-between">
+                                <button class="edit btn mr-2 p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                                <button class="trash btn p-2" type="submit">
+                                    <span class="button-text mr-2">Borrar</span>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content row d-md-flex justify-content-md-end p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                                <h4 class="mb-2">Organizador</h4>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
+                            <div class="datos pt-2">
+                                <p class="mb-2">{{now()}}</p>
+                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">https://google.com.ar</a></p>
+                            </div>
+                        </div>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
+                        </div>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-between">
+                                <button class="edit btn mr-2 p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                                <button class="trash btn p-2" type="submit">
+                                    <span class="button-text mr-2">Borrar</span>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>

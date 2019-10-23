@@ -5,8 +5,7 @@
 .tabs .tab-menu{
     flex-basis: 100%;
     background: var(--tertiary-color);
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
+    border-radius: .25rem;
 }
 
 .tabs .tab-menu ul{
@@ -72,10 +71,6 @@
     position: relative;
     flex-basis: 100%;
     overflow: hidden;
-    border: 3px dashed var(--tertiary-color);
-    border-top: none;
-    border-bottom-left-radius: .25rem;
-    border-bottom-right-radius: .25rem;
 }
 
 .tabs .tab-body .tab-content{
@@ -114,8 +109,17 @@
     color: var(--fourthiary-color);
 }
 
+.tabs .tab-body .tab-content section .content .titulo h4{
+    color: var(--tertiary-color);
+    font-size: 1rem;
+}
+
 .tabs .tab-body .tab-content section .content .descripcion{
     flex-basis: 100%;
+}
+
+.tabs .tab-body .tab-content section .content .datos{
+    border-top: 2px solid var(--tertiary-color);
 }
 
 .tabs .tab-body .tab-content section .content .imagen{
@@ -134,20 +138,60 @@
     flex-basis: 100%;
 }
 
-.tabs .tab-body .tab-content section .content .boton button {
+.tabs .tab-body .tab-content section .content .boton button{
+    width: 45%;
     background: var(--primary-color);
     border-radius: .25rem;
     color: white;
 }
 
+.tabs .tab-body .eventos section .button{
+    display: flex;
+    justify-content: center;
+}
+
+.tabs .tab-body .eventos section .button button{
+    width: 45%;
+    background: var(--primary-color);
+    border-radius: .25rem;
+}
+
+.tabs .tab-body .eventos section .button button .button-text{
+    color: white;
+}
+
+.tabs .tab-body .eventos section .button button .button-icon{
+    color: white;
+}
+
 /* MD */
 @media(min-width: 768px){
-    /**/
+    .tabs .tab-menu{
+        flex-basis: 30%;
+    }
+
+    .tabs .tab-body{
+        flex-basis: 70%;
+    }
+
+    .tabs .tab-body .eventos section .button button{
+        width: calc((45% / 2) - .5rem);
+    }
 }
 
 /* LG */
 @media(min-width: 1024px){
-    /**/
+    .tabs .tab-menu{
+        flex-basis: 20%;
+    }
+
+    .tabs .tab-body{
+        flex-basis: 80%;
+    }
+
+    .tabs .tab-body .eventos section .button button{
+        width: calc((33.33% / 2) - .5rem);
+    }
 }
 
 /* XL */

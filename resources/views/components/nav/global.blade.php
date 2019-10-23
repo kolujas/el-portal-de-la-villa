@@ -4,7 +4,7 @@
     </a>
 
     <div class="nav-row">
-        <a href="/" class="nav-title">
+        <a href="/demo" class="nav-title">
             <h1>Hotel EL Portal de la Villa</h1>
         </a>
     </div>

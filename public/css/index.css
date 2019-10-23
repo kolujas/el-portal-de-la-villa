@@ -64,7 +64,7 @@ body{
 @media(min-width: 1024px){
     /* Navmenu */
     .nav-menu .nav-title{
-        flex-basis: 50%;
+        flex-basis: 40%;
     }
 }
 

@@ -21,7 +21,6 @@
     top: 40%;
     left: 0;
     right: 0;
-    
 }
 
 .jumbotron-banner p{
@@ -57,11 +56,11 @@
 /* LG */
 @media(min-width: 1024px){
     .banner-div{
-        height: 100vh;
+        height: calc(100vh - 7.9rem);
     }
 
     .black-background{
-        height: 100vh;
+        height: calc(100vh - 7.9rem);
         filter: opacity(0.1);
     }    
 }

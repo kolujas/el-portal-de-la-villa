@@ -2,6 +2,8 @@
 
 @section('css')
     <link href="{{asset('css/web/panel.css')}}" rel="stylesheet">
+    <meta name="csrf-token" content="{{csrf_token()}}">
+    <meta name="asset" content="{{asset('/')}}">
 @endsection
 
 @section('titulo')
@@ -53,7 +55,68 @@
                         </div>
                         <div class="accion col-12 col-md-6 col-lg-4">
                             <div class="boton d-flex justify-content-end">
-                                <button class="edit btn p-2" type="submit">
+                                <button data-id="1" class="web-editar btn p-2" type="submit">
+                                    <span class="button-text mr-2">Editar</span>
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="content edition-active row d-md-flex justify-content-md-end mb-2 p-2">
+                        <form action="#" method="post" enctype="multipart/form-data" class="col-12">
+                            @csrf
+                            @method('PUT')
+                            <div class="row d-md-flex justify-content-md-end">
+                                <div class="informacion col-12 col-md-6 col-lg-8">
+                                    <div class="titulo input-group">
+                                        <input class="mb-2 p-2" type="text" name="titulo" placeholder="Título" value="Título">
+                                    </div>
+                                    <div class="descripcion input-group">
+                                        <textarea class="mb-2 p-2" row="30" name="descripcion" placeholder="Descripción">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, accusantium at eveniet vitae iure blanditiis laudantium. Exercitationem expedita praesentium ex ab iure, tempore vel labore, blanditiis iste ea eius cumque?</textarea>
+                                    </div>
+                                </div>
+                                <div class="imagen col-12 col-md-6 col-lg-4">
+                                    <div class="imagen mb-2">
+                                        <label class="imagen-input m-0">
+                                            <i class="input-icon fas fa-pen"></i>
+                                            <input class="d-none" type="file" name="imagen">
+                                        </label>
+                                        <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                                    </div>
+                                </div>
+                                <div class="accion col-12 col-md-6 col-lg-4">
+                                    <div class="boton d-flex justify-content-between">
+                                        <button data-id="1" class="web-editar btn p-2" type="submit">
+                                            <span class="button-text mr-2">Aceptar</span>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+
+                                        <button data-id="1" class="web-editar btn p-2" type="submit">
+                                            <span class="button-text mr-2">Cancelar</span>
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div> -->
+                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="informacion col-12 col-md-6 col-lg-8">
+                            <div class="titulo">
+                                <h3 class="mb-2">Título</h3>
+                            </div>
+                            <div class="descripcion">
+                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            </div>
+                        </div>
+                        <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen mb-2">
+                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
+                            </div>
+                        </div>
+                        <div class="accion col-12 col-md-6 col-lg-4">
+                            <div class="boton d-flex justify-content-end">
+                                <button data-id="1" class="web-editar btn p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
@@ -76,30 +139,7 @@
                         </div>
                         <div class="accion col-12 col-md-6 col-lg-4">
                             <div class="boton d-flex justify-content-end">
-                                <button class="edit btn p-2" type="submit">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
-                            </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
-                            </div>
-                        </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                        </div>
-                        <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-end">
-                                <button class="edit btn p-2" type="submit">
+                                <button data-id="1" class="web-editar btn p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
@@ -122,7 +162,7 @@
                         </div>
                         <div class="accion col-12 col-md-6 col-lg-4">
                             <div class="boton d-flex justify-content-end">
-                                <button class="edit btn p-2" type="submit">
+                                <button data-id="1" class="web-editar btn p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
@@ -140,7 +180,7 @@
                         <h2 class="my-2 p-2 mt-md-0">Eventos creados</h2>
                     </div>
                     <div class="button">
-                        <button class="create btn p-2" type="submit">
+                        <button class="evento-crear btn p-2" type="submit">
                             <span class="button-text mr-2">Agregar</span>
                             <i class="button-icon fas fa-plus"></i>
                         </button>
@@ -156,7 +196,7 @@
                             </div>
                             <div class="datos pt-2">
                                 <p class="mb-2">{{now()}}</p>
-                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">https://google.com.ar</a></p>
+                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">google.com.ar</a></p>
                             </div>
                         </div>
                         <div class="imagen col-12 col-md-6 col-lg-4">
@@ -165,12 +205,12 @@
                             </div>
                         </div>
                         <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-between">
-                                <button class="edit btn mr-2 p-2" type="submit">
+                            <div data-url="/panel/evento/1" class="boton d-flex justify-content-between">
+                                <button data-slug="1" class="evento-editar btn mr-2 p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
-                                <button class="trash btn p-2" type="submit">
+                                <button data-id="1" class="evento-borrar btn p-2" type="submit">
                                     <span class="button-text mr-2">Borrar</span>
                                     <i class="fas fa-trash"></i>
                                 </button>
@@ -188,7 +228,7 @@
                             </div>
                             <div class="datos pt-2">
                                 <p class="mb-2">{{now()}}</p>
-                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">https://google.com.ar</a></p>
+                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">google.com.ar</a></p>
                             </div>
                         </div>
                         <div class="imagen col-12 col-md-6 col-lg-4">
@@ -197,12 +237,12 @@
                             </div>
                         </div>
                         <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-between">
-                                <button class="edit btn mr-2 p-2" type="submit">
+                            <div data-url="/panel/evento/1" class="boton d-flex justify-content-between">
+                                <button data-slug="1" class="evento-editar btn mr-2 p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
-                                <button class="trash btn p-2" type="submit">
+                                <button data-id="1" class="evento-borrar btn p-2" type="submit">
                                     <span class="button-text mr-2">Borrar</span>
                                     <i class="fas fa-trash"></i>
                                 </button>
@@ -220,7 +260,7 @@
                             </div>
                             <div class="datos pt-2">
                                 <p class="mb-2">{{now()}}</p>
-                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">https://google.com.ar</a></p>
+                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">google.com.ar</a></p>
                             </div>
                         </div>
                         <div class="imagen col-12 col-md-6 col-lg-4">
@@ -229,12 +269,12 @@
                             </div>
                         </div>
                         <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-between">
-                                <button class="edit btn mr-2 p-2" type="submit">
+                            <div data-url="/panel/evento/1" class="boton d-flex justify-content-between">
+                                <button data-slug="1" class="evento-editar btn mr-2 p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
-                                <button class="trash btn p-2" type="submit">
+                                <button data-id="1" class="evento-borrar btn p-2" type="submit">
                                     <span class="button-text mr-2">Borrar</span>
                                     <i class="fas fa-trash"></i>
                                 </button>
@@ -245,6 +285,12 @@
             </div>
         </div>
     </div>
+        
+    <form class="delete-form d-none" action="#" method="post">
+        @csrf
+        @method('DELETE')
+        <input type="hidden" name="seccion" value="panel">
+    </form>
 @endsection
 
 @section('footer')

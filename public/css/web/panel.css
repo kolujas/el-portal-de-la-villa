@@ -107,10 +107,12 @@
 
 .tabs .tab-body .tab-content section .content .titulo h3{
     color: var(--fourthiary-color);
+    text-transform: initial;
 }
 
 .tabs .tab-body .tab-content section .content .titulo h4{
     color: var(--tertiary-color);
+    text-transform: initial;
     font-size: 1rem;
 }
 
@@ -123,6 +125,7 @@
 }
 
 .tabs .tab-body .tab-content section .content .imagen{
+    position: relative;
     flex-basis: 100%;
     border-radius: .25rem;
     overflow: hidden;
@@ -162,6 +165,92 @@
 
 .tabs .tab-body .eventos section .button button .button-icon{
     color: white;
+}
+
+.tabs .tab-body .personalizar section .edition-activated > .informacion,
+.tabs .tab-body .personalizar section .edition-activated > .imagen,
+.tabs .tab-body .personalizar section .edition-activated > .accion,
+.tabs .tab-body .personalizar section .edition-deactivated form{
+    display: none;
+}
+
+.tabs .tab-body .personalizar section .edition-deactivated > .informacion,
+.tabs .tab-body .personalizar section .edition-deactivated > .imagen,
+.tabs .tab-body .personalizar section .edition-deactivated > .accion,
+.tabs .tab-body .personalizar section .edition-activated form{
+    display: block;
+}
+
+.tabs .tab-body .personalizar section .edition-activated .titulo input,
+.tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: var(--fourthiary-color);
+    font-size: 1.5rem;
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    border: 2px solid red;
+    animation: rainbow 4s infinite;
+    border-radius: .25rem;
+}
+
+.tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+    font-size: 0.875rem;
+    color: #919aa1;
+    font-weight: 200;
+    letter-spacing: 1px;
+    resize: none;
+}
+
+.tabs .tab-body .personalizar .edition-activated .imagen .imagen-input{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    animation: rainbow 4s infinite;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.tabs .tab-body .personalizar .edition-activated .imagen .imagen-input .input-icon{
+    animation: text-rainbow 4s infinite;
+    font-size: 3rem;
+}
+
+@keyframes rainbow{
+    0%{
+        border-color: white;
+    } 25%{
+        border-color: var(--tertiary-color);
+    } 50%{
+        border-color: var(--primary-color);
+    } 75%{
+        border-color: var(--tertiary-color);
+    } 100%{
+        border-color: white;
+    }
+}
+
+@keyframes text-rainbow{
+    0%{
+        color: white;
+    } 25%{
+        color: var(--tertiary-color);
+    } 50%{
+        color: var(--primary-color);
+    } 75%{
+        color: var(--tertiary-color);
+    } 100%{
+        color: white;
+    }
 }
 
 /* MD */

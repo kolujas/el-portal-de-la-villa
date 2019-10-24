@@ -5,46 +5,91 @@
 .banner-div{
     height: 40vh;
     width: 100%;
-    background: url('/img/construction.jpg') no-repeat;
     padding: 0;
     position: relative;
 }
 
-.black-background{
+/* slider */
+
+.carousel{
+    position: absolute;
+    top: 0; 
     height: 40vh;
-    filter: opacity(0.1);
 }
 
-.jumbotron-banner{
-    flex-wrap: wrap;
-    position: absolute;
-    top: 40%;
-    left: 0;
-    right: 0;
+.carousel img{
+    height: 40vh;
 }
 
-.jumbotron-banner p{
-    width: 100%;
-    font-size: 1.5rem;
-}
-
-.facebook-icon{
-    font-size: 2rem;
-    cursor: pointer;
-    color: #4C6EF5;
-    position: absolute;
-    right: 20px;
-    bottom: 7.5rem;
-}
-
-.instagram-icon{
-    font-size: 2rem;
-    cursor: pointer;
-    color: #F783AC;
-    position: absolute;
-    right: 22px;
+.slider-heading, .slider-text{
+    position: relative;
     bottom: 5rem;
 }
+
+.carousel .redirigirBtn{
+   z-index: 999;
+   position: absolute;
+   top: 65%;
+}
+
+.carousel-control-prev{
+    transform: translateX(-100%);
+    transition: 500ms;
+    z-index: 999;
+}
+
+.carousel-control-next{
+    transform: translateX(100%);
+    transition: 500ms;
+    z-index: 999;
+}
+
+.carousel:hover .indicators{
+    transform: none;
+} 
+
+.fa-facebook:before{
+    font-size: 2rem;
+    cursor: pointer;
+    /* color: #4C6EF5; */
+    color: #495057;
+    position: absolute;
+    right: 0;
+    bottom: 7.8rem;
+    z-index: 999;
+    background-color: #F8F9FA;
+    padding: .3rem;
+    padding-left: 0.6rem;
+}
+
+.fa-instagram:before{
+    font-size: 2rem;
+    cursor: pointer;
+    /* color: #F783AC; */
+    color: #495057;
+    position: absolute;
+    right: 0;
+    bottom: 5rem;
+    z-index: 999;
+    background-color: #F8F9FA;
+    padding: .45rem;
+    padding-left: 0.7rem;
+}
+
+.carousel-inner{
+    background-color: #000;
+    z-index: 999;
+    height: 40vh;
+}
+
+/* informacion-inicial */
+
+.informacion-inicial .div-informacion-inicial .mini-encabezado{
+    font-family: var(--fuente-encabezados);
+    font-size: 1rem;
+}
+
+
 
 
 /* MD */

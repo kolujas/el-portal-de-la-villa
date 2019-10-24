@@ -35,7 +35,7 @@
                                 <p class="card-text">El sitio estará listo pronto</p>
                             </div>
                             <div class="card-body contacto">
-                                <p class="card-text">hola@digitalo.com.ar</p>
+                                <p class="card-text">Reservas@portalhotel.com.ar</p>
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,7 @@ body{
     --primary-color: #0D4A7B;
     --secondary-color: #197C3E;
     --tertiary-color: #C6C6C6;
+    --tertiary-color-hover: #9F9F9F;
     --fourthiary-color: #222222;
     --fuente-encabezados: 'Quicksand', sans-serif;
     min-height: 100vh;

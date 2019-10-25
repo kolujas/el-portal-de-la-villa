@@ -48,7 +48,7 @@
 .tabs .tab-menu .tab-button.opened .tab-icon{
     transform: translateX(-50%) translateY(-50%);
     color: white;
-    background: #9F9F9F;
+    background: var(--tertiary-color-hover);
     z-index: 3;
     font-size: 1.5rem;
     box-shadow: 0px 0px;
@@ -64,7 +64,7 @@
 }
 
 .tabs .tab-menu .tab-button.opened .tab-text{
-    background: #9F9F9F;
+    background: var(--tertiary-color-hover);
 }
 
 .tabs .tab-body{
@@ -120,9 +120,9 @@
     flex-basis: 100%;
 }
 
-.tabs .tab-body .tab-content section .content .datos{
+/* .tabs .tab-body .tab-content section .content .datos{
     border-top: 2px solid var(--tertiary-color);
-}
+} */
 
 .tabs .tab-body .tab-content section .content .imagen{
     position: relative;
@@ -137,11 +137,15 @@
     object-fit: cover;
 }
 
-.tabs .tab-body .tab-content section .content .boton{
+.tabs .tab-body .tab-content section .content .boton,
+.tabs .tab-body .tab-content section .content .acciones{
     flex-basis: 100%;
 }
 
-.tabs .tab-body .tab-content section .content .boton button{
+.tabs .tab-body .tab-content section .content .acciones button,
+.tabs .tab-body .tab-content section .content .acciones a,
+.tabs .tab-body .tab-content section .content .boton button,
+.tabs .tab-body .tab-content section .content .boton a{
     width: 45%;
     background: var(--primary-color);
     border-radius: .25rem;
@@ -153,17 +157,20 @@
     justify-content: center;
 }
 
-.tabs .tab-body .eventos section .button button{
+.tabs .tab-body .eventos section .button button,
+.tabs .tab-body .eventos section .button a{
     width: 45%;
     background: var(--primary-color);
     border-radius: .25rem;
 }
 
-.tabs .tab-body .eventos section .button button .button-text{
+.tabs .tab-body .eventos section .button button .button-text,
+.tabs .tab-body .eventos section .button a .button-text{
     color: white;
 }
 
-.tabs .tab-body .eventos section .button button .button-icon{
+.tabs .tab-body .eventos section .button button .button-icon,
+.tabs .tab-body .eventos section .button a .button-icon{
     color: white;
 }
 
@@ -192,9 +199,15 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 3px;
-    border: 2px solid red;
+    border: 2px solid var(--primary-color);
     animation: rainbow 4s infinite;
     border-radius: .25rem;
+}
+
+.tabs .tab-body .personalizar section .edition-activated .titulo input:focus,
+.tabs .tab-body .personalizar section .edition-activated .descripcion textarea:focus{
+    animation: none;
+    outline: none;
 }
 
 .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
@@ -203,6 +216,7 @@
     font-weight: 200;
     letter-spacing: 1px;
     resize: none;
+    height: 7.5rem;
 }
 
 .tabs .tab-body .personalizar .edition-activated .imagen .imagen-input{
@@ -266,6 +280,10 @@
     .tabs .tab-body .eventos section .button button{
         width: calc((45% / 2) - .5rem);
     }
+
+    .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+        height: 10.5rem;
+    }
 }
 
 /* LG */
@@ -281,9 +299,15 @@
     .tabs .tab-body .eventos section .button button{
         width: calc((33.33% / 2) - .5rem);
     }
+
+    .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+        height: 5.5rem;
+    }
 }
 
 /* XL */
 @media(min-width: 1200px){
-    /**/
+    .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+        height: 4.5rem;
+    }
 }

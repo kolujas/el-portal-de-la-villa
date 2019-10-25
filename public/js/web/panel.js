@@ -100,13 +100,15 @@ let EventButtons = {
     },
 };
 
+function observe(element, event, handler){
+    element.addEventListener(event, handler);
+};
+
 let WebButtons = {
     /** @var {HTMLElement[]} - Array of edit buttons. */
     edit: [],
     /** @var {object} - Form actions. */
     form: {
-        /** @var {HTMLElement} - Form HTML Element */
-        html: null,
         /**
          * Create an edit form.
          * @param {HTMLElement} button - The button clicked.
@@ -114,7 +116,6 @@ let WebButtons = {
         create(button){
             let content = button.parentNode.parentNode.parentNode;
             let formTag = document.createElement('form');
-            this.html = formTag;
             content.appendChild(formTag);
             formTag.classList.add('col-12');
             formTag.action = '#';
@@ -270,17 +271,6 @@ let WebButtons = {
                         icon2.classList.add('fas');
                         icon2.classList.add('fa-times');
         },
-        /**
-         * Check if the form exist.
-         * @return {boolean}
-         */
-        exist(){
-            if(this.html != null){
-                return true;
-            }else{
-                return false;
-            }
-        },
     },
     /** EventButtons loader. */
     load(){
@@ -297,11 +287,12 @@ let WebButtons = {
      * @param {HTMLElement} button - The button clicked.
      */
     activateEdition(button){
-        button.parentNode.parentNode.parentNode.classList.remove('edition-deactivated');
-        button.parentNode.parentNode.parentNode.classList.add('edition-activated');
-        if(!this.form.exist()){
+        if(!button.parentNode.parentNode.parentNode.classList.contains('edition-activated') && 
+        !button.parentNode.parentNode.parentNode.classList.contains('edition-deactivated')){
             this.form.create(button);
         }
+        button.parentNode.parentNode.parentNode.classList.remove('edition-deactivated');
+        button.parentNode.parentNode.parentNode.classList.add('edition-activated');
     },
     /**
      * Execute edit actions.

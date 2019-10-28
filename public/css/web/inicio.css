@@ -89,7 +89,56 @@
     font-size: 1rem;
 }
 
+/* presentacion */
 
+.presentacion-div .card{
+    border: none;
+}
+
+.presentacion-div .card-title{
+    color: var(--primary-color);
+}
+
+.presentacion-div .card-body{
+    width: 80%;
+    background-color: #fff;
+    position: relative;
+    bottom: 3rem;
+    margin: auto;
+}
+
+/* separador con iconos */
+
+.separador-iconos .fa-ship{
+    font-size: 3rem;
+    /* color: #495057; */
+    color: var(--tertiary-color-hover);
+}
+
+.icon-text{
+    /* color: #514040; */
+    color: var(--primary-color);
+    font-size: 1.15rem;
+}
+
+/* formulario */
+
+.form-control{
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid var(--primary-color);
+}
+
+.form-group label{
+    color: var(--primary-color);
+}
+
+.form-group .enviar-contacto{
+    background-color: var(--fourthiary-color);
+}
 
 
 /* MD */

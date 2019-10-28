@@ -20,7 +20,13 @@
 
         /** Carga el panel de administracion en la seccion de crear Evento. */
         public function showCrear(){
-            return view('evento.crear');
+            $validation = (object) [
+                Evento::$validation['crear'],
+            ];
+
+            return view('evento.crear',[
+                'validation' => json_encode($validation),
+            ]);
         }
         
         /**
@@ -31,19 +37,7 @@
         public function doCrear(Request $request){
             $inputData = $request->all();
             
-            $request->validate(Evento::$reglas['crear'], [
-                'titulo.required' => 'El título del evento no puede estar vacío.',
-                'titulo.min' => 'El título del evento debe tener al menos :min caracteres.',
-                'titulo.max' => 'El título del evento no puede tener más de :max caracteres.',
-                'descripcion.required' => 'La descripción del evento no puede estar vacío.',
-                'fecha.required' => 'La fecha del evento no puede estar vacío.',
-                'fecha.date' => 'La fecha del evento debe ser una fecha valida.',
-                'organizador.required' => 'El organizador del evento no puede estar vacío.',
-                'organizador.min' => 'El organizador del evento debe tener al menos :min caracteres.',
-                'organizador.max' => 'El organizador del evento no puede tener más de :max caracteres.',
-                'url.required' => 'La URL del evento es obligatoria.',
-                'url.url' => 'La URL del evento debe ser una URL valida.',
-            ]);
+            $request->validate(Evento::$validation['crear']['rules'], Evento::$validation['crear']['messages']);
             
             $inputData['id_usuario'] = Auth::id();
             
@@ -74,18 +68,7 @@
         public function doEditar(Request $request, $id_evento){
             $inputData = $request->input();
 
-            $request->validate(Evento::$reglas['editar'], [
-                'titulo.required' => 'El título del evento no puede estar vacío.',
-                'titulo.min' => 'El título del evento debe tener al menos :min caracteres.',
-                'titulo.max' => 'El título del evento no puede tener más de :max caracteres.',
-                'descripcion.required' => 'La descripción del evento no puede estar vacío.',
-                'fecha.required' => 'La fecha del evento no puede estar vacío.',
-                'fecha.date' => 'La fecha del evento debe ser una fecha valida.',
-                'organizador.required' => 'El organizador del evento no puede estar vacío.',
-                'organizador.min' => 'El organizador del evento debe tener al menos :min caracteres.',
-                'organizador.max' => 'El organizador del evento no puede tener más de :max caracteres.',
-                'pdf.mimetypes' => 'El PDF del evento debe ser un PDF valido.',
-            ]);
+            $request->validate(Evento::$validation['editar']['rules'], Evento::$validation['editar']['messages']);
             
             $evento = Evento::find($id_evento);
             

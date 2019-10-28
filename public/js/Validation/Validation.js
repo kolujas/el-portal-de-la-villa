@@ -1,18 +1,19 @@
 let Validation = {
+    /** @var {HTMLElements[]} - Array of form HTML Element. */
     forms: [],
-    /** El loader del "Validation". */
+    /** Validation loader. */
     load(){
         this.getElements();
     },
-    /** Obtiene los elementos para validar. */
+    /** Get all the form HTML Elements. */
     getElements(){
         let forms = document.querySelectorAll('.form-validate');
         for(let i = 0; i < forms.length; i++){
             forms[i].classList.add('form-validation-' + i);
             this.forms[i] = {};
             this.forms[i].element = forms[i];
-            this.getButton(i);
-            this.getInputs(i);
+            // this.getButton(i);
+            // this.getInputs(i);
             this.forms[i].rules = Rules.get(forms[i]);
             // console.log('INICIO :D');
             this.forms[i].messages = Messages.get(forms[i]);
@@ -112,3 +113,7 @@ let Validation = {
         return document.querySelector('.form-validation-' + number + ' [name=' + name + '] ~ .invalid-tooltip');
     },
 };
+
+document.addEventListener('DOMContentLoaded', function(){
+    Validation.load();
+});

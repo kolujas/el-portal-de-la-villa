@@ -6,9 +6,9 @@ let Rules = {
      * @return {array}
      */
     get(form){
-        if(form.dataset.rules){
-            let rules = JSON.parse(form.dataset.rules);
-            return this.parse(rules);
+        if(form.dataset.validation){
+            let validation = JSON.parse(form.dataset.validation);
+            return this.parse(validation.rules);
         }else{
             console.log('Formulario llamado: "' + form.className + '", no contiene reglas de validación.');
         }

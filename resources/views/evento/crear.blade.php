@@ -1,6 +1,11 @@
+<?php
+    /** @var object[] $validation */
+?>
 @extends('layout.index')
 
 @section('css')
+    <link href="{{asset('css/Validation.css')}}" rel="stylesheet">
+    <link href="{{asset('css/InputFileMaker.css')}}" rel="stylesheet">
     <link href="{{asset('css/evento/crear.css')}}" rel="stylesheet">
 @endsection
 
@@ -14,92 +19,94 @@
 @endsection
 
 @section('main')
-    <div class="crear col-12">
+    <div class="crear col-12 col-md-10 col-lg-8">
         <div class="title">
             <h2>Crear Evento</h2>
         </div>
-        <form action="/evento/crear" method="post" enctype="multipart/form-data">
+        <form action="/evento/crear"
+            class="form-validate"
+            method="post"
+            enctype="multipart/form-data"
+            data-validation="{{$validation}}">
             @csrf
             <div class="row">
-                <div class="input-group input-group-sm col-12 mb-3">
-                    <label for="titulo" class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Título</span>
+                <div class="form-group form-group-sm col-12 mb-2">
+                    <label for="titulo" class="input-name m-0 p-0">
+                        <span class="input-text">Título</span>
                     </label>
-                    <input id="titulo" type="text" class="form-control" value="{{ old('titulo') }}">
+                    <input id="titulo"
+                        type="text"
+                        class="form-control m-0 p-2"
+                        value="{{old('titulo')}}"
+                        placeholder="Título">
                     <div @if($errors->has('titulo'))
                         class="invalid-tooltip showed"
                     @else
                         class="invalid-tooltip"
                     @endif>
                         @if($errors->has('titulo'))
-                            {{ $errors->first('titulo') }}
+                            <small>{{$errors->first('titulo')}}</small>
                         @endif
                     </div>
                 </div>
-
-                <div class="input-group col-12">
-                    <i class="material-icons prefix">description</i>
-                    <textarea name="descripcion" id="description" class="materialize-textarea" data-length="120">{{ old('descripcion') }}</textarea>
-                    <label for="description">Descripción</label>
+                
+                <div class="form-group form-group-sm col-12 mb-2">
+                    <label for="descripcion" class="input-name m-0 p-0">
+                        <span class="input-text">Descripción</span>
+                    </label>
+                    <textarea id="descripcion" 
+                        name="descripcion" 
+                        class="form-control m-0 p-2"
+                        placeholder="Descripción">{{old('descripcion')}}</textarea>
                     <div @if($errors->has('descripcion'))
                         class="invalid-tooltip showed"
                     @else
                         class="invalid-tooltip"
                     @endif>
                         @if($errors->has('descripcion'))
-                            {{ $errors->first('descripcion') }}
+                            <small>{{$errors->first('descripcion')}}</small>
                         @endif
                     </div>
                 </div>
 
-                <div class="input-group col-12 dateDiv">
-                    <i class="material-icons prefix">date_range</i>
-                    <input type="text" name="fecha" id="fecha" class="datepicker" value="{{ old('fecha') }}">
-                    <label for="fecha">Fecha</label>
-                    <div @if($errors->has('fecha'))
-                        class="invalid-tooltip showed"
-                    @else
-                        class="invalid-tooltip"
-                    @endif>
-                        @if($errors->has('fecha'))
-                            {{ $errors->first('fecha') }}
-                        @endif
-                    </div>
-                </div>
-
-                <div class="input-group col-12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="account_circle" type="text" name="organizador" value="{{ old('organizador') }}">
-                    <label for="account_circle">Organizador</label>
+                <div class="form-group form-group-sm col-12 mb-2">
+                    <label for="organizador" class="input-name m-0 p-0">
+                        <span class="input-text">Organizador</span>
+                    </label>
+                    <input id="organizador" 
+                        type="text" 
+                        class="form-control m-0 p-2" 
+                        value="{{old('organizador')}}"
+                        placeholder="Organizador">
                     <div @if($errors->has('organizador'))
                         class="invalid-tooltip showed"
                     @else
                         class="invalid-tooltip"
                     @endif>
                         @if($errors->has('organizador'))
-                            {{ $errors->first('organizador') }}
+                            <small>{{$errors->first('organizador')}}</small>
                         @endif
                     </div>
                 </div>
                     
-                <div class="input-group col-12 file">
-                    <input type="file" id="file" size="50" name="pdf">
-                    <button class="waves-effect" id="btnFile" type="button">Archivo</button>
-                    <span id="texto">No se eligió ningún archivo</span>
-                    <div @if($errors->has('pdf'))
+                <div class="form-group form-group-sm col-12 mb-2">
+                    <input class="make-a-file make-an-image" type="file" name="imagen" data-text="Imagen" data-notfound="No se eligió ninguna imagen.">
+                    <div @if($errors->has('imagen'))
                         class="invalid-tooltip showed"
                     @else
                         class="invalid-tooltip"
                     @endif>
-                        @if($errors->has('pdf'))
-                            {{ $errors->first('pdf') }}
+                        @if($errors->has('imagen'))
+                            <small>{{$errors->first('imagen')}}</small>
                         @endif
                     </div>
                 </div>
 
-                <div class="col-12 divSubmit">
-                    <button class="btn-small waves-effect waves-light grey lighten-5" type="submit" name="action">Crear evento
-                        <i class="material-icons right">send</i>
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="form-submit btn-small waves-effect waves-light grey lighten-5"
+                        type="submit"
+                        name="action">Crear evento
+                        <i class="fas fa-check"></i>
                     </button>
                 </div>
             </div>
@@ -113,11 +120,12 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{asset('js/Validation/Invalidator.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/Validation/Validator.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/Validation/Requirements.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/Validation/Messages.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/Validation/Rules.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Validation/Validation.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Rules.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Messages.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Requirements.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Validator.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Invalidator.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/InputFileMaker.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/evento/crear.js')}}"></script>
 @endsection

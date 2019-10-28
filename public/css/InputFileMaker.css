@@ -1,0 +1,34 @@
+.container-fluid > .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.make-a-file{
+    visibility: hidden;
+    width: 0;
+}
+
+.file-button{
+    --primary-color: #222;
+    --secondary-color: #ddd;
+    --shadow-color: #888;
+    display: inline-block;
+    margin: 0;
+    background-color: var(--primary-color);
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: .5rem;
+    box-shadow: 3px 3px 8px var(--shadow-color);
+    text-transform: uppercase;
+    border-radius: .25rem;
+    margin-right: .5rem;
+}
+
+.file-img{
+    width: 100%;
+    margin-top: .5rem;
+    border-radius: .25rem;
+}

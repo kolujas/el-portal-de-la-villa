@@ -96,7 +96,7 @@
 }
 
 .presentacion-div .card-title{
-    color: var(--primary-color);
+    color: var(--color-uno);
 }
 
 .presentacion-div .card-body{
@@ -112,12 +112,12 @@
 .separador-iconos .fa-ship{
     font-size: 3rem;
     /* color: #495057; */
-    color: var(--tertiary-color-hover);
+    color: var(--color-tres-hover);
 }
 
 .icon-text{
     /* color: #514040; */
-    color: var(--primary-color);
+    color: var(--color-uno);
     font-size: 1.15rem;
 }
 
@@ -129,15 +129,15 @@
 
 .form-control:focus{
     box-shadow: none;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--color-uno);
 }
 
 .form-group label{
-    color: var(--primary-color);
+    color: var(--color-uno);
 }
 
 .form-group .enviar-contacto{
-    background-color: var(--fourthiary-color);
+    background-color: var(--color-cuatro);
 }
 
 

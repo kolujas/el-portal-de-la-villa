@@ -1,9 +1,9 @@
 .invalid-tooltip{
-    --primary-color: var(--fourthiary-color);
+    --primary-color: var(--color-cuatro);
 }
 
 .file-button{
-    --primary-color: #0D4A7B;
+    --primary-color: var(--color-uno);
     --shadow-color: transparent;
     border-radius: 0;
     font-size: .8rem;
@@ -11,14 +11,14 @@
 
 .crear .form-validate .input-name{
     flex-basis: 30%;
-    color: var(--fourthiary-color);
+    color: var(--color-cuatro);
     font-size: .8rem;
     text-transform: uppercase;
 }
 
 .crear .form-validate .form-control{
     height: 2.5rem;
-    border: 1px solid var(--fourthiary-color);
+    border: 1px solid var(--color-cuatro);
     background: transparent;
 }
 

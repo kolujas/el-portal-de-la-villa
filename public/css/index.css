@@ -10,11 +10,11 @@ html{
 
 body{
     overflow-x: hidden;
-    --primary-color: #0D4A7B;
-    --secondary-color: #197C3E;
-    --tertiary-color: #C6C6C6;
-    --tertiary-color-hover: #9F9F9F;
-    --fourthiary-color: #222222;
+    --color-uno: #0D4A7B;
+    --color-dos: #197C3E;
+    --color-tres: #C6C6C6;
+    --color-tres-hover: #9F9F9F;
+    --color-cuatro: #222222;
     --fuente-encabezados: 'Quicksand', sans-serif;
     min-height: 100vh;
     margin: 0;
@@ -23,9 +23,9 @@ body{
 /* Navmenu */
 .nav-menu{
     background: transparent;
-    --primary-color: #0D4A7B;
-    --tertiary-color: #C6C6C6;
-    --fourthiary-color: #222222;
+    --primary-color: var(--color-uno);
+    --color-tres: #C6C6C6;
+    --color-cuatro: #222222;
 }
 
 .nav-menu .nav-row:first-of-type{
@@ -33,15 +33,15 @@ body{
 }
 
 .nav-menu > .sidebar-button{
-    color: var(--primary-color);
+    color: var(--color-uno);
 }
 
 .sidebar{
-    background: var(--tertiary-color);
+    background: var(--color-tres);
 }
 
 .sidebar.opened{
-    box-shadow: 0 0 19px var(--tertiary-color);
+    box-shadow: 0 0 19px var(--color-tres);
 }
 
 .sidebar .sidebar-header{
@@ -54,7 +54,7 @@ body{
 }
 
 .sidebar .sidebar-content .sidebar-menu .nav-link{
-    color: var(--primary-color);
+    color: var(--color-uno);
 }
 
 /* MD */

@@ -3,10 +3,11 @@
 }
 
 .banner-div{
-    height: 40vh;
+    height: 75vh;
     width: 100%;
     padding: 0;
     position: relative;
+    z-index: 1;
 }
 
 /* slider */
@@ -14,22 +15,23 @@
 .carousel{
     position: absolute;
     top: 0; 
-    height: 40vh;
+    height: 75vh;
 }
 
 .carousel img{
-    height: 40vh;
+    height: 75vh;
+    object-fit: cover
 }
 
 .slider-heading, .slider-text{
     position: relative;
-    bottom: 5rem;
+    bottom: 15rem;
 }
 
 .carousel .redirigirBtn{
    z-index: 999;
    position: absolute;
-   top: 65%;
+   top: 60%;
 }
 
 .carousel-control-prev{
@@ -51,13 +53,9 @@
 .fa-facebook:before{
     font-size: 2rem;
     cursor: pointer;
-    /* color: #4C6EF5; */
-    color: #495057;
-    position: absolute;
-    right: 0;
-    bottom: 7.8rem;
+    color: #4C6EF5 !important;
+    color: var(--color-cuatro);
     z-index: 999;
-    background-color: #F8F9FA;
     padding: .3rem;
     padding-left: 0.6rem;
 }
@@ -65,21 +63,29 @@
 .fa-instagram:before{
     font-size: 2rem;
     cursor: pointer;
-    /* color: #F783AC; */
-    color: #495057;
-    position: absolute;
-    right: 0;
-    bottom: 5rem;
+    color: #F783AC !important;
+    color: var(--color-cuatro);
     z-index: 999;
-    background-color: #F8F9FA;
     padding: .45rem;
     padding-left: 0.7rem;
+}
+
+.redes-sociales{
+    transform: translateY(-50%);
+    top: 48%;
+    left: 0;
+    width: 50px;
+    height: 100px;
+    flex-wrap: wrap;
+    background-color: #F8F9FA;
+    z-index: 2;
+    border-radius: .25rem;
 }
 
 .carousel-inner{
     background-color: #000;
     z-index: 999;
-    height: 40vh;
+    height: 75vh;
 }
 
 /* informacion-inicial */
@@ -144,19 +150,127 @@
 /* MD */
 
 @media(min-width: 768px){
+    
+    /* slider */
 
+    .banner-div{
+        height: 45vh;
+    }
+    
+    .carousel{
+        height: 45vh;
+    }
+    
+    .carousel-inner{
+        /* background-color: #000; */
+        z-index: 999;
+        height: 45vh;
+    }
+
+    .carousel img{
+        height: 45vh;
+    }
+
+    .slider-heading, .slider-text{
+        position: relative;
+        bottom: 8rem;
+    }
+    
+    .carousel .redirigirBtn{
+       z-index: 999;
+       position: absolute;
+       top: 60%;
+    }
+
+    .redirigirBtn:focus{
+        box-shadow: none !important;
+    }
+   
+    
+    /* presentacion */
+    
+    .presentacion-div .card-body{
+        width: 70%;
+    }
+    
+    /* separador con iconos */
+    
+    .separador-iconos .fa-ship{
+        font-size: 3rem;
+        /* color: #495057; */
+        color: var(--color-tres-hover);
+    }
+    
+    .icon-text{
+        /* color: #514040; */
+        color: var(--color-uno);
+        font-size: 1.15rem;
+    }
 }
 
 /* LG */
 @media(min-width: 1024px){
+
+    /* slider */
+
     .banner-div{
-        height: calc(100vh - 7.9rem);
+        height: 55vh;
+    }
+    
+    .carousel{
+        height: 55vh;
+    }
+    
+    .carousel-inner{
+        /* background-color: #000; */
+        z-index: 999;
+        height: 55vh;
     }
 
-    .black-background{
+    .carousel img{
+        height: 55vh;
+    }
+    
+    .carousel .redirigirBtn{
+       z-index: 999;
+       position: absolute;
+       top: 70%;
+       outline: none;
+    }
+
+    .redirigirBtn:focus{
+        box-shadow: none !important;
+    }
+   
+    
+    /* presentacion */
+    
+    .presentacion-div .card-body{
+        width: 70%;
+    }
+    
+    /* separador con iconos */
+    
+    .separador-iconos .fa-ship{
+        font-size: 3rem;
+        /* color: #495057; */
+        color: var(--color-tres-hover);
+    }
+    
+    .icon-text{
+        /* color: #514040; */
+        color: var(--color-uno);
+        font-size: 1.15rem;
+    }
+
+    /* .banner-div{
+        height: calc(100vh - 7.9rem);
+    } */
+
+    /* .black-background{
         height: calc(100vh - 7.9rem);
         filter: opacity(0.1);
-    }    
+    }     */
 }
 
 /* XL */

@@ -1,7 +1,6 @@
-.container-fluid > .row{
+.input-file{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .make-a-file{
@@ -9,7 +8,7 @@
     width: 0;
 }
 
-.file-button{
+.input-file .file-button{
     --primary-color: #222;
     --secondary-color: #ddd;
     --shadow-color: #888;
@@ -31,4 +30,26 @@
     width: 100%;
     margin-top: .5rem;
     border-radius: .25rem;
+}
+
+/* MD */
+@media(min-width: 768px){
+    .input-file{
+        width: 50%;
+        padding-right: .5rem;
+    }
+    
+    .file-img{
+        width: 50%;
+    }
+}
+
+/* LG */
+@media(min-width: 1024px){
+    /**/
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
 }

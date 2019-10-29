@@ -88,9 +88,57 @@
                         @endif
                     </div>
                 </div>
-                    
+
                 <div class="form-group form-group-sm col-12 mb-2">
+                    <label for="fecha" class="input-name m-0 p-0">
+                        <span class="input-text">Fecha</span>
+                    </label>
+                    <input id="fecha" 
+                        type="date" 
+                        class="form-control m-0 p-2" 
+                        value="{{old('fecha')}}">
+                    <div @if($errors->has('fecha'))
+                        class="invalid-tooltip showed"
+                    @else
+                        class="invalid-tooltip"
+                    @endif>
+                        @if($errors->has('fecha'))
+                            <small>{{$errors->first('fecha')}}</small>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group form-group-sm col-12 mb-2">
+                    <label for="url" class="input-name m-0 p-0">
+                        <span class="input-text">URL</span>
+                    </label>
+                    <label for="url" class="d-flex input-group m-0 p-0">
+                        <span class="disabled-text p-2">https://</span>
+                        <input id="url"
+                            type="url"
+                            name="url"
+                            class="p-2" 
+                            value="{{old('url')}}"
+                            placeholder="ejemplo.com">
+                    </label>
+                    <div @if($errors->has('url'))
+                        class="invalid-tooltip showed"
+                    @else
+                        class="invalid-tooltip"
+                    @endif>
+                        @if($errors->has('url'))
+                            <small>{{$errors->first('fecha')}}</small>
+                        @endif
+                    </div>
+                </div>
+                    
+                <div class="form-group form-group-sm col-12 my-2 d-md-flex">
                     <input class="make-a-file make-an-image" type="file" name="imagen" data-text="Imagen" data-notfound="No se eligió ninguna imagen.">
+                    <!-- <div class="input-file">
+                        <button class="file-button">Imagen</button>
+                        <span class="file-text">Miniatura.png</span>
+                    </div>
+                    <img alt="Example image" class="file-img" src="{{asset('img/construction.jpg')}}"> -->
                     <div @if($errors->has('imagen'))
                         class="invalid-tooltip showed"
                     @else

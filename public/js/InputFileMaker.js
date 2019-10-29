@@ -20,22 +20,25 @@ let InputFileMaker = {
      */
     make(input){
         let parent = input.parentNode;
-        let button = document.createElement('button');
-        button.innerHTML = input.dataset.text;
-        button.classList.add('file-button');
-        parent.insertBefore(button, input);
-        button.addEventListener('click', function(e){
-            e.preventDefault();
-            InputFileMaker.execute(input);
-        });
-        let span = document.createElement('span');
-        span.innerHTML = input.dataset.notfound;
-        span.classList.add('file-text');
-        parent.insertBefore(span, input);
-        span.addEventListener('click', function(e){
-            e.preventDefault();
-            InputFileMaker.execute(input);
-        });
+        let div = document.createElement('div');
+        div.classList.add('input-file');
+        parent.insertBefore(div, input);
+            let button = document.createElement('button');
+            button.innerHTML = input.dataset.text;
+            button.classList.add('file-button');
+            div.appendChild(button);
+            button.addEventListener('click', function(e){
+                e.preventDefault();
+                InputFileMaker.execute(input);
+            });
+            let span = document.createElement('span');
+            span.innerHTML = input.dataset.notfound;
+            span.classList.add('file-text');
+            div.appendChild(span);
+            span.addEventListener('click', function(e){
+                e.preventDefault();
+                InputFileMaker.execute(input);
+            });
     },
     /**
      * Execute the correct input.
@@ -49,7 +52,7 @@ let InputFileMaker = {
      * @param {HTMLElement} input - The input.
      */
     update(input){
-        input.previousElementSibling.innerHTML = input.files[0].name;
+        input.previousElementSibling.children[1].innerHTML = input.files[0].name;
     },
     generateImage(input){
         let parent = input.parentNode;

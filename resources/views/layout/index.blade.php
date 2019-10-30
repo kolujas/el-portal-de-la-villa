@@ -17,6 +17,7 @@
         <link href="{{asset('css/WhatsApp.css')}}" rel="stylesheet">
         <link href="{{asset('css/PopUpNotification.css')}}" rel="stylesheet">
         <link href="{{ asset('css/Navmenu.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">       
         @yield('css')
 

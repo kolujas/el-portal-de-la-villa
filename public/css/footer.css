@@ -1,0 +1,26 @@
+.footer{
+    background-color: var(--color-cuatro);
+}
+
+.footer h3{
+    font-family: var(--fuente-encabezado);
+    font-size: 1.1rem;
+}
+
+
+.footer .info-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer .reservas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.suscribirse .btn{
+    border-radius: .25rem;
+    background-color: var(--color-uno);

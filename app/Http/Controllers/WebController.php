@@ -1,6 +1,7 @@
 <?php
     namespace App\Http\Controllers;
 
+    use App\Models\Evento;
     use Auth;
     use Illuminate\Http\Request;
 
@@ -20,8 +21,9 @@
 
         /** Carga el panel de administracion. */
         public function panel(){
+            $eventos = Evento::all();
             return view('web.panel', [
-                //
+                'eventos' => $eventos,
             ]);
         }
 

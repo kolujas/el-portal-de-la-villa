@@ -1,0 +1,96 @@
+.container-fluid > .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.invalid-tooltip{
+    --primary-color: var(--color-cuatro);
+}
+
+.input-file .file-button{
+    --primary-color: var(--color-uno);
+    --shadow-color: transparent;
+    border-radius: 0;
+    font-size: .8rem;
+    width: 25%;
+}
+
+.editar .form-validate .input-name{
+    flex-basis: 25%;
+    color: var(--color-cuatro);
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.editar .form-validate .form-control,
+.editar .form-validate .input-group{
+    height: 2.5rem;
+    border: 1px solid var(--color-cuatro);
+    background: transparent;
+}
+
+.editar .form-validate .input-group .disabled-text{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-cuatro);
+    border: none;
+    border-right: 1px solid var(--color-cuatro);
+}
+
+.editar .form-validate .input-group input{
+    flex-basis: calc(100% - 25%);
+    border: none;
+}
+
+.form-submit{
+    background: var(--color-uno);
+    border: none;
+    outline: none;
+    color: white;
+    padding: .5rem;
+    text-transform: uppercase;
+}
+
+/* MD */
+@media(min-width: 768px){
+    .input-file{
+        align-items: flex-start;
+    }
+
+    .input-file .file-button{
+        min-width: calc(40% + .25rem);
+    }
+
+    .input-file .file-text{
+        padding-top: .5rem;
+    }
+    
+    .editar .form-validate .input-name{
+        flex-basis: 20%;
+    }
+
+    .editar .form-validate .input-group .disabled-text{
+        flex-basis: 20%;
+    }
+    
+    .editar .form-validate .input-group input{
+        flex-basis: calc(100% - 20%);
+    }
+
+    .file-img{
+        margin-top: 0;
+    }
+}
+
+/* LG */
+@media(min-width: 1024px){
+    /**/
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
+}

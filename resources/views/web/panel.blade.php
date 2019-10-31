@@ -1,3 +1,6 @@
+<?php
+    /** @var Evento[] $eventos */
+?>
 @extends('layout.index')
 
 @section('css')
@@ -147,96 +150,38 @@
                             <i class="button-icon fas fa-plus"></i>
                         </button>
                     </div>
-                    <div class="content row d-md-flex justify-content-md-end p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
-                                <h4 class="mb-2">Organizador</h4>
+                    @foreach($eventos as $evento)
+                        <div class="content row d-md-flex justify-content-md-end p-2">
+                            <div class="informacion col-12 col-md-6 col-lg-8">
+                                <div class="titulo">
+                                    <h3 class="mb-2">{{$evento->titulo}}</h3>
+                                    <h4 class="mb-2">{{$evento->organizador}}</h4>
+                                </div>
+                                <div class="descripcion">
+                                    <p class="mb-2">{{$evento->descripcion}}</p>
+                                </div>
+                                <div class="datos">
+                                    <p class="mb-2">{{$evento->fecha}}</p>
+                                    <p class="mb-2"><a target="_blank" href="https://{{$evento->url}}">{{$evento->url}}</a></p>
+                                </div>
                             </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
-                            </div>
-                            <div class="datos">
-                                <p class="mb-2">{{now()}}</p>
-                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">google.com.ar</a></p>
-                            </div>
-                        </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                            <div data-url="/panel/evento/1" class="acciones d-flex justify-content-between">
-                                <a href="/panel/evento/no-mas-lechugas/editar" class="evento-editar btn mr-2 p-2">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <button class="evento-borrar btn p-2">
-                                    <span class="button-text mr-2">Borrar</span>
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content row d-md-flex justify-content-md-end p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
-                                <h4 class="mb-2">Organizador</h4>
-                            </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
-                            </div>
-                            <div class="datos">
-                                <p class="mb-2">{{now()}}</p>
-                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">google.com.ar</a></p>
+                            <div class="imagen col-12 col-md-6 col-lg-4">
+                                <div class="imagen mb-2">
+                                    <img src="{{asset('/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
+                                </div>
+                                <div data-url="/panel/evento/{{$evento->id_evento}}" class="acciones d-flex justify-content-between">
+                                    <a href="/panel/evento/{{$evento->id_evento}}/editar" class="evento-editar btn mr-2 p-2">
+                                        <span class="button-text mr-2">Editar</span>
+                                        <i class="fas fa-pen"></i>
+                                    </a>
+                                    <button class="evento-borrar btn p-2">
+                                        <span class="button-text mr-2">Borrar</span>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                            <div data-url="/panel/evento/1" class="acciones d-flex justify-content-between">
-                                <a href="/panel/evento/no-mas-lechugas/editar" class="evento-editar btn mr-2 p-2">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <button class="evento-borrar btn p-2">
-                                    <span class="button-text mr-2">Borrar</span>
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content row d-md-flex justify-content-md-end p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
-                                <h4 class="mb-2">Organizador</h4>
-                            </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
-                            </div>
-                            <div class="datos">
-                                <p class="mb-2">{{now()}}</p>
-                                <p class="mb-2"><a target="_blank" href="https://google.com.ar">google.com.ar</a></p>
-                            </div>
-                        </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                            <div data-url="/panel/evento/1" class="acciones d-flex justify-content-between">
-                                <a href="/panel/evento/no-mas-lechugas/editar" class="evento-editar btn mr-2 p-2">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <button class="evento-borrar btn p-2">
-                                    <span class="button-text mr-2">Borrar</span>
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </section>
             </div>
         </div>

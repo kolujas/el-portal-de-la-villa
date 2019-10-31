@@ -1,15 +1,70 @@
 let InputFileMaker = {
     /** @var {HTMLElement[]} - Array of Inputs type file. */
     inputs: [],
+    /** @var {object} - Image functions. */
+    image: {
+        /** @var {boolean} - Check if the image was generated or not. */
+        exist: false,
+        /**
+         * Create a new image.
+         * @param {HTMLElement} input - The input.
+         */
+        create(input){
+            let parent = input.parentNode;
+            let img;
+            if(!this.exist){
+                this.exist = true;
+                img = document.createElement('img');
+                img.alt = 'Example image';
+                img.classList.add('file-img');
+            }else{
+                img = document.querySelector('.file-img');
+            }
+            if(FileReader && input.files && input.files.length){
+                let reader = new FileReader();
+                reader.onload = function(){
+                    img.src = reader.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }else{
+                // PENDIENTE
+            }
+            if(!img.classList.contains('generated-image')){
+                img.classList.add('generated-image');
+                img.addEventListener('click', function(e){
+                    e.preventDefault();
+                    InputFileMaker.execute(input);
+                });
+            }
+            parent.insertBefore(img, input);
+        },
+        generate(input){
+            let parent = input.parentNode;
+            this.exist = true;
+            let img = document.createElement('img');
+            img.alt = 'Example image';
+            img.classList.add('file-img');
+            img.classList.add('generated-image');
+            img.src = input.dataset.src;
+            img.addEventListener('click', function(e){
+                e.preventDefault();
+                InputFileMaker.execute(input);
+            });
+            parent.insertBefore(img, input);
+        },
+    },
     /** InputFileMaker loader. */
     load(){
         this.inputs = document.querySelectorAll('.make-a-file');
         for(let i = 0; i < this.inputs.length; i++){
             InputFileMaker.make(this.inputs[i]);
+            if(this.inputs[i].classList.contains('make-an-image') && this.inputs[i].hasAttribute('data-src')){
+                this.image.generate(this.inputs[i]);
+            }
             this.inputs[i].addEventListener('change', function(){
                 InputFileMaker.update(this);
                 if(this.classList.contains('make-an-image')){
-                    InputFileMaker.generateImage(this);
+                    InputFileMaker.image.create(this);
                 }
             });
         }
@@ -52,23 +107,11 @@ let InputFileMaker = {
      * @param {HTMLElement} input - The input.
      */
     update(input){
-        input.previousElementSibling.children[1].innerHTML = input.files[0].name;
-    },
-    generateImage(input){
-        let parent = input.parentNode;
-        let img = document.createElement('img');
-        img.alt = 'Example image';
-        img.classList.add('file-img');
-        if(FileReader && input.files && input.files.length){
-            let reader = new FileReader();
-            reader.onload = function(){
-                img.src = reader.result;
+        for(let i = 0; i < input.parentNode.children.length; i++){
+            if(input.parentNode.children[i].classList.contains('input-file')){
+                input.parentNode.children[i].children[1].innerHTML = input.files[0].name;
             }
-            reader.readAsDataURL(input.files[0]);
-        }else{
-            // PENDIENTE
         }
-        parent.insertBefore(img, input);
     },
 };
 document.addEventListener('DOMContentLoaded', function(){

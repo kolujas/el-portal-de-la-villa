@@ -53,9 +53,12 @@
          */
         public function showEditar($id_evento){
             $evento = Evento::find($id_evento);
+            $validation = (object) [
+                Evento::$validation['editar'],
+            ];
 
-            return view('evento.editar', [
-                'evento' => $evento
+            return view('evento.editar',[
+                'validation' => json_encode($validation),
             ]);
         }
 

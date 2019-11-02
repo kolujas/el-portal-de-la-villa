@@ -2,6 +2,9 @@
 
 @section('css')
     <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
+    <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
+
 @endsection
 
 @section('titulo')
@@ -133,7 +136,7 @@
                 </div>
             </div>    
 
-        <div class="col-12 galeria">
+        <!-- <div class="col-12 galeria">
             <div class="card my-4">
                     <img src="/img/construction.jpg" class="card-img-top" alt="...">
             </div>
@@ -154,8 +157,61 @@
             </div>
             <div class="card my-4">
                     <img src="/img/construction.jpg" class="card-img-top" alt="...">
+            </div>
+        </div> -->
+
+        <div class="container-fluid gallery-container">    
+    
+    <div class="tz-gallery galeria">
+        <h2 class="text-center my-5">Galeria de fotos</h2>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/park.jpg">
+                    <img src="/img/galeria/park.jpg" alt="Park">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/bridge.jpg">
+                    <img src="/img/galeria/bridge.jpg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="/img/galeria/tunnel.jpg">
+                    <img src="/img/galeria/tunnel.jpg" alt="Tunnel">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/coast.jpg">
+                    <img src="/img/galeria/coast.jpg" alt="Coast">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/rails.jpg">
+                    <img src="/img/galeria/rails.jpg" alt="Rails">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/traffic.jpg">
+                    <img src="/img/galeria/traffic.jpg" alt="Traffic">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/rocks.jpg">
+                    <img src="/img/galeria/rocks.jpg" alt="Rocks">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/benches.jpg">
+                    <img src="/img/galeria/benches.jpg" alt="Benches">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="/img/galeria/sky.jpg">
+                    <img src="/img/galeria/sky.jpg" alt="Sky">
+                </a>
             </div>
         </div>
+</div>
 
             <div id="contacto" class="col-12 col-md-9 text-center mt-5 mx-md-auto px-5">
                 <h3>Contactanos</h3>
@@ -174,14 +230,13 @@
 
             <div class="col-12 text-center mt-5 gmaps">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.42240002282!2d-64.451797!3d-32.174427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb83237eb8a7521b!2sHotel%20El%20Portal%20de%20la%20Villa!5e0!3m2!1ses!2sar!4v1572380101216!5m2!1ses!2sar" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
+            </div>   
 
-            <!-- <div class="col-12 text-center mt-5 px-5">
-
-            </div> -->
+</div>
             
         </div>
     </div>
+
     <div class="d-flex justify-content-center position-fixed redes-sociales py-2">
         <a class="facebook-icon" href="https://www.facebook.com">
             <i class="fab fa-facebook"></i>
@@ -190,6 +245,8 @@
             <i class="fab fa-instagram"></i>
         </a>
     </div>
+
+   
    
 @endsection
 
@@ -199,5 +256,11 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>    
+    <script>
+        baguetteBox.run('.tz-gallery', {
+    buttons: true,
+});
+    </script>
 @endsection

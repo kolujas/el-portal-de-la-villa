@@ -146,6 +146,11 @@
     background-color: var(--color-cuatro);
 }
 
+#previous-button, #next-button, #close-button{
+    outline: none !important;
+}
+    
+
 
 /* MD */
 

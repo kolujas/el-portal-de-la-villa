@@ -37,7 +37,7 @@
                     <input id="titulo"
                         type="text"
                         class="form-control m-0 p-2"
-                        value="{{old('titulo')}}"
+                        value="{{old('titulo', $evento->titulo)}}"
                         placeholder="Título">
                     <div @if($errors->has('titulo'))
                         class="invalid-tooltip showed"
@@ -57,7 +57,7 @@
                     <textarea id="descripcion" 
                         name="descripcion" 
                         class="form-control m-0 p-2"
-                        placeholder="Descripción">{{old('descripcion')}}</textarea>
+                        placeholder="Descripción">{{old('descripcion', $evento->descripcion)}}</textarea>
                     <div @if($errors->has('descripcion'))
                         class="invalid-tooltip showed"
                     @else
@@ -76,7 +76,7 @@
                     <input id="organizador" 
                         type="text" 
                         class="form-control m-0 p-2" 
-                        value="{{old('organizador')}}"
+                        value="{{old('organizador', $evento->organizador)}}"
                         placeholder="Organizador">
                     <div @if($errors->has('organizador'))
                         class="invalid-tooltip showed"
@@ -96,7 +96,7 @@
                     <input id="fecha" 
                         type="date" 
                         class="form-control m-0 p-2" 
-                        value="{{old('fecha')}}">
+                        value="{{old('fecha', $evento->fecha)}}">
                     <div @if($errors->has('fecha'))
                         class="invalid-tooltip showed"
                     @else
@@ -118,7 +118,7 @@
                             type="url"
                             name="url"
                             class="p-2" 
-                            value="{{old('url')}}"
+                            value="{{old('url', $evento->url)}}"
                             placeholder="ejemplo.com">
                     </label>
                     <div @if($errors->has('url'))
@@ -133,7 +133,7 @@
                 </div>
                     
                 <div class="form-group form-group-sm col-12 my-2 d-md-flex">
-                    <input class="make-a-file make-an-image" type="file" name="imagen" data-text="Imagen" data-notfound="Imagen por defecto" data-src="{{asset('img/construction.jpg')}}">
+                    <input class="make-a-file make-an-image" type="file" name="imagen" data-text="Imagen" data-notfound='Imagen del evento: "{{$evento->titulo}}"' data-src="{{asset($evento->imagen)}}">
                     <div @if($errors->has('imagen'))
                         class="invalid-tooltip showed"
                     @else
@@ -148,7 +148,7 @@
                 <div class="col-12 d-flex justify-content-end">
                     <button class="form-submit btn-small waves-effect waves-light grey lighten-5"
                         type="submit"
-                        name="action">Crear evento
+                        name="action">Editar
                         <i class="fas fa-check"></i>
                     </button>
                 </div>

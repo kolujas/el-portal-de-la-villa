@@ -170,7 +170,7 @@
                                     <img src="{{asset('/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
                                 </div>
                                 <div data-url="/panel/evento/{{$evento->id_evento}}" class="acciones d-flex justify-content-between">
-                                    <a href="/panel/evento/{{$evento->id_evento}}/editar" class="evento-editar btn mr-2 p-2">
+                                    <a href="/panel/evento/{{$evento->slug}}/editar" class="evento-editar btn mr-2 p-2">
                                         <span class="button-text mr-2">Editar</span>
                                         <i class="fas fa-pen"></i>
                                     </a>

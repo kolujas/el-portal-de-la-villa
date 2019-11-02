@@ -28,6 +28,11 @@
     height: 2.5rem;
     border: 1px solid var(--color-cuatro);
     background: transparent;
+    overflow: hidden;
+}
+
+.editar .form-validate textarea.form-control{
+    height: 7.5rem;
 }
 
 .editar .form-validate .input-group .disabled-text{
@@ -82,6 +87,10 @@
 
     .file-img{
         margin-top: 0;
+    }
+
+    .editar .form-validate textarea.form-control{
+        height: 5rem;
     }
 }
 

@@ -3,7 +3,10 @@
 
     use App\Models\Evento;
     use Auth;
+    use Cviebrock\EloquentSluggable\Services\SlugService;
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\File;
+    use Intervention\Image\ImageManagerStatic as Image;
     use Storage;
 
     class EventoController extends Controller{
@@ -20,9 +23,7 @@
 
         /** Carga el panel de administracion en la seccion de crear Evento. */
         public function showCrear(){
-            $validation = (object) [
-                Evento::$validation['crear'],
-            ];
+            $validation = Evento::$validation['crear'];
 
             return view('evento.crear',[
                 'validation' => json_encode($validation),
@@ -39,26 +40,42 @@
             
             $request->validate(Evento::$validation['crear']['rules'], Evento::$validation['crear']['messages']);
             
-            $inputData['id_usuario'] = Auth::id();
+            if($request->hasFile('imagen')){
+                $filepath = $request->file('imagen')->hashName('eventos');
+                
+                $img = Image::make($request->file('imagen'))
+                        ->resize(400, 400, function($constrait){
+                        	$constrait->aspectRatio();
+                        	$constrait->upsize();
+                        });
+                        
+                Storage::put($filepath, (string) $img->encode());
+                
+                $inputData['imagen'] = $filepath;
+            }
+            
+            $inputData['id_usuario'] = 1;
+            $inputData['slug'] = SlugService::createSlug(Evento::class, 'slug', $inputData['titulo']);
             
             Evento::create($inputData);
             
-            return redirect()->route('evento.panel')->with('status', 'Evento subido correctamente.');
+            return redirect('/panel#eventos')->with('status', 'Evento creado correctamente.');
         }
         
         /**
          * Carga el panel de administracion en la seccion de editar Evento.
          * 
-         * @param $id_evento El id del Evento.
+         * @param $slug El slug del Evento.
          */
-        public function showEditar($id_evento){
-            $evento = Evento::find($id_evento);
+        public function showEditar($slug){
+            $evento = Evento::findBySlug($slug);
             $validation = (object) [
                 Evento::$validation['editar'],
             ];
 
             return view('evento.editar',[
                 'validation' => json_encode($validation),
+                'evento' => $evento,
             ]);
         }
 

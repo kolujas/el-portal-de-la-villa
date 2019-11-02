@@ -17,7 +17,7 @@
          * @var array
          */
         protected $fillable = [
-            'name', 'email', 'password',
+            'nombre', 'correo', 'clave',
         ];
 
         /**
@@ -26,7 +26,7 @@
          * @var array
          */
         protected $hidden = [
-            'password', 'remember_token',
+            'clave', 'remember_token',
         ];
 
         /**
@@ -37,4 +37,9 @@
         protected $casts = [
             'email_verified_at' => 'datetime',
         ];
+
+        /** Establece cual campo va a funcionar como la "Password" guardada para verificar su Autenticacion. */
+        public function getAuthPassword(){
+            return $this->clave;
+        }
     }

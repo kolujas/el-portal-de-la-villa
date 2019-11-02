@@ -12,17 +12,16 @@ let Validation = {
             forms[i].classList.add('form-validation-' + i);
             this.forms[i] = {};
             this.forms[i].element = forms[i];
-            // this.getButton(i);
-            // this.getInputs(i);
+            this.getButton(i);
+            this.getInputs(i);
             this.forms[i].rules = Rules.get(forms[i]);
             // console.log('INICIO :D');
             this.forms[i].messages = Messages.get(forms[i]);
         }
     },
     /**
-     * Obtiene el botón de submit.
-     * 
-     * @param {number} number - La forma de obtener el formulario correctamente.
+     * Get all the submit buttons.
+     * @param {number} number - The number of form.
      */
     getButton(number){
         this.forms[number].button = document.querySelector('.form-validation-' + number + ' .form-submit');
@@ -32,24 +31,33 @@ let Validation = {
         });
     },
     /**
-     * Obtiene los inputs y textareas.
-     * 
-     * @param {number} number - La forma de obtener el formulario correctamente.
+     * Get all the inputs and textareas.
+     * @param {number} number - The number of form.
      */
     getInputs(number){
         this.forms[number].inputs = document.querySelectorAll('.form-validation-' + number + ' input, .form-validation-' + number + ' textarea');
         for(let i = 0; i < this.forms[number].inputs.length; i++){
-            this.forms[number].inputs[i].addEventListener('blur', function(e){
-                e.preventDefault();
-                Validation.validate(number, this);
-            });
+            if(this.forms[number].inputs[i].type == 'text' ||
+            this.forms[number].inputs[i].type == 'email' ||
+            this.forms[number].inputs[i].type == 'numeric' ||
+            this.forms[number].inputs[i].type == 'password' ||
+            !this.forms[number].inputs[i].hasAttribute('type')){
+                this.forms[number].inputs[i].addEventListener('keyup', function(e){
+                    e.preventDefault();
+                    Validation.validate(number, this);
+                });
+            }else{
+                this.forms[number].inputs[i].addEventListener('change', function(e){
+                    e.preventDefault();
+                    Validation.validate(number, this);
+                });
+            }
         }
     },
     /**
-     * Valida el formulario.
-     * 
-     * @param {number} number - La forma de obtener el formulario correctamente.
-     * @param {html} input - El input a validar.
+     * Execute the validation.
+     * @param {number} number - The number of form.
+     * @param {html} input - The input.
      */
     validate(number, input = null){
         let valid = true;
@@ -60,8 +68,10 @@ let Validation = {
             };
             for(let requirement in this.forms[number].rules[name]){
                 if(input !== null && name == input.name){
+                    aux.rules = this.forms[number].rules[name];
                     aux = this.callRequirement(aux, requirement, number, name);
                 }else if(input === null){
+                    aux.rules = this.forms[number].rules[name];
                     aux = this.callRequirement(aux, requirement, number, name);
                 }
             }
@@ -74,12 +84,11 @@ let Validation = {
         } 
     },
     /**
-     * Ejecuta el Requirement y valida, o no, el input.
-     * 
-     * @param {object} aux - El auxiliar de validación.
-     * @param {string} requirement - El Requirement.
-     * @param {number} number - La forma de obtener el formulario correctamente.
-     * @param {string} name - El nombre del input.
+     * Execute the Requirement and valide, or not, the input.
+     * @param {object} aux - An auxiliar of validation.
+     * @param {string} requirement - The Requirement.
+     * @param {number} number - The number of form.
+     * @param {string} name - The input name.
      */
     callRequirement(aux, requirement, number, name){
         if(aux.valid && aux.required){
@@ -93,24 +102,27 @@ let Validation = {
         return aux;
     },
     /**
-     * Obtiene un input.
-     * 
-     * @param {number} number - La forma de obtener el formulario correctamente.
-     * @param {strinf} name - El nombre del input.
+     * Get an input.
+     * @param {number} number - The number of form.
+     * @param {strinf} name - The input name.
      * @return {html}
      */
     getInput(number, name){
         return document.querySelector('.form-validation-' + number + ' [name=' + name + ']');
     },
     /**
-     * Obtiene un tooltip.
-     * 
-     * @param {number} number - La forma de obtener el formulario correctamente.
-     * @param {strinf} name - El nombre del input hermano.
+     * Get a tooltip.
+     * @param {number} number - The number of form.
+     * @param {strinf} name - The input name.
      * @return {html}
      */
     getTooltip(number, name){
-        return document.querySelector('.form-validation-' + number + ' [name=' + name + '] ~ .invalid-tooltip');
+        if(document.querySelector('.form-validation-' + number + ' [name=' + name + '] ~ .invalid-tooltip')){
+            return document.querySelector('.form-validation-' + number + ' [name=' + name + '] ~ .invalid-tooltip');
+        }else{
+            console.log('The input called: ' + name + " doesn't have an invalid-tooltip as brother");
+            return false;
+        }
     },
 };
 

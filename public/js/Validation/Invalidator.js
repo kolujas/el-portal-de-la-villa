@@ -1,10 +1,9 @@
 let Invalidator = {
     /**
-     * Establece un input como invalido.
-     * 
-     * @param {html} input - El input.
-     * @param {html} tooltip - El tooltip.
-     * @param {string} message - El mensaje de error.
+     * Make an input invalid.
+     * @param {html} input - The input.
+     * @param {html} tooltip - The tooltip.
+     * @param {string} message - The error message.
      */
     set(input, tooltip, message){
         input.classList.add('invalid');

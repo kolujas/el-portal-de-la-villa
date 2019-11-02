@@ -4,8 +4,17 @@
     flex-wrap: wrap;
 }
 
+.imagen{
+    flex-wrap: wrap;
+}
+
+.imagen .invalid-tooltip{
+    margin-top: .5rem;
+}
+
 .invalid-tooltip{
     --primary-color: var(--color-cuatro);
+    width: 100%;
 }
 
 .input-file .file-button{
@@ -23,11 +32,15 @@
     text-transform: uppercase;
 }
 
-.crear .form-validate .form-control,
-.crear .form-validate .input-group{
+.crear .form-validate .form-control{
     height: 2.5rem;
     border: 1px solid var(--color-cuatro);
     background: transparent;
+}
+
+.crear .form-validate textarea.form-control{
+    height: 7.5rem;
+    overflow: hidden;
 }
 
 .crear .form-validate .input-group .disabled-text{
@@ -37,12 +50,14 @@
     align-items: center;
     color: var(--color-cuatro);
     border: none;
-    border-right: 1px solid var(--color-cuatro);
+    border: 1px solid var(--color-cuatro);
+    border-right: none;
 }
 
 .crear .form-validate .input-group input{
     flex-basis: calc(100% - 25%);
-    border: none;
+    height: 2.5rem;
+    border: 1px solid var(--color-cuatro);
 }
 
 .form-submit{
@@ -82,6 +97,10 @@
 
     .file-img{
         margin-top: 0;
+    }
+
+    .crear .form-validate textarea.form-control{
+        height: 5rem;
     }
 }
 

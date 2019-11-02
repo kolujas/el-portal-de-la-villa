@@ -1,8 +1,7 @@
 let Messages = {
     /**
-     * Obtiene los mensajes de la validación.
-     * 
-     * @param {html} form - El formulario.
+     * Get the validation messages.
+     * @param {html} form - The form.
      * @return {array}
      */
     get(form){
@@ -10,13 +9,12 @@ let Messages = {
             let validation = JSON.parse(form.dataset.validation);
             return this.parse(validation.messages);
         }else{
-            console.log('Formulario llamado: "' + form.className + '", no contiene reglas de validación.');
+            console.log('The form called: "' + form.className + '", doens\'t have validation messages.');
         }
     },
     /**
-     * Analiza y separa los mensajes de validación.
-     * 
-     * @param {array} messages - Los mensajes de validación.
+     * Parse and split the validation message.
+     * @param {array} messages - The validation messages.
      * @return {array}
      */
     parse(messages){
@@ -35,21 +33,26 @@ let Messages = {
         return aux;
     },
     /**
-     * Analiza y separa la regla de validación.
-     * 
-     * @param {string} rule - La regla de validación.
+     * Parse and split the validation rules.
+     * @param {string} rule - The validation rules.
      * @return {array}
      */
     parseRule(rule){
         let aux = {};
-        if(rule.search(":") >= 0){
-            aux[rule.split(":")[0]] = {};
-            aux[rule.split(":")[0]][rule.split(":")[1]] = {};
+        if(rule.search(/\./) >= 0){
+            aux[rule.split(".")[0]] = {};
+            aux[rule.split(".")[0]][rule.split(".")[1]] = {};
         }else{
             console.log("La regla " + rule + " no contiene separador.");
         }
         return aux;
     },
+    /**
+     * Get one message.
+     * @param {Messages} messages - The Message.
+     * @param {string} rule - The rule.
+     * @param {string} param - The param.
+     */
     getOne(messages, rule, param){
         if(Requirements[rule].params){
             for(let position = 0; position < Requirements[rule].params.length; position++){

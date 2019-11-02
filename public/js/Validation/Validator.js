@@ -1,9 +1,9 @@
 let Validator = {
     /**
-     * Establece un input como valido.
-     * 
-     * @param {html} input - El input.
-     * @param {html} tooltip - El tooltip.
+     * Make an input valid.
+     * @param {html} input - The input.
+     * @param {html} tooltip - The tooltip.
+     * @param {string} message - The error message.
      */
     set(input, tooltip){
         input.classList.add('valid');

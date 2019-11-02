@@ -1,9 +1,9 @@
 let Requirements = {
+    /** @var {object} - Make an input required. */
     required: {
         /**
-         * Valida el input como requerido.
-         * 
-         * @param {html} input - El input.
+         * Valid an input.
+         * @param {html} input - The input.
          * @return {object}
          */
         validate(input){
@@ -19,11 +19,12 @@ let Requirements = {
                 };
             }
         },
-    }, nullable: {
+    }, 
+    /** @var {object} - Make an input nullable. */
+    nullable: {
         /**
-         * Valida el input como no obligatorio.
-         * 
-         * @param {html} input - El input.
+         * Valid an input.
+         * @param {html} input - The input.
          * @return {object}
          */
         validate(input){
@@ -39,13 +40,14 @@ let Requirements = {
                 };
             }
         }
-    }, min: {
+    }, 
+    /** @var {object} - Put a min length on an input. */
+    min: {
         /**
-         * Valida el input con un mínimo de caracteres.
-         * 
-         * @param {html} input - El input.
-         * @param {object} aux - El auxiliar de validación.
-         * @param {number} length - La cantidad de caracteres.
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
+         * @param {number} length - The length.
          * @return {object}
          */
         validate(input, aux, length){
@@ -56,16 +58,19 @@ let Requirements = {
                 aux.valid = false;
                 return aux;
             }
-        }, params: [
+        }, 
+        /** @var {object} - The Requirement min params */
+        params: [
             ":min"
         ],
-    }, max: {
+    }, 
+    /** @var {object} - Put a max length on an input. */
+    max: {
         /**
-         * Valida el input con un máximo de caracteres.
-         * 
-         * @param {html} input - El input.
-         * @param {object} aux - El auxiliar de validación.
-         * @param {number} length - La cantidad de caracteres.
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
+         * @param {number} length - The length.
          * @return {object}
          */
         validate(input, aux, length){
@@ -76,15 +81,18 @@ let Requirements = {
                 aux.valid = true;
                 return aux;
             }
-        }, params: [
+        },
+        /** @var {object} - The Requirement max params */
+        params: [
             ":max"
         ],
-    }, numeric: {
+    }, 
+    /** @var {object} - Make an input numeric. */
+    numeric: {
         /**
-         * Valida un input como número.
-         * 
-         * @param {html} input - El input.
-         * @param {object} aux - El auxiliar de validación.
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
          * @return {object}
          */
         validate(input, aux){
@@ -96,12 +104,13 @@ let Requirements = {
                 return aux;
             }
         }
-    }, email: {
+    }, 
+    /** @var {object} - Make an input an email. */
+    email: {
         /**
-         * Valida el input como email.
-         * 
-         * @param {html} input - El input.
-         * @param {object} aux - El auxiliar de validación.
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
          * @return {object}
          */
         validate(input, aux){
@@ -114,5 +123,75 @@ let Requirements = {
                 return aux;
             }
         }
+    },
+    /** @var {object} - Put mymetypes on an input. */
+    mimetypes: {
+        /**
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
+         * @return {object}
+         */
+        validate(input, aux){
+            if(input.files && input.files.length){
+                let found = false;
+                for(let position = 0; position < input.files.length; position++){
+                    for(let i = 0; i < aux.rules.mimetypes.length; i++){
+                        if(input.files[position].type == aux.rules.mimetypes[i]){
+                            found = true;
+                        }
+                    }
+                }
+                if(found){
+                    aux.valid = true;
+                    return aux;
+                }else{
+                    aux.valid = false;
+                    return aux;
+                }
+            }else{
+                aux.valid = false;
+                return aux;
+            }
+        },
+    },
+    /** @var {object} - Make an input a date. */
+    date: {
+        /**
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
+         * @return {object}
+         */
+        validate(input, aux){
+            if(Date.parse(input.value)){
+                aux.valid = true;
+                return aux;
+            }else{
+                aux.valid = false;
+                return aux;
+            }
+        },
+    },
+    /** @var {object} - Make an input an url. */
+    url: {
+        /**
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
+         * @return {object}
+         */
+        validate(input, aux){
+            if(input.value.search(/https:\/\//) == 0 && input.value.search(/\./) >= 0){
+                aux.valid = true;
+                return aux;
+            }else if(input.value.search(/http:\/\//) == 0 && input.value.search(/\./) >= 0){
+                aux.valid = true;
+                return aux;
+            }else{
+                aux.valid = false;
+                return aux;
+            }
+        },
     },
 };

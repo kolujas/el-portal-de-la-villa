@@ -3,6 +3,7 @@
     position: initial;
     display: none;
     background: var(--primary-color);
+    margin: 0;
 }
 
 .invalid-tooltip.showed{

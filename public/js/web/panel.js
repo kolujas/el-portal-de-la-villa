@@ -13,6 +13,7 @@ let Tabs = {
                 Tabs.switch(i);
             });
         }
+        this.getTarget();
     },
     /**
      * Switch between open and close elements.
@@ -62,6 +63,18 @@ let Tabs = {
             }
         }
     },
+    getTarget(){
+        let href = location.href;
+        let target = href.split('#');
+        if(target.length > 1){
+            target = target[1];
+            for(let i = 0; i < this.contents.length; i++){
+                if(this.contents[i].classList.contains(target)){
+                    this.open(i);
+                }
+            }
+        }
+    },
 };
 
 let EventButtons = {
@@ -74,22 +87,11 @@ let EventButtons = {
         this.edit = document.querySelectorAll('.evento-editar');
         this.delete = document.querySelectorAll('.evento-borrar');
         for(let i = 0; i < this.edit.length; i++){
-            this.edit[i].addEventListener('click', function(e){
-                e.preventDefault();
-                EventButtons.editAccion(this);
-            });
             this.delete[i].addEventListener('click', function(e){
                 e.preventDefault();
                 EventButtons.deleteAccion(this);
             });
         }
-    },
-    /**
-     * Execute edit actions.
-     * @param {HTMLElement} button - The button clicked.
-     */
-    editAccion(button){
-        window.location = "/panel/evento/" + button.dataset.slug + "/editar";
     },
     /**
      * Execute delete actions.

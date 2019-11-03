@@ -137,7 +137,25 @@
                 </section>
             </div>
             <div id="galerias" class="galerias tab-content">
-                <!---->
+                <section>
+                    <div class="title">
+                        <h2 class="my-2 p-2">Galeria de imagenes</h2>
+                    </div>
+                    <div class="filtros d-flex justify-content-between mb-2">
+                        <a class="filtro p-2" href="#habitaciones">Habitaciones</a>
+                        <a class="filtro p-2" href="#otro">Otro</a>
+                    </div>
+                    <div id="habitaciones" class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="image col-12">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                    </div>
+                    <div id="otro" class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                        <div class="image col-12">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                    </div>
+                </section>
             </div>
             <div id="eventos" class="eventos tab-content px-2 pb-2">
                 <section>
@@ -161,13 +179,13 @@
                                     <p class="mb-2">{{$evento->descripcion}}</p>
                                 </div>
                                 <div class="datos">
-                                    <p class="mb-2">{{$evento->fecha}}</p>
-                                    <p class="mb-2"><a target="_blank" href="https://{{$evento->url}}">{{$evento->url}}</a></p>
+                                    <p class="mb-2">{{date("d/m/Y", strtotime($evento->fecha))}}</p>
+                                    <p class="mb-2"><a target="_blank" href="{{$evento->url}}">{{$evento->url}}</a></p>
                                 </div>
                             </div>
                             <div class="imagen col-12 col-md-6 col-lg-4">
                                 <div class="imagen mb-2">
-                                    <img src="{{asset('/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
+                                    <img src="{{asset('storage/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
                                 </div>
                                 <div data-url="/panel/evento/{{$evento->id_evento}}" class="acciones d-flex justify-content-between">
                                     <a href="/panel/evento/{{$evento->slug}}/editar" class="evento-editar btn mr-2 p-2">

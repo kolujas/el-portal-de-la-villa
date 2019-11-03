@@ -69,9 +69,7 @@
          */
         public function showEditar($slug){
             $evento = Evento::findBySlug($slug);
-            $validation = (object) [
-                Evento::$validation['editar'],
-            ];
+            $validation = Evento::$validation['editar'];
 
             return view('evento.editar',[
                 'validation' => json_encode($validation),
@@ -86,45 +84,58 @@
          * @param $id_evento El id del Evento.
          */
         public function doEditar(Request $request, $id_evento){
-            $inputData = $request->input();
+            $inputData = $request->all();
 
             $request->validate(Evento::$validation['editar']['rules'], Evento::$validation['editar']['messages']);
             
             $evento = Evento::find($id_evento);
-            
-            if($request->hasFile('pdf')){
-                $pdfActual = $evento->pdf;
+
+            if($request->hasFile('imagen')){
+                $imagenActual = $evento->imagen;
                 
-                $inputData['pdf'] = $request->file('pdf')->store('eventos');
+                $filepath = $request->file('imagen')->hashName('eventos');
+                
+                $img = Image::make($request->file('imagen'))
+                        ->resize(400, 400, function($constrait){
+                        	$constrait->aspectRatio();
+                        	$constrait->upsize();
+                        });
+                        
+                Storage::put($filepath, (string) $img->encode());
+                
+                $inputData['imagen'] = $filepath;
             }else{
-                $inputData['pdf'] = $evento->pdf;
+                $inputData['imagen'] = $evento->imagen;
             }
             
-            $inputData['id_usuario'] = Auth::id();
+            $inputData['id_usuario'] = 1;
+            if($inputData['titulo'] != $evento->titulo){
+                $inputData['slug'] = SlugService::createSlug(Evento::class, 'slug', $inputData['titulo']);
+            }
             
             $evento->update($inputData);
             
-            if(isset($pdfActual) && !empty($pdfActual)){
-                Storage::delete($pdfActual);
+            if(isset($imagenActual) && !empty($imagenActual)){
+                Storage::delete($imagenActual);
             }
             
-            return redirect()->route('evento.panel')->with('status', 'El Evento: "' . $evento->titulo . '" fue editado exitosamente.');
+            return redirect('/panel#eventos')->with('status', 'Evento editado correctamente.');
         }
 
         /**
-         * Elimina el Evento seleccionada.
+         * Elimina el Evento seleccionado.
          * 
          * @param $id_evento El id del Evento.
          */
         public function doEliminar($id_evento){
-            $evento = Evento::find($id_evento);
+            $noticia = Noticia::find($id_evento);
 
-            if(isset($evento->pdf) && !empty($evento->pdf)) {
-                Storage::delete($evento->pdf);
+            if(isset($evento->imagen) && !empty($evento->imagen)){
+                Storage::delete($evento->imagen);
             }
                 
             $evento->delete();
                 
-            return redirect()->route('evento.panel')->with('status', 'El Evento fue eliminado exitosamente.');
+            return redirect('panel#eventos')->with('status', 'Evento eliminado correctamente.');
         }
     }

@@ -120,10 +120,6 @@
     flex-basis: 100%;
 }
 
-/* .tabs .tab-body .tab-content section .content .datos{
-    border-top: 2px solid var(--color-tres);
-} */
-
 .tabs .tab-body .tab-content section .content .imagen{
     position: relative;
     flex-basis: 100%;
@@ -150,6 +146,17 @@
     background: var(--color-uno);
     border-radius: .25rem;
     color: white;
+}
+
+.tabs .tab-body .galerias section .filtros .filtro{
+    background: var(--color-uno);
+    border-radius: .25rem;
+    color: white;
+}
+
+.tabs .tab-body .galerias .content .image img{
+    width: 100%;
+    object-fit: cover;
 }
 
 .tabs .tab-body .eventos section .button{

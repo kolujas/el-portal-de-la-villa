@@ -30,7 +30,7 @@
             'crear' => [
                 'rules' => [
                     'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required',
+                    'descripcion' => 'required|max:220',
                     'fecha' => 'required|date',
                     'organizador' => 'required|min:2|max:200',
                     'url' => 'required|url',
@@ -40,6 +40,7 @@
                     'titulo.min' => 'El título del evento debe tener al menos :min caracteres.',
                     'titulo.max' => 'El título del evento no puede tener más de :max caracteres.',
                     'descripcion.required' => 'La descripción del evento no puede estar vacío.',
+                    'descripcion.max' => 'La descripción del evento no puede tener más de :max caracteres.',
                     'fecha.required' => 'La fecha del evento no puede estar vacía.',
                     'fecha.date' => 'La fecha del evento debe ser una fecha valida.',
                     'organizador.required' => 'El organizador del evento no puede estar vacío.',
@@ -53,7 +54,7 @@
             ],'editar' => [
                 'rules' => [
                     'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required',
+                    'descripcion' => 'required|max:220',
                     'fecha' => 'required|date',
                     'organizador' => 'required|min:2|max:200',
                     'url' => 'required|url',
@@ -63,6 +64,7 @@
                     'titulo.min' => 'El título del evento debe tener al menos :min caracteres.',
                     'titulo.max' => 'El título del evento no puede tener más de :max caracteres.',
                     'descripcion.required' => 'La descripción del evento no puede estar vacío.',
+                    'descripcion.max' => 'La descripción del evento no puede tener más de :max caracteres.',
                     'fecha.required' => 'La fecha del evento no puede estar vacía.',
                     'fecha.date' => 'La fecha del evento debe ser una fecha valida.',
                     'organizador.required' => 'El organizador del evento no puede estar vacío.',

@@ -3,19 +3,18 @@
     use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Database\Migrations\Migration;
 
-    class CrearTablaGalerias extends Migration{
+    class CrearTablaBanners extends Migration{
         /**
          * Run the migrations.
          * 
          * @return void
          */
         public function up(){
-            Schema::create('galerias', function(Blueprint $table){
-                $table->increments('id_galeria');
+            Schema::create('banners', function(Blueprint $table){
+                $table->increments('id_banner');
                 $table->string('titulo', 150);
                 $table->text('descripcion');
                 $table->string('imagen');
-                $table->unsignedInteger('id_tipo');
                 $table->unsignedInteger('id_usuario');
                 $table->timestamps();
             });
@@ -27,6 +26,6 @@
          * @return void
          */
         public function down(){
-            Schema::dropIfExists('galerias');
+            Schema::dropIfExists('banners');
         }
     }

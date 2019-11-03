@@ -23,18 +23,20 @@
         <div class="title">
             <h2>Editar Evento</h2>
         </div>
-        <form action="/evento/1/editar"
+        <form action="/evento/{{$evento->id_evento}}/editar"
             class="form-validate"
             method="post"
             enctype="multipart/form-data"
             data-validation="{{$validation}}">
             @csrf
+            @method('PUT')
             <div class="row">
                 <div class="form-group form-group-sm col-12 mb-2">
                     <label for="titulo" class="input-name m-0 p-0">
                         <span class="input-text">Título</span>
                     </label>
                     <input id="titulo"
+                        name="titulo"
                         type="text"
                         class="form-control m-0 p-2"
                         value="{{old('titulo', $evento->titulo)}}"
@@ -74,6 +76,7 @@
                         <span class="input-text">Organizador</span>
                     </label>
                     <input id="organizador" 
+                        name="organizador"
                         type="text" 
                         class="form-control m-0 p-2" 
                         value="{{old('organizador', $evento->organizador)}}"
@@ -94,6 +97,7 @@
                         <span class="input-text">Fecha</span>
                     </label>
                     <input id="fecha" 
+                        name="fecha"
                         type="date" 
                         class="form-control m-0 p-2" 
                         value="{{old('fecha', $evento->fecha)}}">
@@ -112,28 +116,25 @@
                     <label for="url" class="input-name m-0 p-0">
                         <span class="input-text">URL</span>
                     </label>
-                    <label for="url" class="d-flex input-group m-0 p-0">
-                        <span class="disabled-text p-2">https://</span>
-                        <input id="url"
-                            type="url"
-                            name="url"
-                            class="p-2" 
-                            value="{{old('url', $evento->url)}}"
-                            placeholder="ejemplo.com">
-                    </label>
+                    <input id="url" 
+                        name="url"
+                        type="text" 
+                        class="form-control m-0 p-2" 
+                        value="{{old('url', $evento->url)}}"
+                        placeholder="https://ejemplo.com">
                     <div @if($errors->has('url'))
                         class="invalid-tooltip showed"
                     @else
                         class="invalid-tooltip"
                     @endif>
                         @if($errors->has('url'))
-                            <small>{{$errors->first('fecha')}}</small>
+                            <small>{{$errors->first('url')}}</small>
                         @endif
                     </div>
                 </div>
                     
                 <div class="form-group form-group-sm col-12 my-2 d-md-flex">
-                    <input class="make-a-file make-an-image" type="file" name="imagen" data-text="Imagen" data-notfound='Imagen del evento: "{{$evento->titulo}}"' data-src="{{asset($evento->imagen)}}">
+                    <input class="make-a-file make-an-image" type="file" name="imagen" data-text="Imagen" data-notfound='Imagen del evento: "{{$evento->titulo}}"' data-src="{{asset('storage/' . $evento->imagen)}}">
                     <div @if($errors->has('imagen'))
                         class="invalid-tooltip showed"
                     @else

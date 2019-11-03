@@ -78,7 +78,7 @@ let Requirements = {
                 aux.valid = true;
                 return aux;
             }else{
-                aux.valid = true;
+                aux.valid = false;
                 return aux;
             }
         },

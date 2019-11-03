@@ -12,5 +12,6 @@
             $evento = Evento::find(1);
             $evento->update(['slug' => 'titulo',]);
             $evento->update(['url' => 'https://google.com.ar',]);
+            $evento->update(['imagen' => 'eventos/construction.jpg',]);
         }
     }

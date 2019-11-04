@@ -9,8 +9,8 @@
          */
         public function run(){
             // $this->call(UsuariosTableSeeder::class);
-            $this->call(EventosTableSeeder::class);
+            // $this->call(EventosTableSeeder::class);
             $this->call(BannersTableSeeder::class);
-            $this->call(GaleriasTableSeeder::class);
+            // $this->call(GaleriasTableSeeder::class);
         }
     }

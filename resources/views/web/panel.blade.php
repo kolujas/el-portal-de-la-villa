@@ -1,12 +1,17 @@
 <?php
+    /** @var object $archivos */
+    /** @var Banner[] $banners */
     /** @var Evento[] $eventos */
+    /** @var array $vaidation */
 ?>
 @extends('layout.index')
 
 @section('css')
+    <link href="{{asset('css/Validation.css')}}" rel="stylesheet">
     <link href="{{asset('css/web/panel.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="asset" content="{{asset('/')}}">
+    <meta name="validation" content="{{$validation}}">
 @endsection
 
 @section('titulo')
@@ -37,97 +42,53 @@
             </ul>
         </div>
         <div class="tab-body">
-            <div id="personalizar" class="personalizar tab-content opened p-2 pt-md-0">
+            <div id="personalizar" class="personalizar tab-content opened p-2 pt-md-0 pr-md-0 pb-md-0">
                 <section>
-                    <div class="title">
-                        <h2 class="mb-2 p-2">Banner principal</h2>
+                    <div class="title ml-lg-2">
+                        <h2 class="mb-0 p-2">Banner principal</h2>
                     </div>
-                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
+                    @foreach($banners as $banner)
+                        <div class="content row d-md-flex justify-content-md-end p-2">
+                            <div class="informacion col-12 col-md-6 col-lg-8">
+                                <div class="titulo">
+                                    <h3 class="mb-2">{{$banner->titulo}}</h3>
+                                </div>
+                                <div class="descripcion">
+                                    <p class="mb-2">{{$banner->descripcion}}</p>
+                                </div>
                             </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            <div class="imagen col-12 col-md-6 col-lg-4 pr-lg-2">
+                                <div class="imagen mb-2">
+                                    <img src="{{asset('storage/' . $banner->imagen)}}" alt="Imagen por defecto">
+                                </div>
                             </div>
-                        </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                        </div>
-                        <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-end">
-                                <button data-id="1" class="web-editar btn p-2" type="submit">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
-                            </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                            <div class="accion col-12 col-md-6 col-lg-4 pr-lg-2">
+                                <div class="boton d-flex justify-content-end">
+                                    <button data-banner="{{$banner}}" class="web-editar-banner btn p-2" type="submit">
+                                        <span class="button-text mr-2">Editar</span>
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                        </div>
-                        <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-end">
-                                <button data-id="1" class="web-editar btn p-2" type="submit">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
-                        <div class="informacion col-12 col-md-6 col-lg-8">
-                            <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
-                            </div>
-                            <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
-                            </div>
-                        </div>
-                        <div class="imagen col-12 col-md-6 col-lg-4">
-                            <div class="imagen mb-2">
-                                <img src="{{asset('/img/construction.jpg')}}" alt="Imagen por defecto">
-                            </div>
-                        </div>
-                        <div class="accion col-12 col-md-6 col-lg-4">
-                            <div class="boton d-flex justify-content-end">
-                                <button data-id="1" class="web-editar btn p-2" type="submit">
-                                    <span class="button-text mr-2">Editar</span>
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </section>
                 <section>
-                    <div class="title">
-                        <h2 class="my-2 p-2">Información inicial</h2>
+                    <div class="title ml-lg-2">
+                        <h2 class="mb-0 p-2">Información inicial</h2>
                     </div>
-                    <div class="content row d-md-flex justify-content-md-end mb-2 p-2">
+                    <div class="content row d-md-flex justify-content-md-end p-2">
                         <div class="informacion col-12">
                             <div class="titulo">
-                                <h3 class="mb-2">Título</h3>
+                                <h3 class="mb-2">{{$archivos->titulo}}</h3>
                             </div>
                             <div class="descripcion">
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat impedit nihil eaque cumque, debitis beatae est neque. Repellat voluptates doloribus in animi, quod culpa quia praesentium dolores, magni reiciendis ut?</p>
+                                <p class="mb-2">{{$archivos->descripcion}}</p>
                             </div>
                         </div>
-                        <div class="accion col-12 col-md-6 col-lg-4">
+                        <div class="accion col-12 col-md-6 col-lg-4 pr-lg-2">
                             <div class="boton d-flex justify-content-end">
-                                <button data-id="1" class="web-editar btn p-2" type="submit">
+                                <button data-informacion="{{json_encode($archivos)}}" class="web-editar-informacion btn p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
                                     <i class="fas fa-pen"></i>
                                 </button>
@@ -136,31 +97,68 @@
                     </div>
                 </section>
             </div>
-            <div id="galerias" class="galerias tab-content">
+            <div id="galerias" class="galerias tab-content p-2 pt-md-0 pr-md-0 pb-md-0">
                 <section>
-                    <div class="title">
-                        <h2 class="my-2 p-2">Galeria de imagenes</h2>
+                    <div class="title ml-lg-2">
+                        <h2 class="mb-0 p-2">Habitaciones</h2>
                     </div>
-                    <div class="filtros d-flex justify-content-between mb-2">
-                        <a class="filtro p-2" href="#habitaciones">Habitaciones</a>
-                        <a class="filtro p-2" href="#otro">Otro</a>
-                    </div>
-                    <div id="habitaciones" class="content row d-md-flex justify-content-md-end mb-2 p-2">
-                        <div class="image col-12">
+                    <div class="content row d-md-flex justify-content-md-between py-2 mx-2 mr-lg-0">
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                         </div>
                     </div>
-                    <div id="otro" class="content row d-md-flex justify-content-md-end mb-2 p-2">
-                        <div class="image col-12">
+                </section>
+                <section>
+                    <div class="title ml-lg-2">
+                        <h2 class="mb-0 p-2">Otro</h2>
+                    </div>
+                    <div class="content row d-md-flex justify-content-md-between py-2 mx-2 mr-lg-0 pb-0">
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                         </div>
                     </div>
                 </section>
             </div>
-            <div id="eventos" class="eventos tab-content px-2 pb-2">
+            <div id="eventos" class="eventos tab-content p-2 pt-md-0 pr-md-0 pb-md-0">
                 <section>
-                    <div class="title">
-                        <h2 class="my-2 p-2 mt-md-0">Eventos creados</h2>
+                    <div class="title ml-lg-2">
+                        <h2 class="mb-2 p-2 mt-md-0">Eventos creados</h2>
                     </div>
                     <div class="button">
                         <button class="evento-crear btn p-2" type="submit">
@@ -183,7 +181,7 @@
                                     <p class="mb-2"><a target="_blank" href="{{$evento->url}}">{{$evento->url}}</a></p>
                                 </div>
                             </div>
-                            <div class="imagen col-12 col-md-6 col-lg-4">
+                            <div class="imagen col-12 col-md-6 col-lg-4 pr-lg-2">
                                 <div class="imagen mb-2">
                                     <img src="{{asset('storage/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
                                 </div>
@@ -218,5 +216,11 @@
 @endsection
 
 @section('js')
+    <script type="text/javascript" src="{{asset('js/Validation/Validation.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Rules.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Messages.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Requirements.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Validator.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Validation/Invalidator.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/web/panel.js')}}"></script>
 @endsection

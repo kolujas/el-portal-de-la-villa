@@ -10,8 +10,10 @@
          */
         public function run(){
             $evento = Evento::find(1);
-            $evento->update(['slug' => 'titulo',]);
-            $evento->update(['url' => 'https://google.com.ar',]);
-            $evento->update(['imagen' => 'eventos/construction.jpg',]);
+            $evento->update([
+                'slug' => 'titulo',
+                'url' => 'https://google.com.ar',
+                'imagen' => 'eventos/construction.jpg',
+            ]);
         }
     }

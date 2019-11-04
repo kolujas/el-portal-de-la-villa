@@ -108,7 +108,7 @@ function observe(element, event, handler){
 
 let WebButtons = {
     /** @var {HTMLElement[]} - Array of edit buttons. */
-    edit: [],
+    editBanner: [],
     /** @var {object} - Form actions. */
     form: {
         /**
@@ -120,7 +120,8 @@ let WebButtons = {
             let formTag = document.createElement('form');
             content.appendChild(formTag);
             formTag.classList.add('col-12');
-            formTag.action = '#';
+            formTag.classList.add('form-validate');
+            formTag.dataset.validation = document.querySelector('[name=validation]').content;
             formTag.method = 'post';
             formTag.enctype = 'multipart/form-data';
                 let method = document.createElement('input');
@@ -141,21 +142,30 @@ let WebButtons = {
                 row.classList.add('d-md-flex');
                 row.classList.add('justify-content-md-end');
 
-            this.createInformacion(row);
-            this.createImagen(row);
-            this.createAccion(row);
+            if(button.classList.contains('web-editar-banner')){
+                let banner = JSON.parse(button.dataset.banner);
+                formTag.action = '/banner/' + banner.id_banner + '/editar';
+
+                this.createInformacion(row, button);
+                this.createImagen(row, button);
+                this.createAccion(row);
+            }else{
+                formTag.action = '/informacion/editar';
+
+                this.createInformacion(row, button);
+                this.createAccion(row);
+            }
         },
         /**
          * Create the "informacion" part.
          * @param {HTMLElement} row - The parent row.
+         * @param {HTMLElement} button - The button clicked.
          */
-        createInformacion(row){
+        createInformacion(row, button){
             let informacion = document.createElement('div');
             row.appendChild(informacion);
             informacion.classList.add('informacion');
             informacion.classList.add('col-12');
-            informacion.classList.add('col-md-6');
-            informacion.classList.add('col-lg-8');
                 let titulo = document.createElement('div');
                 informacion.appendChild(titulo);
                 titulo.classList.add('titulo');
@@ -167,7 +177,11 @@ let WebButtons = {
                     input.type = 'text';
                     input.name = 'titulo';
                     input.placeholder = 'Título';
-                    input.value = 'Título';
+                    
+                    let tooltip = document.createElement('div');
+                    titulo.appendChild(tooltip);
+                    tooltip.classList.add('invalid-tooltip');
+
 
                 let descripcion = document.createElement('div');
                 informacion.appendChild(descripcion);
@@ -179,23 +193,46 @@ let WebButtons = {
                     textarea.classList.add('p-2');
                     textarea.name = 'descripcion';
                     textarea.placeholder = 'Descripción';
-                    textarea.innerHTML = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, accusantium at eveniet vitae iure blanditiis laudantium. Exercitationem expedita praesentium ex ab iure, tempore vel labore, blanditiis iste ea eius cumque?';
+                    
+                    let tooltip2 = document.createElement('div');
+                    descripcion.appendChild(tooltip2);
+                    tooltip2.classList.add('invalid-tooltip');
+
+            if(button.classList.contains('web-editar-banner')){
+            let banner = JSON.parse(button.dataset.banner);
+            informacion.classList.add('col-md-6');
+            informacion.classList.add('col-lg-8');
+                    input.value = banner.titulo;
+                    textarea.innerHTML = banner.descripcion;
+            }else{
+            let informacion = JSON.parse(button.dataset.informacion);
+                input.value = informacion.titulo;
+                textarea.innerHTML = informacion.descripcion;
+            }
         },
         /**
          * Create the "imagen" part.
          * @param {HTMLElement} row - The parent row.
+         * @param {HTMLElement} button - The button clicked.
          */
-        createImagen(row){
+        createImagen(row, button){
+            let banner = JSON.parse(button.dataset.banner);
             let imagen = document.createElement('div');
             row.appendChild(imagen);
             imagen.classList.add('imagen');
             imagen.classList.add('col-12');
-            imagen.classList.add('col-md-6');
-            imagen.classList.add('col-lg-4');
+            imagen.classList.add('pr-lg-2');
                 let imagenDiv = document.createElement('div');
                 imagen.appendChild(imagenDiv);
                 imagenDiv.classList.add('imagen');
                 imagenDiv.classList.add('mb-2');
+                imagen.classList.add('col-md-6');
+                imagen.classList.add('col-lg-4');
+                    let img = document.createElement('img');
+                    imagenDiv.appendChild(img);
+                    img.src = document.querySelector('[name=asset]').content + 'storage/' + banner.imagen;
+                    img.alt = 'Imagen del banner llamado: ' + banner.titulo;
+                    
                     let label = document.createElement('label');
                     imagenDiv.appendChild(label);
                     label.classList.add('imagen-input');
@@ -211,11 +248,21 @@ let WebButtons = {
                         file.classList.add('d-none');
                         file.type = 'file';
                         file.name = 'imagen';
-
-                    let img = document.createElement('img');
-                    imagenDiv.appendChild(img);
-                    img.src = document.querySelector('[name=asset]').content + 'img/construction.jpg';
-                    img.alt = 'Imagen por defecto';
+                        file.addEventListener('change', function(){
+                            if(FileReader && this.files && this.files.length){
+                                let reader = new FileReader();
+                                reader.onload = function(){
+                                    img.src = reader.result;
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                            }else{
+                                // PENDIENTE
+                            }
+                        });
+                        
+                        let tooltip = document.createElement('div');
+                        label.appendChild(tooltip);
+                        tooltip.classList.add('invalid-tooltip');
         },
         /**
          * Create the "accion" part.
@@ -228,6 +275,7 @@ let WebButtons = {
             accion.classList.add('col-12');
             accion.classList.add('col-md-6');
             accion.classList.add('col-lg-4');
+            accion.classList.add('pr-lg-2');
                 let boton = document.createElement('div');
                 accion.appendChild(boton);
                 boton.classList.add('boton');
@@ -238,6 +286,7 @@ let WebButtons = {
                     aceptar.classList.add('web-aceptar');
                     aceptar.classList.add('btn');
                     aceptar.classList.add('p-2');
+                    aceptar.classList.add('form-submit');
                     aceptar.type = "submit";
                     aceptar.dataset.id = "1";
                         let span = document.createElement('span');
@@ -273,36 +322,49 @@ let WebButtons = {
                         icon2.classList.add('fas');
                         icon2.classList.add('fa-times');
         },
+        /**
+         * Delete an edit form.
+         * @param {HTMLElement} button - The button clicked.
+         */
+        delete(button){
+            let content = button.parentNode.parentNode.parentNode.parentNode.parentNode;
+            let form = button.parentNode.parentNode.parentNode.parentNode;
+            content.removeChild(form);
+        },
     },
     /** EventButtons loader. */
     load(){
-        this.edit = document.querySelectorAll('.web-editar');
-        for(let i = 0; i < this.edit.length; i++){
-            this.edit[i].addEventListener('click', function(e){
+        this.editBanner = document.querySelectorAll('.web-editar-banner');
+        this.editInformacion = document.querySelector('.web-editar-informacion');
+        for(let i = 0; i < this.editBanner.length; i++){
+            this.editBanner[i].addEventListener('click', function(e){
                 e.preventDefault();
                 WebButtons.activateEdition(this);
             });
         }
+        this.editInformacion.addEventListener('click', function(e){
+            e.preventDefault();
+            WebButtons.activateEdition(this);
+        });
     },
     /**
-     * Execute edit actions.
+     * Activate the edition mode.
      * @param {HTMLElement} button - The button clicked.
      */
     activateEdition(button){
-        if(!button.parentNode.parentNode.parentNode.classList.contains('edition-activated') && 
-        !button.parentNode.parentNode.parentNode.classList.contains('edition-deactivated')){
-            this.form.create(button);
-        }
         button.parentNode.parentNode.parentNode.classList.remove('edition-deactivated');
         button.parentNode.parentNode.parentNode.classList.add('edition-activated');
+        this.form.create(button);
+        Validation.load();
     },
     /**
-     * Execute edit actions.
+     * Deactivate the edition mode.
      * @param {HTMLElement} button - The button clicked.
      */
     deactivateEdition(button){
         button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove('edition-activated');
         button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add('edition-deactivated');
+        this.form.delete(button);
     },
 };
 

@@ -15,7 +15,6 @@ let Validation = {
             this.getButton(i);
             this.getInputs(i);
             this.forms[i].rules = Rules.get(forms[i]);
-            // console.log('INICIO :D');
             this.forms[i].messages = Messages.get(forms[i]);
         }
     },

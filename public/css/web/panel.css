@@ -1,3 +1,10 @@
+.invalid-tooltip{
+    position: initial;
+    margin-bottom: .5rem;
+    width: 100%;
+    background: var(--color-cuatro);
+}
+
 .panel{
     flex-wrap: wrap;
 }
@@ -101,6 +108,10 @@
     border: none;
 }
 
+.tabs .tab-body .tab-content section:last-of-type .content:last-of-type{
+    padding-bottom: 0 !important;
+}
+
 .tabs .tab-body .tab-content section .content .titulo{
     flex-basis: 100%;
 }
@@ -148,6 +159,11 @@
     color: white;
 }
 
+.tabs .tab-body .galerias.tab-content section .content{
+    overflow: auto;
+    flex-wrap: nowrap;
+}
+
 .tabs .tab-body .galerias section .filtros .filtro{
     background: var(--color-uno);
     border-radius: .25rem;
@@ -157,6 +173,7 @@
 .tabs .tab-body .galerias .content .image img{
     width: 100%;
     object-fit: cover;
+    border-radius: .25rem;
 }
 
 .tabs .tab-body .eventos section .button{
@@ -206,9 +223,7 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 3px;
-    border: 2px solid var(--color-uno);
-    animation: rainbow 4s infinite;
-    border-radius: .25rem;
+    border: 1px solid var(--color-cuatro);
 }
 
 .tabs .tab-body .personalizar section .edition-activated .titulo input:focus,
@@ -291,6 +306,10 @@
     .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
         height: 10.5rem;
     }
+
+    .tabs .tab-body .galerias .content .image{
+        flex-basis: calc(45% - .25rem);
+    }
 }
 
 /* LG */
@@ -309,6 +328,20 @@
 
     .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
         height: 5.5rem;
+    }
+
+    .tabs .tab-body .galerias.tab-content section .content{
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+
+    .tabs .tab-body .galerias .content .image{
+        flex-basis: calc(33% - .25rem);
+        margin-bottom: .5rem;
+    }
+
+    .tabs .tab-body .galerias .content .image:last-of-type{
+        margin-bottom: 0;
     }
 }
 

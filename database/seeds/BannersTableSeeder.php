@@ -9,26 +9,17 @@
          * @return void
          */
         public function run(){
-            Banner::create([
-                'id_banner' => 1,
-                'titulo' => 'First slide label',
-                'descripcion' => 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-                'imagen' => 'img/banner/1.jpg',
-                'id_usuario' => 1,
+            $banner = Banner::find(1);
+            $banner->update([
+                'imagen' => 'banner/1.jpg',
             ]);
-            Banner::create([
-                'id_banner' => 2,
-                'titulo' => 'Second slide label',
-                'descripcion' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                'imagen' => 'img/banner/2.png',
-                'id_usuario' => 1,
+            $banner = Banner::find(2);
+            $banner->update([
+                'imagen' => 'banner/2.png',
             ]);
-            Banner::create([
-                'id_banner' => 3,
-                'titulo' => 'Third slide label',
-                'descripcion' => 'Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
-                'imagen' => 'img/banner/1.jpg',
-                'id_usuario' => 1,
+            $banner = Banner::find(3);
+            $banner->update([
+                'imagen' => 'banner/3.jpg',
             ]);
         }
     }

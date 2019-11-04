@@ -219,51 +219,81 @@
     /* slider */
 
     .banner-div{
-        height: 55vh;
+        height: 45vh;
     }
     
     .carousel{
-        height: 55vh;
+        height: 45vh;
     }
     
     .carousel-inner{
         /* background-color: #000; */
         z-index: 999;
-        height: 55vh;
+        height: 45vh;
     }
 
     .carousel img{
-        height: 55vh;
+        height: 45vh;
+    }
+
+    .slider-heading, .slider-text{
+        position: relative;
+        bottom: 8rem;
+        width: 100%;
     }
     
     .carousel .redirigirBtn{
        z-index: 999;
        position: absolute;
-       top: 70%;
-       outline: none;
+       top: 60%;
     }
 
     .redirigirBtn:focus{
         box-shadow: none !important;
     }
    
-    
+       
     /* presentacion */
-    
-    .presentacion-div .card-body{
-        width: 70%;
+
+    .presentacion-div .card-title{
+        color: var(--color-uno);
     }
+
+    .presentacion-div .card-body{
+        width: 80%;
+        background-color: #fff;
+        position: absolute;
+        right: 0;
+        height: 15rem;
+        bottom: 3rem;
+        border: 1px solid #ccc;
+    }
+
+    .presentacion-div .card:nth-child(2) img{
+        left: 50%;
+    }
+
+    .presentacion-div .card:first-child .card-body{
+        transform: translateX(-40px); 
+        top: 3.2rem;
+    }
+   
+    .presentacion-div .card-2-body{
+        right: 50%;
+        left: 0;
+        transform: translateX(40px);  
+        top: 3.2rem;
+    }
+    
     
     /* separador con iconos */
     
     .separador-iconos .fa-ship{
         font-size: 3rem;
-        /* color: #495057; */
         color: var(--color-tres-hover);
     }
     
     .icon-text{
-        /* color: #514040; */
         color: var(--color-uno);
         font-size: 1.15rem;
     }
@@ -280,5 +310,76 @@
 
 /* XL */
 @media(min-width: 1200px){
+
+    /* slider */
+
+    .banner-div{
+        height: 75vh;
+    }
     
+    .carousel{
+        height: 75vh;
+    }
+    
+    .carousel-inner{
+        height: 75vh;
+    }
+
+    .carousel img{
+        height: 75vh;
+    }
+    
+
+    .slider-heading, .slider-text{
+        bottom: 16rem;
+        font-size: 1.2rem;
+    }
+    
+    .carousel .redirigirBtn{
+       top: 60%;
+    }
+   
+       
+    /* presentacion */
+
+    .presentacion-div .card-body{
+        width: 80%;
+        background-color: #fff;
+        position: absolute;
+        right: 0;
+        height: 15rem;
+        bottom: 3rem;
+        border: 1px solid #ccc;
+    }
+
+    .presentacion-div .card:nth-child(2) img{
+        left: 50%;
+    }
+
+    .presentacion-div .card:first-child .card-body{
+        transform: translateX(-40px); 
+        top: 3.2rem;
+    }
+   
+    .presentacion-div .card-2-body{
+        right: 50%;
+        left: 0;
+        transform: translateX(40px);  
+        top: 3.2rem;
+    }
+    
+    
+    /* separador con iconos */
+    
+    .separador-iconos .fa-ship{
+        font-size: 3rem;
+        color: var(--color-tres-hover);
+    }
+    
+    .icon-text{
+        color: var(--color-uno);
+        font-size: 1.15rem;
+    }
+
+      
 }

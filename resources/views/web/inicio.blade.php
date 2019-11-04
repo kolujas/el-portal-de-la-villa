@@ -75,27 +75,18 @@
                 <p class="px-5 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, incidunt?</p>
             </div>
 
-            <div class="col-12 text-center mt-5 presentacion-div">
-                <div class="card">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
+            <div class="col-lg-12 text-center mt-5 mb-xl-5 presentacion-div flex-wrap">
+                <div class="card mb-lg-0 position-lg-relative">
+                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="...">
+                    <div class="card-body position-lg-absolute col-lg-6">
                         <h5 class="card-title mb-5">Habitaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
-
-                <div class="card">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title mb-5">Habitaciones</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title mb-5">Habitaciones</h5>
+                <div class="card mb-lg-0 position-lg-relative">
+                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="...">
+                    <div class="card-body position-lg-absolute col-lg-6 card-2-body ">
+                        <h5 class="card-title mb-5">Y mucho más</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
@@ -103,34 +94,36 @@
 
             <div class="col-12 text-center mt-5 separador-iconos px-5">
                 <div class="row">
-                    <div class="mb-5 col-4 icon-text">
-                        <i class="fas fa-ship"></i>
-                        <p class="mt-4 font-weight-bold">Paseos en lancha</p>
-                    </div>
-                    <div class="mb-5 col-4 icon-text">
-                        <i class="fas fa-ship"></i>
-                        <p class="mt-4 font-weight-bold">Paseos en lancha</p>
-                    </div>
-                    <div class="mb-5 col-4 icon-text">
-                        <i class="fas fa-ship"></i>
-                        <p class="mt-4 font-weight-bold">Paseos en lancha</p>
-                    </div>
-                    <div class="mb-5 col-4 icon-text">
-                        <i class="fas fa-ship"></i>
-                        <p class="mt-4 font-weight-bold">Paseos en lancha</p>
-                    </div>
-                    <div class="mb-5 col-4 icon-text">
-                        <i class="fas fa-ship"></i>
-                        <p class="mt-4 font-weight-bold">Paseos en lancha</p>
-                    </div>
-                    <div class="mb-5 col-4 icon-text">
-                        <i class="fas fa-ship"></i>
-                        <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                    <div class="d-flex justify-content-center flex-wrap px-5 px-xl-0 m-auto">
+                        <div class="mb-5 col-4 col-xl-2 icon-text">
+                            <i class="fas fa-ship"></i>
+                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        </div>
+                        <div class="mb-5 col-4 col-xl-2 icon-text">
+                            <i class="fas fa-ship"></i>
+                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        </div>
+                        <div class="mb-5 col-4 col-xl-2 icon-text">
+                            <i class="fas fa-ship"></i>
+                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        </div>
+                        <div class="mb-5 col-4 col-xl-2 icon-text">
+                            <i class="fas fa-ship"></i>
+                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        </div>
+                        <div class="mb-5 col-4 col-xl-2 icon-text">
+                            <i class="fas fa-ship"></i>
+                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        </div>
+                        <div class="mb-5 col-4 col-xl-2 icon-text">
+                            <i class="fas fa-ship"></i>
+                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="gallery-container">
-                <div class="tz-gallery galeria">
+                <div class="tz-gallery galeria pt-xl-0">
                     <h2 class="text-center my-5">Galeria de fotos</h2>
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
@@ -181,7 +174,7 @@
                     </div>
                 </div>
 
-                <div id="contacto" class="col-12 col-md-9 text-center mt-5 mx-md-auto px-5">
+                <div id="contacto" class="col-12 col-md-9 col-lg-6 text-center mt-5 mx-md-auto px-5">
                     <h3>Contactanos</h3>
                     <form>
                         <div class="form-group text-left text-uppercase">

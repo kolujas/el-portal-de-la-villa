@@ -185,6 +185,10 @@
                             <label class="font-weight-bold" for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
+                        <div class="form-group text-left text-uppercase">
+                            <label class="font-weight-bold" for="email">Teléfono</label>
+                            <input type="number" class="form-control" id="email" placeholder="Teléfono">
+                        </div>
                         <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </form>
                 </div>

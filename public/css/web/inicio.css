@@ -30,15 +30,28 @@
     height: 75vh;
 }
 
-.carousel img{
-    height: 75vh;
-    object-fit: cover
+.carousel-caption{
+    position: initial;
+    width: 80%;
 }
 
-.slider-heading, .slider-text{
+.carousel img{
+    height: 75vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.carousel-item{
+    height: 100%;
+}
+
+/* .slider-heading, .slider-text{
     position: relative;
     bottom: 15rem;
-}
+} */
 
 .carousel .redirigirBtn{
    z-index: 999;
@@ -181,15 +194,15 @@
         z-index: 999;
         height: 65vh;
     }
-
+    
     .carousel img{
         height: 65vh;
     }
 
-    .slider-heading, .slider-text{
-        position: relative;
-        bottom: 8rem;
+    .carousel-caption p{
+        width: 100%;
     }
+
     
     .carousel .redirigirBtn{
        z-index: 999;

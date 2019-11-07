@@ -25,21 +25,21 @@
                 <li data-target="#carouselCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active d-flex justify-content-center align-items-center">
                     <img src="{{asset('img/banner/1.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
                         <h5 class="text-white slider-heading">First slide label</h5>
                         <p class="slider-text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item d-flex justify-content-center align-items-center">
                     <img src="{{asset('img/banner/2.png')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
                         <h5 class="text-white slider-heading">Second slide label</h5>
                         <p class="slider-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item d-flex justify-content-center align-items-center">
                     <img src="{{asset('img/banner/1.jpg')}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
                         <h5 class="text-white slider-heading">Third slide label</h5>

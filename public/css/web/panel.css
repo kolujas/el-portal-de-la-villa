@@ -11,7 +11,7 @@
 
 .tabs .tab-menu{
     flex-basis: 100%;
-    background: var(--color-tres);
+    background: var(--color-uno);
     border-radius: .25rem;
 }
 
@@ -38,14 +38,14 @@
 
 .tabs .tab-menu .tab-button .tab-icon{
     position: absolute;
-    top: 0;
-    left: 50%;
+    top: 50%;
+    left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
     z-index: 1;
     color: transparent;
     transition: 500ms;
@@ -53,9 +53,8 @@
 }
 
 .tabs .tab-menu .tab-button.opened .tab-icon{
-    transform: translateX(-50%) translateY(-50%);
     color: white;
-    background: var(--color-tres-hover);
+    background: #0d4a7a00;
     z-index: 3;
     font-size: 1.5rem;
     box-shadow: 0px 0px;
@@ -71,7 +70,7 @@
 }
 
 .tabs .tab-menu .tab-button.opened .tab-text{
-    background: var(--color-tres-hover);
+    background: var(--color-uno-hover);
 }
 
 .tabs .tab-body{
@@ -91,11 +90,12 @@
 }
 
 .tabs .tab-body .tab-content .title{
-    background: var(--color-tres);
+    background: var(--color-uno);
 }
 
 .tabs .tab-body .tab-content .title h2{
     font-size: 1.2rem;
+    color: #fff;
 }
 
 .tabs .tab-body .tab-content section .content{
@@ -174,14 +174,21 @@
 .tabs .tab-body .personalizar section .active .descripcion textarea{
     width: 100%;
     height: 100%;
-    background: transparent;
+    background-color: #fff;
     color: var(--color-cuatro);
     font-size: 1.5rem;
     font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 3px;
-    border: 1px solid var(--color-cuatro);
+    border: 1px solid #ced4da;
+}
+
+
+.tabs .tab-body .personalizar section .active .titulo input:focus,
+.tabs .tab-body .personalizar section .active .descripcion textarea:focus{
+    box-shadow: none !important;
+    border: 1px solid var(--color-uno);
 }
 
 .tabs .tab-body .personalizar section .active .titulo input:focus,
@@ -262,7 +269,7 @@
     position: absolute;
     width: 0;
     height: 0;
-    background: var(--color-tres);
+    background: #1a1a1a7a;
     box-shadow: 0px 0px;
     z-index: 1;
     transition: 500ms;
@@ -276,6 +283,7 @@
 
 .tabs .tab-body .galerias .content .image.active label.trash{
     height: 35px;
+    clip-path: polygon(35px 0%, calc(100% - 35px) 0%, 100% 100%, 0% 100%);
 }
 
 .tabs .tab-body .galerias .content .image label.arrow{
@@ -289,10 +297,12 @@
 
 .tabs .tab-body .galerias .content .image label.prev{
     left: 0;
+    clip-path: polygon(0% 0%, 100% 0,  100% calc(100% - 35px), 0% 100%);
 }
 
 .tabs .tab-body .galerias .content .image label.next{
     right: 0;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% calc(100% - 35px));
 }
 
 .tabs .tab-body .galerias section .content .image button{
@@ -310,7 +320,7 @@
 }
 
 .tabs .tab-body .galerias .content .image.active button{
-    background: var(--color-tres);
+    background: #c6c6c600;
     z-index: 3;
 }
 
@@ -323,7 +333,7 @@
 }
 
 .tabs .tab-body .galerias section .content .image.active .trash button{
-    height: 50px;
+    height: 100%;
 }
 
 .tabs .tab-body .galerias section .content .image .arrow button{
@@ -334,7 +344,7 @@
 }
 
 .tabs .tab-body .galerias section .content .image.active .arrow button{
-    width: 50px;
+    width: 100%;
 }
 
 .tabs .tab-body .galerias section .content .image .prev button{
@@ -387,28 +397,24 @@
 @keyframes rainbow{
     0%{
         border-color: white;
-    } 25%{
-        border-color: var(--color-tres);
-    } 50%{
+    } 33%{
         border-color: var(--color-uno);
-    } 75%{
-        border-color: var(--color-tres);
-    } 100%{
+    } 66%{
         border-color: white;
+    } 100%{
+        border-color: var(--color-uno);
     }
 }
 
 @keyframes text-rainbow{
     0%{
         color: white;
-    } 25%{
-        color: var(--color-tres);
-    } 50%{
+    } 33%{
         color: var(--color-uno);
-    } 75%{
-        color: var(--color-tres);
-    } 100%{
+    } 66%{
         color: white;
+    } 100%{
+        color: var(--color-uno);
     }
 }
 

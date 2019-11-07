@@ -114,12 +114,12 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -127,17 +127,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -145,17 +145,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -163,17 +163,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -181,17 +181,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -199,17 +199,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -217,17 +217,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -235,17 +235,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -267,12 +267,12 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -280,17 +280,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -298,17 +298,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -316,17 +316,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -334,17 +334,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -352,17 +352,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -370,17 +370,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>
@@ -388,17 +388,17 @@
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
                             <label class="trash m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-trash"></i>
                                 </button>
                             </label>
                             <label class="arrow prev m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-left"></i>
                                 </button>
                             </label>
                             <label class="arrow next m-0">
-                                <button class="galeria-borrar btn p-2" type="submit">
+                                <button class="galeria-borrar btn p-0" type="submit">
                                     <i class="button-icon fas fa-chevron-right"></i>
                                 </button>
                             </label>

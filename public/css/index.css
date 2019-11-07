@@ -11,6 +11,7 @@ html{
 body{
     overflow-x: hidden;
     --color-uno: #0D4A7B;
+    --color-uno-hover: #1a1a1a21;
     --color-dos: #197C3E;
     --color-tres: #C6C6C6;
     --color-tres-hover: #9F9F9F;

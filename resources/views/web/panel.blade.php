@@ -8,6 +8,7 @@
 
 @section('css')
     <link href="{{asset('css/Validation.css')}}" rel="stylesheet">
+    <link href="{{asset('css/Modal.css')}}" rel="stylesheet">
     <link href="{{asset('css/web/panel.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="asset" content="{{asset('/')}}">
@@ -103,54 +104,304 @@
                         <h2 class="mb-0 p-2">Habitaciones</h2>
                     </div>
                     <div class="content row d-md-flex justify-content-md-between py-2 mx-2 mr-lg-0">
-                        <div class="image col-10 mr-2 mr-lg-0 p-0">
-                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        <div class="image-input col-10 mr-2 mr-lg-0 p-0">
+                            <label class="input-file">
+                                <input type="file">
+                                <span class="input-text mr-2">Agregar</span>
+                                <i class="input-icon fas fa-plus"></i>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div class="title ml-lg-2">
-                        <h2 class="mb-0 p-2">Otro</h2>
+                        <h2 class="mb-0 p-2">Instalaciones</h2>
                     </div>
                     <div class="content row d-md-flex justify-content-md-between py-2 mx-2 mr-lg-0 pb-0">
-                        <div class="image col-10 mr-2 mr-lg-0 p-0">
-                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                        <div class="image-input col-10 mr-2 mr-lg-0 p-0">
+                            <label class="input-file">
+                                <input type="file">
+                                <span class="input-text mr-2">Agregar</span>
+                                <i class="input-icon fas fa-plus"></i>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                         <div class="image col-10 mr-2 mr-lg-0 p-0">
                             <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
+                        </div>
+                        <div class="image col-10 mr-2 mr-lg-0 p-0">
+                            <img src="{{asset('img/construction.jpg')}}" alt="Example image">
+                            <label class="trash m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-trash"></i>
+                                </button>
+                            </label>
+                            <label class="arrow prev m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-left"></i>
+                                </button>
+                            </label>
+                            <label class="arrow next m-0">
+                                <button class="galeria-borrar btn p-2" type="submit">
+                                    <i class="button-icon fas fa-chevron-right"></i>
+                                </button>
+                            </label>
                         </div>
                     </div>
                 </section>
@@ -222,5 +473,6 @@
     <script type="text/javascript" src="{{asset('js/Validation/Requirements.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Validation/Validator.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Validation/Invalidator.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Modal.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/web/panel.js')}}"></script>
 @endsection

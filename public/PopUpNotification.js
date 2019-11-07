@@ -1,5 +1,5 @@
 let PopUpNotification = {
-    /** @var {HTMLElement} - PopUp Notification HTML Element. */
+    /** @var {HTMLElement} - PopUp Notification HTML element. */
     PopUp: null,
     /** @var {HTMLElement} - Closer button. */
     btnCloser: null,

@@ -1,7 +1,7 @@
 <div class="sidebar closed">
     <div class="sidebar-header">
         <a href="#" class="sidebar-button">
-            <i class="fas fa-times text-white"></i>
+            <i class="sidebar-icon fas fa-times text-white"></i>
         </a>
     </div>
 

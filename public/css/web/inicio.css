@@ -1,6 +1,15 @@
-/* body bg
-
-linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
+/* Navmenu */
+.nav-menu{
+    background: transparent;
+    --primary-color: var(--color-uno);
+    --color-tres: #C6C6C6;
+    --color-cuatro: #222222;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
 
 .container-fluid{
     padding: 0;
@@ -15,7 +24,6 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
 }
 
 /* slider */
-
 .carousel{
     position: absolute;
     top: 0; 
@@ -52,7 +60,13 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
 
 .carousel:hover .indicators{
     transform: none;
-} 
+}
+
+.redes-sociales a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .fa-facebook:before{
     font-size: 2rem;
@@ -60,8 +74,6 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
     color: #4C6EF5 !important;
     color: var(--color-cuatro);
     z-index: 999;
-    padding: .3rem;
-    padding-left: 0.6rem;
 }
 
 .fa-instagram:before{
@@ -70,8 +82,6 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
     color: #F783AC !important;
     color: var(--color-cuatro);
     z-index: 999;
-    padding: .45rem;
-    padding-left: 0.7rem;
 }
 
 .redes-sociales{
@@ -93,14 +103,12 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
 }
 
 /* informacion-inicial */
-
 .informacion-inicial .div-informacion-inicial .mini-encabezado{
     font-family: var(--fuente-encabezados);
     font-size: 1rem;
 }
 
 /* presentacion */
-
 .presentacion-div .card{
     border: none;
 }
@@ -159,25 +167,23 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
 /* MD */
 
 @media(min-width: 768px){
-    
     /* slider */
-
     .banner-div{
-        height: 45vh;
+        height: 65vh;
     }
     
     .carousel{
-        height: 45vh;
+        height: 65vh;
     }
     
     .carousel-inner{
         /* background-color: #000; */
         z-index: 999;
-        height: 45vh;
+        height: 65vh;
     }
 
     .carousel img{
-        height: 45vh;
+        height: 65vh;
     }
 
     .slider-heading, .slider-text{
@@ -219,43 +225,10 @@ linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%) */
 
 /* LG */
 @media(min-width: 1024px){
-
     /* slider */
-
-    .banner-div{
-        height: 45vh;
-    }
-    
-    .carousel{
-        height: 45vh;
-    }
-    
-    .carousel-inner{
-        /* background-color: #000; */
-        z-index: 999;
-        height: 45vh;
-    }
-
-    .carousel img{
-        height: 45vh;
-    }
-
     .slider-heading, .slider-text{
-        position: relative;
-        bottom: 8rem;
         width: 100%;
     }
-    
-    .carousel .redirigirBtn{
-       z-index: 999;
-       position: absolute;
-       top: 60%;
-    }
-
-    .redirigirBtn:focus{
-        box-shadow: none !important;
-    }
-   
        
     /* presentacion */
 

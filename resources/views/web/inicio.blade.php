@@ -94,7 +94,7 @@
 
             <div class="col-12 text-center mt-5 separador-iconos px-5">
                 <div class="row">
-                    <div class="d-flex justify-content-center flex-wrap px-5 px-xl-0 m-auto">
+                    <div class="d-flex justify-content-between justify-content-md-center flex-wrap px-md-5 px-xl-0 m-auto">
                         <div class="mb-5 col-4 col-xl-2 icon-text">
                             <i class="fas fa-ship"></i>
                             <p class="mt-4 font-weight-bold">Paseos en lancha</p>

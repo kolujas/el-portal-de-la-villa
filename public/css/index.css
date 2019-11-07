@@ -15,9 +15,15 @@ body{
     --color-tres: #C6C6C6;
     --color-tres-hover: #9F9F9F;
     --color-cuatro: #222222;
+    --color-fondo: linear-gradient(to top, #efefef 0%, #f5f8f9b5 75%, #e7e8e9 100%);
     --fuente-encabezados: 'Quicksand', sans-serif;
     min-height: 100vh;
     margin: 0;
+}
+
+/* PopUpNotification */
+.popup-notification{
+    background: var(--color-dos);
 }
 
 /* Navmenu */
@@ -33,7 +39,11 @@ body{
 }
 
 .nav-menu > .sidebar-button{
-    color: var(--color-uno);
+    color: var(--color-tres);
+}
+
+.nav-menu > .sidebar-button .sidebar-icon{
+    font-size: 1.5rem;
 }
 
 .sidebar{
@@ -57,6 +67,11 @@ body{
     color: var(--color-uno);
 }
 
+/* WhatsApp */
+.whatsapp{
+    background: #25D366;
+}
+
 /* MD */
 @media(min-width: 768px){
     /**/
@@ -67,6 +82,18 @@ body{
     /* Navmenu */
     .nav-menu .nav-title{
         flex-basis: 40%;
+    }
+    
+    .nav-menu .nav-row{
+        flex-basis: 50%;
+    }
+
+    .nav-menu .nav-row:first-of-type{
+        height: 4.6rem;
+    }
+
+    .nav-menu .nav-row{
+        height: 4.6rem;
     }
 }
 

@@ -1,6 +1,6 @@
 <nav class="nav-menu">
     <a href="#" class="sidebar-button">
-        <i class="fas fa-bars"></i>
+        <i class="sidebar-icon fas fa-bars"></i>
     </a>
 
     <div class="nav-row">

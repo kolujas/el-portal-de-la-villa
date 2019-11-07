@@ -9,11 +9,16 @@
          * @return void
          */
         public function run(){
-            $evento = Evento::find(1);
-            $evento->update([
+            Evento::create([
+                'id_evento' => 1,
+                'titulo' => 'Título',
+                'descripcion' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, incidunt?',
+                'organizador' => 'Organizador',
+                'fecha' => now(),
                 'slug' => 'titulo',
                 'url' => 'https://google.com.ar',
                 'imagen' => 'eventos/construction.jpg',
+                'id_usuario' => 1,
             ]);
         }
     }

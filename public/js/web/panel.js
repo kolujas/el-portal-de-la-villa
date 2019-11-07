@@ -107,141 +107,151 @@ function observe(element, event, handler){
 };
 
 let WebButtons = {
-    /** @var {HTMLElement[]} - Array of edit buttons. */
-    editBanner: [],
-    /** @var {object} - Form actions. */
-    form: {
-        /**
-         * Create an edit form.
-         * @param {HTMLElement} button - The button clicked.
-         */
-        create(button){
-            let content = button.parentNode.parentNode.parentNode;
-            let formTag = document.createElement('form');
-            content.appendChild(formTag);
-            formTag.classList.add('col-12');
-            formTag.classList.add('form-validate');
-            formTag.dataset.validation = document.querySelector('[name=validation]').content;
-            formTag.method = 'post';
-            formTag.enctype = 'multipart/form-data';
-                let method = document.createElement('input');
-                formTag.appendChild(method);
-                method.type = "hidden";
-                method.name = "_method";
-                method.value = "PUT";
-                
-                let csrf = document.createElement('input');
-                formTag.appendChild(csrf);
-                csrf.type = "hidden";
-                csrf.name = "_token";
-                csrf.value = document.querySelector('[name=csrf-token]').content;
-
-                let row = document.createElement('div');
-                formTag.appendChild(row);
-                row.classList.add('row');
-                row.classList.add('d-md-flex');
-                row.classList.add('justify-content-md-end');
-
-            if(button.classList.contains('web-editar-banner')){
-                let banner = JSON.parse(button.dataset.banner);
-                formTag.action = '/banner/' + banner.id_banner + '/editar';
-
-                this.createInformacion(row, button);
-                this.createImagen(row, button);
-                this.createAccion(row);
-            }else{
-                formTag.action = '/informacion/editar';
-
-                this.createInformacion(row, button);
-                this.createAccion(row);
+    informacion: {
+        banner: [],
+        archivos: null,
+        load(){
+            this.banner = document.querySelectorAll('.web-editar-banner');
+            this.archivos = document.querySelector('.web-editar-informacion');
+            for(let i = 0; i < this.banner.length; i++){
+                this.banner[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    WebButtons.informacion.active(this);
+                });
             }
+            this.archivos.addEventListener('click', function(e){
+                e.preventDefault();
+                WebButtons.informacion.active(this);
+            });
         },
         /**
-         * Create the "informacion" part.
-         * @param {HTMLElement} row - The parent row.
+         * Activate the edition mode.
          * @param {HTMLElement} button - The button clicked.
          */
-        createInformacion(row, button){
-            let informacion = document.createElement('div');
-            row.appendChild(informacion);
-            informacion.classList.add('informacion');
-            informacion.classList.add('col-12');
-                let titulo = document.createElement('div');
-                informacion.appendChild(titulo);
-                titulo.classList.add('titulo');
-                titulo.classList.add('input-group');
-                    let input = document.createElement('input');
-                    titulo.appendChild(input);
-                    input.classList.add('mb-2');
-                    input.classList.add('p-2');
-                    input.type = 'text';
-                    input.name = 'titulo';
-                    input.placeholder = 'Título';
-                    
-                    let tooltip = document.createElement('div');
-                    titulo.appendChild(tooltip);
-                    tooltip.classList.add('invalid-tooltip');
-
-
-                let descripcion = document.createElement('div');
-                informacion.appendChild(descripcion);
-                descripcion.classList.add('descripcion');
-                descripcion.classList.add('input-group');
-                    let textarea = document.createElement('textarea');
-                    descripcion.appendChild(textarea);
-                    textarea.classList.add('mb-2');
-                    textarea.classList.add('p-2');
-                    textarea.name = 'descripcion';
-                    textarea.placeholder = 'Descripción';
-                    
-                    let tooltip2 = document.createElement('div');
-                    descripcion.appendChild(tooltip2);
-                    tooltip2.classList.add('invalid-tooltip');
-
+        active(button){
             if(button.classList.contains('web-editar-banner')){
-            let banner = JSON.parse(button.dataset.banner);
-            informacion.classList.add('col-md-6');
-            informacion.classList.add('col-lg-8');
-                    input.value = banner.titulo;
-                    textarea.innerHTML = banner.descripcion;
+                let data = JSON.parse(button.dataset.banner);
+                this.form.create('/banner/' + data.id_banner + '/editar', data, button);
             }else{
-            let informacion = JSON.parse(button.dataset.informacion);
-                input.value = informacion.titulo;
-                textarea.innerHTML = informacion.descripcion;
+                let data = JSON.parse(button.dataset.informacion);
+                this.form.create('/informacion/editar', data, button);
             }
+            button.parentNode.parentNode.parentNode.classList.remove('inactive');
+            button.parentNode.parentNode.parentNode.classList.add('active');
+            Validation.load();
         },
         /**
-         * Create the "imagen" part.
-         * @param {HTMLElement} row - The parent row.
+         * Activate the edition mode.
          * @param {HTMLElement} button - The button clicked.
          */
-        createImagen(row, button){
-            let banner = JSON.parse(button.dataset.banner);
-            let imagen = document.createElement('div');
-            row.appendChild(imagen);
-            imagen.classList.add('imagen');
-            imagen.classList.add('col-12');
-            imagen.classList.add('pr-lg-2');
-                let imagenDiv = document.createElement('div');
-                imagen.appendChild(imagenDiv);
-                imagenDiv.classList.add('imagen');
-                imagenDiv.classList.add('mb-2');
-                imagen.classList.add('col-md-6');
-                imagen.classList.add('col-lg-4');
+        inactive(button){
+            button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove('active');
+            button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add('inactive');
+            this.form.delete(button);
+        },
+        /** @var {object} - Form actions. */
+        form: {
+            /**
+             * Create an edit form.
+             * @param {HTMLElement} button - The button clicked.
+             */
+            create(action, data, button){
+                let content = button.parentNode.parentNode.parentNode;
+                let formTag = document.createElement('form');
+                content.appendChild(formTag);
+                formTag.classList.add('col-12', 'form-validate');
+                formTag.dataset.validation = document.querySelector('[name=validation]').content;
+                formTag.method = 'post';
+                formTag.enctype = 'multipart/form-data';
+                formTag.action = action;
+                    let method = document.createElement('input');
+                    formTag.appendChild(method);
+                    method.type = "hidden";
+                    method.name = "_method";
+                    method.value = "PUT";
+                    
+                    let csrf = document.createElement('input');
+                    formTag.appendChild(csrf);
+                    csrf.type = "hidden";
+                    csrf.name = "_token";
+                    csrf.value = document.querySelector('[name=csrf-token]').content;
+
+                    let row = document.createElement('div');
+                    formTag.appendChild(row);
+                    row.classList.add('row', 'd-md-flex', 'justify-content-md-end');
+                    
+                this.createInformacion(row, data, button);
+                let suport = document.createElement('div');
+                row.appendChild(suport);
+                suport.classList.add('suport', 'col-12', 'col-md-6', 'col-lg-4', 'pr-lg-2');
+                if(button.classList.contains('web-editar-banner')){
+                    this.createImagen(suport, data);
+                }
+                this.createAccion(suport);
+            },
+            /**
+             * Create the "informacion" part.
+             * @param {HTMLElement} row - The parent row.
+             * @param {HTMLElement} button - The button clicked.
+             */
+            createInformacion(row, data, button){
+                let informacion = document.createElement('div');
+                row.appendChild(informacion);
+                informacion.classList.add('informacion', 'col-12', 'pr-lg-2');
+                    let titulo = document.createElement('div');
+                    informacion.appendChild(titulo);
+                    titulo.classList.add('titulo', 'input-group');
+                        let input = document.createElement('input');
+                        titulo.appendChild(input);
+                        input.classList.add('mb-2', 'p-2');
+                        input.type = 'text';
+                        input.name = 'titulo';
+                        input.placeholder = 'Título';
+                        input.value = data.titulo;
+                        
+                        let tooltip = document.createElement('div');
+                        titulo.appendChild(tooltip);
+                        tooltip.classList.add('invalid-tooltip');
+
+
+                    let descripcion = document.createElement('div');
+                    informacion.appendChild(descripcion);
+                    descripcion.classList.add('descripcion', 'input-group');
+                        let textarea = document.createElement('textarea');
+                        descripcion.appendChild(textarea);
+                        textarea.classList.add('mb-2', 'p-2');
+                        textarea.name = 'descripcion';
+                        textarea.placeholder = 'Descripción';
+                        textarea.innerHTML = data.descripcion;
+                        
+                        let tooltip2 = document.createElement('div');
+                        descripcion.appendChild(tooltip2);
+                        tooltip2.classList.add('invalid-tooltip');
+
+                if(button.classList.contains('web-editar-banner')){
+                    informacion.classList.add('col-md-6', 'col-lg-8');
+                }
+            },
+            /**
+             * Create the "imagen" part.
+             * @param {HTMLElement} row - The parent row.
+             * @param {HTMLElement} button - The button clicked.
+             */
+            createImagen(row, data){
+                let imagen = document.createElement('div');
+                row.appendChild(imagen);
+                imagen.classList.add('imagen', 'mb-2');
                     let img = document.createElement('img');
-                    imagenDiv.appendChild(img);
-                    img.src = document.querySelector('[name=asset]').content + 'storage/' + banner.imagen;
-                    img.alt = 'Imagen del banner llamado: ' + banner.titulo;
+                    imagen.appendChild(img);
+                    img.src = document.querySelector('[name=asset]').content + 'storage/' + data.imagen;
+                    img.alt = 'Imagen del banner llamado: ' + data.titulo;
                     
                     let label = document.createElement('label');
-                    imagenDiv.appendChild(label);
-                    label.classList.add('imagen-input');
-                    label.classList.add('m-0');
+                    imagen.appendChild(label);
+                    label.classList.add('imagen-input', 'm-0');
                         let icon = document.createElement('i');
                         label.appendChild(icon);
-                        icon.classList.add('input-icon');
-                        icon.classList.add('fas');
-                        icon.classList.add('fa-pen');
+                        icon.classList.add('input-icon', 'fas', 'fa-pen');
 
                         let file = document.createElement('input');
                         label.appendChild(file);
@@ -263,97 +273,111 @@ let WebButtons = {
                         let tooltip = document.createElement('div');
                         label.appendChild(tooltip);
                         tooltip.classList.add('invalid-tooltip');
-        },
-        /**
-         * Create the "accion" part.
-         * @param {HTMLElement} row - The parent row.
-         */
-        createAccion(row){
-            let accion = document.createElement('div');
-            row.appendChild(accion);
-            accion.classList.add('accion');
-            accion.classList.add('col-12');
-            accion.classList.add('col-md-6');
-            accion.classList.add('col-lg-4');
-            accion.classList.add('pr-lg-2');
+            },
+            /**
+             * Create the "accion" part.
+             * @param {HTMLElement} row - The parent row.
+             */
+            createAccion(row){
                 let boton = document.createElement('div');
-                accion.appendChild(boton);
-                boton.classList.add('boton');
-                boton.classList.add('d-flex');
-                boton.classList.add('justify-content-between');
+                row.appendChild(boton);
+                boton.classList.add('boton', 'd-flex', 'justify-content-between');
                     let aceptar = document.createElement('button');
                     boton.appendChild(aceptar);
-                    aceptar.classList.add('web-aceptar');
-                    aceptar.classList.add('btn');
-                    aceptar.classList.add('p-2');
-                    aceptar.classList.add('form-submit');
+                    aceptar.classList.add('web-aceptar', 'btn', 'p-2', 'form-submit');
                     aceptar.type = "submit";
                     aceptar.dataset.id = "1";
                         let span = document.createElement('span');
                         aceptar.appendChild(span);
-                        span.classList.add('button-text');
-                        span.classList.add('mr-2');
+                        span.classList.add('button-text', 'mr-2');
                         span.innerHTML = 'Aceptar';
 
                         let icon = document.createElement('i');
                         aceptar.appendChild(icon);
-                        icon.classList.add('button-icon');
-                        icon.classList.add('fas');
-                        icon.classList.add('fa-check');
+                        icon.classList.add('button-icon', 'fas', 'fa-check');
 
                     let cancelar = document.createElement('button');
                     boton.appendChild(cancelar);
-                    cancelar.classList.add('web-cancelar');
-                    cancelar.classList.add('btn');
-                    cancelar.classList.add('p-2');
+                    cancelar.classList.add('web-cancelar', 'btn', 'p-2');
                     cancelar.addEventListener('click', function(e){
                         e.preventDefault();
-                        WebButtons.deactivateEdition(this);
+                        WebButtons.informacion.inactive(this);
                     });
                         let span2 = document.createElement('span');
                         cancelar.appendChild(span2);
-                        span2.classList.add('button-text');
-                        span2.classList.add('mr-2');
+                        span2.classList.add('button-text', 'mr-2');
                         span2.innerHTML = 'Cancelar';
 
                         let icon2 = document.createElement('i');
                         cancelar.appendChild(icon2);
-                        icon2.classList.add('button-icon');
-                        icon2.classList.add('fas');
-                        icon2.classList.add('fa-times');
+                        icon2.classList.add('button-icon', 'fas', 'fa-times');
+            },
+            /**
+             * Delete an edit form.
+             * @param {HTMLElement} button - The button clicked.
+             */
+            delete(button){
+                let content = button.parentNode.parentNode.parentNode.parentNode.parentNode;
+                let form = button.parentNode.parentNode.parentNode.parentNode;
+                content.removeChild(form);
+            },
+        },
+    },
+    eventos: {},
+    galerias: {
+        images: [],
+        load(){
+            this.images = document.querySelectorAll('.galerias .image');
+            for(let i = 0; i < this.images.length; i++){
+                this.images[i].children[0].addEventListener('click', function(e){
+                    e.preventDefault();
+                    if(this.parentNode.classList.contains('active')){
+                        WebButtons.galerias.inactive(this.parentNode);
+                    }else{
+                        WebButtons.galerias.active(this.parentNode);
+                    }
+                });
+            }
         },
         /**
-         * Delete an edit form.
-         * @param {HTMLElement} button - The button clicked.
+         * Activate the edition mode.
+         * @param {HTMLElement} image - The image clicked.
          */
-        delete(button){
-            let content = button.parentNode.parentNode.parentNode.parentNode.parentNode;
-            let form = button.parentNode.parentNode.parentNode.parentNode;
-            content.removeChild(form);
+        active(image){
+            if(!image.classList.contains('inactive')){
+                image.children[1].addEventListener('click', function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    WebButtons.galerias.delete(image);
+                });
+            }
+            image.classList.remove('inactive');
+            image.classList.add('active');
+        },
+        /**
+         * Activate the edition mode.
+         * @param {HTMLElement} image - The image clicked.
+         */
+        inactive(image){
+            image.classList.remove('active');
+            image.classList.add('inactive');
+        },
+        delete(image){
+            WebButtons.galerias.inactive(image);
         },
     },
     /** EventButtons loader. */
     load(){
-        this.editBanner = document.querySelectorAll('.web-editar-banner');
-        this.editInformacion = document.querySelector('.web-editar-informacion');
-        for(let i = 0; i < this.editBanner.length; i++){
-            this.editBanner[i].addEventListener('click', function(e){
-                e.preventDefault();
-                WebButtons.activateEdition(this);
-            });
-        }
-        this.editInformacion.addEventListener('click', function(e){
-            e.preventDefault();
-            WebButtons.activateEdition(this);
-        });
+        this.informacion.load();
+        this.galerias.load();
     },
     /**
      * Activate the edition mode.
      * @param {HTMLElement} button - The button clicked.
      */
     activateEdition(button){
-        button.parentNode.parentNode.parentNode.classList.remove('edition-deactivated');
-        button.parentNode.parentNode.parentNode.classList.add('edition-activated');
+        button.parentNode.parentNode.parentNode.classList.remove('inactive');
+        button.parentNode.parentNode.parentNode.classList.add('active');
         this.form.create(button);
         Validation.load();
     },
@@ -362,8 +386,8 @@ let WebButtons = {
      * @param {HTMLElement} button - The button clicked.
      */
     deactivateEdition(button){
-        button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove('edition-activated');
-        button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add('edition-deactivated');
+        button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove('active');
+        button.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add('inactive');
         this.form.delete(button);
     },
 };

@@ -108,10 +108,6 @@
     border: none;
 }
 
-.tabs .tab-body .tab-content section:last-of-type .content:last-of-type{
-    padding-bottom: 0 !important;
-}
-
 .tabs .tab-body .tab-content section .content .titulo{
     flex-basis: 100%;
 }
@@ -159,15 +155,204 @@
     color: white;
 }
 
+/* Personalizar */
+.tabs .tab-body .personalizar section .active > .informacion,
+.tabs .tab-body .personalizar section .active > .imagen,
+.tabs .tab-body .personalizar section .active > .accion,
+.tabs .tab-body .personalizar section .inactive form{
+    display: none;
+}
+
+.tabs .tab-body .personalizar section .inactive > .informacion,
+.tabs .tab-body .personalizar section .inactive > .imagen,
+.tabs .tab-body .personalizar section .inactive > .accion,
+.tabs .tab-body .personalizar section .active form{
+    display: block;
+}
+
+.tabs .tab-body .personalizar section .active .titulo input,
+.tabs .tab-body .personalizar section .active .descripcion textarea{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: var(--color-cuatro);
+    font-size: 1.5rem;
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    border: 1px solid var(--color-cuatro);
+}
+
+.tabs .tab-body .personalizar section .active .titulo input:focus,
+.tabs .tab-body .personalizar section .active .descripcion textarea:focus{
+    animation: none;
+    outline: none;
+}
+
+.tabs .tab-body .personalizar section .active .descripcion textarea{
+    font-size: 0.875rem;
+    color: #919aa1;
+    font-weight: 200;
+    letter-spacing: 1px;
+    resize: none;
+    height: 7.5rem;
+}
+
+.tabs .tab-body .personalizar .active .imagen .imagen-input{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    animation: rainbow 4s infinite;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.tabs .tab-body .personalizar .active .imagen .imagen-input .input-icon{
+    animation: text-rainbow 4s infinite;
+    font-size: 3rem;
+}
+
+/* Galerias */
 .tabs .tab-body .galerias.tab-content section .content{
     overflow: auto;
     flex-wrap: nowrap;
 }
 
-.tabs .tab-body .galerias section .filtros .filtro{
-    background: var(--color-uno);
+.tabs .tab-body .galerias section .content .image-input .input-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
     border-radius: .25rem;
+    background: transparent;
+    animation: rainbow 4s infinite;
+    cursor: pointer;
+}
+
+.tabs .tab-body .galerias section .content .image-input .input-file input{
+    display: none;
+}
+
+.tabs .tab-body .galerias section .content .image-input .input-file .input-text{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: var(--color-uno);
+}
+
+.tabs .tab-body .galerias section .content .image-input .input-file .input-icon{
+    font-size: 1.2rem;
+    color: var(--color-uno);
+}
+
+.tabs .tab-body .galerias section .content .image{
+    position: relative;
+    cursor: pointer;
+}
+
+.tabs .tab-body .galerias .content .image label{
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: var(--color-tres);
+    box-shadow: 0px 0px;
+    z-index: 1;
+    transition: 500ms;
+}
+
+.tabs .tab-body .galerias .content .image label.trash{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.tabs .tab-body .galerias .content .image.active label.trash{
+    height: 35px;
+}
+
+.tabs .tab-body .galerias .content .image label.arrow{
+    top: 0;
+    height: 100%;
+}
+
+.tabs .tab-body .galerias .content .image.active label.arrow{
+    width: 35px;
+}
+
+.tabs .tab-body .galerias .content .image label.prev{
+    left: 0;
+}
+
+.tabs .tab-body .galerias .content .image label.next{
+    right: 0;
+}
+
+.tabs .tab-body .galerias section .content .image button{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    box-shadow: 0px 0px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 500ms;
+}
+
+.tabs .tab-body .galerias .content .image.active button{
+    background: var(--color-tres);
+    z-index: 3;
+}
+
+.tabs .tab-body .galerias section .content .image .trash button{
+    bottom: 0;
+    left: 50%;
+    width: 50px;
+    height: 25px;
+    transform: translateX(-50%);
+}
+
+.tabs .tab-body .galerias section .content .image.active .trash button{
+    height: 50px;
+}
+
+.tabs .tab-body .galerias section .content .image .arrow button{
+    top: 50%;
+    width: 25px;
+    height: 50px;
+    transform: translateY(-50%);
+}
+
+.tabs .tab-body .galerias section .content .image.active .arrow button{
+    width: 50px;
+}
+
+.tabs .tab-body .galerias section .content .image .prev button{
+    left: 0;
+}
+
+.tabs .tab-body .galerias section .content .image .next button{
+    right: 0;
+}
+
+.tabs .tab-body .galerias section .content .image button .button-icon{
+    color: transparent;
+    transition: 600ms;
+}
+
+.tabs .tab-body .galerias section .content .image.active button .button-icon{
     color: white;
+    font-size: 1.5rem;
 }
 
 .tabs .tab-body .galerias .content .image img{
@@ -176,6 +361,7 @@
     border-radius: .25rem;
 }
 
+/* Eventos */
 .tabs .tab-body .eventos section .button{
     display: flex;
     justify-content: center;
@@ -196,69 +382,6 @@
 .tabs .tab-body .eventos section .button button .button-icon,
 .tabs .tab-body .eventos section .button a .button-icon{
     color: white;
-}
-
-.tabs .tab-body .personalizar section .edition-activated > .informacion,
-.tabs .tab-body .personalizar section .edition-activated > .imagen,
-.tabs .tab-body .personalizar section .edition-activated > .accion,
-.tabs .tab-body .personalizar section .edition-deactivated form{
-    display: none;
-}
-
-.tabs .tab-body .personalizar section .edition-deactivated > .informacion,
-.tabs .tab-body .personalizar section .edition-deactivated > .imagen,
-.tabs .tab-body .personalizar section .edition-deactivated > .accion,
-.tabs .tab-body .personalizar section .edition-activated form{
-    display: block;
-}
-
-.tabs .tab-body .personalizar section .edition-activated .titulo input,
-.tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    color: var(--color-cuatro);
-    font-size: 1.5rem;
-    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: 3px;
-    border: 1px solid var(--color-cuatro);
-}
-
-.tabs .tab-body .personalizar section .edition-activated .titulo input:focus,
-.tabs .tab-body .personalizar section .edition-activated .descripcion textarea:focus{
-    animation: none;
-    outline: none;
-}
-
-.tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
-    font-size: 0.875rem;
-    color: #919aa1;
-    font-weight: 200;
-    letter-spacing: 1px;
-    resize: none;
-    height: 7.5rem;
-}
-
-.tabs .tab-body .personalizar .edition-activated .imagen .imagen-input{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid red;
-    animation: rainbow 4s infinite;
-    border-radius: .25rem;
-    cursor: pointer;
-}
-
-.tabs .tab-body .personalizar .edition-activated .imagen .imagen-input .input-icon{
-    animation: text-rainbow 4s infinite;
-    font-size: 3rem;
 }
 
 @keyframes rainbow{
@@ -299,14 +422,23 @@
         flex-basis: 70%;
     }
 
+    .tabs .tab-body .tab-content section:last-of-type .content:last-of-type{
+        padding-bottom: 0 !important;
+    }
+
     .tabs .tab-body .eventos section .button button{
         width: calc((45% / 2) - .5rem);
     }
 
-    .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
-        height: 10.5rem;
+    .tabs .tab-body .personalizar section:first-of-type .active .descripcion textarea{
+        height: 9.5rem;
     }
 
+    .tabs .tab-body .personalizar section:last-of-type .active .descripcion textarea{
+        height: 5.5rem;
+    }
+
+    .tabs .tab-body .galerias section .content .image-input,
     .tabs .tab-body .galerias .content .image{
         flex-basis: calc(45% - .25rem);
     }
@@ -326,7 +458,7 @@
         width: calc((33.33% / 2) - .5rem);
     }
 
-    .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+    .tabs .tab-body .personalizar section .active .descripcion textarea{
         height: 5.5rem;
     }
 
@@ -335,11 +467,24 @@
         flex-wrap: wrap;
     }
 
-    .tabs .tab-body .galerias .content .image{
-        flex-basis: calc(33% - .25rem);
-        margin-bottom: .5rem;
+    .tabs .tab-body .personalizar section:first-of-type .active .descripcion textarea{
+        height: 5.5rem;
     }
 
+    .tabs .tab-body .personalizar section:last-of-type .active .descripcion textarea{
+        height: 4.5rem;
+    }
+
+    .tabs .tab-body .galerias section .content .image-input,
+    .tabs .tab-body .galerias .content .image{
+        position: relative;
+        flex-basis: calc(33% - .25rem);
+        margin-bottom: .5rem;
+        overflow: hidden;
+    }
+
+    .tabs .tab-body .galerias .content .image:nth-of-type(7),
+    .tabs .tab-body .galerias .content .image:nth-of-type(8),
     .tabs .tab-body .galerias .content .image:last-of-type{
         margin-bottom: 0;
     }
@@ -347,7 +492,7 @@
 
 /* XL */
 @media(min-width: 1200px){
-    .tabs .tab-body .personalizar section .edition-activated .descripcion textarea{
+    .tabs .tab-body .personalizar section .active .descripcion textarea{
         height: 4.5rem;
     }
 }

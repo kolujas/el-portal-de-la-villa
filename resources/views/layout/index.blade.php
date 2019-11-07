@@ -48,6 +48,9 @@
                     @yield('main')
                 </div>
             </div>
+
+            @component('components.whatsapp')
+            @endcomponent
         </main>
 
         <footer> 

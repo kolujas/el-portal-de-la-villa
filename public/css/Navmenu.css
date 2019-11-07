@@ -322,13 +322,17 @@
     .nav-menu .menu-list{
         display: flex;
         list-style: none;
+        position: absolute;
+        bottom: 3rem;
+        color: #000;
+        z-index: 999;
     }
 
     .nav-menu .menu-list .nav-link{
         display: flex;
         align-items: center;
         height: 100%;
-        color: var(--secondary-color);
+        color: var(--color-cuarto);
         text-decoration: none;
         margin-left: 1rem;
     }

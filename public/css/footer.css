@@ -1,12 +1,6 @@
-.footer{
+ .footer{
     background-color: var(--color-cuatro);
 }
-
-.footer h3{
-    font-family: var(--fuente-encabezado);
-    font-size: 1.1rem;
-}
-
 
 .footer .info-contacto{
     display: flex;
@@ -20,8 +14,28 @@
     justify-content: center;
 }
 
+.footer .footer-container{
+    display: flex;
+    justify-content: center;
+}
 
 .suscribirse .btn{
     border-radius: .25rem;
     background-color: var(--color-uno);
+} 
+
+
+/* MD */
+@media(min-width: 768px){
+    
+}
+
+/* LG */
+@media(min-width: 1024px){
+    
+}
+
+/* XL */
+@media(min-width: 1200px){
+    
 }

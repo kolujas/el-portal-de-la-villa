@@ -1,10 +1,10 @@
 <div class="footer px-2">
-        <div class="row text-center">
-            <div class="col-6 py-4 info-contacto">
+        <div class="row text-center footer-container">
+            <div class="col-6 col-lg-5 col-xl-5 py-4 info-contacto">
                 <h3 class="text-white">Dónde estamos</h3>
                     <p class="text-center">Av. Costanera 199 esq. Av 3 costa del este, Partido de la costa, Buenos Aires</p>
             </div>
-            <div class="col-6 py-4 reservas">
+            <div class="col-6 col-lg-5 col-xl-5 py-4 reservas">
             <h3 class="text-white">Reservas</h3>
                     <p class="text-center text-break">(02246) 435 580/540/460
                     reservas@villadelparque.com.ar</p>   

@@ -32,9 +32,9 @@
         </header>
 
         @if(Session::has('status'))
-            <aside id="notification">
-                <p class="notification_info">{{Session::get('status')}}</p>
-                <i class="notification_closer" aria-label="Close">
+            <aside class="popup-notification">
+                <p class="popup-notification-text m-0">{{Session::get('status')}}</p>
+                <i class="popup-notification-closer" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </i>
             </aside>

@@ -20,6 +20,11 @@ body{
     margin: 0;
 }
 
+/* PopUpNotification */
+.popup-notification{
+    background: var(--color-dos);
+}
+
 /* Navmenu */
 .nav-menu{
     background: transparent;

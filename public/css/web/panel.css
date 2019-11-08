@@ -226,6 +226,10 @@
     font-size: 3rem;
 }
 
+.suport .boton .web-cancelar{
+    background-color: var(--color-cuatro) !important;
+}
+
 /* Galerias */
 .tabs .tab-body .galerias.tab-content section .content{
     overflow: auto;

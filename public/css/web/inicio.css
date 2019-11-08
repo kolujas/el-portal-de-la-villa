@@ -140,7 +140,7 @@
 
 /* separador con iconos */
 
-.separador-iconos .fa-ship{
+.separador-iconos .fa-ship, .fa-shuttle-van, .fa-concierge-bell, .fa-coffee, .fa-swimming-pool, .fa-wifi{
     font-size: 3rem;
     /* color: #495057; */
     color: var(--color-tres-hover);
@@ -223,7 +223,7 @@
     
     /* separador con iconos */
     
-    .separador-iconos .fa-ship{
+    .separador-iconos .fa-ship {
         font-size: 3rem;
         /* color: #495057; */
         color: var(--color-tres-hover);

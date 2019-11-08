@@ -10,6 +10,7 @@
     <link href="{{asset('css/Validation.css')}}" rel="stylesheet">
     <link href="{{asset('css/Modal.css')}}" rel="stylesheet">
     <link href="{{asset('css/web/panel.css')}}" rel="stylesheet">
+    <link href="{{asset('css/modal.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="asset" content="{{asset('/')}}">
     <meta name="validation" content="{{$validation}}">
@@ -441,7 +442,7 @@
                                         <span class="button-text mr-2">Editar</span>
                                         <i class="fas fa-pen"></i>
                                     </a>
-                                    <button class="evento-borrar btn p-2">
+                                    <button type="button" class="btn btn-primary evento-borrar btn p-2" data-toggle="modal" data-target="#exampleModal">
                                         <span class="button-text mr-2">Borrar</span>
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -453,6 +454,11 @@
             </div>
         </div>
     </div>
+
+    @component('components.modal')
+    @endcomponent
+
+
         
     <form class="delete-form d-none" action="#" method="post">
         @csrf

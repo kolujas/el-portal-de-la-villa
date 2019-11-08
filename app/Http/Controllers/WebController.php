@@ -2,6 +2,7 @@
     namespace App\Http\Controllers;
 
     use App\Models\Banner;
+    use App\Models\Galeria;
     use App\Models\Evento;
     use App\Models\Web;
     use Auth;
@@ -26,6 +27,8 @@
         /** Carga el panel de administracion. */
         public function panel(){
             $banners = Banner::all();
+            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(8);
+            $habitaciones_totales = Galeria::where('id_tipo', '=', 1)->get();
             $eventos = Evento::all();
 
             if(File::get('storage/archivos/titulo.txt')){
@@ -43,6 +46,8 @@
             return view('web.panel', [
                 'archivos' => $archivos,
                 'banners' => $banners,
+                'habitaciones' => $habitaciones,
+                'habitaciones_totales' => $habitaciones_totales,
                 'eventos' => $eventos,
                 'validation' => json_encode(Web::$validation['editar']),
             ]);

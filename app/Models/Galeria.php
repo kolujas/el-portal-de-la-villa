@@ -13,7 +13,7 @@
 
         /** @var array Los atributos que se van a cargar de forma masiva. */
         protected $fillable = [
-            'titulo', 'descripcion', 'imagen', 'id_tipo',
+            'imagen', 'id_tipo', 'posicion',
         ];
         
         /** Trae el Usuario que coincidan con el PK. */
@@ -25,35 +25,24 @@
         public static $validation = [
             'crear' => [
                 'rules' => [
-                    'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required|max:220',
                     'imagen' => 'required|mimetypes:image/jpeg,image/png',
                     'id_tipo' => 'required',
+                    'posicion' => 'required|numeric',
                 ], 'messages' => [
-                    'titulo.required' => 'El título de la imagen no puede estar vacío.',
-                    'titulo.min' => 'El título de la imagen debe tener al menos :min caracteres.',
-                    'titulo.max' => 'El título de la imagen no puede tener más de :max caracteres.',
-                    'descripcion.required' => 'La descripción de la imagen no puede estar vacío.',
-                    'descripcion.max' => 'La descripción de la imagen no puede tener más de :max caracteres.',
-                    'imagen.required' => 'La imagen es obligatoria.',
-                    'imagen.mimetypes' => 'La imagen debe ser una imagen con formato JPG/JPEG o PNG.',
+                    'imagen.required' => 'La imagen no puede estar vacía.',
+                    'imagen.mimetypes' => 'La imagen debe ser formato JPG/JPEG o PNG.',
+                    'posicion.required' => 'La posición de la imagen no puede estar vacío.',
+                    'posicion.numeric' => 'La posición de la imagen debe de ser valor numeric.',
                     'id_tipo.required' => 'El tipo de la imagen es obligatorio.',
                 ],
-            ],'editar' => [
+            ], 'editar' => [
+            ], 'mover' => [
                 'rules' => [
-                    'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required|max:220',
-                    'imagen' => 'nullable|mimetypes:image/jpeg,image/png',
-                    'id_tipo' => 'required',
+                    'posicion' => 'required|numeric',
                 ], 'messages' => [
-                    'titulo.required' => 'El título de la imagen no puede estar vacío.',
-                    'titulo.min' => 'El título de la imagen debe tener al menos :min caracteres.',
-                    'titulo.max' => 'El título de la imagen no puede tener más de :max caracteres.',
-                    'descripcion.required' => 'La descripción de la imagen no puede estar vacío.',
-                    'descripcion.max' => 'La descripción de la imagen no puede tener más de :max caracteres.',
-                    'imagen.mimetypes' => 'La imagen debe ser una imagen con formato JPG/JPEG o PNG.',
-                    'id_tipo.required' => 'El tipo de la imagen es obligatorio.',
+                    'posicion.required' => 'La posición de la imagen no puede estar vacío.',
+                    'posicion.numeric' => 'La posición de la imagen debe de ser valor numeric.',
                 ],
-            ]
+            ],
         ];
     }

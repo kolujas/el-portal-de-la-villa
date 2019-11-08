@@ -326,8 +326,13 @@ let WebButtons = {
     eventos: {},
     galerias: {
         images: [],
+        prev_arrows: [],
+        next_arrows: [],
+        waiting: false,
         load(){
             this.images = document.querySelectorAll('.galerias .image');
+            this.prev_arrows = document.querySelectorAll('.galerias .image .prev button');
+            this.next_arrows = document.querySelectorAll('.galerias .image .next button');
             for(let i = 0; i < this.images.length; i++){
                 this.images[i].children[0].addEventListener('click', function(e){
                     e.preventDefault();
@@ -338,21 +343,39 @@ let WebButtons = {
                     }
                 });
             }
+            for(let i = 0; i < this.prev_arrows.length; i++){
+                this.prev_arrows[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.habitacion).posicion - 1);
+                });
+            }
+            for(let i = 0; i < this.next_arrows.length; i++){
+                this.next_arrows[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.habitacion).posicion + 1);
+                });
+            }
         },
         /**
          * Activate the edition mode.
          * @param {HTMLElement} image - The image clicked.
          */
         active(image){
-            if(!image.classList.contains('inactive')){
-                image.children[1].addEventListener('click', function(e){
-                    e.stopPropagation();
-                    e.preventDefault();
-                    WebButtons.galerias.delete(image);
-                });
+            if(!WebButtons.galerias.waiting){
+                let images = document.querySelectorAll('.image.active');
+                for(let i = 0; i < images.length; i++){
+                    this.inactive(images[i]);
+                }
+                if(!image.classList.contains('inactive')){
+                    image.children[1].addEventListener('click', function(e){
+                        e.stopPropagation();
+                        e.preventDefault();
+                        WebButtons.galerias.delete(image);
+                    });
+                }
+                image.classList.remove('inactive');
+                image.classList.add('active');
             }
-            image.classList.remove('inactive');
-            image.classList.add('active');
         },
         /**
          * Activate the edition mode.
@@ -364,6 +387,90 @@ let WebButtons = {
         },
         delete(image){
             WebButtons.galerias.inactive(image);
+        },
+        move(image, position){
+            if(position < 1){
+                position = habitaciones.length;
+            }
+            if(position > habitaciones.length){
+                position = 1;
+            }
+            let showeds = document.querySelectorAll('.image.habitacion.showed');
+            let found = false;
+            let habitacion, newHabitacion;
+            for(let i = 0; i < showeds.length; i++){
+                habitacion = JSON.parse(image.dataset.habitacion);
+                newHabitacion = JSON.parse(showeds[i].dataset.habitacion);
+                if(newHabitacion.posicion == position){
+                    this.replace(image, showeds[i], position);
+                    found = true;
+                    break;
+                }
+            }
+            if(!found){
+                for(let i = 0; i < habitaciones.length; i++){
+                    if(habitaciones[i].posicion == position){
+                        let newImage = this.substitute(habitaciones[i]);
+                        this.replace(image, newImage, position);
+                        break;
+                    }
+                }
+            }
+        },
+        async replace(image, newImage, position){
+            let habitacion = image.dataset.habitacion;
+            let newHabitacion = newImage.dataset.habitacion;
+            habitacion = JSON.parse(habitacion);
+            newHabitacion = JSON.parse(newHabitacion);
+            newHabitacion.posicion = habitacion.posicion;
+            habitacion.posicion = position;
+            this.inactive(image);
+            this.loading(image);
+            await this.update(habitacion.id_galeria, position);
+            image.dataset.habitacion = JSON.stringify(newHabitacion);
+            newImage.dataset.habitacion = JSON.stringify(habitacion);
+            image.children[0].src = document.querySelector('[name=asset]').content + newHabitacion.imagen;
+            newImage.children[0].src = document.querySelector('[name=asset]').content + habitacion.imagen;
+            for(let i = 0; i < habitaciones.length; i++){
+                if(habitaciones[i].id_galeria == habitacion.id_galeria){
+                    habitaciones[i].posicion = habitacion.posicion;
+                }else if(habitaciones[i].id_galeria == newHabitacion.id_galeria){
+                    habitaciones[i].posicion = newHabitacion.posicion;
+                }
+            }
+        },
+        substitute(habitacion){
+            let image = document.createElement('div');
+            image.dataset.habitacion = JSON.stringify(habitacion);
+                let img = document.createElement('img');
+                img.src = document.querySelector('[name=asset]').content + habitacion.imagen;
+                image.appendChild(img);
+            return image;
+        },
+        async update(id_galeria, posicion){
+            let formData = new FormData();
+            formData.append("posicion", posicion);
+            formData.append("_method", 'PUT');
+            formData.append("_token", document.querySelector('[name=csrf-token]').content);
+            await Database.update('/api/galeria/' + id_galeria + '/mover', formData, this);
+        },
+        finish(json){
+            this.stop();
+        },
+        loading(image){
+            this.waiting = true;
+            let loading = document.createElement('div');
+            loading.classList.add('loading');
+            image.appendChild(loading);
+                let icon = document.createElement('i');
+                icon.classList.add('loading-icon', 'fas', 'fa-spinner');
+                loading.appendChild(icon);
+        },
+        stop(){
+            let loading = document.querySelector('.loading');
+            let parent = loading.parentNode;
+            parent.removeChild(loading);
+            this.waiting = false;
         },
     },
     /** EventButtons loader. */

@@ -1,4 +1,4 @@
-.make-a-modal{
+/* .make-a-modal{
     position: fixed;
     top: 0;
     left: 0;
@@ -6,4 +6,19 @@
     height: 100%;
     z-index: 3;
     background: rgba(34, 34, 34, .5);
+} */
+
+.modal-footer .cancelar{
+    background-color: var(--color-cuatro);
+    color: #fff;
+    outline: none;
+}
+
+.modal-footer .cancelar, .aceptar:focus{
+    box-shadow: none;
+}
+
+.modal-footer .aceptar{
+    background-color: var(--color-uno);
+    color: #fff;
 }

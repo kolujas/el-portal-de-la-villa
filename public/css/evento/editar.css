@@ -26,9 +26,14 @@
 .editar .form-validate .form-control,
 .editar .form-validate .input-group{
     height: 2.5rem;
-    border: 1px solid var(--color-cuatro);
+    border: 1px solid #ced4da;
     background: transparent;
     overflow: hidden;
+}
+
+.editar .form-validate .form-control:focus,
+.editar .form-validate .input-group:focus{
+    border: 1px solid var(--color-uno);
 }
 
 .editar .form-validate textarea.form-control{

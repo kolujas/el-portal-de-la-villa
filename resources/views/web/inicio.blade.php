@@ -100,24 +100,24 @@
                             <p class="mt-4 font-weight-bold">Paseos en lancha</p>
                         </div>
                         <div class="mb-5 col-4 col-xl-2 icon-text">
-                            <i class="fas fa-ship"></i>
-                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                            <i class="fas fa-shuttle-van"></i>
+                            <p class="mt-4 font-weight-bold">Transporte</p>
                         </div>
                         <div class="mb-5 col-4 col-xl-2 icon-text">
-                            <i class="fas fa-ship"></i>
-                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                        <i class="fas fa-concierge-bell"></i>
+                            <p class="mt-4 font-weight-bold">Check in 24hs</p>
                         </div>
                         <div class="mb-5 col-4 col-xl-2 icon-text">
-                            <i class="fas fa-ship"></i>
-                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                            <i class="fas fa-coffee"></i>
+                            <p class="mt-4 font-weight-bold">Desayuno hasta las 11am</p>
                         </div>
                         <div class="mb-5 col-4 col-xl-2 icon-text">
-                            <i class="fas fa-ship"></i>
-                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                            <i class="fas fa-swimming-pool"></i>
+                            <p class="mt-4 font-weight-bold">Pileta exterior y climatizada</p>
                         </div>
                         <div class="mb-5 col-4 col-xl-2 icon-text">
-                            <i class="fas fa-ship"></i>
-                            <p class="mt-4 font-weight-bold">Paseos en lancha</p>
+                            <i class="fas fa-wifi"></i>
+                            <p class="mt-4 font-weight-bold">WIFI de alta velocidad</p>
                         </div>
                     </div>
                 </div>

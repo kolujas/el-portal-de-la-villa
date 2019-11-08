@@ -22,6 +22,16 @@ body{
     margin: 0;
 }
 
+.btn:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* PopUpNotification */
 .popup-notification{
     background: var(--color-dos);

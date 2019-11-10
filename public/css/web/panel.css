@@ -236,7 +236,18 @@
     flex-wrap: nowrap;
 }
 
-.tabs .tab-body .galerias section .content .image-input .input-file{
+.tabs .tab-body .galerias section .content .image-input form,
+.tabs .tab-body .galerias section .content .image-input.confirm .form,
+.tabs .tab-body .galerias section .content .image-input.checked{
+    display: none;
+}
+
+.tabs .tab-body .galerias section .content .image-input .form{
+    width: 100%;
+    height: 100%;
+}
+
+.tabs .tab-body .galerias section .content .image-input .form .input-file{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -249,22 +260,61 @@
     cursor: pointer;
 }
 
-.tabs .tab-body .galerias section .content .image-input .input-file input{
+.tabs .tab-body .galerias section .content .image-input .form .input-file input{
     display: none;
 }
 
-.tabs .tab-body .galerias section .content .image-input .input-file .input-text{
+.tabs .tab-body .galerias section .content .image-input .form .input-file .input-text{
     text-transform: uppercase;
     font-size: 1.2rem;
     color: var(--color-uno);
 }
 
-.tabs .tab-body .galerias section .content .image-input .input-file .input-icon{
+.tabs .tab-body .galerias section .content .image-input .form .input-file .input-icon{
     font-size: 1.2rem;
     color: var(--color-uno);
 }
 
-.tabs .tab-body .galerias section .content .image{
+.tabs .tab-body .galerias section .content .image-input .form-accions{
+    display: none !important;
+    width: 100%;
+    height: 100%;
+}
+
+.tabs .tab-body .galerias section .content .image-input.confirm .form-accions{
+    display: flex !important;
+}
+
+.tabs .tab-body .galerias section .content .image-input .form-accions label{
+    flex-basis: calc(50% - .25rem);
+}
+
+.tabs .tab-body .galerias section .content .image-input .form-accions label button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+    border-radius: .25rem;
+    background: transparent;
+    animation: rainbow 4s infinite;
+    cursor: pointer;
+}
+
+.tabs .tab-body .galerias section .content .image-input .form-accions label button .input-text{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--color-uno);
+}
+
+.tabs .tab-body .galerias section .content .image-input .form-accions label button .input-icon{
+    font-size: 1rem;
+    color: var(--color-uno);
+}
+
+.tabs .tab-body .galerias section .content .image,
+.tabs .tab-body .galerias section .content .example-image{
     position: relative;
     cursor: pointer;
 }
@@ -369,7 +419,8 @@
     font-size: 1.5rem;
 }
 
-.tabs .tab-body .galerias .content .image img{
+.tabs .tab-body .galerias .content .image img,
+.tabs .tab-body .galerias .content .example-image img{
     width: 100%;
     height: 10rem;
     object-fit: cover;
@@ -379,6 +430,26 @@
 .tabs .tab-body .galerias.tab-content section .content .substitute{
     flex-basis: 0 !important;
     margin: 0;
+}
+
+.tabs .tab-body .galerias section .content .example-image .example-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 500ms;
+    text-align: center;
+    opacity: 0;
+    background: #1a1a1a7a;
+    color: white;
+}
+
+.tabs .tab-body .galerias section .content .example-image .example-text.show{
+    opacity: 1;
 }
 
 /* Eventos */
@@ -488,9 +559,19 @@
     }
 
     .tabs .tab-body .galerias section .content .image-input,
-    .tabs .tab-body .galerias .content .image{
+    .tabs .tab-body .galerias .content .image,
+    .tabs .tab-body .galerias .content .example-image{
         flex-basis: calc(45% - .25rem);
     }
+
+    .tabs .tab-body .galerias section .content .image-input .form-accions label button .input-text{
+        font-size: .8rem;
+    }
+    
+    .tabs .tab-body .galerias section .content .image-input .form-accions label button .input-icon{
+        font-size: .8rem;
+    }
+    
 }
 
 /* LG */
@@ -525,6 +606,7 @@
     }
 
     .tabs .tab-body .galerias section .content .image-input,
+    .tabs .tab-body .galerias .content .example-image,
     .tabs .tab-body .galerias .content .image{
         position: relative;
         flex-basis: calc(33% - .25rem);
@@ -536,12 +618,6 @@
     .tabs .tab-body .galerias .content .image:nth-of-type(6),
     .tabs .tab-body .galerias .content .image:nth-of-type(9){
         margin-right: 0 !important;
-    }
-
-    .tabs .tab-body .galerias .content .image:nth-of-type(7),
-    .tabs .tab-body .galerias .content .image:nth-of-type(8),
-    .tabs .tab-body .galerias .content .image:nth-of-type(9){
-        margin-bottom: 0;
     }
 
     .tabs .tab-body .galerias.tab-content section .content .substitute{

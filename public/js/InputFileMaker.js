@@ -38,6 +38,10 @@ let InputFileMaker = {
             }
             parent.insertBefore(img, input);
         },
+        /**
+         * Generate an default image.
+         * @param {HTMLElemeny} input - The input.
+         */
         generate(input){
             let parent = input.parentNode;
             this.exist = true;
@@ -52,6 +56,16 @@ let InputFileMaker = {
             });
             parent.insertBefore(img, input);
         },
+        /**
+         * Remove a previous image.
+         * @param {HTMLElement} image - The image.
+         */
+        remove(image){
+            let parent = image.parentNode;
+            if(document.querySelector('.file-img.generated-image')){
+                parent.removeChild(document.querySelector('.file-img.generated-image'));
+            }
+        },
     },
     /** InputFileMaker loader. */
     load(){
@@ -64,6 +78,9 @@ let InputFileMaker = {
             this.inputs[i].addEventListener('change', function(){
                 InputFileMaker.update(this);
                 if(this.classList.contains('make-an-image')){
+                    if(this.files.length == 0){
+                        InputFileMaker.image.remove(this);
+                    }
                     InputFileMaker.image.create(this);
                 }
             });
@@ -109,7 +126,11 @@ let InputFileMaker = {
     update(input){
         for(let i = 0; i < input.parentNode.children.length; i++){
             if(input.parentNode.children[i].classList.contains('input-file')){
-                input.parentNode.children[i].children[1].innerHTML = input.files[0].name;
+                if(input.files.length){
+                    input.parentNode.children[i].children[1].innerHTML = input.files[0].name;
+                }else{
+                    input.parentNode.children[i].children[1].innerHTML = input.dataset.notfound;
+                }
             }
         }
     },

@@ -63,6 +63,7 @@ let Tabs = {
             }
         }
     },
+    /** Get if the URL has an #. */
     getTarget(){
         let href = location.href;
         let target = href.split('#');
@@ -110,6 +111,7 @@ let WebButtons = {
     informacion: {
         banner: [],
         archivos: null,
+        /** The WebButtons 'informacion' loader */
         load(){
             this.banner = document.querySelectorAll('.web-editar-banner');
             this.archivos = document.querySelector('.web-editar-informacion');
@@ -329,6 +331,161 @@ let WebButtons = {
         prev_arrows: [],
         next_arrows: [],
         waiting: false,
+        new_image: {
+            imageInputs: [],
+            waiting: false,
+            /** The WebButtons 'galerias' 'new_image' loader. */
+            load(){
+                this.imageInputs = document.querySelectorAll('.image-input');
+                for(let i = 0; i < this.imageInputs.length; i++){
+                    this.addActions(this.imageInputs[i]);
+                }
+            },
+            /**
+             * Add actions in the childs of the container.
+             * @param {HTMLElement} container - A container.
+             */
+            addActions(container){
+                let input = container.children[0].children[0].children[0];
+                input.addEventListener('change', function(){
+                    WebButtons.galerias.new_image.confirm(this.parentNode.parentNode.parentNode);
+                });
+                let accept = container.children[1].children[0].children[0];
+                    cancel = container.children[1].children[1].children[0];
+                accept.addEventListener('click', function(){
+                    WebButtons.galerias.new_image.accept(this.parentNode.parentNode.parentNode);
+                });
+                cancel.addEventListener('click', function(){
+                    WebButtons.galerias.new_image.cancel(this.parentNode.parentNode.parentNode);
+                });
+            },
+            /**
+             * Enable the confirmation.
+             * @param {HTMLTlement} container - A container.
+             */
+            confirm(container){
+                if(!WebButtons.galerias.waiting){
+                    container.classList.remove('checked');
+                    container.classList.add('confirm');
+                    this.example(container.parentNode, container);
+                }
+            },
+            /**
+             * 
+             * @param {HTMLElement} content - A content.
+             * @param {HTMLElement} container - A container.
+             */
+            example(content, container){
+                let input = container.children[0].children[0].children[0];
+                let habitacion = document.createElement('div');
+                habitacion.classList.add('habitacion', 'example-image', 'col-10', 'mr-2', 'p-0', 'mr-2');
+                content.insertBefore(habitacion, container.nextElementSibling);
+                    let imagen = document.createElement('img');
+                    imagen.alt = 'Example image';
+                    habitacion.appendChild(imagen);
+                    if(FileReader && input.files && input.files.length){
+                        let reader = new FileReader();
+                        reader.onload = function(){
+                            imagen.src = reader.result;
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }else{
+                        // PENDIENTE
+                    }
+
+                    let p = document.createElement('p');
+                    p.classList.add('example-text');
+                    if(input.files[0].type != 'image/jpeg' && input.files[0].type != 'image/png'){
+                        p.classList.add('show');
+                        p.innerHTML = 'Formato invalido, debe ser JPEG/JPG o PNG';
+                    }else{
+                        p.innerHTML = 'Ejemplo';
+                    }
+                    habitacion.appendChild(p);
+                    p.addEventListener('click', function(){
+                        WebButtons.galerias.new_image.show(this);
+                    });
+            },
+            /**
+             * Show or hide the parraph.
+             * @param {HTMLElement} p - The parraph.
+             */
+            show(p){
+                if(!p.classList.contains('show')){
+                    p.classList.add('show');
+                }else{
+                    p.classList.remove('show');
+                }
+            },
+            /**
+             * Accept the confirmation.
+             * @param {HTMLElement} container - A container.
+             */
+            accept(container){
+                if(!WebButtons.galerias.waiting){
+                    container.classList.remove('confirm');
+                    container.classList.add('checked');
+                    this.loading(document.querySelector('.example-image'));
+                    this.submit(container);
+                }
+            },
+            /**
+             * Deny the confirmation.
+             * @param {HTMLElement} container - A container.
+             */
+            cancel(container){
+                if(!WebButtons.galerias.waiting){
+                    container.classList.remove('confirm');
+                    let input = container.children[0].children[0].children[0];
+                    input.value = "";
+                    let example = document.querySelector('.example-image');
+                    example.parentNode.removeChild(example);
+                }
+            },
+            /**
+             * Submit a form.
+             * @param {HTMLElement} container - A container.
+             */
+            submit(container){
+                let imagen = container.children[0].children[0].children[0];
+                let id_tipo = container.children[0].children[1];
+                let form = document.createElement('form');
+                form.action = '/galeria/' + id_tipo.value + '/agregar';
+                form.method = 'post';
+                form.enctype = 'multipart/form-data';
+                container.appendChild(form);
+                    let method = document.createElement('input');
+                    method.type = 'hidden';
+                    method.name = '_method';
+                    method.value = 'POST';
+                    form.appendChild(method);
+
+                    let csrf = document.createElement('input');
+                    csrf.type = 'hidden';
+                    csrf.name = '_token';
+                    csrf.value = document.querySelector('[name=csrf-token]').content;
+                    form.appendChild(csrf);
+                    
+                    form.appendChild(imagen);
+                    form.appendChild(id_tipo);
+
+                form.submit();
+            },
+            /**
+             * Put the page in pause.
+             * @param {HTMLElement} image - An image.
+             */
+            loading(image){
+                WebButtons.galerias.waiting = true;
+                let loading = document.createElement('div');
+                loading.classList.add('loading');
+                image.appendChild(loading);
+                    let icon = document.createElement('i');
+                    icon.classList.add('loading-icon', 'fas', 'fa-spinner');
+                    loading.appendChild(icon);
+            },
+        },
+        /** The WebButtons 'galerias' loader. */
         load(){
             this.images = document.querySelectorAll('.galerias .image');
             this.prev_arrows = document.querySelectorAll('.galerias .image .prev button');
@@ -355,6 +512,7 @@ let WebButtons = {
                     WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.habitacion).posicion + 1);
                 });
             }
+            this.new_image.load();
         },
         /**
          * Activate the edition mode.
@@ -385,16 +543,25 @@ let WebButtons = {
             image.classList.remove('active');
             image.classList.add('inactive');
         },
+        /**
+         * Delete an image.
+         * @param {HTMLElement} image - The image.
+         */
         delete(image){
             WebButtons.galerias.inactive(image);
         },
+        /**
+         * Change the image position.
+         * @param {HTMLElemenT} image - The image.
+         * @param {nummeric} position - The position.
+         */
         move(image, position){
             if(position < 1){
                 position = habitaciones.length;
-            }
-            if(position > habitaciones.length){
+            }else if(position >= habitaciones.length){
                 position = 1;
             }
+
             let showeds = document.querySelectorAll('.image.habitacion.showed');
             let found = false;
             let habitacion, newHabitacion;
@@ -417,6 +584,12 @@ let WebButtons = {
                 }
             }
         },
+        /**
+         * Change two imagen position.
+         * @param {HTMLElement} image - The image.
+         * @param {HTMLElement} newImage - Another image.
+         * @param {numeric} position - The position.
+         */
         async replace(image, newImage, position){
             let habitacion = image.dataset.habitacion;
             let newHabitacion = newImage.dataset.habitacion;
@@ -429,8 +602,8 @@ let WebButtons = {
             await this.update(habitacion.id_galeria, position);
             image.dataset.habitacion = JSON.stringify(newHabitacion);
             newImage.dataset.habitacion = JSON.stringify(habitacion);
-            image.children[0].src = document.querySelector('[name=asset]').content + newHabitacion.imagen;
-            newImage.children[0].src = document.querySelector('[name=asset]').content + habitacion.imagen;
+            image.children[0].src = document.querySelector('[name=asset]').content + 'storage/' + newHabitacion.imagen;
+            newImage.children[0].src = document.querySelector('[name=asset]').content + 'storage/' + habitacion.imagen;
             for(let i = 0; i < habitaciones.length; i++){
                 if(habitaciones[i].id_galeria == habitacion.id_galeria){
                     habitaciones[i].posicion = habitacion.posicion;
@@ -439,6 +612,10 @@ let WebButtons = {
                 }
             }
         },
+        /**
+         * Make an substitute for one Galeria.
+         * @param {Galeria} habitacion - A Galeria object.
+         */
         substitute(habitacion){
             let image = document.createElement('div');
             image.dataset.habitacion = JSON.stringify(habitacion);
@@ -447,6 +624,11 @@ let WebButtons = {
                 image.appendChild(img);
             return image;
         },
+        /**
+         * Change the Galeria position.
+         * @param {numeric} id_galeria - The Galeria id.
+         * @param {numeric} posicion - The position.
+         */
         async update(id_galeria, posicion){
             let formData = new FormData();
             formData.append("posicion", posicion);
@@ -454,9 +636,14 @@ let WebButtons = {
             formData.append("_token", document.querySelector('[name=csrf-token]').content);
             await Database.update('/api/galeria/' + id_galeria + '/mover', formData, this);
         },
+        /** Finish the sending action. */
         finish(json){
             this.stop();
         },
+        /**
+         * Put the page on pause.
+         * @param {HTMLElement} image - An image.
+         */
         loading(image){
             this.waiting = true;
             let loading = document.createElement('div');
@@ -466,6 +653,7 @@ let WebButtons = {
                 icon.classList.add('loading-icon', 'fas', 'fa-spinner');
                 loading.appendChild(icon);
         },
+        /** Stop the loading function. */
         stop(){
             let loading = document.querySelector('.loading');
             let parent = loading.parentNode;

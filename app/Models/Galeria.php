@@ -13,7 +13,7 @@
 
         /** @var array Los atributos que se van a cargar de forma masiva. */
         protected $fillable = [
-            'imagen', 'id_tipo', 'posicion',
+            'imagen', 'id_tipo', 'posicion', 'id_usuario',
         ];
         
         /** Trae el Usuario que coincidan con el PK. */
@@ -23,16 +23,13 @@
         
         /** @var array Las reglas de validación y sus mensajes correspondientes. */
         public static $validation = [
-            'crear' => [
+            'agregar' => [
                 'rules' => [
                     'imagen' => 'required|mimetypes:image/jpeg,image/png',
                     'id_tipo' => 'required',
-                    'posicion' => 'required|numeric',
                 ], 'messages' => [
                     'imagen.required' => 'La imagen no puede estar vacía.',
                     'imagen.mimetypes' => 'La imagen debe ser formato JPG/JPEG o PNG.',
-                    'posicion.required' => 'La posición de la imagen no puede estar vacío.',
-                    'posicion.numeric' => 'La posición de la imagen debe de ser valor numeric.',
                     'id_tipo.required' => 'El tipo de la imagen es obligatorio.',
                 ],
             ], 'editar' => [

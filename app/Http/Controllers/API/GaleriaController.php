@@ -7,6 +7,12 @@
     use Illuminate\Http\Request;
 
     class GaleriaController extends Controller{
+        /**
+         * Valida y mueve una imagen en la Galeria.
+         * 
+         * @param $request Request.
+         * @param $id_galeria El id de la imagen de la Galeria.
+         */
         public function doMover(Request $request, $id_galeria){
             $inputData = $request->all();
 
@@ -31,7 +37,7 @@
 
             return response()->json([
                 'error' => 0,
-                'status' => 'Galeria editada correctamente.',
+                'status' => 'Imagen movida correctamente.',
             ]);
         }
     }

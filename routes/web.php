@@ -13,3 +13,6 @@
 
 /** BannerController */
     Route::put('/banner/{id_banner}/editar', 'BannerController@doEditar')->name('banner.doEditar');
+
+/** GaleriaController */
+    Route::post('/galeria/{id_tipo}/agregar', 'GaleriaController@doAgregar')->name('galeria.doAgregar');

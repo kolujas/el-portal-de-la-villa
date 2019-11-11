@@ -128,7 +128,7 @@
          * @param $id_evento El id del Evento.
          */
         public function doEliminar($id_evento){
-            $noticia = Noticia::find($id_evento);
+            $evento = Evento::find($id_evento);
 
             if(isset($evento->imagen) && !empty($evento->imagen)){
                 Storage::delete($evento->imagen);

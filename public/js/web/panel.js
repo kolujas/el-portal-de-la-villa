@@ -78,38 +78,16 @@ let Tabs = {
     },
 };
 
-let EventButtons = {
-    /** @var {HTMLElement[]} - Array of edit buttons. */
-    edit: [],
-    /** @var {HTMLElement[]} - Array of delete buttons. */
-    delete: [],
-    /** EventButtons loader. */
-    load(){
-        this.edit = document.querySelectorAll('.evento-editar');
-        this.delete = document.querySelectorAll('.evento-borrar');
-        for(let i = 0; i < this.edit.length; i++){
-            this.delete[i].addEventListener('click', function(e){
-                e.preventDefault();
-                EventButtons.deleteAccion(this);
-            });
-        }
-    },
-    /**
-     * Execute delete actions.
-     * @param {HTMLElement} button - The button clicked.
-     */
-    deleteAccion(button){
-        console.log(button);
-    },
-};
-
 function observe(element, event, handler){
     element.addEventListener(event, handler);
 };
 
 let WebButtons = {
+    /** @var {object} - Section 'informacion'. */
     informacion: {
+        /** @var {HTMLElement[]} - Array of banner HTML Elements. */
         banner: [],
+        /** @var {HTMLElement} - Principal text files from index page on inputs HTML Elements. */
         archivos: null,
         /** The WebButtons 'informacion' loader */
         load(){
@@ -325,27 +303,55 @@ let WebButtons = {
             },
         },
     },
-    eventos: {},
+    /** @var {object} - Section 'eventos'. */
+    eventos: {
+        /** @var {HTMLElement[]} - All the delete buttons from the Eventos. */
+        delete_buttons: [],
+        /** The WebButtons 'eventos' loader. */
+        load(){
+            this.delete_buttons = document.querySelectorAll('.eventos .event .evento-borrar');
+            for(let i = 0; i < this.delete_buttons.length; i++){
+                this.delete_buttons[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    let data = {
+                        'title': 'Borrar evento "' + this.dataset.titulo + '"',
+                        'description': '¿Estás seguro de que querés borrar el evento?',
+                        'action': '/evento/' + this.dataset.id_evento + '/eliminar',
+                        'value': this.dataset.id_evento,
+                    };
+                    WebModal.edit(data);
+                });
+            };
+        },
+    },
+    /** @var {object} - Section 'galerias'. */
     galerias: {
+        /** @var {HTMLElement[]} - All the Galeria's images. */
         images: [],
+        /** @var {HTMLElement[]} - All the previous arrow buttons. */
         prev_arrows: [],
+        /** @var {HTMLElement[]} - All the next arrow buttons. */
         next_arrows: [],
+        /** @var {HTMLElement[]} - All the delete buttons from Galerias. */
+        delete_buttons: [],
+        /** @var {boolean} - If the section is submiting something. */
         waiting: false,
+        /** @var {object} - In charge of create a new Galeria image. */
         new_image: {
+            /** @var {HTMLElement[]} - All the Galeria images inputs. */
             imageInputs: [],
-            waiting: false,
             /** The WebButtons 'galerias' 'new_image' loader. */
             load(){
                 this.imageInputs = document.querySelectorAll('.image-input');
                 for(let i = 0; i < this.imageInputs.length; i++){
-                    this.addActions(this.imageInputs[i]);
+                    this.setActions(this.imageInputs[i]);
                 }
             },
             /**
              * Add actions in the childs of the container.
              * @param {HTMLElement} container - A container.
              */
-            addActions(container){
+            setActions(container){
                 let input = container.children[0].children[0].children[0];
                 input.addEventListener('change', function(){
                     WebButtons.galerias.new_image.confirm(this.parentNode.parentNode.parentNode);
@@ -377,12 +383,12 @@ let WebButtons = {
              */
             example(content, container){
                 let input = container.children[0].children[0].children[0];
-                let habitacion = document.createElement('div');
-                habitacion.classList.add('habitacion', 'example-image', 'col-10', 'mr-2', 'p-0', 'mr-2');
-                content.insertBefore(habitacion, container.nextElementSibling);
+                let galeria = document.createElement('div');
+                galeria.classList.add('galeria', 'example-image', 'col-10', 'mr-2', 'p-0', 'mr-2');
+                content.insertBefore(galeria, container.nextElementSibling);
                     let imagen = document.createElement('img');
                     imagen.alt = 'Example image';
-                    habitacion.appendChild(imagen);
+                    galeria.appendChild(imagen);
                     if(FileReader && input.files && input.files.length){
                         let reader = new FileReader();
                         reader.onload = function(){
@@ -401,7 +407,7 @@ let WebButtons = {
                     }else{
                         p.innerHTML = 'Ejemplo';
                     }
-                    habitacion.appendChild(p);
+                    galeria.appendChild(p);
                     p.addEventListener('click', function(){
                         WebButtons.galerias.new_image.show(this);
                     });
@@ -490,6 +496,15 @@ let WebButtons = {
             this.images = document.querySelectorAll('.galerias .image');
             this.prev_arrows = document.querySelectorAll('.galerias .image .prev button');
             this.next_arrows = document.querySelectorAll('.galerias .image .next button');
+            this.delete_buttons = document.querySelectorAll('.galerias .image .trash button');
+            this.setActions();
+            this.new_image.load();
+        },
+        /**
+         * Add actions in the childs of the container.
+         * @param {HTMLElement} container - A container.
+         */
+        setActions(container){
             for(let i = 0; i < this.images.length; i++){
                 this.images[i].children[0].addEventListener('click', function(e){
                     e.preventDefault();
@@ -503,16 +518,35 @@ let WebButtons = {
             for(let i = 0; i < this.prev_arrows.length; i++){
                 this.prev_arrows[i].addEventListener('click', function(e){
                     e.preventDefault();
-                    WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.habitacion).posicion - 1);
+                    WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.galeria).posicion - 1);
                 });
             }
             for(let i = 0; i < this.next_arrows.length; i++){
                 this.next_arrows[i].addEventListener('click', function(e){
                     e.preventDefault();
-                    WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.habitacion).posicion + 1);
+                    WebButtons.galerias.move(this.parentNode.parentNode, JSON.parse(this.parentNode.parentNode.dataset.galeria).posicion + 1);
                 });
             }
-            this.new_image.load();
+            for(let i = 0; i < this.delete_buttons.length; i++){
+                this.delete_buttons[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    let image = this.parentNode.parentNode,
+                        galeria = JSON.parse(image.dataset.galeria),
+                        seccion;
+                    if(galeria.id_tipo == 1){
+                        seccion = 'habitaciones';
+                    }else{
+                        seccion = 'instalaciones';
+                    }
+                    let data = {
+                        'title': 'Borrar la imagen ' + galeria.posicion + ' de las ' + seccion,
+                        'description': '¿Estás seguro de que querés borrar la imagen?',
+                        'action': '/galeria/' + galeria.id_galeria + '/eliminar',
+                        'value': galeria.id_galeria,
+                    };
+                    WebModal.edit(data);
+                });
+            }
         },
         /**
          * Activate the edition mode.
@@ -520,9 +554,16 @@ let WebButtons = {
          */
         active(image){
             if(!WebButtons.galerias.waiting){
-                let images = document.querySelectorAll('.image.active');
-                for(let i = 0; i < images.length; i++){
-                    this.inactive(images[i]);
+                if(JSON.parse(image.dataset.galeria).id_tipo == 1){
+                    let images = document.querySelectorAll('.habitaciones .image.active');
+                    for(let i = 0; i < images.length; i++){
+                        this.inactive(images[i]);
+                    }
+                }else{
+                    let images = document.querySelectorAll('.instalaciones .image.active');
+                    for(let i = 0; i < images.length; i++){
+                        this.inactive(images[i]);
+                    }
                 }
                 if(!image.classList.contains('inactive')){
                     image.children[1].addEventListener('click', function(e){
@@ -556,30 +597,48 @@ let WebButtons = {
          * @param {nummeric} position - The position.
          */
         move(image, position){
-            if(position < 1){
-                position = habitaciones.length;
-            }else if(position >= habitaciones.length){
-                position = 1;
+            let showeds;
+            if(JSON.parse(image.dataset.galeria).id_tipo == 1){
+                if(position < 1){
+                    position = galerias.habitaciones.length;
+                }else if(position >= galerias.habitaciones.length){
+                    position = 1;
+                }
+                showeds = document.querySelectorAll('.habitaciones .image.galeria.showed');
+            }else{
+                if(position < 1){
+                    position = galerias.instalaciones.length;
+                }else if(position >= galerias.instalaciones.length){
+                    position = 1;
+                }
+                showeds = document.querySelectorAll('.instalaciones .image.galeria.showed');
             }
-
-            let showeds = document.querySelectorAll('.image.habitacion.showed');
             let found = false;
-            let habitacion, newHabitacion;
             for(let i = 0; i < showeds.length; i++){
-                habitacion = JSON.parse(image.dataset.habitacion);
-                newHabitacion = JSON.parse(showeds[i].dataset.habitacion);
-                if(newHabitacion.posicion == position){
+                let galeria = JSON.parse(image.dataset.galeria);
+                let newGaleria = JSON.parse(showeds[i].dataset.galeria);
+                if(newGaleria.posicion == position){
                     this.replace(image, showeds[i], position);
                     found = true;
                     break;
                 }
             }
             if(!found){
-                for(let i = 0; i < habitaciones.length; i++){
-                    if(habitaciones[i].posicion == position){
-                        let newImage = this.substitute(habitaciones[i]);
-                        this.replace(image, newImage, position);
-                        break;
+                if(JSON.parse(image.dataset.galeria).id_tipo == 1){
+                    for(let i = 0; i < galerias.habitaciones.length; i++){
+                        if(galerias.habitaciones[i].posicion == position){
+                            let newImage = this.substitute(galerias.habitaciones[i]);
+                            this.replace(image, newImage, position);
+                            break;
+                        }
+                    }
+                }else{
+                    for(let i = 0; i < galerias.instalaciones.length; i++){
+                        if(galerias.instalaciones[i].posicion == position){
+                            let newImage = this.substitute(galerias.instalaciones[i]);
+                            this.replace(image, newImage, position);
+                            break;
+                        }
                     }
                 }
             }
@@ -591,36 +650,46 @@ let WebButtons = {
          * @param {numeric} position - The position.
          */
         async replace(image, newImage, position){
-            let habitacion = image.dataset.habitacion;
-            let newHabitacion = newImage.dataset.habitacion;
-            habitacion = JSON.parse(habitacion);
-            newHabitacion = JSON.parse(newHabitacion);
-            newHabitacion.posicion = habitacion.posicion;
-            habitacion.posicion = position;
+            let galeria = image.dataset.galeria;
+            let newGaleria = newImage.dataset.galeria;
+            galeria = JSON.parse(galeria);
+            newGaleria = JSON.parse(newGaleria);
+            newGaleria.posicion = galeria.posicion;
+            galeria.posicion = position;
             this.inactive(image);
             this.loading(image);
-            await this.update(habitacion.id_galeria, position);
-            image.dataset.habitacion = JSON.stringify(newHabitacion);
-            newImage.dataset.habitacion = JSON.stringify(habitacion);
-            image.children[0].src = document.querySelector('[name=asset]').content + 'storage/' + newHabitacion.imagen;
-            newImage.children[0].src = document.querySelector('[name=asset]').content + 'storage/' + habitacion.imagen;
-            for(let i = 0; i < habitaciones.length; i++){
-                if(habitaciones[i].id_galeria == habitacion.id_galeria){
-                    habitaciones[i].posicion = habitacion.posicion;
-                }else if(habitaciones[i].id_galeria == newHabitacion.id_galeria){
-                    habitaciones[i].posicion = newHabitacion.posicion;
+            await this.update(galeria.id_galeria, position);
+            image.dataset.galeria = JSON.stringify(newGaleria);
+            newImage.dataset.galeria = JSON.stringify(galeria);
+            image.children[0].src = document.querySelector('[name=asset]').content + 'storage/' + newGaleria.imagen;
+            newImage.children[0].src = document.querySelector('[name=asset]').content + 'storage/' + galeria.imagen;
+            if(galeria.id_tipo == 1){
+                for(let i = 0; i < galerias.habitaciones.length; i++){
+                    if(galerias.habitaciones[i].id_galeria == galeria.id_galeria){
+                        galerias.habitaciones[i].posicion = galeria.posicion;
+                    }else if(galerias.habitaciones[i].id_galeria == newGaleria.id_galeria){
+                        galerias.habitaciones[i].posicion = newGaleria.posicion;
+                    }
+                }
+            }else{
+                for(let i = 0; i < galerias.instalaciones.length; i++){
+                    if(galerias.instalaciones[i].id_galeria == galeria.id_galeria){
+                        galerias.instalaciones[i].posicion = galeria.posicion;
+                    }else if(galerias.instalaciones[i].id_galeria == newGaleria.id_galeria){
+                        galerias.instalaciones[i].posicion = newGaleria.posicion;
+                    }
                 }
             }
         },
         /**
          * Make an substitute for one Galeria.
-         * @param {Galeria} habitacion - A Galeria object.
+         * @param {Galeria} galeria - A Galeria object.
          */
-        substitute(habitacion){
+        substitute(galeria){
             let image = document.createElement('div');
-            image.dataset.habitacion = JSON.stringify(habitacion);
+            image.dataset.galeria = JSON.stringify(galeria);
                 let img = document.createElement('img');
-                img.src = document.querySelector('[name=asset]').content + habitacion.imagen;
+                img.src = document.querySelector('[name=asset]').content + galeria.imagen;
                 image.appendChild(img);
             return image;
         },
@@ -661,10 +730,11 @@ let WebButtons = {
             this.waiting = false;
         },
     },
-    /** EventButtons loader. */
+    /** WebButtons loader. */
     load(){
         this.informacion.load();
         this.galerias.load();
+        this.eventos.load();
     },
     /**
      * Activate the edition mode.
@@ -687,10 +757,66 @@ let WebButtons = {
     },
 };
 
+let WebModal = {
+    /** @var {HTMLElement[]} - The created form. */
+    form: null,
+    /** @var {HTMLElement[]} - The accept button. */
+    accept_button: null,
+    /** @var {HTMLElement[]} - The form's action. */
+    action: null,
+    /** @var {HTMLElement[]} - The value. */
+    value: null,
+    /** WebModal loader. */
+    load(){
+        this.accept_button = document.querySelector('.modal-footer .aceptar');
+        this.accept_button.addEventListener('click', function(e){
+            e.preventDefault();
+            WebModal.send();
+        });
+    },
+    /**
+     * Edit the delete modal properties.
+     * @param {array} data - The data.
+     */
+    edit(data){
+        document.querySelector('.modal-title').innerHTML = data.title;
+        document.querySelector('.modal-body').innerHTML = data.description;
+        this.action = data.action;
+        this.value = data.value;
+    },
+    /** Send its form. */
+    send(){
+        if(this.form === null){
+            this.form = document.createElement('form');
+            this.form.method = 'post';
+            document.querySelector('.modal').appendChild(this.form);
+        }
+        this.form.action = this.action;
+            let method = document.createElement('input');
+            form.appendChild(method);
+            method.type = "hidden";
+            method.name = "_method";
+            method.value = "DELETE";
+            
+            let csrf = document.createElement('input');
+            form.appendChild(csrf);
+            csrf.type = "hidden";
+            csrf.name = "_token";
+            csrf.value = document.querySelector('[name=csrf-token]').content;
+
+            let input = document.createElement('input');
+            form.appendChild(input);
+            input.type = "hidden";
+            input.name = "id_galeria";
+            input.value = this.value;
+        this.form.submit();
+    },
+};
+
 document.addEventListener('DOMContentLoaded', function(){
     Tabs.load();
-    EventButtons.load();
     WebButtons.load();
+    WebModal.load();
     document.querySelector('.evento-crear').addEventListener("click", function(){
         window.location = "/panel/evento/crear";
     });

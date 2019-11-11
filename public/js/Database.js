@@ -25,7 +25,7 @@ let Database = {
      */
     async update(URL, BODY, executor){
         return await fetch(URL, {
-            method: 'PUT',
+            method: 'POST',
             body: BODY,
         }).then(respuesta => {
             respuesta.json().then(async json => {

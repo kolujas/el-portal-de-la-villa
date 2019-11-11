@@ -10,9 +10,11 @@
     Route::post('/evento/crear', 'EventoController@doCrear')->name('evento.doCrear');
     Route::get('/panel/evento/{slug}/editar', 'EventoController@showEditar')->name('evento.showEditar');
     Route::put('/evento/{id_evento}/editar', 'EventoController@doEditar')->name('evento.doEditar');
+    Route::delete('/evento/{id_evento}/eliminar', 'EventoController@doEliminar')->name('evento.doEliminar');
 
 /** BannerController */
     Route::put('/banner/{id_banner}/editar', 'BannerController@doEditar')->name('banner.doEditar');
 
 /** GaleriaController */
     Route::post('/galeria/{id_tipo}/agregar', 'GaleriaController@doAgregar')->name('galeria.doAgregar');
+    Route::delete('/galeria/{id_galeria}/eliminar', 'GaleriaController@doEliminar')->name('galeria.doEliminar');

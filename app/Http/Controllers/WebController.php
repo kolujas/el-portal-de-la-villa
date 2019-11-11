@@ -27,8 +27,10 @@
         /** Carga el panel de administracion. */
         public function panel(){
             $banners = Banner::all();
-            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(8);
+            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'habitaciones');
             $habitaciones_totales = Galeria::where('id_tipo', '=', 1)->get();
+            $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'instalaciones');
+            $instalaciones_totales = Galeria::where('id_tipo', '=', 2)->get();
             $eventos = Evento::all();
 
             if(File::get('storage/archivos/titulo.txt')){
@@ -47,7 +49,11 @@
                 'archivos' => $archivos,
                 'banners' => $banners,
                 'habitaciones' => $habitaciones,
-                'habitaciones_totales' => $habitaciones_totales,
+                'instalaciones' => $instalaciones,
+                'galerias' => [
+                    'habitaciones' => $habitaciones_totales,
+                    'instalaciones' => $instalaciones_totales,
+                ],
                 'eventos' => $eventos,
                 'validation' => json_encode(Web::$validation['editar']),
             ]);

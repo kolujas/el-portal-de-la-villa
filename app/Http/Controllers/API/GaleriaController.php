@@ -22,7 +22,7 @@
 
             $galeria_encontrada = null;
 
-            $galerias = Galeria::where('id_tipo', '=', 1)->get();
+            $galerias = Galeria::where('id_tipo', '=', $galeria_seleccionada->id_tipo)->get();
 
             foreach($galerias as $galeria){
                 if($galeria->posicion == $inputData['posicion']){

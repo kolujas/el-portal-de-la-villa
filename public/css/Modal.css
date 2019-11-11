@@ -8,17 +8,25 @@
     background: rgba(34, 34, 34, .5);
 } */
 
+.modal-footer button{
+    border-radius: .25rem;
+}
+
 .modal-footer .cancelar{
     background-color: var(--color-cuatro);
     color: #fff;
     outline: none;
 }
 
+.modal-footer .aceptar{
+    background-color: var(--color-uno);
+    color: #fff;
+}
+
 .modal-footer .cancelar, .aceptar:focus{
     box-shadow: none;
 }
 
-.modal-footer .aceptar{
-    background-color: var(--color-uno);
-    color: #fff;
+.modal form{
+    display: none;
 }

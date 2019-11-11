@@ -12,8 +12,8 @@
         /**
          * Valida y agrega una imagen en la Galeria.
          * 
-         * @param $request Request.
-         * @param $id_tipo El tipo de Galeria.
+         * @param $request - Request.
+         * @param $id_tipo - El tipo de Galeria.
          */
         public function doAgregar(Request $request, $id_tipo){
             $inputData = $request->all();
@@ -47,5 +47,22 @@
             Galeria::create($inputData);
             
             return redirect('/panel#galerias')->with('status', 'Imagen subida correctamente.');
+        }
+
+        /**
+         * Elimina la imagen de la Galeria seleccionado.
+         * 
+         * @param $id_galeria - El id de la imagen.
+         */
+        public function doEliminar($id_galeria){
+            $galeria = Galeria::find($id_galeria);
+
+            if(isset($galeria->imagen) && !empty($galeria->imagen)){
+                Storage::delete($galeria->imagen);
+            }
+                
+            $galeria->delete();
+                
+            return redirect('panel#galerias')->with('status', 'Galeria eliminada correctamente.');
         }
     }

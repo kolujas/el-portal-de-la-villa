@@ -2,7 +2,8 @@
     /** @var object $archivos */
     /** @var Banner[] $banners */
     /** @var Galeria[] $habitaciones */
-    /** @var Galeria[] $habitaciones_totales */
+    /** @var Galeria[] $instalaciones */
+    /** @var array $galerias */
     /** @var Evento[] $eventos */
     /** @var array $vaidation */
 ?>
@@ -102,7 +103,7 @@
                 </section>
             </div>
             <div id="galerias" class="galerias tab-content p-2 pt-md-0 pr-md-0 pb-md-0">
-                <section>
+                <section class="habitaciones">
                     <div class="title ml-lg-2">
                         <h2 class="mb-0 p-2">Habitaciones</h2>
                     </div>
@@ -118,34 +119,34 @@
                             </div>
                             <div class="form-accions d-flex justify-content-between">
                                 <label class="accept-file m-0">
-                                    <button class="accept-button btn p-0" type="submit">
-                                    <span class="input-text mr-2">Aceptar</span>
-                                    <i class="input-icon fas fa-check"></i>
+                                    <button class="accept-button btn p-0">
+                                        <span class="input-text mr-2">Aceptar</span>
+                                        <i class="input-icon fas fa-check"></i>
                                     </button>
                                 </label>
                                 <label class="cancel-file m-0">
-                                    <button class="cancel-button btn p-0" type="submit">
-                                    <span class="input-text mr-2">Cancelar</span>
-                                    <i class="input-icon fas fa-times"></i>
+                                    <button class="cancel-button btn p-0">
+                                        <span class="input-text mr-2">Cancelar</span>
+                                        <i class="input-icon fas fa-times"></i>
                                     </button>
                                 </label>
                             </div>
                         </div>
                         @foreach($habitaciones as $habitacion)
-                            <div class="habitacion image col-10 mr-2 p-0 showed mr-2" data-habitacion="{{$habitacion}}">
+                            <div class="galeria image col-10 mr-2 p-0 showed mr-2" data-galeria="{{$habitacion}}">
                                 <img src="{{asset('storage/' . $habitacion->imagen)}}" alt="Example image">
                                 <label class="arrow prev m-0">
-                                    <button class="prev-button btn p-0" type="submit">
+                                    <button class="prev-button btn p-0">
                                         <i class="button-icon fas fa-chevron-left"></i>
                                     </button>
                                 </label>
                                 <label class="arrow next m-0">
-                                    <button class="next-button btn p-0" type="submit">
+                                    <button class="next-button btn p-0">
                                         <i class="button-icon fas fa-chevron-right"></i>
                                     </button>
                                 </label>
                                 <label class="trash m-0">
-                                    <button class="dalete-button btn p-0" type="submit">
+                                    <button class="dalete-button btn p-0" data-toggle="modal" data-target="#exampleModal">
                                         <i class="button-icon fas fa-trash"></i>
                                     </button>
                                 </label>
@@ -157,12 +158,64 @@
                             @endfor
                         @endif
                     </div>
-                    {{ $habitaciones->fragment('galerias')->links() }}
+                    {{ $habitaciones->fragment('galerias')->appends(['instalaciones' => $instalaciones->currentPage()])->links() }}
                 </section>
-                <section>
+                <section class="instalaciones">
                     <div class="title ml-lg-2">
                         <h2 class="mb-0 p-2">Instalaciones</h2>
                     </div>
+                    <div class="content row d-md-flex justify-content-md-left py-2 mx-2 mr-lg-0">
+                        <div class="image-input col-10 mr-2 p-0">
+                            <div class="form">
+                                <label class="input-file">
+                                    <input type="file" name="imagen">
+                                    <span class="input-text mr-2">Agregar</span>
+                                    <i class="input-icon fas fa-plus"></i>
+                                </label>
+                                <input type="hidden" name="id_tipo" value="2">
+                            </div>
+                            <div class="form-accions d-flex justify-content-between">
+                                <label class="accept-file m-0">
+                                    <button class="accept-button btn p-0">
+                                    <span class="input-text mr-2">Aceptar</span>
+                                    <i class="input-icon fas fa-check"></i>
+                                    </button>
+                                </label>
+                                <label class="cancel-file m-0">
+                                    <button class="cancel-button btn p-0">
+                                    <span class="input-text mr-2">Cancelar</span>
+                                    <i class="input-icon fas fa-times"></i>
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                        @foreach($instalaciones as $instalacion)
+                            <div class="galeria image col-10 mr-2 p-0 showed mr-2" data-galeria="{{$instalacion}}">
+                                <img src="{{asset('storage/' . $instalacion->imagen)}}" alt="Example image">
+                                <label class="arrow prev m-0">
+                                    <button class="prev-button btn p-0">
+                                        <i class="button-icon fas fa-chevron-left"></i>
+                                    </button>
+                                </label>
+                                <label class="arrow next m-0">
+                                    <button class="next-button btn p-0">
+                                        <i class="button-icon fas fa-chevron-right"></i>
+                                    </button>
+                                </label>
+                                <label class="trash m-0">
+                                    <button class="dalete-button btn p-0" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="button-icon fas fa-trash"></i>
+                                    </button>
+                                </label>
+                            </div>
+                        @endforeach
+                        @if((count($instalaciones) + 1) % 3 != 0)
+                            @for($i = 0; $i < (count($instalaciones) % 3); $i++)
+                                <div class="substitute col-10 mr-0 p-0"></div>
+                            @endfor
+                        @endif
+                    </div>
+                    {{ $instalaciones->fragment('galerias')->appends(['habitaciones' => $habitaciones->currentPage()])->links() }}
                 </section>
             </div>
             <div id="eventos" class="eventos tab-content p-2 pt-md-0 pr-md-0 pb-md-0">
@@ -177,7 +230,7 @@
                         </button>
                     </div>
                     @foreach($eventos as $evento)
-                        <div class="content row d-md-flex justify-content-md-end p-2">
+                        <div class="event content row d-md-flex justify-content-md-end p-2">
                             <div class="informacion col-12 col-md-6 col-lg-8">
                                 <div class="titulo">
                                     <h3 class="mb-2">{{$evento->titulo}}</h3>
@@ -200,7 +253,7 @@
                                         <span class="button-text mr-2">Editar</span>
                                         <i class="fas fa-pen"></i>
                                     </a>
-                                    <button type="button" class="btn btn-primary evento-borrar btn p-2" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" data-titulo="{{$evento->titulo}}" data-id_evento="{{$evento->id_evento}}" class="btn btn-primary evento-borrar btn p-2" data-toggle="modal" data-target="#exampleModal">
                                         <span class="button-text mr-2">Borrar</span>
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -215,12 +268,6 @@
 
     @component('components.modal')
     @endcomponent
-        
-    <form class="delete-form d-none" action="#" method="post">
-        @csrf
-        @method('DELETE')
-        <input type="hidden" name="seccion" value="panel">
-    </form>
 @endsection
 
 @section('footer')
@@ -229,7 +276,7 @@
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="{{asset('js/Detabase.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/Database.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Validation/Validation.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Validation/Rules.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Validation/Messages.js')}}"></script>
@@ -238,7 +285,7 @@
     <script type="text/javascript" src="{{asset('js/Validation/Invalidator.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/Modal.js')}}"></script>
     <script>
-        let habitaciones = @json($habitaciones_totales);
+        let galerias = @json($galerias);
     </script>
     <script type="text/javascript" src="{{asset('js/web/panel.js')}}"></script>
 @endsection

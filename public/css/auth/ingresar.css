@@ -1,0 +1,105 @@
+/* Navmenu */
+.nav-menu{
+    --secondary-color: var(--color-cuatro);
+}
+
+.container-fluid > .row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.invalid-tooltip{
+    --primary-color: var(--color-cuatro);
+    width: 100%;
+}
+
+.ingresar .form-validate .input-name{
+    flex-basis: 25%;
+    color: var(--color-cuatro);
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.ingresar .form-validate .form-control{
+    height: 2.5rem;
+    border: 1px solid var(--color-cuatro);
+    background: transparent;
+}
+
+.ingresar .form-validate textarea.form-control{
+    height: 7.5rem;
+    overflow: hidden;
+}
+
+.ingresar .form-validate .input-group .disabled-text{
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-cuatro);
+    border: none;
+    border: 1px solid var(--color-cuatro);
+    border-right: none;
+}
+
+.ingresar .form-validate .input-group input{
+    flex-basis: calc(100% - 25%);
+    height: 2.5rem;
+    border: 1px solid var(--color-cuatro);
+}
+
+.form-submit{
+    background: var(--color-uno);
+    border: none;
+    outline: none;
+    color: white;
+    padding: .5rem;
+    text-transform: uppercase;
+    border-radius: .25rem;
+}
+
+/* MD */
+@media(min-width: 768px){
+    .input-file{
+        align-items: flex-start;
+    }
+
+    .input-file .file-button{
+        min-width: calc(40% + .25rem);
+    }
+
+    .input-file .file-text{
+        padding-top: .5rem;
+    }
+    
+    .ingresar .form-validate .input-name{
+        flex-basis: 20%;
+    }
+
+    .ingresar .form-validate .input-group .disabled-text{
+        flex-basis: 20%;
+    }
+    
+    .ingresar .form-validate .input-group input{
+        flex-basis: calc(100% - 20%);
+    }
+
+    .file-img{
+        margin-top: 0;
+    }
+
+    .ingresar .form-validate textarea.form-control{
+        height: 5rem;
+    }
+}
+
+/* LG */
+@media(min-width: 1024px){
+    /**/
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
+}

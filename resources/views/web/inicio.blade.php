@@ -1,10 +1,15 @@
+<?php
+    /** @var object $archivos */
+    /** @var Banner[] $banners */
+    /** @var array $galerias */
+    /** @var array $vaidation */
+?>
 @extends('layout.index')
 
 @section('css')
     <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
-
 @endsection
 
 @section('titulo')
@@ -25,27 +30,19 @@
                 <li data-target="#carouselCaptions" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active d-flex justify-content-center align-items-center">
-                    <img src="{{asset('img/banner/1.jpg')}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
-                        <h5 class="text-white slider-heading">First slide label</h5>
-                        <p class="slider-text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                @foreach($banners as $banner)
+                    @if($banner->id_banner == 1)
+                    <div class="carousel-item active d-flex justify-content-center align-items-center">
+                    @else
+                    <div class="carousel-item d-flex justify-content-center align-items-center">
+                    @endif
+                        <img src="{{asset('storage/' . $banner->imagen)}}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
+                            <h5 class="text-white slider-heading">{{$banner->titulo}}</h5>
+                            <p class="slider-text">{{$banner->descripcion}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item d-flex justify-content-center align-items-center">
-                    <img src="{{asset('img/banner/2.png')}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
-                        <h5 class="text-white slider-heading">Second slide label</h5>
-                        <p class="slider-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item d-flex justify-content-center align-items-center">
-                    <img src="{{asset('img/banner/1.jpg')}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
-                        <h5 class="text-white slider-heading">Third slide label</h5>
-                        <p class="slider-text">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <a class="carousel-control-prev indicators" href="#carouselCaptions" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -67,12 +64,10 @@
     <!-- contenido -->
     <div class="informacion-inicial">
         <div class="row">
-            <div class="col-12 text-center mt-5 div-informacion-inicial">
+            <div id="informacion" class="col-12 text-center mt-5 div-informacion-inicial">
                 <span class="lead mini-encabezado">Viví Córdoba</span>
-                <h2 class="py-3">Hotel el Portal de la villa 31</h2>
-                <p class="px-5 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, incidunt?</p>
-                <p class="px-5 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, incidunt?</p>
-                <p class="px-5 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, incidunt?</p>
+                <h2 class="py-3">{{$archivos->titulo}}</h2>
+                <p class="px-5 text-dark">{{nl2br($archivos->descripcion)}}</p>
             </div>
 
             <div class="col-lg-12 text-center mt-5 mb-xl-5 presentacion-div flex-wrap">
@@ -122,55 +117,18 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery-container">
+
+            <div id="galeria" class="gallery-container">
                 <div class="tz-gallery galeria pt-xl-0">
                     <h2 class="text-center my-5">Galeria de fotos</h2>
                     <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/park.jpg')}}">
-                                <img src="{{asset('/img/galeria/park.jpg')}}" alt="Park">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/bridge.jpg')}}">
-                                <img src="{{asset('/img/galeria/bridge.jpg')}}" alt="Bridge">
-                            </a>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/tunnel.jpg')}}">
-                                <img src="{{asset('/img/galeria/tunnel.jpg')}}" alt="Tunnel">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/coast.jpg')}}">
-                                <img src="{{asset('/img/galeria/coast.jpg')}}" alt="Coast">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/rails.jpg')}}">
-                                <img src="{{asset('/img/galeria/rails.jpg')}}" alt="Rails">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/traffic.jpg')}}">
-                                <img src="{{asset('/img/galeria/traffic.jpg')}}" alt="Traffic">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/rocks.jpg')}}">
-                                <img src="{{asset('/img/galeria/rocks.jpg')}}" alt="Rocks">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/benches.jpg')}}">
-                                <img src="{{asset('/img/galeria/benches.jpg')}}" alt="Benches">
-                            </a>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <a class="lightbox" href="{{asset('/img/galeria/sky.jpg')}}">
-                                <img src="{{asset('/img/galeria/sky.jpg')}}" alt="Sky">
-                            </a>
-                        </div>
+                        @foreach($galerias['habitaciones'] as $habitacion)
+                            <div class="col-sm-6 col-md-4">
+                                <a class="lightbox" href="{{asset('storage/' . $habitacion->imagen)}}">
+                                    <img src="{{asset('storage/' . $habitacion->imagen)}}" alt="Park">
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 

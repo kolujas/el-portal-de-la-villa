@@ -11,15 +11,28 @@
 
     <div class="nav-row">
         <ul class="menu-list">
-            <li><a href="/#contecto" class="nav-link">
+            <li><a href="/demo#informacion" class="nav-link">
                 El Hotel
             </a></li>
-            <li><a href="/#contecto" class="nav-link">
+            <li><a href="/demo#galeria" class="nav-link">
                 Galeria
             </a></li>
-            <li><a href="/#contecto" class="nav-link">
+            <li><a href="/demo#contacto" class="nav-link">
                 Contacto
             </a></li>
+            @if(Auth::check())
+            <li class="collapsable closed">
+                <a href="#" class="collapsable-button">Panel<i class="fas fa-sort-down"></i></a>
+                <ul class="collapsable-menu">
+                    <li><a href="/panel#personalizar" class="collapsable-link text-white">Personalizar Web</a></li>
+                    <li><a href="/panel#galerias" class="collapsable-link text-white">Galerias</a></li>
+                    <li><a href="/panel#eventos" class="collapsable-link text-white">Eventos</a></li>
+                </ul>
+            </li>
+            <li><a href="/salir" class="nav-link">
+                Cerrar Sesión
+            </a></li>
+            @endif
         </ul>
     </div>
 

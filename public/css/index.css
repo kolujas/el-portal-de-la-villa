@@ -94,17 +94,19 @@ body{
     .nav-menu .nav-title{
         flex-basis: 40%;
     }
-    
-    .nav-menu .nav-row{
-        flex-basis: 50%;
-    }
 
     .nav-menu .nav-row:first-of-type{
         height: 4.6rem;
+        flex-basis: 40%;
     }
 
     .nav-menu .nav-row{
         height: 4.6rem;
+        flex-basis: 60%;
+    }
+
+    .nav-menu .menu-list li{
+        margin-left: 0;
     }
 }
 

@@ -47,9 +47,9 @@
                     'organizador.min' => 'El organizador del evento debe tener al menos :min caracteres.',
                     'organizador.max' => 'El organizador del evento no puede tener más de :max caracteres.',
                     'url.required' => 'La URL del evento es obligatoria.',
-                    'url.url' => 'La URL del evento debe ser una URL valida.',
+                    'url.url' => 'La URL del evento no es una URL valida.',
                     'imagen.required' => 'La imagen del evento es obligatoria.',
-                    'imagen.mimetypes' => 'La imagen del evento debe ser una imagen con formato JPG/JPEG o PNG.',
+                    'imagen.mimetypes' => 'La imagen del evento no es una imagen valida, debe ser formato JPG/JPEG o PNG.',
                 ],
             ],'editar' => [
                 'rules' => [
@@ -71,8 +71,8 @@
                     'organizador.min' => 'El organizador del evento debe tener al menos :min caracteres.',
                     'organizador.max' => 'El organizador del evento no puede tener más de :max caracteres.',
                     'url.required' => 'La URL del evento es obligatoria.',
-                    'url.url' => 'La URL del evento debe ser una URL valida.',
-                    'imagen.mimetypes' => 'La imagen del evento debe ser una imagen con formato JPG/JPEG o PNG.',
+                    'url.url' => 'La URL del evento no es una URL valida.',
+                    'imagen.mimetypes' => 'La imagen del evento no es una imagen valida, debe ser formato JPG/JPEG o PNG.',
                 ],
             ]
         ];

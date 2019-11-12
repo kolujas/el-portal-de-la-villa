@@ -547,6 +547,24 @@ let WebButtons = {
                     WebModal.edit(data);
                 });
             }
+            let menu_buttons = document.querySelectorAll('.collapsable-link');
+            for(let i = 0; i < menu_buttons.length; i++){
+                menu_buttons[i].addEventListener('click', function(e){
+                    e.preventDefault();
+                    let href = this.href.split("#").pop();
+                    switch(href){
+                        case 'personalizar':
+                            Tabs.switch(0);
+                        break;
+                        case 'galerias':
+                            Tabs.switch(1);
+                        break;
+                        case 'eventos':
+                            Tabs.switch(2);
+                        break;
+                    }
+                });
+            }
         },
         /**
          * Activate the edition mode.

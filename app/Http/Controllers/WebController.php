@@ -19,8 +19,29 @@
         }
 
         public function inicio(){
+            $banners = Banner::all();
+            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'habitaciones');
+            $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'instalaciones');
+
+            if(File::get('storage/archivos/titulo.txt')){
+                $archivos = (object) [
+                    'titulo' => File::get('storage/archivos/titulo.txt'),
+                    'descripcion' => File::get('storage/archivos/descripcion.txt'),
+                ];
+            }else{
+                $archivos = (object) [
+                    'titulo' => File::get('archivos/titulo.txt'),
+                    'descripcion' => File::get('archivos/descripcion.txt'),
+                ];
+            }
+            
             return view('web.inicio', [
-                //
+                'archivos' => $archivos,
+                'banners' => $banners,
+                'galerias' => [
+                    'habitaciones' => $habitaciones,
+                    'instalaciones' => $instalaciones,
+                ],
             ]);
         }
 

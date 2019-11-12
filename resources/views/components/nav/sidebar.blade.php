@@ -7,15 +7,23 @@
 
     <div class="sidebar-content">
         <ul class="sidebar-menu">
-            <li><a href="/#categorias" class="nav-link text-white">
+            <li><a href="/demo#informacion" class="nav-link text-white">
                 El Hotel
             </a></li>
-            <li><a href="/#contecto" class="nav-link text-white">
+            <li><a href="/demo#galeria" class="nav-link text-white">
                 Galeria
             </a></li>
-            <li><a href="/ayuda" class="nav-link text-white">
+            <li><a href="/demo#contacto" class="nav-link text-white">
                 Contacto
             </a></li>
+            @if(Auth::check())
+            <li><a href="/panel" class="nav-link text-white">
+                Panel
+            </a></li>
+            <li><a href="/salir" class="nav-link text-white">
+                Cerrar Sesion
+            </a></li>
+            @endif
         </ul>
     </div>
 

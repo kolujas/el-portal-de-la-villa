@@ -28,7 +28,7 @@
                 $filepath = $request->file('imagen')->hashName('banners');
                 
                 $img = Image::make($request->file('imagen'))
-                        ->resize(400, 400, function($constrait){
+                        ->resize(1200, 1200, function($constrait){
                         	$constrait->aspectRatio();
                         	$constrait->upsize();
                         });

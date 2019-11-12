@@ -29,10 +29,9 @@
                     'id_tipo' => 'required',
                 ], 'messages' => [
                     'imagen.required' => 'La imagen no puede estar vacía.',
-                    'imagen.mimetypes' => 'La imagen debe ser formato JPG/JPEG o PNG.',
+                    'imagen.mimetypes' => 'La imagen no es una imagen valida, debe ser formato JPG/JPEG o PNG.',
                     'id_tipo.required' => 'El tipo de la imagen es obligatorio.',
                 ],
-            ], 'editar' => [
             ], 'mover' => [
                 'rules' => [
                     'posicion' => 'required|numeric',

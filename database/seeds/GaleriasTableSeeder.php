@@ -9,11 +9,20 @@
          * @return void
          */
         public function run(){
-            $galeria = Galeria::find(1);
-            $inputData = ['posicion' => 1];
-            $galeria->update($inputData);
-            $galeria = Galeria::find(2);
-            $galeria->update($inputData);
+            Galeria::create([
+                'id_galeria' => 1,
+                'imagen' => 'galeria/1.jpg',
+                'posicion' => 1,
+                'id_usuario' => 1,
+                'id_tipo' => 1,
+            ]);
+            Galeria::create([
+                'id_galeria' => 2,
+                'imagen' => 'galeria/1.jpg',
+                'posicion' => 1,
+                'id_usuario' => 1,
+                'id_tipo' => 2,
+            ]);
             Galeria::create([
                 'id_galeria' => 3,
                 'imagen' => 'galeria/1.jpg',

@@ -2,11 +2,11 @@
         <div class="row text-center footer-container">
             <div class="col-6 col-lg-5 col-xl-5 py-4 info-contacto">
                 <h3 class="text-white">Dónde estamos</h3>
-                    <p class="text-center">Av. Costanera 199 esq. Av 3 costa del este, Partido de la costa, Buenos Aires</p>
+                    <p class="text-center">San Martín 194, Villa del Dique, Córdoba</p>
             </div>
             <div class="col-6 col-lg-5 col-xl-5 py-4 reservas">
             <h3 class="text-white">Reservas</h3>
-                    <p class="text-center text-break">(02246) 435 580/540/460
+                    <p class="text-center text-break">03546 49-7995‬
                     reservas@villadelparque.com.ar</p>   
             </div>
         </div>

@@ -119,8 +119,8 @@
             </div>
 
             <div id="galeria" class="gallery-container col-12 col-md-10 px-3 mx-md-auto px-md-0">
+                <h2 class="text-center mt-5 mb-3">Galeria de fotos</h2>
                 <div class="tz-gallery galeria p-0">
-                    <h2 class="text-center mt-5 mb-3">Galeria de fotos</h2>
                     <div class="row">
                         @foreach($galerias['habitaciones'] as $habitacion)
                             <div class="col-sm-6 col-md-4">

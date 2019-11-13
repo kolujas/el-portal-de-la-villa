@@ -174,6 +174,31 @@
     outline: none !important;
 }
 
+.galeria{
+    width: 100%;
+    overflow: hidden;
+}
+
+.galeria .row{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.galeria .row div{
+    min-width: 350px;
+}
+
+.tz-gallery .lightbox img{
+    height: 300px;
+    object-fit: cover;
+}
+
+#baguetteBox-overlay .full-image img{
+    object-fit: cover !important;
+    height: 400px !important;
+    width: 100% !important;
+}
+
 /* MD */
 
 @media(min-width: 768px){
@@ -216,6 +241,17 @@
     /* separador con iconos */    
     .icon-text{
         font-size: 1.15rem;
+    }
+
+    .tz-gallery .lightbox img{
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    #baguetteBox-overlay .full-image img{
+        height: auto !important;
+        width: auto !important;
     }
 }
 

@@ -727,7 +727,6 @@
         flex-basis: calc(33% - .5rem);
         min-width: calc(33% - .5rem);
         height: 250px;
-        border-right: 1px solid red
     }
 
     .tabs .tab-body .eventos section .empty-event .empty-titulo{

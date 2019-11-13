@@ -254,7 +254,7 @@
     
     
     /* separador con iconos */
-    .separador-iconos:hover .fa-ship{
+    .icon-text:hover:hover .separador-icon{
         color: var(--color-tres-uno);
     }
     
@@ -309,9 +309,8 @@
         top: 3.2rem;
     }
     
-    
     /* separador con iconos */
-    .separador-iconos .fa-ship{
+    .separador-iconos .separador-icon{
         font-size: 3rem;
         color: var(--color-tres-hover);
     }

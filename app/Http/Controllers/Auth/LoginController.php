@@ -49,12 +49,10 @@
             $request->validate(User::$validation['ingresar']['rules'], User::$validation['ingresar']['messages']);
 
             if(isset($inputData['recordar'])){
-                foreach($inputData['recordar'] as $checkbox){
-                    if($checkbox){
-                        $recordar = true;
-                    }else{
-                        $recordar = false;
-                    }
+                if($inputData['recordar'] == 'on'){
+                    $recordar = true;
+                }else{
+                    $recordar = false;
                 }
             }else{
                 $recordar = false;

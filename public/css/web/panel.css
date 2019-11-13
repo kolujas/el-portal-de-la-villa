@@ -145,7 +145,7 @@
 
 .tabs .tab-body .tab-content section .content .imagen img{
     width: 100%;
-    height: 10rem;
+    height: 300px;
     object-fit: cover;
 }
 
@@ -244,6 +244,12 @@
     overflow-x: auto;
     overflow-y: hidden;
     flex-wrap: nowrap;
+    height: 300px;
+}
+
+.tabs .tab-body .galerias section .content .image-input.col-10{
+    flex-basis: 300px;
+    max-width: 300px;
 }
 
 .tabs .tab-body .galerias section .content .image-input form,
@@ -327,6 +333,8 @@
 .tabs .tab-body .galerias section .content .example-image{
     position: relative;
     cursor: pointer;
+    flex-basis: 300px;
+    max-width: 300px;
 }
 
 .tabs .tab-body .galerias .content .image label{
@@ -432,7 +440,7 @@
 .tabs .tab-body .galerias .content .image img,
 .tabs .tab-body .galerias .content .example-image img{
     width: 100%;
-    height: 10rem;
+    height: 100%;
     object-fit: cover;
     border-radius: .25rem;
 }
@@ -620,11 +628,16 @@
         height: 4.5rem;
     }
 
-    .tabs .tab-body .galerias section .content .image-input,
-    .tabs .tab-body .galerias .content .example-image,
-    .tabs .tab-body .galerias .content .image{
+    .tabs .tab-body .galerias.tab-content section .content{
+        height: fit-content;
+    }
+
+    .tabs .tab-body .galerias section .content .image-input.col-10,
+    .tabs .tab-body .galerias section .content .example-image,
+    .tabs .tab-body .galerias section .content .image{
         position: relative;
         flex-basis: calc(32.9% - .5rem);
+        height: 250px;
         margin-bottom: 1rem;
         overflow: hidden;
     }

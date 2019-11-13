@@ -99,7 +99,7 @@
                             <p class="m-0 mt-3 font-weight-bold">Transporte</p>
                         </div>
                         <div class="icon-text col-4 col-xl-2 mb-5 mb-xl-0">
-                        <i class="fas separador-icon fa-concierge-bell"></i>
+                            <i class="fas separador-icon fa-concierge-bell"></i>
                             <p class="m-0 mt-3 font-weight-bold">Check in 24hs</p>
                         </div>
                         <div class="icon-text col-4 col-xl-2">

@@ -11,7 +11,6 @@
 .input-file .file-button{
     --primary-color: var(--color-uno);
     --shadow-color: transparent;
-    border-radius: 0;
     font-size: .8rem;
     width: 25%;
 }
@@ -62,6 +61,7 @@
     color: white;
     padding: .5rem;
     text-transform: uppercase;
+    border-radius: .25rem;
 }
 
 /* MD */

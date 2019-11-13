@@ -15,7 +15,7 @@
             ],'editar' => [
                 'rules' => [
                     'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required|max:220',
+                    'descripcion' => 'required',
                 ], 'messages' => [
                     'titulo.required' => 'El título principal no puede estar vacío.',
                     'titulo.min' => 'El título principal debe tener al menos :min caracteres.',

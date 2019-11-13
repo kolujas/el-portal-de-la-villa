@@ -63,6 +63,6 @@
                 
             $galeria->delete();
                 
-            return redirect('panel#galerias')->with('status', 'Galeria eliminada correctamente.');
+            return redirect('panel#galerias')->with('status', 'Imagen eliminada correctamente.');
         }
     }

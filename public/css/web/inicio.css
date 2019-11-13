@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 .container-fluid{
@@ -23,7 +23,7 @@
     z-index: 1;
 }
 
-/* slider */
+/* Slider */
 .carousel{
     position: absolute;
     top: 0; 
@@ -48,15 +48,8 @@
     height: 100%;
 }
 
-/* .slider-heading, .slider-text{
-    position: relative;
-    bottom: 15rem;
-} */
-
 .carousel .redirigirBtn{
    z-index: 999;
-   position: absolute;
-   top: 60%;
 }
 
 .carousel-control-prev{
@@ -75,44 +68,48 @@
     transform: none;
 }
 
-.redes-sociales a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fa-facebook:before{
-    font-size: 2rem;
-    cursor: pointer;
-    color: #4C6EF5 !important;
-    color: var(--color-cuatro);
-    z-index: 999;
-}
-
-.fa-instagram:before{
-    font-size: 2rem;
-    cursor: pointer;
-    color: #F783AC !important;
-    color: var(--color-cuatro);
-    z-index: 999;
-}
-
 .redes-sociales{
     transform: translateY(-50%);
     top: 48%;
     left: 0;
     width: 50px;
-    height: 100px;
     flex-wrap: wrap;
     background-color: #F8F9FA;
     z-index: 2;
     border-radius: .25rem;
 }
 
+.redes-sociales a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-sociales .icon{
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.fa-instagram:before{
+    color: #F783AC !important;
+}
+
+.fa-facebook:before{
+    color: #4C6EF5 !important;
+}
+
 .carousel-inner{
     background-color: #000;
     z-index: 999;
     height: 75vh;
+}
+
+.carousel .carousel-footer{
+    position: absolute;
+    bottom: 3.5rem;
+    left: 0;
+    width: 100%;
 }
 
 /* informacion-inicial */
@@ -134,25 +131,26 @@
     width: 80%;
     background-color: #fff;
     position: relative;
-    bottom: 3rem;
+    transform: translateY(-3rem);
     margin: auto;
 }
 
 /* separador con iconos */
-
-.separador-iconos .fa-ship, .fa-shuttle-van, .fa-concierge-bell, .fa-coffee, .fa-swimming-pool, .fa-wifi{
+.separador-iconos .separador-icon{
     font-size: 3rem;
-    /* color: #495057; */
     color: var(--color-tres-hover);
+    transition: 500ms;
 }
 
 .icon-text{
-    /* color: #514040; */
     color: var(--color-uno);
-    font-size: 1.15rem;
+    font-size: 1rem;
 }
 
 /* formulario */
+.contacto{
+    margin-top: 4rem;
+}
 
 .form-control{
     border: 1px solid #ced4da;
@@ -167,19 +165,22 @@
     color: var(--color-uno);
 }
 
-.form-group .enviar-contacto{
+.enviar-contacto{
+    border-radius: .25rem;
     background-color: var(--color-cuatro);
 }
 
 #previous-button, #next-button, #close-button{
     outline: none !important;
 }
-    
-
 
 /* MD */
 
 @media(min-width: 768px){
+    .redes-sociales .icon{
+        font-size: 2rem;
+    }
+    
     /* slider */
     .banner-div{
         height: 65vh;
@@ -190,8 +191,6 @@
     }
     
     .carousel-inner{
-        /* background-color: #000; */
-        z-index: 999;
         height: 65vh;
     }
     
@@ -201,13 +200,6 @@
 
     .carousel-caption p{
         width: 100%;
-    }
-
-    
-    .carousel .redirigirBtn{
-       z-index: 999;
-       position: absolute;
-       top: 60%;
     }
 
     .redirigirBtn:focus{
@@ -221,17 +213,8 @@
         width: 70%;
     }
     
-    /* separador con iconos */
-    
-    .separador-iconos .fa-ship {
-        font-size: 3rem;
-        /* color: #495057; */
-        color: var(--color-tres-hover);
-    }
-    
+    /* separador con iconos */    
     .icon-text{
-        /* color: #514040; */
-        color: var(--color-uno);
         font-size: 1.15rem;
     }
 }
@@ -244,14 +227,8 @@
     }
        
     /* presentacion */
-
-    .presentacion-div .card-title{
-        color: var(--color-uno);
-    }
-
     .presentacion-div .card-body{
         width: 80%;
-        background-color: #fff;
         position: absolute;
         right: 0;
         height: 15rem;
@@ -277,32 +254,18 @@
     
     
     /* separador con iconos */
-    
-    .separador-iconos .fa-ship{
-        font-size: 3rem;
-        color: var(--color-tres-hover);
+    .separador-iconos:hover .fa-ship{
+        color: var(--color-tres-uno);
     }
     
     .icon-text{
-        color: var(--color-uno);
         font-size: 1.15rem;
     }
-
-    /* .banner-div{
-        height: calc(100vh - 7.9rem);
-    } */
-
-    /* .black-background{
-        height: calc(100vh - 7.9rem);
-        filter: opacity(0.1);
-    }     */
 }
 
 /* XL */
 @media(min-width: 1200px){
-
-    /* slider */
-
+    /* Slider */
     .banner-div{
         height: 75vh;
     }
@@ -328,20 +291,8 @@
     .carousel .redirigirBtn{
        top: 60%;
     }
-   
        
     /* presentacion */
-
-    .presentacion-div .card-body{
-        width: 80%;
-        background-color: #fff;
-        position: absolute;
-        right: 0;
-        height: 15rem;
-        bottom: 3rem;
-        border: 1px solid #ccc;
-    }
-
     .presentacion-div .card:nth-child(2) img{
         left: 50%;
     }
@@ -360,16 +311,12 @@
     
     
     /* separador con iconos */
-    
     .separador-iconos .fa-ship{
         font-size: 3rem;
         color: var(--color-tres-hover);
     }
     
     .icon-text{
-        color: var(--color-uno);
         font-size: 1.15rem;
     }
-
-      
 }

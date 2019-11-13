@@ -1,3 +1,7 @@
+.pagination{
+    margin-bottom: 0;
+}
+
 /* Navmenu */
 .nav-menu{
     --secondary-color: var(--color-cuatro);
@@ -44,7 +48,7 @@
 .tabs .tab-menu .tab-button .tab-icon{
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -237,7 +241,8 @@
 
 /* Galerias */
 .tabs .tab-body .galerias.tab-content section .content{
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
 }
 
@@ -291,7 +296,7 @@
 }
 
 .tabs .tab-body .galerias section .content .image-input .form-accions label{
-    flex-basis: calc(50% - .25rem);
+    flex-basis: calc(50% - .5rem);
 }
 
 .tabs .tab-body .galerias section .content .image-input .form-accions label button{
@@ -543,6 +548,10 @@
         flex-basis: 30%;
     }
 
+    .tabs .tab-menu .tab-button .tab-text{
+        justify-content: flex-end;
+    }
+
     .tabs .tab-body{
         flex-basis: 70%;
     }
@@ -566,7 +575,7 @@
     .tabs .tab-body .galerias section .content .image-input,
     .tabs .tab-body .galerias .content .image,
     .tabs .tab-body .galerias .content .example-image{
-        flex-basis: calc(45% - .25rem);
+        flex-basis: calc(45% - .5rem);
     }
 
     .tabs .tab-body .galerias section .content .image-input .form-accions label button .input-text{
@@ -600,6 +609,7 @@
     .tabs .tab-body .galerias.tab-content section .content{
         overflow: hidden;
         flex-wrap: wrap;
+        margin-bottom: 2rem;
     }
 
     .tabs .tab-body .personalizar section:first-of-type .active .descripcion textarea{
@@ -614,8 +624,8 @@
     .tabs .tab-body .galerias .content .example-image,
     .tabs .tab-body .galerias .content .image{
         position: relative;
-        flex-basis: calc(33% - .25rem);
-        margin-bottom: .5rem;
+        flex-basis: calc(32.9% - .5rem);
+        margin-bottom: 1rem;
         overflow: hidden;
     }
 
@@ -633,7 +643,7 @@
         z-index: 1;
         transition: 500ms;
         position: relative;
-        flex-basis: calc(33% - .25rem);
+        flex-basis: calc(33% - .5rem);
         overflow: hidden;
     }
 }

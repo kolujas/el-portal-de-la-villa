@@ -150,7 +150,7 @@
 }
 
 .sidebar.closed{
-    transform: translateX(-100%);
+    transform: translateX(-101%);
 }
 
 .sidebar .sidebar-header{

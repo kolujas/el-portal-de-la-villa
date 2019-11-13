@@ -139,7 +139,7 @@ let WebButtons = {
                 let content = button.parentNode.parentNode.parentNode;
                 let formTag = document.createElement('form');
                 content.appendChild(formTag);
-                formTag.classList.add('col-12', 'form-validate');
+                formTag.classList.add('col-12', 'form-validate', 'my-5', 'px-3');
                 formTag.dataset.validation = document.querySelector('[name=validation]').content;
                 formTag.method = 'post';
                 formTag.enctype = 'multipart/form-data';
@@ -163,7 +163,7 @@ let WebButtons = {
                 this.createInformacion(row, data, button);
                 let suport = document.createElement('div');
                 row.appendChild(suport);
-                suport.classList.add('suport', 'col-12', 'col-md-6', 'col-lg-4', 'pr-lg-2');
+                suport.classList.add('suport', 'col-12', 'col-md-6', 'col-lg-4', 'px-3');
                 if(button.classList.contains('web-editar-banner')){
                     this.createImagen(suport, data);
                 }
@@ -177,13 +177,13 @@ let WebButtons = {
             createInformacion(row, data, button){
                 let informacion = document.createElement('div');
                 row.appendChild(informacion);
-                informacion.classList.add('informacion', 'col-12', 'pr-lg-2');
+                informacion.classList.add('informacion', 'col-12', 'px-3');
                     let titulo = document.createElement('div');
                     informacion.appendChild(titulo);
                     titulo.classList.add('titulo', 'input-group');
                         let input = document.createElement('input');
                         titulo.appendChild(input);
-                        input.classList.add('mb-2', 'p-2');
+                        input.classList.add('mb-3', 'p-2');
                         input.type = 'text';
                         input.name = 'titulo';
                         input.placeholder = 'Título';
@@ -199,7 +199,7 @@ let WebButtons = {
                     descripcion.classList.add('descripcion', 'input-group');
                         let textarea = document.createElement('textarea');
                         descripcion.appendChild(textarea);
-                        textarea.classList.add('mb-2', 'p-2');
+                        textarea.classList.add('mb-3', 'p-2');
                         textarea.name = 'descripcion';
                         textarea.placeholder = 'Descripción';
                         textarea.innerHTML = data.descripcion;
@@ -220,7 +220,7 @@ let WebButtons = {
             createImagen(row, data){
                 let imagen = document.createElement('div');
                 row.appendChild(imagen);
-                imagen.classList.add('imagen', 'mb-2');
+                imagen.classList.add('imagen', 'mb-3');
                     let img = document.createElement('img');
                     imagen.appendChild(img);
                     img.src = document.querySelector('[name=asset]').content + 'storage/' + data.imagen;
@@ -384,7 +384,7 @@ let WebButtons = {
             example(content, container){
                 let input = container.children[0].children[0].children[0];
                 let galeria = document.createElement('div');
-                galeria.classList.add('galeria', 'example-image', 'col-10', 'mr-2', 'p-0', 'mr-2');
+                galeria.classList.add('galeria', 'example-image', 'col-10', 'mr-2', 'p-0', 'mr-3');
                 content.insertBefore(galeria, container.nextElementSibling);
                     let imagen = document.createElement('img');
                     imagen.alt = 'Example image';
@@ -811,19 +811,19 @@ let WebModal = {
         }
         this.form.action = this.action;
             let method = document.createElement('input');
-            form.appendChild(method);
+            this.form.appendChild(method);
             method.type = "hidden";
             method.name = "_method";
             method.value = "DELETE";
             
             let csrf = document.createElement('input');
-            form.appendChild(csrf);
+            this.form.appendChild(csrf);
             csrf.type = "hidden";
             csrf.name = "_token";
             csrf.value = document.querySelector('[name=csrf-token]').content;
 
             let input = document.createElement('input');
-            form.appendChild(input);
+            this.form.appendChild(input);
             input.type = "hidden";
             input.name = "id_galeria";
             input.value = this.value;

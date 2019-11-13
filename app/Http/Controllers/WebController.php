@@ -22,6 +22,10 @@
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'habitaciones');
             $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'instalaciones');
+            // $cantidad = [
+            //     'habitaciones' => 0,
+            //     'instalaciones' => 0,
+            // ];
 
             if(File::get('storage/archivos/titulo.txt')){
                 $archivos = (object) [

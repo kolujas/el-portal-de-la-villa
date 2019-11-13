@@ -31,7 +31,7 @@
             @csrf
             @method('PUT')
             <div class="row">
-                <div class="form-group form-group-sm col-12 mb-2">
+                <div class="form-group form-group-sm col-12 mb-3">
                     <label for="titulo" class="input-name m-0 p-0">
                         <span class="input-text">Título</span>
                     </label>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 
-                <div class="form-group form-group-sm col-12 mb-2">
+                <div class="form-group form-group-sm col-12 mb-3">
                     <label for="descripcion" class="input-name m-0 p-0">
                         <span class="input-text">Descripción</span>
                     </label>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="form-group form-group-sm col-12 mb-2">
+                <div class="form-group form-group-sm col-12 mb-3">
                     <label for="organizador" class="input-name m-0 p-0">
                         <span class="input-text">Organizador</span>
                     </label>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-                <div class="form-group form-group-sm col-12 mb-2">
+                <div class="form-group form-group-sm col-12 mb-3">
                     <label for="fecha" class="input-name m-0 p-0">
                         <span class="input-text">Fecha</span>
                     </label>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
 
-                <div class="form-group form-group-sm col-12 mb-2">
+                <div class="form-group form-group-sm col-12 mb-3">
                     <label for="url" class="input-name m-0 p-0">
                         <span class="input-text">URL</span>
                     </label>

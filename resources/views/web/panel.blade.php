@@ -46,28 +46,28 @@
                 </a></li>
             </ul>
         </div>
-        <div class="tab-body">
-            <div id="personalizar" class="personalizar tab-content opened p-2 pt-md-0 pr-md-0 pb-md-0">
+        <div class="tab-body pl-md-3">
+            <div id="personalizar" class="personalizar tab-content opened mt-3 mt-md-0">
                 <section>
-                    <div class="title ml-lg-2">
-                        <h2 class="mb-0 p-2">Banner principal</h2>
+                    <div class="title">
+                        <h2 class="mb-0 p-3">Banner principal</h2>
                     </div>
                     @foreach($banners as $banner)
-                        <div class="content row d-md-flex justify-content-md-end p-2">
-                            <div class="informacion col-12 col-md-6 col-lg-8">
+                        <div class="content row d-md-flex justify-content-md-end">
+                            <div class="informacion col-12 col-md-6 col-lg-8 px-3">
                                 <div class="titulo">
-                                    <h3 class="mb-2">{{$banner->titulo}}</h3>
+                                    <h3 class="mb-3 mt-5">{{$banner->titulo}}</h3>
                                 </div>
                                 <div class="descripcion">
-                                    <p class="mb-2">{{$banner->descripcion}}</p>
+                                    <p class="mb-3">{!!nl2br($banner->descripcion)!!}</p>
                                 </div>
                             </div>
-                            <div class="imagen col-12 col-md-6 col-lg-4 pr-lg-2">
-                                <div class="imagen mb-2">
+                            <div class="imagen col-12 col-md-6 col-lg-4 px-3">
+                                <div class="imagen mb-3 mt-md-5">
                                     <img src="{{asset('storage/' . $banner->imagen)}}" alt="Imagen por defecto">
                                 </div>
                             </div>
-                            <div class="accion col-12 col-md-6 col-lg-4 pr-lg-2">
+                            <div class="accion col-12 col-md-6 col-lg-4 px-3 mb-5">
                                 <div class="boton d-flex justify-content-end">
                                     <button data-banner="{{$banner}}" class="web-editar-banner btn p-2" type="submit">
                                         <span class="button-text mr-2">Editar</span>
@@ -79,19 +79,19 @@
                     @endforeach
                 </section>
                 <section>
-                    <div class="title ml-lg-2">
-                        <h2 class="mb-0 p-2">Información inicial</h2>
+                    <div class="title">
+                        <h2 class="mb-0 p-3">Información inicial</h2>
                     </div>
-                    <div class="content row d-md-flex justify-content-md-end p-2">
-                        <div class="informacion col-12">
+                    <div class="content row d-md-flex justify-content-md-end">
+                        <div class="informacion col-12 px-3">
                             <div class="titulo">
-                                <h3 class="mb-2">{{$archivos->titulo}}</h3>
+                                <h3 class="mt-5 mb-3">{{$archivos->titulo}}</h3>
                             </div>
                             <div class="descripcion">
-                                <p class="mb-2">{{$archivos->descripcion}}</p>
+                                <p class="mb-3">{!!nl2br($archivos->descripcion)!!}</p>
                             </div>
                         </div>
-                        <div class="accion col-12 col-md-6 col-lg-4 pr-lg-2">
+                        <div class="accion col-12 col-md-6 col-lg-4 px-3 mb-5">
                             <div class="boton d-flex justify-content-end">
                                 <button data-informacion="{{json_encode($archivos)}}" class="web-editar-informacion btn p-2" type="submit">
                                     <span class="button-text mr-2">Editar</span>
@@ -102,13 +102,13 @@
                     </div>
                 </section>
             </div>
-            <div id="galerias" class="galerias tab-content p-2 pt-md-0 pr-md-0 pb-md-0">
-                <section class="habitaciones">
-                    <div class="title ml-lg-2">
-                        <h2 class="mb-0 p-2">Habitaciones</h2>
+            <div id="galerias" class="galerias tab-content mt-3 mt-md-0">
+                <section class="habitaciones mb-5">
+                    <div class="title">
+                        <h2 class="mb-5 p-3">Habitaciones</h2>
                     </div>
-                    <div class="content row d-md-flex justify-content-md-left py-2 mx-2 mr-lg-0">
-                        <div class="image-input col-10 mr-2 p-0">
+                    <div class="content row d-md-flex justify-content-md-left py-2 mx-2 mx-lg-0 p-lg-0">
+                        <div class="image-input col-10 mr-3 p-0">
                             <div class="form">
                                 <label class="input-file">
                                     <input type="file" name="imagen">
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         @foreach($habitaciones as $habitacion)
-                            <div class="galeria image col-10 mr-2 p-0 showed mr-2" data-galeria="{{$habitacion}}">
+                            <div class="galeria image col-10 mr-3 p-0 showed" data-galeria="{{$habitacion}}">
                                 <img src="{{asset('storage/' . $habitacion->imagen)}}" alt="Example image">
                                 <label class="arrow prev m-0">
                                     <button class="prev-button btn p-0">
@@ -161,11 +161,11 @@
                     {{ $habitaciones->fragment('galerias')->appends(['instalaciones' => $instalaciones->currentPage()])->links() }}
                 </section>
                 <section class="instalaciones">
-                    <div class="title ml-lg-2">
-                        <h2 class="mb-0 p-2">Instalaciones</h2>
+                    <div class="title">
+                        <h2 class="mb-5 p-3">Instalaciones</h2>
                     </div>
-                    <div class="content row d-md-flex justify-content-md-left py-2 mx-2 mr-lg-0">
-                        <div class="image-input col-10 mr-2 p-0">
+                    <div class="content row d-md-flex justify-content-md-left py-2 mx-2 mx-lg-0 p-lg-0">
+                        <div class="image-input col-10 mr-3 p-0">
                             <div class="form">
                                 <label class="input-file">
                                     <input type="file" name="imagen">
@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         @foreach($instalaciones as $instalacion)
-                            <div class="galeria image col-10 mr-2 p-0 showed mr-2" data-galeria="{{$instalacion}}">
+                            <div class="galeria image col-10 mr-3 p-0 showed" data-galeria="{{$instalacion}}">
                                 <img src="{{asset('storage/' . $instalacion->imagen)}}" alt="Example image">
                                 <label class="arrow prev m-0">
                                     <button class="prev-button btn p-0">
@@ -218,10 +218,10 @@
                     {{ $instalaciones->fragment('galerias')->appends(['habitaciones' => $habitaciones->currentPage()])->links() }}
                 </section>
             </div>
-            <div id="eventos" class="eventos tab-content p-2 pt-md-0 pr-md-0 pb-md-0">
+            <div id="eventos" class="eventos tab-content mt-3 mt-md-0">
                 <section>
-                    <div class="title ml-lg-2">
-                        <h2 class="mb-2 p-2 mt-md-0">Eventos creados</h2>
+                    <div class="title">
+                        <h2 class="mb-3 p-3">Eventos creados</h2>
                     </div>
                     <div class="button">
                         <button class="evento-crear btn p-2" type="submit">
@@ -230,22 +230,22 @@
                         </button>
                     </div>
                     @foreach($eventos as $evento)
-                        <div class="event content row d-md-flex justify-content-md-end p-2">
-                            <div class="informacion col-12 col-md-6 col-lg-8">
+                        <div class="event content row d-md-flex justify-content-md-end py-5">
+                            <div class="informacion col-12 col-md-6 col-lg-8 px-3">
                                 <div class="titulo">
-                                    <h3 class="mb-2">{{$evento->titulo}}</h3>
-                                    <h4 class="mb-2">{{$evento->organizador}}</h4>
+                                    <h3 class="mb-3">{{$evento->titulo}}</h3>
+                                    <h4 class="mb-3">{{$evento->organizador}}</h4>
                                 </div>
                                 <div class="descripcion">
-                                    <p class="mb-2">{{$evento->descripcion}}</p>
+                                    <p class="mb-3">{!!nl2br($evento->descripcion)!!}</p>
                                 </div>
                                 <div class="datos">
-                                    <p class="mb-2">{{date("d/m/Y", strtotime($evento->fecha))}}</p>
-                                    <p class="mb-2"><a target="_blank" href="{{$evento->url}}">{{$evento->url}}</a></p>
+                                    <p class="mb-3">{{date("d/m/Y", strtotime($evento->fecha))}}</p>
+                                    <p class="mb-3"><a target="_blank" href="{{$evento->url}}">{{$evento->url}}</a></p>
                                 </div>
                             </div>
-                            <div class="imagen col-12 col-md-6 col-lg-4 pr-lg-2">
-                                <div class="imagen mb-2">
+                            <div class="imagen col-12 col-md-6 col-lg-4 pr-lg-2 px-3">
+                                <div class="imagen mb-3">
                                     <img src="{{asset('storage/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
                                 </div>
                                 <div data-url="/panel/evento/{{$evento->id_evento}}" class="acciones d-flex justify-content-between">

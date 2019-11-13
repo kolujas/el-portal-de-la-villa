@@ -656,7 +656,6 @@
     .tabs .tab-body .galerias section .content .image-input .form-accions label button .input-icon{
         font-size: .8rem;
     }
-    
 }
 
 /* LG */
@@ -670,7 +669,7 @@
     }
 
     .tabs .tab-body .eventos section .button button{
-        width: calc((33.33% / 2) - .5rem);
+        width: calc((33.calc(33% - .5rem) / 2) - .5rem);
     }
 
     .tabs .tab-body .personalizar section .active .descripcion textarea{
@@ -699,10 +698,11 @@
     .tabs .tab-body .galerias section .content .example-image,
     .tabs .tab-body .galerias section .content .image{
         position: relative;
-        flex-basis: calc(32.9% - .5rem);
+        flex-basis: calc(33% - .5rem);
         height: 250px;
         margin-bottom: 1rem;
         overflow: hidden;
+        max-width: calc(33% - .5rem);
     }
 
     .tabs .tab-body .galerias .content :nth-child(3),
@@ -724,8 +724,8 @@
     }
 
     .tabs .tab-body .galerias section .content .empty-image{
-        flex-basis: calc(32.9% - .5rem);
-        min-width: calc(32.9% - .5rem);
+        flex-basis: calc(33% - .5rem);
+        min-width: calc(33% - .5rem);
         height: 250px;
     }
 

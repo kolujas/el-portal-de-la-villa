@@ -96,7 +96,9 @@
 
 /* LG */
 @media(min-width: 1024px){
-    /**/
+    .ingresar{
+        margin-bottom: 4rem;
+    }
 }
 
 /* XL */

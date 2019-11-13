@@ -118,17 +118,36 @@
                 </div>
             </div>
 
-            <div id="galeria" class="gallery-container col-12 col-md-10 px-3 mx-md-auto px-md-0">
+            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
                 <h2 class="text-center mt-5 mb-3">Galeria de fotos</h2>
-                <div class="tz-gallery galeria p-0">
+                <div class="tz-gallery galeria px-3 pb-0">
                     <div class="row">
-                        @foreach($galerias['habitaciones'] as $habitacion)
+                        @if(count($galerias['habitaciones']))
+                            @foreach($galerias['habitaciones'] as $habitacion)
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="lightbox" href="{{asset('storage/' . $habitacion->imagen)}}">
+                                        <img class="mb-0" src="{{asset('storage/' . $habitacion->imagen)}}" alt="Park">
+                                    </a>
+                                </div>
+                            @endforeach
+                            {{ $galerias['habitaciones']->fragment('galeria')->appends(['habitaciones' => $galerias['habitaciones']->currentPage()])->links() }}
+                        @else
                             <div class="col-sm-6 col-md-4">
-                                <a class="lightbox" href="{{asset('storage/' . $habitacion->imagen)}}">
-                                    <img class="mb-3" src="{{asset('storage/' . $habitacion->imagen)}}" alt="Park">
-                                </a>
+                                <div class="empty-image p-1">
+                                    <div class="empty-content"></div>
+                                </div>
                             </div>
-                        @endforeach
+                            <div class="col-sm-6 col-md-4">
+                                <div class="empty-image p-1">
+                                    <div class="empty-content"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="empty-image p-1">
+                                    <div class="empty-content"></div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div> 
             </div>

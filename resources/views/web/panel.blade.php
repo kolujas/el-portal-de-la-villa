@@ -132,30 +132,39 @@
                                 </label>
                             </div>
                         </div>
-                        @foreach($habitaciones as $habitacion)
-                            <div class="galeria image col-10 mr-3 p-0 showed" data-galeria="{{$habitacion}}">
-                                <img src="{{asset('storage/' . $habitacion->imagen)}}" alt="Example image">
-                                <label class="arrow prev m-0">
-                                    <button class="prev-button btn p-0">
-                                        <i class="button-icon fas fa-chevron-left"></i>
-                                    </button>
-                                </label>
-                                <label class="arrow next m-0">
-                                    <button class="next-button btn p-0">
-                                        <i class="button-icon fas fa-chevron-right"></i>
-                                    </button>
-                                </label>
-                                <label class="trash m-0">
-                                    <button class="dalete-button btn p-0" data-toggle="modal" data-target="#exampleModal">
-                                        <i class="button-icon fas fa-trash"></i>
-                                    </button>
-                                </label>
+                        @if(count($habitaciones))
+                            @foreach($habitaciones as $habitacion)
+                                <div class="galeria image col-10 mr-3 p-0 showed" data-galeria="{{$habitacion}}">
+                                    <img src="{{asset('storage/' . $habitacion->imagen)}}" alt="Example image">
+                                    <label class="arrow prev m-0">
+                                        <button class="prev-button btn p-0">
+                                            <i class="button-icon fas fa-chevron-left"></i>
+                                        </button>
+                                    </label>
+                                    <label class="arrow next m-0">
+                                        <button class="next-button btn p-0">
+                                            <i class="button-icon fas fa-chevron-right"></i>
+                                        </button>
+                                    </label>
+                                    <label class="trash m-0">
+                                        <button class="dalete-button btn p-0" data-toggle="modal" data-target="#exampleModal">
+                                            <i class="button-icon fas fa-trash"></i>
+                                        </button>
+                                    </label>
+                                </div>
+                            @endforeach
+                            @if((count($habitaciones) + 1) % 3 != 0)
+                                @for($i = 0; $i < (count($habitaciones) % 3); $i++)
+                                    <div class="substitute col-10 mr-0 p-0"></div>
+                                @endfor
+                            @endif
+                        @else
+                            <div class="empty-image mr-3 p-1">
+                                <div class="empty-content"></div>
                             </div>
-                        @endforeach
-                        @if((count($habitaciones) + 1) % 3 != 0)
-                            @for($i = 0; $i < (count($habitaciones) % 3); $i++)
-                                <div class="substitute col-10 mr-0 p-0"></div>
-                            @endfor
+                            <div class="empty-image mr-3 p-1">
+                                <div class="empty-content"></div>
+                            </div>
                         @endif
                     </div>
                     {{ $habitaciones->fragment('galerias')->appends(['instalaciones' => $instalaciones->currentPage()])->links() }}
@@ -189,30 +198,39 @@
                                 </label>
                             </div>
                         </div>
-                        @foreach($instalaciones as $instalacion)
-                            <div class="galeria image col-10 mr-3 p-0 showed" data-galeria="{{$instalacion}}">
-                                <img src="{{asset('storage/' . $instalacion->imagen)}}" alt="Example image">
-                                <label class="arrow prev m-0">
-                                    <button class="prev-button btn p-0">
-                                        <i class="button-icon fas fa-chevron-left"></i>
-                                    </button>
-                                </label>
-                                <label class="arrow next m-0">
-                                    <button class="next-button btn p-0">
-                                        <i class="button-icon fas fa-chevron-right"></i>
-                                    </button>
-                                </label>
-                                <label class="trash m-0">
-                                    <button class="dalete-button btn p-0" data-toggle="modal" data-target="#exampleModal">
-                                        <i class="button-icon fas fa-trash"></i>
-                                    </button>
-                                </label>
+                        @if(count($instalaciones))
+                            @foreach($instalaciones as $instalacion)
+                                <div class="galeria image col-10 mr-3 p-0 showed" data-galeria="{{$instalacion}}">
+                                    <img src="{{asset('storage/' . $instalacion->imagen)}}" alt="Example image">
+                                    <label class="arrow prev m-0">
+                                        <button class="prev-button btn p-0">
+                                            <i class="button-icon fas fa-chevron-left"></i>
+                                        </button>
+                                    </label>
+                                    <label class="arrow next m-0">
+                                        <button class="next-button btn p-0">
+                                            <i class="button-icon fas fa-chevron-right"></i>
+                                        </button>
+                                    </label>
+                                    <label class="trash m-0">
+                                        <button class="dalete-button btn p-0" data-toggle="modal" data-target="#exampleModal">
+                                            <i class="button-icon fas fa-trash"></i>
+                                        </button>
+                                    </label>
+                                </div>
+                            @endforeach
+                            @if((count($instalaciones) + 1) % 3 != 0)
+                                @for($i = 0; $i < (count($instalaciones) % 3); $i++)
+                                    <div class="substitute col-10 mr-0 p-0"></div>
+                                @endfor
+                            @endif
+                        @else
+                            <div class="empty-image mr-3 p-1">
+                                <div class="empty-content"></div>
                             </div>
-                        @endforeach
-                        @if((count($instalaciones) + 1) % 3 != 0)
-                            @for($i = 0; $i < (count($instalaciones) % 3); $i++)
-                                <div class="substitute col-10 mr-0 p-0"></div>
-                            @endfor
+                            <div class="empty-image mr-3 p-1">
+                                <div class="empty-content"></div>
+                            </div>
                         @endif
                     </div>
                     {{ $instalaciones->fragment('galerias')->appends(['habitaciones' => $habitaciones->currentPage()])->links() }}
@@ -229,38 +247,55 @@
                             <i class="button-icon fas fa-plus"></i>
                         </button>
                     </div>
-                    @foreach($eventos as $evento)
-                        <div class="event content row d-md-flex justify-content-md-end py-5">
-                            <div class="informacion col-12 col-md-6 col-lg-8 px-3">
-                                <div class="titulo">
-                                    <h3 class="mb-3">{{$evento->titulo}}</h3>
-                                    <h4 class="mb-3">{{$evento->organizador}}</h4>
+                    @if(count($eventos))
+                        @foreach($eventos as $evento)
+                            <div class="event content row d-md-flex justify-content-md-end py-5">
+                                <div class="informacion col-12 col-md-6 col-lg-8 px-3">
+                                    <div class="titulo">
+                                        <h3 class="mb-3">{{$evento->titulo}}</h3>
+                                        <h4 class="mb-3">{{$evento->organizador}}</h4>
+                                    </div>
+                                    <div class="descripcion">
+                                        <p class="mb-3">{!!nl2br($evento->descripcion)!!}</p>
+                                    </div>
+                                    <div class="datos">
+                                        <p class="mb-3">{{date("d/m/Y", strtotime($evento->fecha))}}</p>
+                                        <p class="mb-3"><a target="_blank" href="{{$evento->url}}">{{$evento->url}}</a></p>
+                                    </div>
                                 </div>
-                                <div class="descripcion">
-                                    <p class="mb-3">{!!nl2br($evento->descripcion)!!}</p>
-                                </div>
-                                <div class="datos">
-                                    <p class="mb-3">{{date("d/m/Y", strtotime($evento->fecha))}}</p>
-                                    <p class="mb-3"><a target="_blank" href="{{$evento->url}}">{{$evento->url}}</a></p>
+                                <div class="imagen col-12 col-md-6 col-lg-4 px-3">
+                                    <div class="imagen mb-3">
+                                        <img src="{{asset('storage/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
+                                    </div>
+                                    <div data-url="/panel/evento/{{$evento->id_evento}}" class="acciones d-flex justify-content-between">
+                                        <a href="/panel/evento/{{$evento->slug}}/editar" class="evento-editar btn mr-2 p-2">
+                                            <span class="button-text mr-2">Editar</span>
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                        <button type="button" data-titulo="{{$evento->titulo}}" data-id_evento="{{$evento->id_evento}}" class="btn btn-primary evento-borrar btn p-2" data-toggle="modal" data-target="#exampleModal">
+                                            <span class="button-text mr-2">Borrar</span>
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="imagen col-12 col-md-6 col-lg-4 pr-lg-2 px-3">
-                                <div class="imagen mb-3">
-                                    <img src="{{asset('storage/' . $evento->imagen)}}" alt="Imagen del evento: {{$evento->titulo}}">
-                                </div>
-                                <div data-url="/panel/evento/{{$evento->id_evento}}" class="acciones d-flex justify-content-between">
-                                    <a href="/panel/evento/{{$evento->slug}}/editar" class="evento-editar btn mr-2 p-2">
-                                        <span class="button-text mr-2">Editar</span>
-                                        <i class="fas fa-pen"></i>
-                                    </a>
-                                    <button type="button" data-titulo="{{$evento->titulo}}" data-id_evento="{{$evento->id_evento}}" class="btn btn-primary evento-borrar btn p-2" data-toggle="modal" data-target="#exampleModal">
-                                        <span class="button-text mr-2">Borrar</span>
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                        @endforeach
+                    @else
+                        <div class="empty-event content row d-md-flex justify-content-md-end py-5">
+                            <div class="informacion col-12 col-md-6 col-lg-8 px-3">
+                                <div class="empty-titulo mb-3"></div>
+                                <div class="empty-subtitulo mb-3"></div>
+                                <div class="empty-descripcion mb-3"></div>
+                                <div class="empty-date mb-3"></div>
+                                <div class="empty-url mb-3"></div>
+                            </div>
+                            <div class="image col-12 col-md-6 col-lg-4 px-3">
+                                <div class="empty-image mb-3 p-1">
+                                    <div class="empty-content"></div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endif
                 </section>
             </div>
         </div>

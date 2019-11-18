@@ -9,6 +9,7 @@
 @section('css')
     <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/datepicker/datepicker.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
 @endsection
 
@@ -167,6 +168,84 @@
                         <label class="font-weight-bold" for="email">Teléfono</label>
                         <input type="number" class="form-control" id="email" placeholder="Teléfono">
                     </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle mx-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Check in
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">1</a>
+                            <a class="dropdown-item" href="#">2</a>
+                            <a class="dropdown-item" href="#">3</a>
+                            <a class="dropdown-item" href="#">4</a>
+                            <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item" href="#">6</a>
+                            <a class="dropdown-item" href="#">7</a>
+                            <a class="dropdown-item" href="#">8</a>
+                            <a class="dropdown-item" href="#">9</a>
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">11</a>
+                            <a class="dropdown-item" href="#">12</a>
+                            <a class="dropdown-item" href="#">13</a>
+                            <a class="dropdown-item" href="#">14</a>
+                            <a class="dropdown-item" href="#">15</a>
+                            <a class="dropdown-item" href="#">16</a>
+                            <a class="dropdown-item" href="#">17</a>
+                            <a class="dropdown-item" href="#">18</a>
+                            <a class="dropdown-item" href="#">19</a>
+                            <a class="dropdown-item" href="#">20</a>
+                            <a class="dropdown-item" href="#">21</a>
+                            <a class="dropdown-item" href="#">22</a>
+                            <a class="dropdown-item" href="#">23</a>
+                            <a class="dropdown-item" href="#">24</a>
+                            <a class="dropdown-item" href="#">25</a>
+                            <a class="dropdown-item" href="#">26</a>
+                            <a class="dropdown-item" href="#">27</a>
+                            <a class="dropdown-item" href="#">28</a>
+                            <a class="dropdown-item" href="#">29</a>
+                            <a class="dropdown-item" href="#">30</a>
+                            <a class="dropdown-item" href="#">31</a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle mx-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Check out
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">1</a>
+                            <a class="dropdown-item" href="#">2</a>
+                            <a class="dropdown-item" href="#">3</a>
+                            <a class="dropdown-item" href="#">4</a>
+                            <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item" href="#">6</a>
+                            <a class="dropdown-item" href="#">7</a>
+                            <a class="dropdown-item" href="#">8</a>
+                            <a class="dropdown-item" href="#">9</a>
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">11</a>
+                            <a class="dropdown-item" href="#">12</a>
+                            <a class="dropdown-item" href="#">13</a>
+                            <a class="dropdown-item" href="#">14</a>
+                            <a class="dropdown-item" href="#">15</a>
+                            <a class="dropdown-item" href="#">16</a>
+                            <a class="dropdown-item" href="#">17</a>
+                            <a class="dropdown-item" href="#">18</a>
+                            <a class="dropdown-item" href="#">19</a>
+                            <a class="dropdown-item" href="#">20</a>
+                            <a class="dropdown-item" href="#">21</a>
+                            <a class="dropdown-item" href="#">22</a>
+                            <a class="dropdown-item" href="#">23</a>
+                            <a class="dropdown-item" href="#">24</a>
+                            <a class="dropdown-item" href="#">25</a>
+                            <a class="dropdown-item" href="#">26</a>
+                            <a class="dropdown-item" href="#">27</a>
+                            <a class="dropdown-item" href="#">28</a>
+                            <a class="dropdown-item" href="#">29</a>
+                            <a class="dropdown-item" href="#">30</a>
+                            <a class="dropdown-item" href="#">31</a>
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                 </form>
             </div>
@@ -193,8 +272,13 @@
 @endsection
 
 @section('js')
+    <script src="{{asset('js/datepicker/datepicker.min.js')}}"></script>
+    <script src="{{asset('js/jquery-popper/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap/bootstrap.js')}}"></script>    
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>    
+    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
+    
+    
     <script>
         baguetteBox.run('.tz-gallery', {
             buttons: true,

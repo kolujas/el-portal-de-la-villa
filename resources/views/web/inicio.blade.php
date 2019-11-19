@@ -7,10 +7,10 @@
 @extends('layout.index')
 
 @section('css')
-    <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/datepicker/datepicker.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
+    <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
 @endsection
 
 @section('titulo')
@@ -122,10 +122,10 @@
             <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
                 <h2 class="text-center mt-5 mb-3">Galeria de fotos</h2>
                 <div class="tz-gallery galeria px-3 pb-0">
-                    <div class="row">
+                    <div class="row pt-1">
                         @if(count($galerias['habitaciones']))
                             @foreach($galerias['habitaciones'] as $habitacion)
-                                <div class="col-sm-6 col-md-4">
+                                <div class="col-sm-6 col-md-4 mb-3">
                                     <a class="lightbox" href="{{asset('storage/' . $habitacion->imagen)}}">
                                         <img class="mb-0" src="{{asset('storage/' . $habitacion->imagen)}}" alt="Park">
                                     </a>
@@ -169,83 +169,23 @@
                         <input type="number" class="form-control" id="email" placeholder="Teléfono">
                     </div>
 
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle mx-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Check in
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">1</a>
-                            <a class="dropdown-item" href="#">2</a>
-                            <a class="dropdown-item" href="#">3</a>
-                            <a class="dropdown-item" href="#">4</a>
-                            <a class="dropdown-item" href="#">5</a>
-                            <a class="dropdown-item" href="#">6</a>
-                            <a class="dropdown-item" href="#">7</a>
-                            <a class="dropdown-item" href="#">8</a>
-                            <a class="dropdown-item" href="#">9</a>
-                            <a class="dropdown-item" href="#">10</a>
-                            <a class="dropdown-item" href="#">11</a>
-                            <a class="dropdown-item" href="#">12</a>
-                            <a class="dropdown-item" href="#">13</a>
-                            <a class="dropdown-item" href="#">14</a>
-                            <a class="dropdown-item" href="#">15</a>
-                            <a class="dropdown-item" href="#">16</a>
-                            <a class="dropdown-item" href="#">17</a>
-                            <a class="dropdown-item" href="#">18</a>
-                            <a class="dropdown-item" href="#">19</a>
-                            <a class="dropdown-item" href="#">20</a>
-                            <a class="dropdown-item" href="#">21</a>
-                            <a class="dropdown-item" href="#">22</a>
-                            <a class="dropdown-item" href="#">23</a>
-                            <a class="dropdown-item" href="#">24</a>
-                            <a class="dropdown-item" href="#">25</a>
-                            <a class="dropdown-item" href="#">26</a>
-                            <a class="dropdown-item" href="#">27</a>
-                            <a class="dropdown-item" href="#">28</a>
-                            <a class="dropdown-item" href="#">29</a>
-                            <a class="dropdown-item" href="#">30</a>
-                            <a class="dropdown-item" href="#">31</a>
+                   <div class="row d-flex justify-content-center mb-3">
+                    <div id="checkin" class="input-group date form-group text-left text-uppercase col-12 col-md-3 mb-3">
+                            <label class="font-weight-bold w-100" for="checkin-input">Check in</label>
+                            <input type="text" class="form-control" id="checkin-input" placeholder="dd/mm/yyyy">
+                            <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
                         </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle mx-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Check out
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">1</a>
-                            <a class="dropdown-item" href="#">2</a>
-                            <a class="dropdown-item" href="#">3</a>
-                            <a class="dropdown-item" href="#">4</a>
-                            <a class="dropdown-item" href="#">5</a>
-                            <a class="dropdown-item" href="#">6</a>
-                            <a class="dropdown-item" href="#">7</a>
-                            <a class="dropdown-item" href="#">8</a>
-                            <a class="dropdown-item" href="#">9</a>
-                            <a class="dropdown-item" href="#">10</a>
-                            <a class="dropdown-item" href="#">11</a>
-                            <a class="dropdown-item" href="#">12</a>
-                            <a class="dropdown-item" href="#">13</a>
-                            <a class="dropdown-item" href="#">14</a>
-                            <a class="dropdown-item" href="#">15</a>
-                            <a class="dropdown-item" href="#">16</a>
-                            <a class="dropdown-item" href="#">17</a>
-                            <a class="dropdown-item" href="#">18</a>
-                            <a class="dropdown-item" href="#">19</a>
-                            <a class="dropdown-item" href="#">20</a>
-                            <a class="dropdown-item" href="#">21</a>
-                            <a class="dropdown-item" href="#">22</a>
-                            <a class="dropdown-item" href="#">23</a>
-                            <a class="dropdown-item" href="#">24</a>
-                            <a class="dropdown-item" href="#">25</a>
-                            <a class="dropdown-item" href="#">26</a>
-                            <a class="dropdown-item" href="#">27</a>
-                            <a class="dropdown-item" href="#">28</a>
-                            <a class="dropdown-item" href="#">29</a>
-                            <a class="dropdown-item" href="#">30</a>
-                            <a class="dropdown-item" href="#">31</a>
-                        </div>
-                    </div>
 
+                    <div id="checkout" class="input-group date form-group text-left text-uppercase col-12 col-md-3 mb-3">
+                            <label class="font-weight-bold w-100" for="checkout-input">check out</label>
+                            <input type="text" class="form-control" id="checkout-input" placeholder="dd/mm/yyyy">
+                            <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                        </div>
+                    <div class="form-group text-left text-uppercase col-12 col-md-3 mb-3">
+                        <label class="font-weight-bold" for="personas">Número de personas</label>
+                        <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Número de personas">
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                 </form>
             </div>
@@ -272,16 +212,29 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/datepicker/datepicker.min.js')}}"></script>
-    <script src="{{asset('js/jquery-popper/jquery-3.4.1.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap/bootstrap.js')}}"></script>    
+    <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
+    <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
     
     
     <script>
+    
         baguetteBox.run('.tz-gallery', {
             buttons: true,
         });
+
+        $('#checkin').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es"
+        });
+
+        $('#checkout').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es"
+        });
+
+       
+        
     </script>
 @endsection

@@ -174,8 +174,15 @@
     outline: none !important;
 }
 
+#checkin, #checkout{
+    position: relative;
+}
+
 #checkin input, #checkout input{
-    border-right: none;
+    border: none;
+    background-color: var(--color-uno);
+    color: #fff;
+    text-transform: uppercase;
 }
 
 #checkin span, #checkout span{
@@ -183,19 +190,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f9;
-    color: var(--color-uno);
-    border: 1px solid #ced4da;
-    border-left: none;
+    background-color: var(--color-uno);
+    color: #fff;
+    border: none;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    height: 100%;
+    z-index: 99;
 }
 
 #checkin input:focus + span, #checkout input:focus + span{
-    border-color: var(--color-uno);
+    outline: none;
 }
-
 
 #checkin span i, #checkout span i{
     font-size: 2rem;
+}
+
+#checkin-input::placeholder, #checkout-input::placeholder{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.datepicker{
+    z-index: 999 !important;
 }
 
 /* galeria */

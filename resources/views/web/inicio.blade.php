@@ -170,16 +170,16 @@
                     </div>
 
                    <div class="row d-flex justify-content-center mb-3">
-                    <div id="checkin" class="input-group date form-group text-left text-uppercase col-12 col-md-3 mb-3">
-                            <label class="font-weight-bold w-100" for="checkin-input">Check in</label>
-                            <input type="text" class="form-control" id="checkin-input" placeholder="dd/mm/yyyy">
+                    <div id="checkin" class="input-group date form-group text-left text-uppercase col-6 col-md-3 mb-3">
+                            <!-- <label class="font-weight-bold w-100" for="checkin-input">Check in</label> -->
+                            <input type="text" class="form-control" id="checkin-input" placeholder="check in">
                             <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
                         </div>
 
-                    <div id="checkout" class="input-group date form-group text-left text-uppercase col-12 col-md-3 mb-3">
-                            <label class="font-weight-bold w-100" for="checkout-input">check out</label>
-                            <input type="text" class="form-control" id="checkout-input" placeholder="dd/mm/yyyy">
-                            <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                    <div id="checkout" class="input-group date form-group text-left text-uppercase col-6 col-md-3 mb-3">
+                            <!-- <label class="font-weight-bold w-100" for="checkout-input">check out</label> -->
+                            <input type="text" class="form-control" id="checkout-input" placeholder="check out">
+                            <span class="input-group-addon"><i class="far fa-calendar-check"></i></span>
                         </div>
                     <div class="form-group text-left text-uppercase col-12 col-md-3 mb-3">
                         <label class="font-weight-bold" for="personas">Número de personas</label>
@@ -225,16 +225,14 @@
         });
 
         $('#checkin').datepicker({
-            format: "dd/mm/yyyy",
+            format: "dd M",
             language: "es"
         });
 
         $('#checkout').datepicker({
-            format: "dd/mm/yyyy",
+            format: "dd M",
             language: "es"
         });
-
-       
         
     </script>
 @endsection

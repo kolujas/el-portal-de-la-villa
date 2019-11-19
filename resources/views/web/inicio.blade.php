@@ -181,9 +181,29 @@
                             <input type="text" class="form-control" id="checkout-input" placeholder="check out">
                             <span class="input-group-addon"><i class="far fa-calendar-check"></i></span>
                         </div>
-                    <div class="form-group text-left text-uppercase col-12 col-md-3 mb-3">
-                        <label class="font-weight-bold" for="personas">Número de personas</label>
-                        <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Número de personas">
+                   <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
+                         <label class="font-weight-bold" for="personas">Número de personas</label> 
+                        <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
+                        </div> 
+                    </div> -->
+
+                    <div class="form-group input-group text-center text-uppercase col-8 col-md-3 mb-3 personas">
+                        <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
+                        <div class="input-group mb-3 position-relative">
+                            <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
+                                <option selected disabled>Huespedes</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="3">4</option>
+                                <option value="3">5</option>
+                                <option value="3">6</option>
+                                <option value="3">+</option>
+                            </select>
+                            <div class="input-group-append">
+                                <label class="input-group-text px-0" for="inputGroupSelect02"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span></label>
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>

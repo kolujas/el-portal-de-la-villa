@@ -217,6 +217,50 @@
     z-index: 999 !important;
 }
 
+.personas input{
+    border: none;
+    background-color: var(--color-uno);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.personas input::placeholder{
+    color: #fff;
+}
+
+.personas input:focus{
+    background-color: var(--color-uno);
+    color: #fff;
+}
+
+.huespedes{
+    background-color: var(--color-uno);
+    color: #fff;
+    -webkit-appearance: none;
+    position: relative;
+}
+
+.input-group-append{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    height: 100%;
+    width: 50px;
+}
+
+.huespedes option[disabled]{
+    background-color: var(--color-uno);
+    color: #fff !important;
+}
+
+.input-group-append label{
+    background-color: var(--color-uno);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+
 /* galeria */
 
 .galeria{

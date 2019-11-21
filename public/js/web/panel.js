@@ -721,7 +721,7 @@ let WebButtons = {
             formData.append("posicion", posicion);
             formData.append("_method", 'PUT');
             formData.append("_token", document.querySelector('[name=csrf-token]').content);
-            await Database.update('/api/galeria/' + id_galeria + '/mover', formData, this);
+            await Database.create('/api/galeria/' + id_galeria + '/mover', formData, this);
         },
         /** Finish the sending action. */
         finish(json){

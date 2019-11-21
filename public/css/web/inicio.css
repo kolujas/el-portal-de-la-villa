@@ -176,35 +176,34 @@
 
 #checkin, #checkout{
     position: relative;
+    background-color: var(--color-uno);
 }
 
 #checkin input, #checkout input{
     border: none;
-    background-color: var(--color-uno);
     color: #fff;
     text-transform: uppercase;
+    background: transparent;
 }
 
-#checkin span, #checkout span{
+#checkin label, #checkout label{
     width: 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: var(--color-uno);
     color: #fff;
     border: none;
     position: absolute;
-    right: 15px;
+    right: 0;
     top: 0;
     height: 100%;
     z-index: 99;
 }
 
-#checkin input:focus + span, #checkout input:focus + span{
+#checkin input:focus + label, #checkout input:focus + label{
     outline: none;
 }
 
-#checkin span i, #checkout span i{
+#checkin label i, #checkout label i{
     font-size: 2rem;
 }
 
@@ -217,11 +216,15 @@
     z-index: 999 !important;
 }
 
+.personas{
+    background-color: var(--color-uno);
+}
+
 .personas input{
     border: none;
-    background-color: var(--color-uno);
     color: #fff;
     text-transform: uppercase;
+    background: transparent;
 }
 
 .personas input::placeholder{
@@ -240,13 +243,15 @@
     position: relative;
 }
 
-.input-group-append{
+.personas label{
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 99;
     height: 100%;
     width: 50px;
+    background-color: var(--color-uno);
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 .huespedes option[disabled]{
@@ -254,15 +259,7 @@
     color: #fff !important;
 }
 
-.input-group-append label{
-    background-color: var(--color-uno);
-    color: #fff;
-    font-size: 1.5rem;
-}
-
-
 /* galeria */
-
 .galeria{
     width: 100%;
     overflow: hidden;

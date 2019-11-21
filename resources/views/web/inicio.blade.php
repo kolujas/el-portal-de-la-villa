@@ -155,58 +155,66 @@
 
             <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
                 <h3 class="text-center mb-3">Contactanos</h3>
-                <form class="text-right">
-                    <div class="form-group text-left text-uppercase mb-3">
+                <form class="row text-right">
+                    <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="nombre">Nombre</label>
                         <input type="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
                     </div>
-                    <div class="form-group text-left text-uppercase mb-3">
+                    <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
-                    <div class="form-group text-left text-uppercase mb-3">
+                    <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="email">Teléfono</label>
                         <input type="number" class="form-control" id="email" placeholder="Teléfono">
                     </div>
 
-                   <div class="row d-flex justify-content-center mb-3">
-                    <div id="checkin" class="input-group date form-group text-left text-uppercase col-6 col-md-3 mb-3">
-                            <!-- <label class="font-weight-bold w-100" for="checkin-input">Check in</label> -->
-                            <input type="text" class="form-control" id="checkin-input" placeholder="check in">
-                            <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
-                        </div>
+                    <div class="form-group text-left text-uppercase col-12 my-3">
+                        <div class="row w-100 m-auto d-flex justify-content-between">
+                            <div id="checkin" class="date col-12 col-md-5 col-lg-3 mb-3 px-0">
+                                <!-- <label class="font-weight-bold w-100" for="checkin-input">Check in</label> -->
+                                <input type="text" class="form-control" id="checkin-input" placeholder="check in">
+                                <label for="checkin-input" class="input-group-addon m-0">
+                                    <i class="far fa-calendar-alt"></i>
+                                </label>
+                                <!-- <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span> -->
+                            </div>
 
-                    <div id="checkout" class="input-group date form-group text-left text-uppercase col-6 col-md-3 mb-3">
-                            <!-- <label class="font-weight-bold w-100" for="checkout-input">check out</label> -->
-                            <input type="text" class="form-control" id="checkout-input" placeholder="check out">
-                            <span class="input-group-addon"><i class="far fa-calendar-check"></i></span>
-                        </div>
-                   <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
-                         <label class="font-weight-bold" for="personas">Número de personas</label> 
-                        <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
-                        </div> 
-                    </div> -->
+                            <div id="checkout" class="date col-12 col-md-5 col-lg-3 mb-3 px-0">
+                                <!-- <label class="font-weight-bold w-100" for="checkout-input">check out</label> -->
+                                <input type="text" class="form-control" id="checkout-input" placeholder="check out">
+                                <label for="checkout-input" class="input-group-addon m-0">
+                                    <i class="far fa-calendar-check"></i>
+                                </label>
+                            </div>
+                    <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
+                            <label class="font-weight-bold" for="personas">Número de personas</label> 
+                            <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
+                            </div> 
+                        </div> -->
 
-                    <div class="form-group input-group text-center text-uppercase col-8 col-md-3 mb-3 personas">
-                        <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
-                        <div class="input-group mb-3 position-relative">
-                            <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
-                                <option selected disabled>Huespedes</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="3">4</option>
-                                <option value="3">5</option>
-                                <option value="3">6</option>
-                                <option value="3">+</option>
-                            </select>
-                            <div class="input-group-append">
-                                <label class="input-group-text px-0" for="inputGroupSelect02"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span></label>
+                            <div class="col-12 col-md-5 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
+                            <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
+                                <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
+                                    <option selected disabled>Huespedes</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    <option value="3">6</option>
+                                    <option value="3">+</option>
+                                </select>
+                                <label class="input-group-text px-0" for="inputGroupSelect02">
+                                    <i class="fas fa-user-plus"></i>
+                                </label>
                             </div>
                         </div>
-                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+
+                    <div class="form-group text-right text-uppercase col-12 mb-3">
+                        <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+                    </div>
                 </form>
             </div>
 

@@ -1,3 +1,8 @@
+/* Navmenu */
+.nav-menu{
+    --secondary-color: var(--color-cuatro);
+}
+
 .container-fluid > .row{
     display: flex;
     justify-content: center;

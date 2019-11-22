@@ -432,6 +432,7 @@
     
     .carousel .redirigirBtn{
        top: 60%;
+       background-color: var(--color-uno);
     }
        
     /* presentacion */

@@ -58,10 +58,10 @@ let Requirements = {
                 aux.valid = false;
                 return aux;
             }
-        }, 
-        /** @var {object} - The Requirement min params */
-        params: [
-            ":min"
+        },
+        /** @var {object} - The Requirement min replacement text */
+        replacement: [
+            ":min",
         ],
     }, 
     /** @var {object} - Put a max length on an input. */
@@ -82,9 +82,9 @@ let Requirements = {
                 return aux;
             }
         },
-        /** @var {object} - The Requirement max params */
-        params: [
-            ":max"
+        /** @var {object} - The Requirement max replacement text */
+        replacement: [
+            ":max",
         ],
     }, 
     /** @var {object} - Make an input numeric. */
@@ -154,6 +154,15 @@ let Requirements = {
                 return aux;
             }
         },
+        /** @var {object} - The Requirement mimetypes params. */
+        params: [
+            'image/jpeg',
+            'image/png',
+        ],
+        /** @var {object} - The Requirement mimetypes replacement text */
+        replacement: [
+            ":mimetypes",
+        ],
     },
     /** @var {object} - Make an input a date. */
     date: {
@@ -194,4 +203,33 @@ let Requirements = {
             }
         },
     },
+    exists: {
+        /**
+         * Valid an input.
+         * @param {html} input - The input.
+         * @param {object} aux - An auxiliar.
+         * @param {number} length - The length.
+         * @return {object}
+         */
+        validate(input, aux, params){
+            console.log(params);
+        },
+        /** @var {object} - The Requirement exists replacement text */
+        replacement: [
+            ":table",
+            ":column",
+        ],
+    },
+    // unique: {
+    //     /**
+    //      * Valid an input.
+    //      * @param {html} input - The input.
+    //      * @param {object} aux - An auxiliar.
+    //      * @param {number} length - The length.
+    //      * @return {object}
+    //      */
+    //     validate(input, aux, params){
+    //         params
+    //     },
+    // },
 };

@@ -293,11 +293,13 @@
     object-fit: cover !important;
     height: 400px !important;
     width: 100% !important;
+    box-shadow: none;
 }
 
 .tz-gallery .lightbox img{
     height: 300px;
     object-fit: cover;
+    background: white;
 }
 
 /* MD */
@@ -402,6 +404,12 @@
 
     .galeria .row div{
         min-width: 33%;
+    }
+
+    .galeria .row div:first-of-type,
+    .galeria .row div:nth-of-type(2),
+    .galeria .row div:nth-of-type(3){
+        margin-bottom: 30px;
     }
 }
 

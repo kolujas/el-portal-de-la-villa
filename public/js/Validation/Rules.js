@@ -34,14 +34,15 @@ let Rules = {
         let aux = [];
         for(let position = 0; position < rules.length; position ++){
             if(rules[position].search(/:/) >= 0){
+                let rule = rules[position].split(":");
                 if(rules[position].search(/,/) >= 0){
-                    let aux2 = rules[position].split(":")[1].split(',');
-                    aux[rules[position].split(":")[0]] = [];
-                    for(let i = 0; i < aux2.length; i++){
-                        aux[rules[position].split(":")[0]].push(aux2[i]);
+                    let params = rule[1].split(',');
+                    aux[rule[0]] = [];
+                    for(let i = 0; i < params.length; i++){
+                        aux[rule[0]].push(params[i]);
                     }
                 }else{
-                    aux[rules[position].split(":")[0]] = rules[position].split(":")[1];
+                    aux[rule[0]] = rule[1];
                 }
             }else{
                 aux[rules[position]] = false;

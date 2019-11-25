@@ -13,7 +13,7 @@
 @endsection
 
 @section('titulo')
-    El Portal de la Villa - Habitaciones
+    El Portal de la Villa - instalaciones
 @endsection
 
 @section('nav')
@@ -88,13 +88,7 @@
                                     </div>
                                 @endif
                             @endfor
-                            <!-- corta este codigo para moverlo -->
-                            @if(count($instalaciones) > 6)
-                                <div class="col-sm-6 col-md-4">
-                                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
-                                </div>
-                            @endif
-                            <!-- hasta acá -->
+                           
                         @else
                             <div class="col-sm-6 col-md-4">
                                 <div class="empty-image p-1">
@@ -115,6 +109,12 @@
                     </div>
                 </div> 
             </div>
+
+            @if(count($instalaciones) > 6)
+                <div class="row col-12 d-flex justify-content-center">
+                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
+                </div>
+            @endif
 
             <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
                 <h3 class="text-center mb-3">Contactanos</h3>

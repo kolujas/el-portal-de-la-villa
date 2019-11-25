@@ -45,6 +45,12 @@ body{
     --color-cuatro: #222222;
 }
 
+.nav-menu .nav-title h1{
+    background: url(../img/recursos/logo.png) no-repeat center top;
+    background-size: contain;
+    font-size: 0;
+}
+
 .nav-menu .nav-row:first-of-type{
     justify-content: center;
 }

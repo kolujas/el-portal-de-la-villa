@@ -20,12 +20,16 @@
 
         public function inicio(){
             $banners = Banner::all();
-            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(9, ['*'], 'habitaciones');
-            $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->paginate(9, ['*'], 'instalaciones');
-            // $cantidad = [
-            //     'habitaciones' => 0,
-            //     'instalaciones' => 0,
-            // ];
+            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
+            $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->get();
+            
+            $galeria = collect([]);
+            foreach($habitaciones as $habitacion){
+                $galeria->push($habitacion);
+            }
+            foreach($instalaciones as $instalacion){
+                $galeria->push($instalacion);
+            }
 
             if(File::get('storage/archivos/titulo.txt')){
                 $archivos = (object) [
@@ -42,10 +46,7 @@
             return view('web.inicio', [
                 'archivos' => $archivos,
                 'banners' => $banners,
-                'galerias' => [
-                    'habitaciones' => $habitaciones,
-                    'instalaciones' => $instalaciones,
-                ],
+                'galeria' => $galeria,
             ]);
         }
 

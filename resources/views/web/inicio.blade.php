@@ -120,18 +120,30 @@
             </div>
 
             <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
-                <h2 class="text-center mt-5 mb-3">Galeria de fotos</h2>
+                <h2 class="text-center mt-5 mb-0">Galeria de fotos</h2>
                 <div class="tz-gallery galeria px-3 pb-0">
-                    <div class="row pt-1">
-                        @if(count($galerias['habitaciones']))
-                            @foreach($galerias['habitaciones'] as $habitacion)
-                                <div class="col-sm-6 col-md-4 mb-3">
-                                    <a class="lightbox" href="{{asset('storage/' . $habitacion->imagen)}}">
-                                        <img class="mb-0" src="{{asset('storage/' . $habitacion->imagen)}}" alt="Park">
-                                    </a>
+                    <div class="row pt-3 pb-4">
+                        @if(count($galeria))
+                            @for($i = 0; $i < count($galeria); $i++)
+                                @if($i < 6)
+                                    <div class="col-sm-6 col-md-4">
+                                        <a class="lightbox" href="{{asset('storage/' . $galeria[$i]->imagen)}}">
+                                            <img class="mb-0" src="{{asset('storage/' . $galeria[$i]->imagen)}}" alt="Park">
+                                        </a>
+                                    </div>
+                                @else
+                                    <div class="col-sm-6 col-md-4 d-none">
+                                        <a class="lightbox" href="{{asset('storage/' . $galeria[$i]->imagen)}}"></a>
+                                    </div>
+                                @endif
+                            @endfor
+                            <!-- corta este codigo para moverlo -->
+                            @if(count($galeria) > 6)
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
                                 </div>
-                            @endforeach
-                            {{ $galerias['habitaciones']->fragment('galeria')->appends(['habitaciones' => $galerias['habitaciones']->currentPage()])->links() }}
+                            @endif
+                            <!-- hasta acá -->
                         @else
                             <div class="col-sm-6 col-md-4">
                                 <div class="empty-image p-1">
@@ -187,11 +199,12 @@
                                     <i class="far fa-calendar-check"></i>
                                 </label>
                             </div>
-                    <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
-                            <label class="font-weight-bold" for="personas">Número de personas</label> 
-                            <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
-                            </div> 
-                        </div> -->
+
+                            <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
+                                <label class="font-weight-bold" for="personas">Número de personas</label> 
+                                <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
+                                </div> 
+                            </div> -->
 
                             <div class="col-12 col-md-5 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
                             <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->

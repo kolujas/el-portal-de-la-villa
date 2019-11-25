@@ -116,6 +116,7 @@
 .informacion-inicial .div-informacion-inicial .mini-encabezado{
     font-family: var(--fuente-encabezados);
     font-size: 1rem;
+    color: #4e5254;
 }
 
 /* presentacion */
@@ -133,6 +134,10 @@
     position: relative;
     transform: translateY(-3rem);
     margin: auto;
+}
+
+.presentacion-div .card-body .more{
+    background-color: var(--color-uno);
 }
 
 /* separador con iconos */

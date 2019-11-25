@@ -77,6 +77,7 @@
                     <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="/habitaciones" class="more btn btn-primary">Ver más</a>
                     </div>
                 </div>
                 <div class="card mb-lg-0 position-lg-relative">
@@ -84,6 +85,7 @@
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="/instalaciones" class="more btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -120,7 +122,7 @@
             </div>
 
             <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
-                <h2 class="text-center mt-5 mb-0">Galeria de fotos</h2>
+                <h2 class="text-center mt-5 mb-0">Galería de fotos</h2>
                 <div class="tz-gallery galeria px-3 pb-0">
                     <div class="row pt-3 pb-4">
                         @if(count($galeria))
@@ -167,15 +169,18 @@
 
             <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
                 <h3 class="text-center mb-3">Contactanos</h3>
-                <form class="row text-right">
+                <form class="form-validate row text-right"
+                    data-validation="{{$validation}}">
                     <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="nombre">Nombre</label>
                         <input type="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
                     </div>
+                    
                     <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
+
                     <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="email">Teléfono</label>
                         <input type="number" class="form-control" id="email" placeholder="Teléfono">
@@ -200,12 +205,6 @@
                                 </label>
                             </div>
 
-                            <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
-                                <label class="font-weight-bold" for="personas">Número de personas</label> 
-                                <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
-                                </div> 
-                            </div> -->
-
                             <div class="col-12 col-md-5 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
                             <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
                                 <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
@@ -226,7 +225,7 @@
                     </div>
 
                     <div class="form-group text-right text-uppercase col-12 mb-3">
-                        <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+                        <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>
             </div>

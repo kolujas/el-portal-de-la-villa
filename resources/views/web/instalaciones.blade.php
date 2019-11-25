@@ -64,8 +64,14 @@
     <!-- contenido -->
     <div class="informacion-inicial col-12">
         <div class="row">
+            <div id="informacion" class="informacion div-informacion-inicial col-12 col-md-10 col-lg-8 col-xl-6 mt-5 px-5 mx-md-auto px-md-0 text-center">
+                <span class="lead mini-encabezado">Instalaciones</span>
+                <h2 class="py-3">Título</h2>
+                <p class="m-0 text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero obcaecati debitis, eligendi dolore culpa deleniti, consequuntur et temporibus quaerat corporis. Praesentium quos nobis error suscipit architecto aliquam cupiditate atque.</p>
+            </div>
+            
             <div id="instalaciones" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
-                <h2 class="text-center mt-5 mb-0">Instalaciones</h2>
+                <h2 class="text-center mt-5 mb-0">Galería de fotos</h2>
                 <div class="tz-gallery instalaciones px-3 pb-0">
                     <div class="row pt-3 pb-4">
                         @if(count($instalaciones))

@@ -56,7 +56,7 @@
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
             
-            return view('web.inicio', [
+            return view('web.habitaciones', [
                 'banners' => $banners,
                 'habitaciones' => $habitaciones,
             ]);
@@ -67,7 +67,7 @@
             $banners = Banner::all();
             $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->get();
             
-            return view('web.inicio', [
+            return view('web.instalaciones', [
                 'banners' => $banners,
                 'instalaciones' => $instalaciones,
             ]);

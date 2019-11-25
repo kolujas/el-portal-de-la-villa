@@ -12,7 +12,6 @@
 
 /** CorreoController */
     Route::post('/contactar', 'CorreoController@contactar')->name('correo.contactar');
-    Route::post('/preguntar', 'CorreoController@preguntar')->name('correo.preguntar');
     Route::get('/gracias', 'CorreoController@gracias')->name('correo.gracias');
 
 /** AuthController */

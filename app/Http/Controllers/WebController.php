@@ -11,13 +11,14 @@
     use Storage;
 
     class WebController extends Controller{
-        /** Carga la seccion principal. */
+        /** Carga la web en modo construcción. */
         public function construccion(){
             return view('web.construccion', [
                 //
             ]);
         }
 
+        /** Carga la sección principal. */
         public function inicio(){
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
@@ -50,7 +51,29 @@
             ]);
         }
 
-        /** Carga el panel de administracion. */
+        /** Carga la sección de "Habitaciones". */
+        public function habitaciones(){
+            $banners = Banner::all();
+            $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
+            
+            return view('web.inicio', [
+                'banners' => $banners,
+                'habitaciones' => $habitaciones,
+            ]);
+        }
+
+        /** Carga la sección de "Instalaciones". */
+        public function instalaciones(){
+            $banners = Banner::all();
+            $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->get();
+            
+            return view('web.inicio', [
+                'banners' => $banners,
+                'instalaciones' => $instalaciones,
+            ]);
+        }
+
+        /** Carga el panel de administración. */
         public function panel(){
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->paginate(8, ['*'], 'habitaciones');

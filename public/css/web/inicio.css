@@ -50,6 +50,7 @@
 
 .carousel .redirigirBtn{
    z-index: 999;
+   background-color: var(--color-uno);
 }
 
 .carousel-control-prev{
@@ -107,7 +108,7 @@
 
 .carousel .carousel-footer{
     position: absolute;
-    bottom: 3.5rem;
+    bottom: 10rem;
     left: 0;
     width: 100%;
 }
@@ -302,6 +303,10 @@
     background: white;
 }
 
+.load_gallery{
+    background-color: var(--color-uno);
+}
+
 /* MD */
 @media(min-width: 768px){
     .redes-sociales .icon{
@@ -327,6 +332,10 @@
 
     .carousel-caption p{
         width: 100%;
+    }
+
+    .carousel .carousel-footer{
+        bottom: 16rem;
     }
 
     .redirigirBtn:focus{
@@ -360,6 +369,10 @@
     /* slider */
     .slider-heading, .slider-text{
         width: 100%;
+    }
+
+    .carousel .carousel-footer{
+        bottom: 16rem;
     }
        
     /* presentacion */
@@ -430,6 +443,10 @@
 
     .carousel img{
         height: 75vh;
+    }
+
+    .carousel .carousel-footer{
+        bottom: 17em;
     }
     
 

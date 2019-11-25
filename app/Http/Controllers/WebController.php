@@ -48,6 +48,7 @@
                 'archivos' => $archivos,
                 'banners' => $banners,
                 'galeria' => $galeria,
+                'validation' => json_encode(Web::$validation['contactar']),
             ]);
         }
 
@@ -59,6 +60,7 @@
             return view('web.habitaciones', [
                 'banners' => $banners,
                 'habitaciones' => $habitaciones,
+                'validation' => json_encode(Web::$validation['contactar']),
             ]);
         }
 
@@ -70,6 +72,7 @@
             return view('web.instalaciones', [
                 'banners' => $banners,
                 'instalaciones' => $instalaciones,
+                'validation' => json_encode(Web::$validation['contactar']),
             ]);
         }
 

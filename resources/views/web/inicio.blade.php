@@ -82,7 +82,7 @@
                 <div class="card mb-lg-0 position-lg-relative">
                     <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="...">
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
-                        <h5 class="card-title mb-3">Y mucho más</h5>
+                        <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>

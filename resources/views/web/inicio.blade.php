@@ -178,7 +178,7 @@
             </div>
 
             @if(count($galeria) > 6)
-                <div class="col-sm-6 col-md-4 d-flex justify-content-center">
+                <div class="row col-12 d-flex justify-content-center">
                     <a class="btn btn-primary load_gallery" href="#">Ver más</a>
                 </div>
             @endif

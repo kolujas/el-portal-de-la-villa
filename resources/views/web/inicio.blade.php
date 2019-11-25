@@ -41,6 +41,9 @@
                         <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
                             <h5 class="text-white slider-heading">{{$banner->titulo}}</h5>
                             <p class="slider-text">{!!nl2br($banner->descripcion)!!}</p>
+                            <div class="carousel-footer d-flex justify-content-center">
+                                <a href="#contacto" class="btn btn-primary redirigirBtn">Reservar</a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -53,10 +56,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-            <div class="carousel-footer d-flex justify-content-center">
-                <!-- <a href="#" type="submit" class="btn btn-primary redirigirBtn">Reservar</a> -->
-                <a href="#contacto" class="btn btn-primary redirigirBtn">Reservar</a>
-            </div>
         </div>
     </div>
 @endsection

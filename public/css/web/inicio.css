@@ -106,13 +106,6 @@
     height: 75vh;
 }
 
-.carousel .carousel-footer{
-    position: absolute;
-    bottom: 10rem;
-    left: 0;
-    width: 100%;
-}
-
 /* informacion-inicial */
 .informacion-inicial .div-informacion-inicial .mini-encabezado{
     font-family: var(--fuente-encabezados);
@@ -339,10 +332,6 @@
         width: 100%;
     }
 
-    .carousel .carousel-footer{
-        bottom: 16rem;
-    }
-
     .redirigirBtn:focus{
         box-shadow: none !important;
     }
@@ -374,10 +363,6 @@
     /* slider */
     .slider-heading, .slider-text{
         width: 100%;
-    }
-
-    .carousel .carousel-footer{
-        bottom: 16rem;
     }
        
     /* presentacion */
@@ -449,11 +434,6 @@
     .carousel img{
         height: 75vh;
     }
-
-    .carousel .carousel-footer{
-        bottom: 17em;
-    }
-    
 
     .slider-heading, .slider-text{
         bottom: 16rem;

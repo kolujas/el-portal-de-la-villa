@@ -307,6 +307,10 @@
     background: white;
 }
 
+.load_gallery{
+    background-color: var(--color-uno);
+}
+
 /* MD */
 @media(min-width: 768px){
     .redes-sociales .icon{

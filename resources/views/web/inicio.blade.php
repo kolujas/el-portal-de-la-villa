@@ -253,10 +253,10 @@
     </div>
 
     <div class="d-flex justify-content-center position-fixed redes-sociales py-2">
-        <a class="icon facebook-icon mb-2" target="_blank" href="https://www.facebook.com">
+        <a class="icon facebook-icon mb-2" target="_blank" href="https://www.facebook.com/ElPortalDeLaVillaHotel/">
             <i class="fab fa-facebook"></i>
         </a>
-        <a class="icon instagram-icon" target="_blank" href="https://www.facebook.com">
+        <a class="icon instagram-icon" target="_blank" href="https://www.instagram.com/elportaldelavillahotel/">
             <i class="fab fa-instagram"></i>
         </a>
     </div>

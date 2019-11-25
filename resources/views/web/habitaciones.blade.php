@@ -1,14 +1,14 @@
 <?php
     /** @var Banner[] $banners */
-    /** @var Galeria[] $habitaciones */
+    /** @var habitaciones[] $habitaciones */
     /** @var array $vaidation */
 ?>
 @extends('layout.index')
 
 @section('css')
-    <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/habitaciones/baguetteBox.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/datepicker/datepicker.css')}}" rel="stylesheet">
-    <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
+    <link href="{{asset('css/habitaciones/grid/gallery-grid.css')}}" rel="stylesheet">
     <link href="{{asset('css/web/habitaciones.css')}}" rel="stylesheet">
 @endsection
 
@@ -88,13 +88,7 @@
                                     </div>
                                 @endif
                             @endfor
-                            <!-- corta este codigo para moverlo -->
-                            @if(count($habitaciones) > 6)
-                                <div class="col-sm-6 col-md-4">
-                                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
-                                </div>
-                            @endif
-                            <!-- hasta acá -->
+                           
                         @else
                             <div class="col-sm-6 col-md-4">
                                 <div class="empty-image p-1">
@@ -115,6 +109,12 @@
                     </div>
                 </div> 
             </div>
+
+            @if(count($habitaciones) > 6)
+                <div class="row col-12 d-flex justify-content-center">
+                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
+                </div>
+            @endif
 
             <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
                 <h3 class="text-center mb-3">Contactanos</h3>
@@ -206,6 +206,6 @@
 @section('js')
     <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
-    <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/habitaciones/baguetteBox.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/web/habitaciones.js')}}"></script>
 @endsection

@@ -108,7 +108,7 @@
 
 .carousel .carousel-footer{
     position: absolute;
-    bottom: 10rem;
+    bottom: 10  rem;
     left: 0;
     width: 100%;
 }
@@ -119,6 +119,7 @@
     font-size: 1rem;
     color: #4e5254;
 }
+    
 
 /* presentacion */
 .presentacion-div .card{

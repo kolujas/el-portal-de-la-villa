@@ -118,5 +118,7 @@ body{
 
 /* XL */
 @media(min-width: 1200px){
-    /**/
+    .nav-menu .nav-title h1{
+        padding-bottom: 5rem !important;
+    }
 }

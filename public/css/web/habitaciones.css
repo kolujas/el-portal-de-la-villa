@@ -50,7 +50,6 @@
 
 .carousel .redirigirBtn{
    z-index: 999;
-   background-color: var(--color-uno);
 }
 
 .carousel-control-prev{
@@ -108,7 +107,7 @@
 
 .carousel .carousel-footer{
     position: absolute;
-    bottom: 10rem;
+    bottom: 3.5rem;
     left: 0;
     width: 100%;
 }
@@ -265,18 +264,18 @@
     color: #fff !important;
 }
 
-/* galeria */
-.galeria{
+/* habitaciones */
+.habitaciones{
     width: 100%;
     overflow: hidden;
 }
 
-.galeria .row{
+.habitaciones .row{
     flex-wrap: nowrap;
     overflow-x: auto;
 }
 
-.galeria .row > div{
+.habitaciones .row > div{
     flex-basis: 300px;
     min-width: 300px;
     height: 300px;
@@ -308,10 +307,6 @@
     background: white;
 }
 
-.load_gallery{
-    background-color: var(--color-uno);
-}
-
 /* MD */
 @media(min-width: 768px){
     .redes-sociales .icon{
@@ -337,10 +332,6 @@
 
     .carousel-caption p{
         width: 100%;
-    }
-
-    .carousel .carousel-footer{
-        bottom: 16rem;
     }
 
     .redirigirBtn:focus{
@@ -374,10 +365,6 @@
     /* slider */
     .slider-heading, .slider-text{
         width: 100%;
-    }
-
-    .carousel .carousel-footer{
-        bottom: 16rem;
     }
        
     /* presentacion */
@@ -415,18 +402,18 @@
         font-size: 1.15rem;
     }
 
-    .galeria .row{
+    .habitaciones .row{
         flex-wrap: wrap;
         overflow-x: hidden;
     }
 
-    .galeria .row div{
+    .habitaciones .row div{
         min-width: 33%;
     }
 
-    .galeria .row div:first-of-type,
-    .galeria .row div:nth-of-type(2),
-    .galeria .row div:nth-of-type(3){
+    .habitaciones .row div:first-of-type,
+    .habitaciones .row div:nth-of-type(2),
+    .habitaciones .row div:nth-of-type(3){
         margin-bottom: 30px;
     }
 }
@@ -448,10 +435,6 @@
 
     .carousel img{
         height: 75vh;
-    }
-
-    .carousel .carousel-footer{
-        bottom: 17em;
     }
     
 

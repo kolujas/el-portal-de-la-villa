@@ -26,12 +26,4 @@
             @endif
         </ul>
     </div>
-
-    <div class="sidebar-footer">
-        <ul class="footer-menu">
-            <li><a href="#" class="footer-link text-white">Politica y Privacidad</a></li>
-            <li><a href="#" class="footer-link text-white">Terminos legales</a></li>
-        </ul>
-        <div class="footer-text">©2019 Archimak</div>
-    </div>
 </div>

@@ -1,7 +1,6 @@
 <?php
-    /** @var object $archivos */
     /** @var Banner[] $banners */
-    /** @var Galeria[] $galeria */
+    /** @var Galeria[] $habitaciones */
     /** @var array $vaidation */
 ?>
 @extends('layout.index')
@@ -10,11 +9,11 @@
     <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/datepicker/datepicker.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
-    <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
+    <link href="{{asset('css/web/habitaciones.css')}}" rel="stylesheet">
 @endsection
 
 @section('titulo')
-    El Portal de la Villa - Pueblo Hotel
+    El Portal de la Villa - Habitaciones
 @endsection
 
 @section('nav')
@@ -66,96 +65,36 @@
     <div class="informacion-inicial col-12">
         <div class="row">
             <div id="informacion" class="informacion div-informacion-inicial col-12 col-md-10 col-lg-8 col-xl-6 mt-5 px-5 mx-md-auto px-md-0 text-center">
-                <span class="lead mini-encabezado">Viví Córdoba</span>
-                <h2 class="py-3">{{$archivos->titulo}}</h2>
-                <p class="m-0 text-dark">{!!nl2br($archivos->descripcion)!!}</p>
+                <span class="lead mini-encabezado">Habitaciones</span>
+                <h2 class="py-3">Título</h2>
+                <p class="m-0 text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero obcaecati debitis, eligendi dolore culpa deleniti, consequuntur et temporibus quaerat corporis. Praesentium quos nobis error suscipit architecto aliquam cupiditate atque.</p>
             </div>
-
-            <div class="presentacion-div col-lg-12 col-md-10 mt-5 px-3 mx-md-auto px-md-0 text-center flex-wrap">
-                <div class="card mb-3 mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="...">
-                    <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
-                        <h5 class="card-title mb-3">Habitaciones</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="/habitaciones" class="more btn btn-primary">Ver más</a>
-                    </div>
-                </div>
-                <div class="card mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="...">
-                    <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
-                        <h5 class="card-title mb-3">Instalaciones</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="/instalaciones" class="more btn btn-primary">Ver más</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="separador-iconos col-12 col-md-10 col-lg-8 mt-5 px-5 mx-md-auto px-md-0 text-center">
-                <div class="row">
-                    <div class="d-flex justify-content-center justify-content-md-center flex-wrap">
-                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-coffee"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Desayuno gratuito</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-parking"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Estacionamiento gratuito</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-snowflake"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Aire acondicionado</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-utensils"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Restaurante</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-baby-carriage"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Apto para niños</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-swimmer"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Pileta exterior y climatizada</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wallet"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Servicio completo de lavandería</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-glass-martini-alt"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Bar</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wifi"></i>
-                            <p class="m-0 mt-3 font-weight-bold">WIFI de alta velocidad</p>
-                        </div>
-                        <div class="icon-text col-4 col-xl-3 mt-xl-5 mb-xl-5">
-                            <i class="separador-icon fas fa-ban text-dark"></i>
-                            <p class="m-0 mt-3 font-weight-bold">No tiene jacuzzis</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
+            
+            <div id="habitaciones" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
                 <h2 class="text-center mt-5 mb-0">Galería de fotos</h2>
-                <div class="tz-gallery galeria px-3 pb-0">
+                <div class="tz-gallery habitaciones px-3 pb-0">
                     <div class="row pt-3 pb-4">
-                        @if(count($galeria))
-                            @for($i = 0; $i < count($galeria); $i++)
+                        @if(count($habitaciones))
+                            @for($i = 0; $i < count($habitaciones); $i++)
                                 @if($i < 6)
                                     <div class="col-sm-6 col-md-4">
-                                        <a class="lightbox" href="{{asset('storage/' . $galeria[$i]->imagen)}}">
-                                            <img class="mb-0" src="{{asset('storage/' . $galeria[$i]->imagen)}}" alt="Park">
+                                        <a class="lightbox" href="{{asset('storage/' . $habitaciones[$i]->imagen)}}">
+                                            <img class="mb-0" src="{{asset('storage/' . $habitaciones[$i]->imagen)}}" alt="Park">
                                         </a>
                                     </div>
                                 @else
                                     <div class="col-sm-6 col-md-4 d-none">
-                                        <a class="lightbox" href="{{asset('storage/' . $galeria[$i]->imagen)}}"></a>
+                                        <a class="lightbox" href="{{asset('storage/' . $habitaciones[$i]->imagen)}}"></a>
                                     </div>
                                 @endif
                             @endfor
-                           
+                            <!-- corta este codigo para moverlo -->
+                            @if(count($habitaciones) > 6)
+                                <div class="col-sm-6 col-md-4">
+                                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
+                                </div>
+                            @endif
+                            <!-- hasta acá -->
                         @else
                             <div class="col-sm-6 col-md-4">
                                 <div class="empty-image p-1">
@@ -177,26 +116,17 @@
                 </div> 
             </div>
 
-            @if(count($galeria) > 6)
-                <div class="col-sm-6 col-md-4 d-flex justify-content-center">
-                    <a class="btn btn-primary load_gallery" href="#">Ver más</a>
-                </div>
-            @endif
-
             <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
                 <h3 class="text-center mb-3">Contactanos</h3>
-                <form class="form-validate row text-right"
-                    data-validation="{{$validation}}">
+                <form class="row text-right">
                     <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="nombre">Nombre</label>
                         <input type="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
                     </div>
-                    
                     <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
-
                     <div class="form-group text-left text-uppercase col-12 mb-3">
                         <label class="font-weight-bold" for="email">Teléfono</label>
                         <input type="number" class="form-control" id="email" placeholder="Teléfono">
@@ -221,6 +151,12 @@
                                 </label>
                             </div>
 
+                            <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
+                                <label class="font-weight-bold" for="personas">Número de personas</label> 
+                                <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
+                                </div> 
+                            </div> -->
+
                             <div class="col-12 col-md-5 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
                             <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
                                 <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
@@ -241,7 +177,7 @@
                     </div>
 
                     <div class="form-group text-right text-uppercase col-12 mb-3">
-                        <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+                        <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -271,24 +207,5 @@
     <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
-    
-    
-    <script>
-    
-        baguetteBox.run('.tz-gallery', {
-            buttons: true,
-        });
-
-        $('#checkin').datepicker({
-            format: "dd M",
-            language: "es"
-        });
-
-        $('#checkout').datepicker({
-            format: "dd M",
-            language: "es"
-        });
-        
-    </script>
+    <script type="text/javascript" src="{{asset('js/web/habitaciones.js')}}"></script>
 @endsection

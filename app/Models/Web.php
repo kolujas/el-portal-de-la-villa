@@ -8,9 +8,19 @@
         public static $validation = [
             'contactar' => [
                 'rules' => [
-                    //
+                    'nombre' => 'required|min:2|max:60',
+                    'correo' => 'required|email|max:100',
+                    'telefono' => 'required|numeric',
+                    'mensaje' => 'required',
                 ], 'messages' => [
-                    //
+                    'nombre.required' => 'El nombre es obligatorio.',
+                    'nombre.min' => 'El nombre no puede tener menos de :min caracteres.',
+                    'nombre.max' => 'El nombre no puede tener más de :max caracteres.',
+                    'correo.required' => 'El correo es obligatorio.',
+                    'correo.max' => 'El correo no puede tener más de :max caracteres.',
+                    'telefono.required' => 'El teléfono es obligatorio.',
+                    'telefono.numeric' => 'El teléfono debe ser un valor numérico.',
+                    'mensaje.required' => 'El mensaje de no puede estar vacío.',
                 ],
             ],'editar' => [
                 'rules' => [

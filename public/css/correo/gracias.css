@@ -1,0 +1,23 @@
+.container-fluid.p-3 {
+    padding-bottom: 0 !important;
+}
+
+.jumbotron{
+    border: none;
+    height: 65vh;
+}
+
+.volverBtn{
+    background-color: var(--color-uno);
+    padding: 1rem;
+    color: #fff;
+    border-radius: .4rem;
+}
+
+.gracias-div h2{
+    font-size: 2rem;
+}
+
+.gracias-div p{
+    font-size: 1.2rem;
+}

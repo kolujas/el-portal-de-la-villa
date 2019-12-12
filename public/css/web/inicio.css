@@ -116,7 +116,8 @@
 
 /* presentacion */
 .presentacion-div .card{
-    border: none;
+    border: 0.5rem;
+    background-color: var(--color-fondo)
 }
 
 .presentacion-div .card-title{
@@ -466,7 +467,11 @@
     /* separador con iconos */
     .separador-iconos .separador-icon{
         font-size: 3rem;
-        color: var(--color-tres-hover);
+        color: var(--color-tres-hover);   
+    }
+
+    .separador-iconos{
+        margin-top: 5.5rem !important;
     }
     
     .icon-text{

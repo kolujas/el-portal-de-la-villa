@@ -42,7 +42,7 @@
                             <h5 class="text-white slider-heading">{{$banner->titulo}}</h5>
                             <p class="slider-text">{!!nl2br($banner->descripcion)!!}</p>
                             <div class="carousel-footer d-flex justify-content-center">
-                                <a href="#contacto" class="btn btn-primary redirigirBtn">Reservar</a>
+                                <a href="#contacto" class="btn btn-primary redirigirBtn">Contactar</a>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="separador-iconos col-12 col-md-10 col-lg-8 mt-5 px-5 mx-md-auto px-md-0 text-center">
+            <div class="separador-iconos col-12 pt-5 px-5 px-md-auto px-md-0 text-center">
                 <div class="row">
                     <div class="d-flex justify-content-center justify-content-md-center flex-wrap">
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
@@ -98,7 +98,7 @@
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-parking"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Estacionamiento gratuito</p>
+                            <p class="m-0 mt-3 font-weight-bold">Parking gratuito</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-snowflake"></i>
@@ -117,7 +117,7 @@
                             <p class="m-0 mt-3 font-weight-bold">Pileta exterior y climatizada</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wallet"></i>
+                            <i class="separador-icon fas fa-tshirt"></i>
                             <p class="m-0 mt-3 font-weight-bold">Servicio completo de lavandería</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
@@ -128,9 +128,17 @@
                             <i class="separador-icon fas fa-wifi"></i>
                             <p class="m-0 mt-3 font-weight-bold">WIFI de alta velocidad</p>
                         </div>
-                        <div class="icon-text col-4 col-xl-3 mt-xl-5 mb-xl-5">
-                            <i class="separador-icon fas fa-ban text-dark"></i>
-                            <p class="m-0 mt-3 font-weight-bold">No tiene jacuzzis</p>
+                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                            <i class="separador-icon fas fa-wifi"></i>
+                            <p class="m-0 mt-3 font-weight-bold">SPA</p>
+                        </div>
+                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                            <i class="separador-icon fas fa-anchor"></i>
+                            <p class="m-0 mt-3 font-weight-bold">Club de costa</p>
+                        </div>
+                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                            <i class="separador-icon fas fa-wifi"></i>
+                            <p class="m-0 mt-3 font-weight-bold">Calefacción central</p>
                         </div>
                     </div>
                 </div>

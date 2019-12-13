@@ -129,7 +129,7 @@
                             <p class="m-0 mt-3 font-weight-bold">WIFI de alta velocidad</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wifi"></i>
+                            <i class="separador-icon fas fa-spa"></i>
                             <p class="m-0 mt-3 font-weight-bold">SPA</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
@@ -137,7 +137,7 @@
                             <p class="m-0 mt-3 font-weight-bold">Club de costa</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wifi"></i>
+                            <i class="separador-icon fas fa-thermometer-full"></i>
                             <p class="m-0 mt-3 font-weight-bold">Calefacción central</p>
                         </div>
                     </div>

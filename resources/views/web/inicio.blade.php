@@ -76,7 +76,7 @@
                     <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="/habitaciones" class="more btn btn-primary">Ver más</a>
+                        <a href="/habitaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
                 <div class="card mb-lg-0 position-lg-relative">
@@ -84,7 +84,7 @@
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="/instalaciones" class="more btn btn-primary">Ver más</a>
+                        <a href="/instalaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
             </div>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group text-right text-uppercase col-12 mb-3">
+                    <div class="form-group text-right text-uppercase col-12 mb-3 d-flex justify-content-center">
                         <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>

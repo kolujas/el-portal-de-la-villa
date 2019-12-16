@@ -51,6 +51,7 @@
 .carousel .redirigirBtn{
    z-index: 999;
    background-color: var(--color-uno);
+   border-radius: 0.25rem;
 }
 
 .carousel-control-prev{
@@ -116,7 +117,7 @@
 
 /* presentacion */
 .presentacion-div .card{
-    border-radius: 0.5rem;
+    border-radius: .5rem;
 }
 
 .presentacion-div .card-title{
@@ -129,26 +130,32 @@
     position: relative;
     transform: translateY(-3rem);
     margin: auto;
+    border-radius: .5rem;
 }
 
 .presentacion-div .card-body .more{
     background-color: var(--color-uno);
 }
 
+.presentacion-div .more{
+    border-radius: .25rem;
+}
+
 /* separador con iconos */
 .separador-iconos{
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    background: white;
 }
 
 .separador-iconos .separador-icon{
     font-size: 3rem;
-    color: var(--color-tres-hover);
+    color: #197c5cc2;
     transition: 500ms;
 }
 
 .icon-text{
-    color: var(--color-uno);
+    color: #6f6f6f;
     font-size: 1rem;
 }
 
@@ -309,6 +316,7 @@
 
 .load_gallery{
     background-color: var(--color-uno);
+    border-radius: .5rem;
 }
 
 /* MD */
@@ -379,6 +387,8 @@
     /* presentacion */
     .presentacion-div .card{
         background-color: var(--color-fondo);
+        border-radius: 0;
+        border: none;
     }
 
     .presentacion-div .card-body{
@@ -413,7 +423,7 @@
     }
 
     .icon-text:hover:hover .separador-icon{
-        color: var(--color-tres-uno);
+        color: var(--color-uno);
     }
     
     .icon-text{
@@ -486,6 +496,11 @@
     .separador-iconos .separador-icon{
         font-size: 3rem;
         color: var(--color-tres-hover);   
+    }
+
+    .separador-iconos{
+        margin-top: 5.5rem !important;
+        background-color: #fff;
     }
     
     .icon-text{

@@ -51,6 +51,7 @@
 .carousel .redirigirBtn{
    z-index: 999;
    background-color: var(--color-uno);
+   border-radius: 0.25rem;
 }
 
 .carousel-control-prev{
@@ -123,6 +124,7 @@
 
 /* presentacion */
 .presentacion-div .card{
+    border-radius: .5rem;
     border: none;
 }
 
@@ -136,10 +138,15 @@
     position: relative;
     transform: translateY(-3rem);
     margin: auto;
+    border-radius: .5rem;
 }
 
 .presentacion-div .card-body .more{
     background-color: var(--color-uno);
+}
+
+.presentacion-div .more{
+    border-radius: .25rem;
 }
 
 /* separador con iconos */
@@ -311,6 +318,7 @@
 
 .load_gallery{
     background-color: var(--color-uno);
+    border-radius: .5rem;
 }
 
 /* MD */
@@ -382,7 +390,10 @@
     }
        
     /* presentacion */
-    .presentacion-div .card-body{
+    .presentacion-div .card{
+        background-color: var(--color-fondo);
+        border-radius: 0;
+        border: none;
         width: 80%;
         position: absolute;
         right: 0;

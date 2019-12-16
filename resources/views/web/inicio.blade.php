@@ -76,20 +76,20 @@
                     <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="/habitaciones" class="more btn btn-primary">Ver más</a>
+                        <a href="/habitaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
-                <div class="card mb-lg-0 position-lg-relative">
+                <div class="card mb-3 mb-lg-0 position-lg-relative">
                     <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="...">
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <a href="/instalaciones" class="more btn btn-primary">Ver más</a>
+                        <a href="/instalaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
             </div>
 
-            <div class="separador-iconos col-12 pt-5 text-center">
+            <div class="separador-iconos col-12 py-5 text-center">
                 <div class="row">
                     <div class="d-flex justify-content-center justify-content-md-center flex-wrap">
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
@@ -129,7 +129,7 @@
                             <p class="m-0 mt-3 font-weight-bold">WIFI de alta velocidad</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wifi"></i>
+                            <i class="separador-icon fas fa-spa"></i>
                             <p class="m-0 mt-3 font-weight-bold">SPA</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
@@ -137,7 +137,7 @@
                             <p class="m-0 mt-3 font-weight-bold">Club de costa</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-xl-5">
-                            <i class="separador-icon fas fa-wifi"></i>
+                            <i class="separador-icon fas fa-thermometer-full"></i>
                             <p class="m-0 mt-3 font-weight-bold">Calefacción central</p>
                         </div>
                     </div>
@@ -162,7 +162,6 @@
                                     </div>
                                 @endif
                             @endfor
-                           
                         @else
                             <div class="col-sm-6 col-md-4">
                                 <div class="empty-image p-1">
@@ -247,7 +246,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group text-right text-uppercase col-12 mb-3">
+                    <div class="form-group text-right text-uppercase col-12 mb-3 d-flex justify-content-center">
                         <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>

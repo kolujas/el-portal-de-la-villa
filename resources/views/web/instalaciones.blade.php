@@ -70,7 +70,7 @@
                 <p class="m-0 text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero obcaecati debitis, eligendi dolore culpa deleniti, consequuntur et temporibus quaerat corporis. Praesentium quos nobis error suscipit architecto aliquam cupiditate atque.</p>
             </div>
             
-            <div id="instalaciones" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
+            <div id="instalaciones" class="galeria gallery-container col-12 col-lg-10 p-0 mx-md-auto">
                 <h2 class="text-center mt-5 mb-0">Galería de fotos</h2>
                 <div class="tz-gallery instalaciones px-3 pb-0">
                     <div class="row pt-3 pb-4">
@@ -88,7 +88,6 @@
                                     </div>
                                 @endif
                             @endfor
-                           
                         @else
                             <div class="col-sm-6 col-md-4">
                                 <div class="empty-image p-1">
@@ -115,76 +114,6 @@
                     <a class="btn btn-primary load_gallery" href="#">Ver más</a>
                 </div>
             @endif
-
-            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
-                <h3 class="text-center mb-3">Contactanos</h3>
-                <form class="row text-right">
-                    <div class="form-group text-left text-uppercase col-12 mb-3">
-                        <label class="font-weight-bold" for="nombre">Nombre</label>
-                        <input type="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
-                    </div>
-                    <div class="form-group text-left text-uppercase col-12 mb-3">
-                        <label class="font-weight-bold" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group text-left text-uppercase col-12 mb-3">
-                        <label class="font-weight-bold" for="email">Teléfono</label>
-                        <input type="number" class="form-control" id="email" placeholder="Teléfono">
-                    </div>
-
-                    <div class="form-group text-left text-uppercase col-12 my-3">
-                        <div class="row w-100 m-auto d-flex justify-content-between">
-                            <div id="checkin" class="date col-12 col-md-5 col-lg-3 mb-3 px-0">
-                                <!-- <label class="font-weight-bold w-100" for="checkin-input">Check in</label> -->
-                                <input type="text" class="form-control" id="checkin-input" placeholder="check in">
-                                <label for="checkin-input" class="input-group-addon m-0">
-                                    <i class="far fa-calendar-alt"></i>
-                                </label>
-                                <!-- <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span> -->
-                            </div>
-
-                            <div id="checkout" class="date col-12 col-md-5 col-lg-3 mb-3 px-0">
-                                <!-- <label class="font-weight-bold w-100" for="checkout-input">check out</label> -->
-                                <input type="text" class="form-control" id="checkout-input" placeholder="check out">
-                                <label for="checkout-input" class="input-group-addon m-0">
-                                    <i class="far fa-calendar-check"></i>
-                                </label>
-                            </div>
-
-                            <!-- <div class="form-group input-group text-center text-uppercase col-6 col-md-3 mb-3 personas">
-                                <label class="font-weight-bold" for="personas">Número de personas</label> 
-                                <input type="number" class="form-control" id="personas" aria-describedby="nombreHelp" placeholder="Huespedes"><span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
-                                </div> 
-                            </div> -->
-
-                            <div class="col-12 col-md-5 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
-                            <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
-                                <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
-                                    <option selected disabled>Huespedes</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="3">4</option>
-                                    <option value="3">5</option>
-                                    <option value="3">6</option>
-                                    <option value="3">+</option>
-                                </select>
-                                <label class="input-group-text px-0" for="inputGroupSelect02">
-                                    <i class="fas fa-user-plus"></i>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group text-right text-uppercase col-12 mb-3">
-                        <button type="submit" class="btn btn-primary enviar-contacto text-uppercase">Enviar</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="col-12 text-center mt-5 gmaps px-0 px-md-0">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.42240002282!2d-64.451797!3d-32.174427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb83237eb8a7521b!2sHotel%20El%20Portal%20de%20la%20Villa!5e0!3m2!1ses!2sar!4v1572380101216!5m2!1ses!2sar" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
         </div>
     </div>
 

@@ -102,6 +102,10 @@ a:hover{
     background: #25D366;
 }
 
+.container-fluid{
+    background: #ecedee;
+}
+
 /* MD */
 @media(min-width: 768px){
     /**/

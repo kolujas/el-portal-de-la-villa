@@ -29,7 +29,7 @@
 @endsection
 
 @section('main')
-    <div class="panel tabs col-12 d-flex justify-content-between">
+    <div class="panel tabs col-12 d-flex justify-content-center">
         <div class="tab-menu p-2">
             <ul class="d-flex justify-content-around m-0 p-0">
                 <li class="mb-2"><a class="tab-button opened" href="#personalizar">

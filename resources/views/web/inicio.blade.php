@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="separador-iconos col-12 pt-5 px-5 px-md-auto px-md-0 text-center">
+            <div class="separador-iconos col-12 pt-5 text-center">
                 <div class="row">
                     <div class="d-flex justify-content-center justify-content-md-center flex-wrap">
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
@@ -112,19 +112,19 @@
                             <i class="separador-icon fas fa-baby-carriage"></i>
                             <p class="m-0 mt-3 font-weight-bold">Apto para niños</p>
                         </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-swimmer"></i>
                             <p class="m-0 mt-3 font-weight-bold">Pileta exterior y climatizada</p>
                         </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-tshirt"></i>
                             <p class="m-0 mt-3 font-weight-bold">Servicio completo de lavandería</p>
                         </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-glass-martini-alt"></i>
                             <p class="m-0 mt-3 font-weight-bold">Bar</p>
                         </div>
-                        <div class="icon-text col-4 col-xl-3 mb-xl-5">
+                        <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-wifi"></i>
                             <p class="m-0 mt-3 font-weight-bold">WIFI de alta velocidad</p>
                         </div>

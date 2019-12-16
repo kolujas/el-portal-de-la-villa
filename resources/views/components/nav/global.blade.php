@@ -11,8 +11,17 @@
 
     <div class="nav-row">
         <ul class="menu-list">
+            <li><a href="/demo" class="nav-link">
+                Inicio
+            </a></li>
             <li><a href="/demo#informacion" class="nav-link">
                 El Hotel
+            </a></li>
+            <li><a href="/habitaciones" class="nav-link">
+                Habitaciones
+            </a></li>
+            <li><a href="/instalaciones" class="nav-link">
+                Instalaciones
             </a></li>
             <li><a href="/demo#galeria" class="nav-link">
                 Galeria

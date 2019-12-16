@@ -48,10 +48,11 @@ a:hover{
     --primary-color: var(--color-uno);
     --color-tres: #C6C6C6;
     --color-cuatro: #222222;
+    flex-wrap: nowrap;
 }
 
 .nav-menu .nav-title{
-    flex-basis: 60%;
+    flex-basis: 70%;
     height: 100%;
 }
 
@@ -109,10 +110,6 @@ a:hover{
 /* LG */
 @media(min-width: 1024px){
     /* Navmenu */
-    .nav-menu .nav-title{
-        flex-basis: 60%;
-    }
-
     .nav-menu .nav-title h1{
         background: url(../img/recursos/logo.png) no-repeat center top;
         background-size: contain;
@@ -120,12 +117,12 @@ a:hover{
 
     .nav-menu .nav-row:first-of-type{
         height: 4.6rem;
-        flex-basis: 40%;
+        flex-basis: 30%;
     }
 
     .nav-menu .nav-row{
         height: 4.6rem;
-        flex-basis: 60%;
+        flex-basis: 70%;
     }
 
     .nav-menu .menu-list li{

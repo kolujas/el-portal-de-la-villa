@@ -7,8 +7,17 @@
 
     <div class="sidebar-content">
         <ul class="sidebar-menu">
+            <li><a href="/demo" class="nav-link text-white">
+                Inicio
+            </a></li>
             <li><a href="/demo#informacion" class="nav-link text-white">
                 El Hotel
+            </a></li>
+            <li><a href="/habitaciones" class="nav-link text-white">
+                Habitaciones
+            </a></li>
+            <li><a href="/instalaciones" class="nav-link text-white">
+                Instalaciones
             </a></li>
             <li><a href="/demo#galeria" class="nav-link text-white">
                 Galeria

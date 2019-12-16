@@ -116,8 +116,7 @@
 
 /* presentacion */
 .presentacion-div .card{
-    border: 0.5rem;
-    background-color: var(--color-fondo)
+    border-radius: 0.5rem;
 }
 
 .presentacion-div .card-title{
@@ -137,6 +136,11 @@
 }
 
 /* separador con iconos */
+.separador-iconos{
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
 .separador-iconos .separador-icon{
     font-size: 3rem;
     color: var(--color-tres-hover);
@@ -343,7 +347,12 @@
         width: 70%;
     }
     
-    /* separador con iconos */    
+    /* separador con iconos */
+    .separador-iconos{
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+    }
+  
     .icon-text{
         font-size: 1.15rem;
     }
@@ -368,6 +377,10 @@
     }
        
     /* presentacion */
+    .presentacion-div .card{
+        background-color: var(--color-fondo);
+    }
+
     .presentacion-div .card-body{
         width: 80%;
         position: absolute;
@@ -394,6 +407,11 @@
     }
     
     /* separador con iconos */
+    .separador-iconos{
+        padding-left: 10rem !important;
+        padding-right: 10rem !important;
+    }
+
     .icon-text:hover:hover .separador-icon{
         color: var(--color-tres-uno);
     }
@@ -468,10 +486,6 @@
     .separador-iconos .separador-icon{
         font-size: 3rem;
         color: var(--color-tres-hover);   
-    }
-
-    .separador-iconos{
-        margin-top: 5.5rem !important;
     }
     
     .icon-text{

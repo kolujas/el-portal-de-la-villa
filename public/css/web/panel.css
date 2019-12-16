@@ -100,6 +100,7 @@
 
 .tabs .tab-body .tab-content .title{
     background: var(--color-uno);
+    border-radius: .25rem;
 }
 
 .tabs .tab-body .tab-content .title h2{
@@ -753,6 +754,14 @@
 
 /* XL */
 @media(min-width: 1200px){
+    .tabs .tab-menu{
+        flex-basis: 15%;
+    }
+
+    .tabs .tab-body{
+        flex-basis: 80%;
+    }
+
     .tabs .tab-body .personalizar section .active .descripcion textarea{
         height: 4.5rem;
     }

@@ -75,7 +75,7 @@
                     <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="...">
                     <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Ofrecemos desde nuestras habitaciones comodidad, servicio, simpleza y contacto con la Naturaleza. Nos encanta conectarnos con nuestros huéspedes que vienen desde muchos lugares todo el año. Nuestra premisa la hospitalidad.</p>
                         <a href="/habitaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="...">
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">Cada vez que visite Villa del Dique nos encargaremos de hacerlo sentir tan cómodo como en su propia casa. El Portal de la Villa cuenta con la calidez de un staff comprometido que hará con detalles simples que experimente la comodidad.</p>
                         <a href="/instalaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>

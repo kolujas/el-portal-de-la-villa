@@ -495,7 +495,6 @@
     /* separador con iconos */
     .separador-iconos .separador-icon{
         font-size: 3rem;
-        color: var(--color-tres-hover);   
     }
 
     .separador-iconos{

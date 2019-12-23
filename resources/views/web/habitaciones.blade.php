@@ -24,37 +24,14 @@
 @section('banner')
     <div class="banner-div">
         <div id="carouselCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators d-none">
-                <li data-target="#carouselCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselCaptions" data-slide-to="2"></li>
-            </ol>
             <div class="carousel-inner">
-                @foreach($banners as $banner)
-                    @if($banner->id_banner == 1)
-                    <div class="carousel-item active d-flex justify-content-center align-items-center">
-                    @else
-                    <div class="carousel-item d-flex justify-content-center align-items-center">
-                    @endif
-                        <img src="{{asset('storage/' . $banner->imagen)}}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
-                            <h5 class="text-white slider-heading">{{$banner->titulo}}</h5>
-                            <p class="slider-text">{!!nl2br($banner->descripcion)!!}</p>
-                        </div>
+                <div class="carousel-item active d-flex justify-content-center align-items-center">
+                    <img src="{{asset('img/recursos/banner-habitaciones.JPG')}}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
+                        <h5 class="text-white slider-heading">TÍTULO DE HABITACIONES</h5>
+                        <p class="slider-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum corporis exercitationem reprehenderit adipisci libero distinctio repudiandae voluptatum modi minima molestiae quis aliquid, optio iusto? Voluptatibus qui inventore autem dolor officiis!</p>
                     </div>
-                @endforeach
-            </div>
-            <a class="carousel-control-prev indicators" href="#carouselCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next indicators" href="#carouselCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <div class="carousel-footer d-flex justify-content-center">
-                <!-- <a href="#" type="submit" class="btn btn-primary redirigirBtn">Reservar</a> -->
-                <a href="#contacto" class="btn btn-primary redirigirBtn">Reservar</a>
+                </div>
             </div>
         </div>
     </div>

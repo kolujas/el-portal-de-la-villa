@@ -64,25 +64,25 @@
     <!-- contenido -->
     <div class="informacion-inicial col-12">
         <div class="row">
-            <div id="informacion" class="informacion div-informacion-inicial col-12 col-md-10 col-lg-8 col-xl-6 mt-5 px-5 mx-md-auto px-0 my-4 text-center">
-            <span class="section-title-border my-3 mx-auto"></span>
-                <span class="lead mini-encabezado">Viví Córdoba</span>
+            <div id="informacion" class="informacion div-informacion-inicial col-12 col-md-10 col-lg-8 col-xl-6 px-5 mx-md-auto px-0 my-4 text-center">
+                <span class="section-title-border mx-auto"></span>
+                <span class="lead mini-encabezado d-block pt-4 mt-2">Viví Córdoba</span>
                 <h2 class="py-3">{{$archivos->titulo}}</h2>
                 <p class="m-0 text-dark">{!!nl2br($archivos->descripcion)!!}</p>
             </div>
 
-            <div class="presentacion-div col-lg-12 col-md-10 mt-5 px-3 mx-md-auto px-0 my-4 text-center flex-wrap">
+            <div class="presentacion-div col-lg-12 col-md-10 px-3 mx-md-auto px-0 my-4 text-center flex-wrap">
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
                     <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="foto">
-                    <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
+                    <div class="card-body position-lg-absolute pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
                         <p class="card-text">Ofrecemos desde nuestras habitaciones comodidad, servicio, simpleza y contacto con la Naturaleza. Nos encanta conectarnos con nuestros huéspedes que vienen desde muchos lugares todo el año. Nuestra premisa la hospitalidad.</p>
                         <a href="/habitaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="foto">
-                    <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
+                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top position-lg-absolute col-lg-6 px-0" alt="foto">
+                    <div class="card-body position-lg-absolute card-2-body pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">Cada vez que visite Villa del Dique nos encargaremos de hacerlo sentir tan cómodo como en su propia casa. El Portal de la Villa cuenta con la calidez de un staff comprometido que hará con detalles simples que experimente la comodidad.</p>
                         <a href="/instalaciones" class="more btn btn-primary mb-4">Ver más</a>
@@ -145,10 +145,11 @@
                 </div>
             </div>
 
-            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mx-md-auto">
-                <h2 class="text-center mt-5 mb-0">Galería de fotos</h2>
-                <div class="tz-gallery galeria px-3 pb-0">
-                    <div class="row pt-3 pb-4">
+            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 pt-4 mx-md-auto">
+                <span class="section-title-border mx-auto"></span>
+                <h2 class="text-center mb-0 mt-4">Galería de fotos</h2>
+                <div class="tz-gallery galeria px-3 pt-4 pb-0">
+                    <div class="row pb-4">
                         @if(count($galeria))
                             @for($i = 0; $i < count($galeria); $i++)
                                 @if($i < 6)
@@ -185,17 +186,16 @@
             </div>
 
             @if(count($galeria) > 6)
-                <div class="row col-12 d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
                     <a class="btn btn-primary load_gallery" href="#">Ver más</a>
                 </div>
             @endif
 
-
-            <div class="card-group pt-5 px-4 noticias col-12">
-                <div class="row d-flex justify-content-around">
+            <div class="card-group pt-4 noticias col-12">
+                <div class="row d-flex justify-content-around px-3">
                     <span class="section-title-border mx-auto"></span>
                     <h4 class="my-4 col-12 text-center">Últimas noticias</h4>
-                    <div class="card col-12 col-md-5 col-lg-4 px-0 my-3">
+                    <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
                         <img src="/img/galeria/1.jpg" class="card-img-top" alt="foto">
                         <div class="card-body">
                             <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
@@ -204,7 +204,7 @@
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
-                    <div class="card col-12 col-md-5 col-lg-4 px-0 my-3">
+                    <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
                         <img src="/img/galeria/2.jpg" class="card-img-top" alt="foto">
                         <div class="card-body">
                             <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
@@ -213,7 +213,7 @@
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         </div>
                     </div>
-                    <div class="card col-12 col-md-5 col-lg-4 px-0 my-3">
+                    <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
                         <img src="/img/galeria/rails.jpg" class="card-img-top" alt="foto">
                         <div class="card-body">
                             <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
@@ -225,7 +225,7 @@
                 </div>
             </div>
 
-            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-0 my-4">
+            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mx-md-auto px-5">
                 <h3 class="text-center mb-3">Contactanos</h3>
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">

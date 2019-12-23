@@ -454,14 +454,14 @@
 
     .presentacion-div .card:first-child .card-body{
         transform: translateX(-40px); 
-        top: 3.2rem;
+        top: 1.2rem;
     }
    
     .presentacion-div .card-2-body{
         right: 50%;
         left: 0;
         transform: translateX(40px);  
-        top: 3.2rem;
+        top: 1.2rem;
     }
     
     /* separador con iconos */
@@ -530,14 +530,14 @@
 
     .presentacion-div .card:first-child .card-body{
         transform: translateX(-40px); 
-        top: 3.2rem;
+        top: 6.2rem;
     }
    
     .presentacion-div .card-2-body{
         right: 50%;
         left: 0;
         transform: translateX(40px);  
-        top: 3.2rem;
+        top: 6.2rem;
     }
     
     /* separador con iconos */

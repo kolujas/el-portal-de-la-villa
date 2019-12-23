@@ -80,7 +80,7 @@
                         <a href="/habitaciones" class="more btn btn-primary mb-4">Ver más</a>
                     </div>
                 </div>
-                <div class="card mb-3 mb-lg-0 position-lg-relative">
+                <div class="card mb-3 mb-lg-4 position-lg-relative">
                     <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="foto">
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
@@ -152,29 +152,29 @@
                         @if(count($galeria))
                             @for($i = 0; $i < count($galeria); $i++)
                                 @if($i < 6)
-                                    <div class="col-sm-6 col-md-4">
+                                    <div class="col-sm-6 col-md-4 my-4">
                                         <a class="lightbox" href="{{asset('storage/' . $galeria[$i]->imagen)}}">
                                             <img class="mb-0" src="{{asset('storage/' . $galeria[$i]->imagen)}}" alt="Park">
                                         </a>
                                     </div>
                                 @else
-                                    <div class="col-sm-6 col-md-4 d-none">
+                                    <div class="col-sm-6 col-md-4 my-4 d-none">
                                         <a class="lightbox" href="{{asset('storage/' . $galeria[$i]->imagen)}}"></a>
                                     </div>
                                 @endif
                             @endfor
                         @else
-                            <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-4 my-4">
                                 <div class="empty-image p-1">
                                     <div class="empty-content"></div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-4 my-4">
                                 <div class="empty-image p-1">
                                     <div class="empty-content"></div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-4 my-4">
                                 <div class="empty-image p-1">
                                     <div class="empty-content"></div>
                                 </div>

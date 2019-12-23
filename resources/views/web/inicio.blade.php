@@ -37,7 +37,7 @@
                     @else
                     <div class="carousel-item d-flex justify-content-center align-items-center">
                     @endif
-                        <img src="{{asset('storage/' . $banner->imagen)}}" class="d-block w-100" alt="...">
+                        <img src="{{asset('storage/' . $banner->imagen)}}" class="d-block w-100" alt="foto">
                         <div class="carousel-caption d-block d-md-flex justify-content-center flex-wrap">
                             <h5 class="text-white slider-heading">{{$banner->titulo}}</h5>
                             <p class="slider-text">{!!nl2br($banner->descripcion)!!}</p>
@@ -64,15 +64,16 @@
     <!-- contenido -->
     <div class="informacion-inicial col-12">
         <div class="row">
-            <div id="informacion" class="informacion div-informacion-inicial col-12 col-md-10 col-lg-8 col-xl-6 mt-5 px-5 mx-md-auto px-md-0 text-center">
+            <div id="informacion" class="informacion div-informacion-inicial col-12 col-md-10 col-lg-8 col-xl-6 mt-5 px-5 mx-md-auto px-0 my-4 text-center">
+            <span class="section-title-border my-3 mx-auto"></span>
                 <span class="lead mini-encabezado">Viví Córdoba</span>
                 <h2 class="py-3">{{$archivos->titulo}}</h2>
                 <p class="m-0 text-dark">{!!nl2br($archivos->descripcion)!!}</p>
             </div>
 
-            <div class="presentacion-div col-lg-12 col-md-10 mt-5 px-3 mx-md-auto px-md-0 text-center flex-wrap">
+            <div class="presentacion-div col-lg-12 col-md-10 mt-5 px-3 mx-md-auto px-0 my-4 text-center flex-wrap">
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="...">
+                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="foto">
                     <div class="card-body position-lg-absolute col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
                         <p class="card-text">Ofrecemos desde nuestras habitaciones comodidad, servicio, simpleza y contacto con la Naturaleza. Nos encanta conectarnos con nuestros huéspedes que vienen desde muchos lugares todo el año. Nuestra premisa la hospitalidad.</p>
@@ -80,7 +81,7 @@
                     </div>
                 </div>
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="...">
+                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 position-lg-absolute px-0" alt="foto">
                     <div class="card-body position-lg-absolute card-2-body col-lg-6 pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">Cada vez que visite Villa del Dique nos encargaremos de hacerlo sentir tan cómodo como en su propia casa. El Portal de la Villa cuenta con la calidez de un staff comprometido que hará con detalles simples que experimente la comodidad.</p>
@@ -189,7 +190,42 @@
                 </div>
             @endif
 
-            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-md-0">
+
+            <div class="card-group pt-5 px-4 noticias col-12">
+                <div class="row d-flex justify-content-around">
+                    <span class="section-title-border mx-auto"></span>
+                    <h4 class="my-4 col-12 text-center">Últimas noticias</h4>
+                    <div class="card col-12 col-md-5 col-lg-4 px-0 my-3">
+                        <img src="/img/galeria/1.jpg" class="card-img-top" alt="foto">
+                        <div class="card-body">
+                            <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
+                            <h5 class="card-title text-dark">ELIT DUIED AIUSMOD TEMPOR DID LABORE DOLORY</h5>
+                            <span class="section-title-border my-4 mx-auto"></span>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-5 col-lg-4 px-0 my-3">
+                        <img src="/img/galeria/2.jpg" class="card-img-top" alt="foto">
+                        <div class="card-body">
+                            <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
+                            <h5 class="card-title text-dark">ELIT DUIED AIUSMOD TEMPOR DID LABORE DOLORY</h5>
+                            <span class="section-title-border my-4 mx-auto"></span>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-5 col-lg-4 px-0 my-3">
+                        <img src="/img/galeria/rails.jpg" class="card-img-top" alt="foto">
+                        <div class="card-body">
+                            <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
+                            <h5 class="card-title text-dark">ELIT DUIED AIUSMOD TEMPOR DID LABORE DOLORY</h5>
+                            <span class="section-title-border my-4 mx-auto"></span>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mt-5 mx-md-auto px-5 px-0 my-4">
                 <h3 class="text-center mb-3">Contactanos</h3>
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">
@@ -210,7 +246,7 @@
 
                     <div class="form-group text-left text-uppercase col-12 my-3">
                         <div class="row w-100 m-auto d-flex justify-content-between">
-                            <div id="checkin" class="date col-12 col-md-5 col-lg-3 mb-3 px-0">
+                            <div id="checkin" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
                                 <!-- <label class="font-weight-bold w-100" for="checkin-input">Check in</label> -->
                                 <input type="text" class="form-control" id="checkin-input" placeholder="check in">
                                 <label for="checkin-input" class="input-group-addon m-0">
@@ -219,7 +255,7 @@
                                 <!-- <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span> -->
                             </div>
 
-                            <div id="checkout" class="date col-12 col-md-5 col-lg-3 mb-3 px-0">
+                            <div id="checkout" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
                                 <!-- <label class="font-weight-bold w-100" for="checkout-input">check out</label> -->
                                 <input type="text" class="form-control" id="checkout-input" placeholder="check out">
                                 <label for="checkout-input" class="input-group-addon m-0">
@@ -227,7 +263,7 @@
                                 </label>
                             </div>
 
-                            <div class="col-12 col-md-5 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
+                            <div class="col-12 col-md-5 col-lg-4 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
                             <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
                                 <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
                                     <option selected disabled>Huespedes</option>
@@ -252,7 +288,7 @@
                 </form>
             </div>
 
-            <div class="col-12 text-center mt-5 gmaps px-0 px-md-0">
+            <div class="col-12 text-center mt-5 gmaps px-0 px-0 my-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.42240002282!2d-64.451797!3d-32.174427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb83237eb8a7521b!2sHotel%20El%20Portal%20de%20la%20Villa!5e0!3m2!1ses!2sar!4v1572380101216!5m2!1ses!2sar" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </div>

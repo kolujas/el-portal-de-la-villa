@@ -229,41 +229,57 @@
                 <h3 class="text-center mb-3">Contactanos</h3>
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">
-                    <div class="form-group text-left text-uppercase col-12 mb-3">
+                    <div class="form-group text-left text-uppercase col-12 col-lg-10 mb-3 mx-auto">
                         <label class="font-weight-bold" for="nombre">Nombre</label>
-                        <input type="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
+                        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
                     </div>
                     
-                    <div class="form-group text-left text-uppercase col-12 mb-3">
+                    <div class="form-group text-left text-uppercase col-12 col-lg-10 mb-3 mx-auto">
                         <label class="font-weight-bold" for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
 
-                    <div class="form-group text-left text-uppercase col-12 mb-3">
+                    <div class="form-group text-left text-uppercase col-12 col-lg-10 mb-3 mx-auto">
                         <label class="font-weight-bold" for="email">Teléfono</label>
                         <input type="number" class="form-control" id="email" placeholder="Teléfono">
                     </div>
 
                     <div class="form-group text-left text-uppercase col-12 my-3">
-                        <div class="row w-100 m-auto d-flex justify-content-between">
-                            <div id="checkin" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
-                                <!-- <label class="font-weight-bold w-100" for="checkin-input">Check in</label> -->
+                        <div class="row w-100 m-auto d-flex justify-content-around text-center">
+                            <!-- <div id="checkin" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
                                 <input type="text" class="form-control" id="checkin-input" placeholder="check in">
                                 <label for="checkin-input" class="input-group-addon m-0">
                                     <i class="far fa-calendar-alt"></i>
                                 </label>
-                                <!-- <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span> -->
+                            </div> -->
+
+                            <!-- <div id="checkin" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
+                                <input type="text" class="form-control" id="checkin-input" placeholder="check in">
+                                <label for="checkin-input" class="input-group-addon m-0">
+                                    <i class="far fa-calendar-alt"></i>
+                                </label>
+                            </div> -->
+                           
+                            <div id="checkin" class="date col-4 col-md-5 col-lg-3 col-xl-2 mb-3 px-0" data-date-format="mm-dd">
+                                <label class="font-weight-bold" for="checkin">Checkin</label>
+                                <input class="form-control" id="checkin" type="text" readonly />
+                                <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
                             </div>
 
-                            <div id="checkout" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
-                                <!-- <label class="font-weight-bold w-100" for="checkout-input">check out</label> -->
+                            <div id="checkout" class="date col-4 col-md-5 col-lg-3 col-xl-2 mb-3 px-0" data-date-format="mm-dd">
+                            <label class="font-weight-bold" for="checkout">Checkout</label>
+                                <input class="form-control" id="checkout" type="text" readonly />
+                                <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                            </div>
+
+                           <!--  <div id="checkout" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
                                 <input type="text" class="form-control" id="checkout-input" placeholder="check out">
                                 <label for="checkout-input" class="input-group-addon m-0">
                                     <i class="far fa-calendar-check"></i>
                                 </label>
-                            </div>
+                            </div> -->
 
-                            <div class="col-12 col-md-5 col-lg-4 col-lg-3 px-1 personas position-relative mb-3 m-md-auto mx-lg-0 mt-lg-0">
+                            <div class="col-10 col-md-5 col-lg-4 col-xl-3 px-1 personas mb-3 m-md-auto mx-lg-0 mt-lg-0 mx-auto">
                             <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
                                 <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
                                     <option selected disabled>Huespedes</option>
@@ -272,8 +288,7 @@
                                     <option value="3">3</option>
                                     <option value="3">4</option>
                                     <option value="3">5</option>
-                                    <option value="3">6</option>
-                                    <option value="3">+</option>
+                                    <option value="3">6 o más</option>
                                 </select>
                                 <label class="input-group-text px-0" for="inputGroupSelect02">
                                     <i class="fas fa-user-plus"></i>
@@ -282,7 +297,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group text-right text-uppercase col-12 mb-3 d-flex justify-content-center">
+                    <div class="form-group text-right text-uppercase col-12 col-lg-11 mb-3 d-flex justify-content-center">
                         <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>
@@ -322,7 +337,7 @@
             buttons: true,
         });
 
-        $('#checkin').datepicker({
+       /*  $('#checkin').datepicker({
             format: "dd M",
             language: "es"
         });
@@ -330,6 +345,24 @@
         $('#checkout').datepicker({
             format: "dd M",
             language: "es"
+        }); */
+
+        $(function () {
+            $("#checkin").datepicker({ 
+                    format: "dd M",
+                    language: "es",
+                    autoclose: true, 
+                    todayHighlight: true                    
+            }).datepicker('update', new Date());
+        });
+
+        $(function () {
+            $("#checkout").datepicker({ 
+                   format: "dd M",
+                    language: "es",
+                    autoclose: true, 
+                    todayHighlight: true
+            }).datepicker('update', new Date());
         });
         
     </script>

@@ -183,18 +183,32 @@
 }
 
 #checkin, #checkout{
-    position: relative;
-    background-color: var(--color-uno);
+   position: relative;
+   margin: 0 5px 0 0;
+
 }
 
-#checkin input, #checkout input{
+#checkin > span, #checkout > span{
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    bottom: 0;
+    font-size: 1.3rem;
+    color: var(--color-uno);
+}
+
+#checkin > span:hover, #checkout > span:hover{
+    cursor: pointer;
+}
+
+/* #checkin input, #checkout input{
     border: none;
     color: #fff;
     text-transform: uppercase;
     background: transparent;
-}
+} */
 
-#checkin label, #checkout label{
+/* #checkin label, #checkout label{
     width: 50px;
     display: flex;
     align-items: center;
@@ -205,9 +219,9 @@
     top: 0;
     height: 100%;
     z-index: 99;
-}
+} */
 
-#checkin input:focus + label, #checkout input:focus + label{
+/* #checkin input:focus + label, #checkout input:focus + label{
     outline: none;
 }
 
@@ -218,14 +232,10 @@
 #checkin-input::placeholder, #checkout-input::placeholder{
     color: #fff;
     text-transform: uppercase;
-}
+} */
 
 .datepicker{
     z-index: 999 !important;
-}
-
-.personas{
-    background-color: var(--color-uno);
 }
 
 .personas input{
@@ -239,26 +249,23 @@
     color: #fff;
 }
 
-.personas input:focus{
-    background-color: var(--color-uno);
-    color: #fff;
-}
-
 .huespedes{
-    background-color: var(--color-uno);
-    color: #fff;
+    border: 1px solid #ced4da;
     -webkit-appearance: none;
     position: relative;
+    box-shadow: none !important;
+}
+
+.huespedes:focus{
+    border: 1px solid var(--color-uno);
 }
 
 .personas label{
     position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
+    top: 5px;
+    right: 10px;
+    height: 80%;
     width: 50px;
-    background-color: var(--color-uno);
-    color: #fff;
     font-size: 1.5rem;
 }
 
@@ -473,6 +480,20 @@
         font-size: 1.15rem;
     }
 
+
+    .huespedes{
+        margin-top: 1.7rem;
+    }
+
+    .personas label{
+        position: absolute;
+        width: 20px;
+        top: 36px;
+        right: 21px;
+        height: 40%;
+        font-size: 1.2rem;
+    }
+
     .galeria .row{
         flex-wrap: wrap;
         overflow-x: hidden;
@@ -547,5 +568,18 @@
     
     .icon-text{
         font-size: 1.15rem;
+    }
+
+    .huespedes{
+        width: 10rem;
+    }
+
+    .personas label{
+        position: absolute;
+        width: 20px;
+        top: 36px;
+        right: 14px;
+        height: 40%;
+        font-size: 1.2rem;
     }
 }

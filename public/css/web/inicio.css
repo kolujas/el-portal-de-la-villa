@@ -175,7 +175,7 @@
 
 .enviar-contacto{
     border-radius: .25rem;
-    background-color: var(--color-cuatro);
+    background-color: var(--color-uno);
 }
 
 #previous-button, #next-button, #close-button{

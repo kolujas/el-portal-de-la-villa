@@ -2,6 +2,7 @@
     /** @var object $archivos */
     /** @var Banner[] $banners */
     /** @var Galeria[] $galeria */
+    /** @var Evento[] $eventos */
     /** @var array $vaidation */
 ?>
 @extends('layout.index')
@@ -145,11 +146,11 @@
                 </div>
             </div>
 
-            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 pt-4 mx-md-auto">
+            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mt-3 pt-4 mx-md-auto">
                 <span class="section-title-border mx-auto"></span>
-                <h2 class="text-center mb-0 mt-4">Galería de fotos</h2>
+                <h2 class="text-center mb-0 mt-4 pt-2">Galería de fotos</h2>
                 <div class="tz-gallery galeria px-3 pt-4 pb-0">
-                    <div class="row pb-4">
+                    <div class="row">
                         @if(count($galeria))
                             @for($i = 0; $i < count($galeria); $i++)
                                 @if($i < 6)
@@ -191,42 +192,39 @@
                 </div>
             @endif
 
-            <div class="card-group pt-4 noticias col-12">
-                <div class="row d-flex justify-content-around px-3">
+            <div class="card-group mt-3 pt-4 eventos col-12">
+                <div class="row d-flex justify-content-around px-3 ml-0">
                     <span class="section-title-border mx-auto"></span>
-                    <h4 class="my-4 col-12 text-center">Últimas noticias</h4>
-                    <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
-                        <img src="/img/galeria/1.jpg" class="card-img-top" alt="foto">
-                        <div class="card-body">
-                            <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
-                            <h5 class="card-title text-dark">ELIT DUIED AIUSMOD TEMPOR DID LABORE DOLORY</h5>
-                            <span class="section-title-border my-4 mx-auto"></span>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h2 class="pb-4 my-4 pt-2 col-12 text-center">Últimos eventos</h2>
+                    @if(count($eventos))
+                        @foreach($eventos as $evento)
+                            <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
+                                <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img-top" alt="foto">
+                                <div class="card-body">
+                                    <p class="card-text mb-4"><small class="text-muted">{{$evento->date}}</small></p>
+                                    <span class="section-title-border my-4"></span>
+                                    <h5 class="card-title text-dark">{{$evento->titulo}}</h5>
+                                    <p class="card-text">{!!$evento->descripcion!!}</p>
+                                    <a href="{{$evento->url}}" target="_blank" class="evento-url btn btn-primary">Ver más</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="card empty-card col-12 col-md-5 col-lg-4 px-0 mb-4">
+                            <div class="empty-image"></div>
+                            <div class="card-body empty-body">
+                                <div class="empty-date my-4"></div>
+                                <div class="empty-title"></div>
+                                <div class="empty-content mt-4"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
-                        <img src="/img/galeria/2.jpg" class="card-img-top" alt="foto">
-                        <div class="card-body">
-                            <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
-                            <h5 class="card-title text-dark">ELIT DUIED AIUSMOD TEMPOR DID LABORE DOLORY</h5>
-                            <span class="section-title-border my-4 mx-auto"></span>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                    <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
-                        <img src="/img/galeria/rails.jpg" class="card-img-top" alt="foto">
-                        <div class="card-body">
-                            <p class="card-text my-4"><small class="text-muted">BY ADMIN/ ON 1 SEP, 2018</small></p>
-                            <h5 class="card-title text-dark">ELIT DUIED AIUSMOD TEMPOR DID LABORE DOLORY</h5>
-                            <span class="section-title-border my-4 mx-auto"></span>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        </div>
-                    </div>
+                    @endif
                 </div>
             </div>
 
-            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mx-md-auto px-5">
-                <h3 class="text-center mb-3">Contactanos</h3>
+            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mx-md-auto mt-3 px-5">
+                <span class="section-title-border mx-auto"></span>
+                <h3 class="text-center pb-4 my-4 pt-2">Contactanos</h3>
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">
                     <div class="form-group text-left text-uppercase col-12 col-lg-10 mb-3 mx-auto">
@@ -303,7 +301,7 @@
                 </form>
             </div>
 
-            <div class="col-12 text-center mt-5 gmaps px-0 px-0 my-4">
+            <div class="col-12 text-center mt-5 gmaps px-0 px-0 mt-4">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.42240002282!2d-64.451797!3d-32.174427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb83237eb8a7521b!2sHotel%20El%20Portal%20de%20la%20Villa!5e0!3m2!1ses!2sar!4v1572380101216!5m2!1ses!2sar" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </div>

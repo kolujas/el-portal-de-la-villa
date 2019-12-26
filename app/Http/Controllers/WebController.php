@@ -23,6 +23,7 @@
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
             $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->get();
+            $eventos = Evento::limit(6)->get();
             
             $galeria = collect([]);
             foreach($habitaciones as $habitacion){
@@ -30,6 +31,10 @@
             }
             foreach($instalaciones as $instalacion){
                 $galeria->push($instalacion);
+            }
+
+            foreach($eventos as $evento){
+                $evento->date = $this->createDate('es', $evento);
             }
 
             if(File::get('storage/archivos/titulo.txt')){
@@ -48,6 +53,7 @@
                 'archivos' => $archivos,
                 'banners' => $banners,
                 'galeria' => $galeria,
+                'eventos' => $eventos,
                 'validation' => json_encode(Web::$validation['contactar']),
             ]);
         }

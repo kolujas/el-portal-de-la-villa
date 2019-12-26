@@ -33,7 +33,7 @@
                     'descripcion' => 'required|max:220',
                     'fecha' => 'required|date',
                     'organizador' => 'required|min:2|max:200',
-                    'url' => 'required|url|exists:tipos,id_tipo',
+                    'url' => 'required|url',
                     'imagen' => 'required|mimetypes:image/jpeg,image/png',
                 ], 'messages' => [
                     'titulo.required' => 'El título del evento no puede estar vacío.',

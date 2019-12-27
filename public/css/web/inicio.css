@@ -160,14 +160,21 @@
 }
 
 /* formulario */
-
 #contacto{
     background-color: var(--color-uno);
-    padding-top: 4rem;
+}
+
+#contacto form{
+    position: relative;
+    padding-bottom: 15rem;
 }
 
 #contacto .section-title-border{
     background-color: #fff;
+}
+    
+.card-body .section-title-border{
+    transform: none;
 }
 
 #contacto .section-title-border::before{
@@ -189,12 +196,13 @@
 }
 
 .form-group label{
-    color: var(--color-uno);
+    color: #fff;
 }
 
 .enviar-contacto{
     border-radius: .25rem;
-    background-color: var(--color-uno);
+    background-color: #fff;
+    color: var(--color-uno);
 }
 
 #previous-button, #next-button, #close-button{
@@ -202,9 +210,11 @@
 }
 
 #checkin, #checkout{
-   position: relative;
-   margin: 0 5px 0 0;
-
+    position: relative;
+    margin: 0 5px 0 0;
+    width: 100%;
+    height: 0;
+    border: none;
 }
 
 #checkin > span, #checkout > span{
@@ -219,39 +229,6 @@
 #checkin > span:hover, #checkout > span:hover{
     cursor: pointer;
 }
-
-/* #checkin input, #checkout input{
-    border: none;
-    color: #fff;
-    text-transform: uppercase;
-    background: transparent;
-} */
-
-/* #checkin label, #checkout label{
-    width: 50px;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    border: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    z-index: 99;
-} */
-
-/* #checkin input:focus + label, #checkout input:focus + label{
-    outline: none;
-}
-
-#checkin label i, #checkout label i{
-    font-size: 2rem;
-}
-
-#checkin-input::placeholder, #checkout-input::placeholder{
-    color: #fff;
-    text-transform: uppercase;
-} */
 
 .datepicker{
     z-index: 999 !important;
@@ -269,28 +246,56 @@
 }
 
 .huespedes{
-    border: 1px solid #ced4da;
-    -webkit-appearance: none;
     position: relative;
-    box-shadow: none !important;
 }
 
 .huespedes:focus{
     border: 1px solid var(--color-uno);
 }
 
-.personas label{
+.huespedes label{
     position: absolute;
     top: 5px;
     right: 10px;
     height: 80%;
     width: 50px;
     font-size: 1.5rem;
+    background: #fff;
+}
+
+.huespedes .label-icon{
+    color: var(--color-uno);
 }
 
 .huespedes option[disabled]{
     background-color: var(--color-uno);
     color: #fff !important;
+}
+
+.fechas{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    z-index: 2;
+}
+
+.fechas::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    z-index: 0;
+    opacity: .5;
+    background: url(/img/recursos/banner-contacto.jpg) no-repeat center center;
+    background-attachment: fixed;
+}
+
+.col-12.day{
+    font-size: 4rem;
 }
 
 /* galeria */
@@ -390,6 +395,38 @@
     top: 0;
 }
 
+.section-addon-border{
+    position: relative;
+    height: 30px;
+    width: 5px;
+    background: #fff;
+    border-radius: 10px;
+    display: block;
+    transform: translateY(95%);
+}
+
+.section-addon-border::before {
+    position: absolute;
+    content: "";
+    height: 50%;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    top: -60%;
+    left: 0;
+}
+
+.section-addon-border::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    top: -170%;
+    left: 0;
+}
+
 .empty-card .empty-image{
     width: 100%;
     height: 300px;
@@ -481,6 +518,42 @@
         height: auto !important;
         width: auto !important;
     }
+
+    #contacto{
+        overflow: hidden;
+    }
+
+    #contacto form{
+        padding-bottom: 0;
+    }
+
+    .fechas{
+        left: 58.33%;
+        width: 41.667vw;
+        height: 100%;
+    }
+
+    .fechas::before{
+        height: 200%;
+    }
+
+    .section-addon-border{
+        height: 5px;
+        width: 30px;
+        transform: translateX(-85%);
+    }
+
+    .section-addon-border::before{
+        height: 100%;
+        width: 50%;
+        left: 110%;
+        top: 0;
+    }
+    
+    .section-addon-border::after{
+        left: 170%;
+        top: 0;
+    }
 }
 
 /* LG */
@@ -521,10 +594,6 @@
         transform: translateX(40px);
         width: 70%;
     }
-    
-    .card-body .section-title-border{
-        transform: none;
-    }
 
     /* separador con iconos */
     .separador-iconos{
@@ -538,19 +607,6 @@
     
     .icon-text{
         font-size: 1.15rem;
-    }
-
-    .huespedes{
-        margin-top: 1.7rem;
-    }
-
-    .personas label{
-        position: absolute;
-        width: 20px;
-        top: 36px;
-        right: 21px;
-        height: 40%;
-        font-size: 1.2rem;
     }
 
     .galeria .row{
@@ -620,18 +676,5 @@
     
     .icon-text{
         font-size: 1.15rem;
-    }
-
-    .huespedes{
-        width: 10rem;
-    }
-
-    .personas label{
-        position: absolute;
-        width: 20px;
-        top: 36px;
-        right: 1rem;
-        height: 40%;
-        font-size: 1.2rem;
     }
 }

@@ -222,81 +222,82 @@
                 </div>
             </div>
 
-            <div id="contacto" class="contacto col-12 col-md-8 col-xl-6 mx-md-auto mt-3 px-5">
-                <span class="section-title-border mx-auto"></span>
-                <h3 class="text-center text-white pb-4 my-4 pt-2">Contactanos</h3>
+            <div id="contacto" class="contacto col-12 mx-md-auto mt-3 pt-5">
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">
-                    <div class="form-group text-left text-uppercase col-12 col-md-7 col-lg-10 mb-3 mx-auto">
-                        <label class="font-weight-bold" for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
-                    </div>
-                    
-                    <div class="form-group text-left text-uppercase col-12 col-md-7 col-lg-10 mb-3 mx-auto">
-                        <label class="font-weight-bold" for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
-                    </div>
-
-                    <div class="form-group text-left text-uppercase col-12 col-md-7 col-lg-10 mb-3 mx-auto">
-                        <label class="font-weight-bold" for="email">Teléfono</label>
-                        <input type="number" class="form-control" id="email" placeholder="Teléfono">
-                    </div>
-
-                    <div class="form-group text-left text-uppercase col-12 my-3">
-                        <div class="row w-100 m-auto d-flex justify-content-around text-center">
-                            <!-- <div id="checkin" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
-                                <input type="text" class="form-control" id="checkin-input" placeholder="check in">
-                                <label for="checkin-input" class="input-group-addon m-0">
-                                    <i class="far fa-calendar-alt"></i>
-                                </label>
-                            </div> -->
-
-                            <!-- <div id="checkin" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
-                                <input type="text" class="form-control" id="checkin-input" placeholder="check in">
-                                <label for="checkin-input" class="input-group-addon m-0">
-                                    <i class="far fa-calendar-alt"></i>
-                                </label>
-                            </div> -->
-                           
-                            <div id="checkin" class="date col-4 col-md-2 col-lg-3 col-xl-2 mb-3 px-0" data-date-format="mm-dd">
-                                <label class="font-weight-bold" for="checkin">Checkin</label>
-                                <input class="form-control" id="checkin" type="text" readonly />
-                                <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                    <div class="col-12 col-md-7 px-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="section-title-border mx-auto"></span>
+                                <h3 class="text-center text-white pb-4 mt-4 pt-2 px-5">Contactanos</h3>
+                            </div>
+                            
+                            <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                <label class="font-weight-bold" for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
+                            </div>
+                            
+                            <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                <label class="font-weight-bold" for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
                             </div>
 
-                            <div id="checkout" class="date col-4 col-md-2 col-lg-3 col-xl-2 mb-3 px-0" data-date-format="mm-dd">
-                            <label class="font-weight-bold" for="checkout">Checkout</label>
-                                <input class="form-control" id="checkout" type="text" readonly />
-                                <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                            <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                <label class="font-weight-bold" for="telefono">Teléfono</label>
+                                <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
                             </div>
 
-                           <!--  <div id="checkout" class="date col-12 col-md-5 col-lg-4 col-lg-3 mb-3 px-0">
-                                <input type="text" class="form-control" id="checkout-input" placeholder="check out">
-                                <label for="checkout-input" class="input-group-addon m-0">
-                                    <i class="far fa-calendar-check"></i>
-                                </label>
-                            </div> -->
-
-                            <div class="col-10 col-md-5 col-lg-4 col-xl-3 px-1 personas mb-3 m-md-auto mx-lg-0 mt-lg-0 mx-auto">
-                            <!-- <label class="font-weight-bold" for="personas">Número de personas</label> -->
-                                <select class="huespedes custom-select text-uppercase" id="inputGroupSelect02">
-                                    <option selected disabled>Huespedes</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="3">4</option>
-                                    <option value="3">5</option>
-                                    <option value="3">6 o más</option>
-                                </select>
-                                <label class="input-group-text px-0" for="inputGroupSelect02">
-                                    <span class="input-group-addon"><i class="fas fa-user-plus"></i></span>
-                                </label>
+                            <div class="personas form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                <label class="font-weight-bold" for="huespedes">Huespedes</label>
+                                <div class="huespedes">
+                                    <select class="form-control huespedes custom-select" id="huespedes">
+                                        <option selected disabled>Huespedes</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="3">4</option>
+                                        <option value="3">5</option>
+                                        <option value="3">6 o más</option>
+                                    </select>
+                                    <label class="input-group-text px-0" for="huespedes">
+                                        <span class="input-group-addon"><i class="label-icon fas fa-user-plus"></i></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group text-right text-uppercase col-12 col-lg-11 mb-3 d-flex justify-content-center">
-                        <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+                        <div class="form-group text-right text-uppercase col-12 col-lg-11 mb-3 d-flex justify-content-center">
+                            <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+                        </div>
+                    </div>
+                    <div class="fechas col-12 col-md-5 p-0 d-md-flex align-items-center">
+                        <div class="row m-auto d-flex justify-content-around text-center text-white">
+                            <div class="col-5 col-md-12 py-5 py-md-0">
+                                <label class="row" for="checkin">
+                                    <div class="col-12">Checkin</div>
+                                    <div class="col-12 day">12</div>
+                                    <div class="col-12 text">
+                                        <span class="month text-uppercase">Diciembre</span>
+                                        <span class="year text-uppercase">2019</span>
+                                    </div>
+                                </label>
+                                <input class="form-date form-control p-0" id="checkin" type="text" readonly />
+                            </div>
+                            <div class="col-1 col-md-12 d-flex align-items-center my-3">
+                                <span class="section-addon-border mx-auto"></span>
+                            </div>
+                            <div class="col-5 col-md-12 py-5 py-md-0">
+                                <label class="row" for="checkout">
+                                    <div class="col-12">Checkout</div>
+                                    <div class="col-12 day">05</div>
+                                    <div class="col-12 text">
+                                        <span class="month text-uppercase">Enero</span>
+                                        <span class="year text-uppercase">2020</span>
+                                    </div>
+                                </label>
+                                <input class="form-date form-control p-0" id="checkout" type="text" readonly />
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -330,24 +331,13 @@
     
     
     <script>
-    
         baguetteBox.run('.tz-gallery', {
             buttons: true,
         });
 
-       /*  $('#checkin').datepicker({
-            format: "dd M",
-            language: "es"
-        });
-
-        $('#checkout').datepicker({
-            format: "dd M",
-            language: "es"
-        }); */
-
         $(function () {
             $("#checkin").datepicker({ 
-                    format: "dd M",
+                    format: "dd-mm-yyyy",
                     language: "es",
                     autoclose: true, 
                     todayHighlight: true                    
@@ -356,11 +346,16 @@
 
         $(function () {
             $("#checkout").datepicker({ 
-                   format: "dd M",
+                   format: "dd-mm-yyyy",
                     language: "es",
                     autoclose: true, 
                     todayHighlight: true
             }).datepicker('update', new Date());
+        });
+
+        $(".form-date").on('change', function(e){
+            e.preventDefault();
+            FormDate.change(this);
         });
         
     </script>

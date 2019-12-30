@@ -72,9 +72,9 @@
                 <p class="m-0 text-dark">{!!nl2br($archivos->descripcion)!!}</p>
             </div>
 
-            <div class="presentacion-div col-lg-12 col-md-10 px-3 mx-md-auto px-0 my-4 text-center flex-wrap">
+            <div class="presentacion-div col-lg-12 col-md-10 px-3 mx-md-auto px-lg-0 my-4 text-center flex-wrap">
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top col-lg-6 px-0" alt="foto">
+                    <img src="{{asset('img/recursos/banner-habitaciones.JPG')}}" class="card-img-top col-lg-6 px-0" alt="foto">
                     <div class="card-body position-lg-absolute pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Habitaciones</h5>
                         <p class="card-text">Ofrecemos desde nuestras habitaciones comodidad, servicio, simpleza y contacto con la Naturaleza. Nos encanta conectarnos con nuestros huéspedes que vienen desde muchos lugares todo el año. Nuestra premisa la hospitalidad.</p>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
-                    <img src="{{asset('/img/construction.jpg')}}" class="card-img-top position-lg-absolute col-lg-6 px-0" alt="foto">
+                    <img src="{{asset('img/recursos/banner-instalaciones.JPG')}}" class="card-img-top position-lg-absolute col-lg-6 px-0" alt="foto">
                     <div class="card-body position-lg-absolute card-2-body pt-3 px-3 pb-0 p-lg-5">
                         <h5 class="card-title mb-3">Instalaciones</h5>
                         <p class="card-text">Cada vez que visite Villa del Dique nos encargaremos de hacerlo sentir tan cómodo como en su propia casa. El Portal de la Villa cuenta con la calidez de un staff comprometido que hará con detalles simples que experimente la comodidad.</p>
@@ -225,7 +225,7 @@
             <div id="contacto" class="contacto col-12 mx-md-auto mt-3 pt-5">
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">
-                    <div class="col-12 col-md-7 px-5">
+                    <div class="form col-12 col-md-7 px-5 pb-3">
                         <div class="row">
                             <div class="col-12">
                                 <span class="section-title-border mx-auto"></span>
@@ -265,14 +265,13 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group text-right text-uppercase col-12 col-lg-11 mb-3 d-flex justify-content-center">
-                            <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
+                        <div class="addon d-md-flex align-items-center">
+                            <span class="section-addon-border mx-auto"></span>
                         </div>
                     </div>
                     <div class="fechas col-12 col-md-5 p-0 d-md-flex align-items-center">
                         <div class="row m-auto d-flex justify-content-around text-center text-white">
-                            <div class="col-5 col-md-12 py-5 py-md-0">
+                            <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
                                 <label class="row" for="checkin">
                                     <div class="col-12">Checkin</div>
                                     <div class="col-12 day">12</div>
@@ -286,7 +285,7 @@
                             <div class="col-1 col-md-12 d-flex align-items-center my-3">
                                 <span class="section-addon-border mx-auto"></span>
                             </div>
-                            <div class="col-5 col-md-12 py-5 py-md-0">
+                            <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
                                 <label class="row" for="checkout">
                                     <div class="col-12">Checkout</div>
                                     <div class="col-12 day">05</div>
@@ -296,6 +295,10 @@
                                     </div>
                                 </label>
                                 <input class="form-date form-control p-0" id="checkout" type="text" readonly />
+                            </div>
+
+                            <div class="form-group text-right text-uppercase col-12 col-lg-11 mb-5 mt-md-3 d-flex justify-content-center">
+                                <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                             </div>
                         </div>
                     </div>

@@ -166,7 +166,6 @@
 
 #contacto form{
     position: relative;
-    padding-bottom: 15rem;
 }
 
 #contacto .section-title-border{
@@ -184,7 +183,6 @@
 #contacto .section-title-border::after{
     background-color: #fff;
 }
-
 
 .form-control{
     border: 1px solid #ced4da;
@@ -273,12 +271,8 @@
 }
 
 .fechas{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 15rem;
-    z-index: 2;
+    position: relative;
+    height: fit-content;
 }
 
 .fechas::before{
@@ -287,7 +281,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 15rem;
+    height: 100%;
     z-index: 0;
     opacity: .5;
     background: url(/img/recursos/banner-contacto.jpg) no-repeat center center;
@@ -296,6 +290,51 @@
 
 .col-12.day{
     font-size: 4rem;
+}
+
+#contacto form .addon{
+    position: absolute;
+    bottom: -2.5px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#contacto form .addon .section-addon-border{
+    position: relative;
+    height: 5px;
+    width: 100px;
+    background: #fff;
+    border-radius: 10px;
+    display: block;
+    transform: translateX(-80%);
+}
+
+#contacto form .addon .section-addon-border.section-addon-border::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    background: #fff;
+    border-radius: 10px;
+    left: 105%;
+    top: 0;
+}
+
+#contacto form .addon .section-addon-border::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    left: 160%;
+    top: 0;
+}
+
+.datepicker-dropdown.datepicker-orient-top:after,
+.datepicker-dropdown.datepicker-orient-top:before{
+    display: none;
 }
 
 /* galeria */
@@ -462,6 +501,12 @@
     transition: 500ms;
 }
 
+.presentacion-div .card img{
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
 /* MD */
 @media(min-width: 768px){
     .redes-sociales .icon{
@@ -528,9 +573,7 @@
     }
 
     .fechas{
-        left: 58.33%;
-        width: 41.667vw;
-        height: 100%;
+        height: inherit;
     }
 
     .fechas::before{
@@ -553,6 +596,42 @@
     .section-addon-border::after{
         left: 170%;
         top: 0;
+    }
+
+    #contacto form .addon{
+        position: absolute;
+        left: calc(100% - 2.5px);
+        top: -3rem;
+        height: calc(100% + 3rem);
+        z-index: 2;
+        width: fit-content;
+    }
+
+    #contacto form .addon .section-addon-border{
+        height: 100px;
+        width: 5px;
+        transform: translateY(-80%);
+    }
+
+    #contacto form .addon .section-addon-border.section-addon-border::before{
+        height: 50%;
+        width: 100%;
+        top: 105%;
+        left: 0;
+    }
+
+    #contacto form .addon .section-addon-border::after{
+        height: 100%;
+        width: 100%;
+        top: 160%;
+        left: 0;
+    }
+
+    #checkin,
+    #checkout{
+        width: 12rem;
+        display: block;
+        margin: auto;
     }
 }
 

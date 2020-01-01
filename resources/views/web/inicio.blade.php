@@ -202,7 +202,7 @@
                                 <div class="card-body p-0">
                                     <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
                                     <div class="date text-center p-3">
-                                        <div class="day text">{{$evento->date->day}}</div>
+                                        <div class="day text text">{{$evento->date->day text}}</div>
                                         <div class="text">
                                             <span class="month text-uppercase">{{$evento->date->month}}</span>
                                             <span class="year text-uppercase">{{$evento->date->year}}</span>
@@ -229,82 +229,84 @@
             <div id="contacto" class="contacto col-12 mx-md-auto mt-3 pt-5">
                 <form class="form-validate row text-right"
                     data-validation="{{$validation}}">
-                    <div class="form col-12 col-md-7 px-5 pb-3">
+                    <div class="col-12">
+                        <span class="section-title-border mx-auto"></span>
+                        <h3 class="text-center text-white pb-4 mt-4 pt-2 px-5">Contactanos</h3>
+                    </div>
+
+                    <div class="col-12">
                         <div class="row">
-                            <div class="col-12">
-                                <span class="section-title-border mx-auto"></span>
-                                <h3 class="text-center text-white pb-4 mt-4 pt-2 px-5">Contactanos</h3>
-                            </div>
-                            
-                            <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
-                                <label class="font-weight-bold" for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
-                            </div>
-                            
-                            <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
-                                <label class="font-weight-bold" for="email">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            <div class="form col-12 col-md-7 px-5 pb-3">
+                                <div class="row">
+                                    <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                        <label class="font-weight-bold" for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
+                                    </div>
+                                    
+                                    <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                        <label class="font-weight-bold" for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                    </div>
+
+                                    <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                        <label class="font-weight-bold" for="telefono">Teléfono</label>
+                                        <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
+                                    </div>
+
+                                    <div class="personas form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                        <label class="font-weight-bold" for="huespedes">Huespedes</label>
+                                        <div class="huespedes">
+                                            <select class="form-control huespedes custom-select" id="huespedes">
+                                                <option selected disabled>Huespedes</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="3">4</option>
+                                                <option value="3">5</option>
+                                                <option value="3">6 o más</option>
+                                            </select>
+                                            <label class="input-group-text px-0" for="huespedes">
+                                                <span class="input-group-addon"><i class="label-icon fas fa-user-plus"></i></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
-                                <label class="font-weight-bold" for="telefono">Teléfono</label>
-                                <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
-                            </div>
-
-                            <div class="personas form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
-                                <label class="font-weight-bold" for="huespedes">Huespedes</label>
-                                <div class="huespedes">
-                                    <select class="form-control huespedes custom-select" id="huespedes">
-                                        <option selected disabled>Huespedes</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="3">4</option>
-                                        <option value="3">5</option>
-                                        <option value="3">6 o más</option>
-                                    </select>
-                                    <label class="input-group-text px-0" for="huespedes">
-                                        <span class="input-group-addon"><i class="label-icon fas fa-user-plus"></i></span>
-                                    </label>
+                            <div class="fechas col-12 col-md-5 p-0 d-md-flex align-items-center">
+                                <div class="row m-auto d-flex justify-content-around text-center text-white">
+                                    <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
+                                        <label class="row" for="checkin">
+                                            <div class="col-12">Checkin</div>
+                                            <div class="col-12 day text">12</div>
+                                            <div class="col-12 text">
+                                                <span class="month text-uppercase">Diciembre</span>
+                                                <span class="year text-uppercase">2019</span>
+                                            </div>
+                                        </label>
+                                        <input class="form-date form-control p-0" id="checkin" type="text" readonly />
+                                    </div>
+                                    <div class="col-1 col-md-12 d-flex align-items-center my-3">
+                                        <span class="section-addon-border mx-auto"></span>
+                                    </div>
+                                    <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
+                                        <label class="row" for="checkout">
+                                            <div class="col-12">Checkout</div>
+                                            <div class="col-12 day text">05</div>
+                                            <div class="col-12 text">
+                                                <span class="month text-uppercase">Enero</span>
+                                                <span class="year text-uppercase">2020</span>
+                                            </div>
+                                        </label>
+                                        <input class="form-date form-control p-0" id="checkout" type="text" readonly />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="addon d-md-flex align-items-center">
-                            <span class="section-addon-border mx-auto"></span>
-                        </div>
                     </div>
-                    <div class="fechas col-12 col-md-5 p-0 d-md-flex align-items-center">
-                        <div class="row m-auto d-flex justify-content-around text-center text-white">
-                            <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
-                                <label class="row" for="checkin">
-                                    <div class="col-12">Checkin</div>
-                                    <div class="col-12 day text">12</div>
-                                    <div class="col-12 text">
-                                        <span class="month text-uppercase">Diciembre</span>
-                                        <span class="year text-uppercase">2019</span>
-                                    </div>
-                                </label>
-                                <input class="form-date form-control p-0" id="checkin" type="text" readonly />
-                            </div>
-                            <div class="col-1 col-md-12 d-flex align-items-center my-3">
-                                <span class="section-addon-border mx-auto"></span>
-                            </div>
-                            <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
-                                <label class="row" for="checkout">
-                                    <div class="col-12">Checkout</div>
-                                    <div class="col-12 day text">05</div>
-                                    <div class="col-12 text">
-                                        <span class="month text-uppercase">Enero</span>
-                                        <span class="year text-uppercase">2020</span>
-                                    </div>
-                                </label>
-                                <input class="form-date form-control p-0" id="checkout" type="text" readonly />
-                            </div>
 
-                            <div class="form-group text-right text-uppercase col-12 col-lg-11 mb-5 mt-md-3 d-flex justify-content-center">
-                                <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
-                            </div>
-                        </div>
+                    <div class="form-group text-right text-uppercase col-12 mb-5 mt-md-3 d-flex justify-content-center">
+                        <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -347,7 +349,7 @@
                     format: "dd-mm-yyyy",
                     language: "es",
                     autoclose: true, 
-                    todayHighlight: true                    
+                    today textHighlight: true                    
             }).datepicker('update', new Date());
         });
 
@@ -356,7 +358,7 @@
                    format: "dd-mm-yyyy",
                     language: "es",
                     autoclose: true, 
-                    todayHighlight: true
+                    today textHighlight: true
             }).datepicker('update', new Date());
         });
 

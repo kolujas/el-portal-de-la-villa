@@ -23,7 +23,7 @@
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
             $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->get();
-            $eventos = Evento::whereDate('fecha', '<=', now())->orderBy('fecha', 'ASC')->limit(3)->get();
+            $eventos = Evento::whereDate('fecha', '>=', now())->orderBy('fecha', 'ASC')->limit(3)->get();
             
             $galeria = collect([]);
             foreach($habitaciones as $habitacion){

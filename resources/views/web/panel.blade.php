@@ -32,9 +32,13 @@
     <div class="panel tabs col-12 d-flex justify-content-center">
         <div class="tab-menu p-2">
             <ul class="d-flex justify-content-around m-0 p-0">
-                <li class="mb-2"><a class="tab-button opened" href="#personalizar">
-                    <i class="tab-icon fas fa-edit"></i>
-                    <span class="tab-text p-2">Personalizar Web</span>
+                <li class="mb-2"><a class="tab-button opened" href="#banners">
+                    <i class="tab-icon fas fa-images"></i>
+                    <span class="tab-text p-2">Banners</span>
+                </a></li>
+                <li class="mb-2"><a class="tab-button" href="#informacion">
+                    <i class="tab-icon fas fa-info"></i>
+                    <span class="tab-text p-2">Información</span>
                 </a></li>
                 <li class="mb-2"><a class="tab-button" href="#galerias">
                     <i class="tab-icon fas fa-images"></i>
@@ -47,7 +51,7 @@
             </ul>
         </div>
         <div class="tab-body pl-md-3">
-            <div id="personalizar" class="personalizar tab-content opened mt-3 mt-md-0">
+            <div id="banners" class="banners tab-content opened mt-3 mt-md-0">
                 <section>
                     <div class="title">
                         <h2 class="mb-0 p-3">Banner principal</h2>
@@ -78,6 +82,8 @@
                         </div>
                     @endforeach
                 </section>
+            </div>
+            <div id="informacion" class="informacion tab-content mt-3 mt-md-0">
                 <section>
                     <div class="title">
                         <h2 class="mb-0 p-3">Información inicial</h2>

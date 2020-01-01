@@ -159,6 +159,36 @@
     font-size: 1rem;
 }
 
+.card-event .card-body{
+    position: relative;
+}
+
+.card-event .card-body .date{
+    position: absolute;
+    top: -5%;
+    left: calc(105% - 10rem);
+    background: white;
+    width: 10rem;
+    border-radius: .25rem;
+    transition: 500ms;
+    color: var(--color-cuatro);
+}
+
+.card-event:hover .card-body .date{
+    color: var(--color-uno);
+    font-weight: bold;
+    top: 0;
+    left: calc(100% - 10rem);
+}
+
+.card-event .card-body .card-title{
+    transition: 500ms;
+}
+
+.card-event:hover .card-body .card-title{
+    transform: translateY(-5%);
+}
+
 /* formulario */
 #contacto{
     background-color: var(--color-uno);
@@ -288,7 +318,7 @@
     background-attachment: fixed;
 }
 
-.col-12.day{
+.day{
     font-size: 4rem;
 }
 

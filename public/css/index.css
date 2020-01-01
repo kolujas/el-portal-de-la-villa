@@ -104,6 +104,7 @@ a:hover{
 
 .container-fluid{
     background: #ecedee;
+    min-height: 75vh;
 }
 
 /* MD */

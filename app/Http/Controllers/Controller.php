@@ -21,4 +21,21 @@
             $date = $date->diffForHumans();
             return $date;
         }
+
+        /**
+         * Create the a date format text.
+         * @param $idiom - The date idiom.
+         * @param $obj - The object.
+         */
+        public function transformDate($idiom, $obj){
+            $date = new Carbon($obj->fecha);
+            $day = $date->format('d');
+            $month = $date->formatLocalized('%B');
+            $year = $date->format('Y');
+            return (object) [
+                'day' => $day,
+                'month' => $month,
+                'year' => $year,
+            ];
+        }
     }

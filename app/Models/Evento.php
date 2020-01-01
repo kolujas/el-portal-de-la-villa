@@ -30,7 +30,7 @@
             'crear' => [
                 'rules' => [
                     'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required|max:220',
+                    'descripcion' => 'nullable|max:220',
                     'fecha' => 'required|date',
                     'organizador' => 'required|min:2|max:200',
                     'url' => 'required|url',
@@ -54,7 +54,7 @@
             ],'editar' => [
                 'rules' => [
                     'titulo' => 'required|min:3|max:150',
-                    'descripcion' => 'required|max:220',
+                    'descripcion' => 'nullable|max:220',
                     'fecha' => 'required|date',
                     'organizador' => 'required|min:2|max:200',
                     'url' => 'required|url',

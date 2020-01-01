@@ -165,23 +165,23 @@
     color: white;
 }
 
-/* Personalizar */
-.tabs .tab-body .personalizar section .active > .informacion,
-.tabs .tab-body .personalizar section .active > .imagen,
-.tabs .tab-body .personalizar section .active > .accion,
-.tabs .tab-body .personalizar section .inactive form{
+/* Banners */
+.tabs .tab-body .banners section .active > .informacion,
+.tabs .tab-body .banners section .active > .imagen,
+.tabs .tab-body .banners section .active > .accion,
+.tabs .tab-body .banners section .inactive form{
     display: none;
 }
 
-.tabs .tab-body .personalizar section .inactive > .informacion,
-.tabs .tab-body .personalizar section .inactive > .imagen,
-.tabs .tab-body .personalizar section .inactive > .accion,
-.tabs .tab-body .personalizar section .active form{
+.tabs .tab-body .banners section .inactive > .informacion,
+.tabs .tab-body .banners section .inactive > .imagen,
+.tabs .tab-body .banners section .inactive > .accion,
+.tabs .tab-body .banners section .active form{
     display: block;
 }
 
-.tabs .tab-body .personalizar section .active .titulo input,
-.tabs .tab-body .personalizar section .active .descripcion textarea{
+.tabs .tab-body .banners section .active .titulo input,
+.tabs .tab-body .banners section .active .descripcion textarea{
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -195,19 +195,19 @@
 }
 
 
-.tabs .tab-body .personalizar section .active .titulo input:focus,
-.tabs .tab-body .personalizar section .active .descripcion textarea:focus{
+.tabs .tab-body .banners section .active .titulo input:focus,
+.tabs .tab-body .banners section .active .descripcion textarea:focus{
     box-shadow: none !important;
     border: 1px solid var(--color-uno);
 }
 
-.tabs .tab-body .personalizar section .active .titulo input:focus,
-.tabs .tab-body .personalizar section .active .descripcion textarea:focus{
+.tabs .tab-body .banners section .active .titulo input:focus,
+.tabs .tab-body .banners section .active .descripcion textarea:focus{
     animation: none;
     outline: none;
 }
 
-.tabs .tab-body .personalizar section .active .descripcion textarea{
+.tabs .tab-body .banners section .active .descripcion textarea{
     font-size: 0.875rem;
     color: #919aa1;
     font-weight: 200;
@@ -216,7 +216,7 @@
     height: 7.5rem;
 }
 
-.tabs .tab-body .personalizar .active .imagen .imagen-input{
+.tabs .tab-body .banners .active .imagen .imagen-input{
     position: absolute;
     left: 0;
     right: 0;
@@ -231,7 +231,82 @@
     cursor: pointer;
 }
 
-.tabs .tab-body .personalizar .active .imagen .imagen-input .input-icon{
+.tabs .tab-body .banners .active .imagen .imagen-input .input-icon{
+    animation: text-rainbow 4s infinite;
+    font-size: 3rem;
+}
+
+.suport .boton .web-cancelar{
+    background-color: var(--color-cuatro) !important;
+}
+
+/* Información */
+.tabs .tab-body .informacion section .active > .informacion,
+.tabs .tab-body .informacion section .active > .imagen,
+.tabs .tab-body .informacion section .active > .accion,
+.tabs .tab-body .informacion section .inactive form{
+    display: none;
+}
+
+.tabs .tab-body .informacion section .inactive > .informacion,
+.tabs .tab-body .informacion section .inactive > .imagen,
+.tabs .tab-body .informacion section .inactive > .accion,
+.tabs .tab-body .informacion section .active form{
+    display: block;
+}
+
+.tabs .tab-body .informacion section .active .titulo input,
+.tabs .tab-body .informacion section .active .descripcion textarea{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: var(--color-cuatro);
+    font-size: 1.5rem;
+    font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    border: 1px solid #ced4da;
+}
+
+
+.tabs .tab-body .informacion section .active .titulo input:focus,
+.tabs .tab-body .informacion section .active .descripcion textarea:focus{
+    box-shadow: none !important;
+    border: 1px solid var(--color-uno);
+}
+
+.tabs .tab-body .informacion section .active .titulo input:focus,
+.tabs .tab-body .informacion section .active .descripcion textarea:focus{
+    animation: none;
+    outline: none;
+}
+
+.tabs .tab-body .informacion section .active .descripcion textarea{
+    font-size: 0.875rem;
+    color: #919aa1;
+    font-weight: 200;
+    letter-spacing: 1px;
+    resize: none;
+    height: 7.5rem;
+}
+
+.tabs .tab-body .informacion .active .imagen .imagen-input{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    animation: rainbow 4s infinite;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.tabs .tab-body .informacion .active .imagen .imagen-input .input-icon{
     animation: text-rainbow 4s infinite;
     font-size: 3rem;
 }
@@ -636,11 +711,19 @@
         width: calc((45% / 2) - .5rem);
     }
 
-    .tabs .tab-body .personalizar section:first-of-type .active .descripcion textarea{
+    .tabs .tab-body .banners section:first-of-type .active .descripcion textarea{
         height: 9.5rem;
     }
 
-    .tabs .tab-body .personalizar section:last-of-type .active .descripcion textarea{
+    .tabs .tab-body .banners section:last-of-type .active .descripcion textarea{
+        height: 5.5rem;
+    }
+
+    .tabs .tab-body .informacion section:first-of-type .active .descripcion textarea{
+        height: 9.5rem;
+    }
+
+    .tabs .tab-body .informacion section:last-of-type .active .descripcion textarea{
         height: 5.5rem;
     }
 
@@ -673,7 +756,11 @@
         width: calc((33.calc(33% - .5rem) / 2) - .5rem);
     }
 
-    .tabs .tab-body .personalizar section .active .descripcion textarea{
+    .tabs .tab-body .banners section .active .descripcion textarea{
+        height: 5.5rem;
+    }
+
+    .tabs .tab-body .informacion section .active .descripcion textarea{
         height: 5.5rem;
     }
 
@@ -683,11 +770,19 @@
         margin-bottom: 2rem;
     }
 
-    .tabs .tab-body .personalizar section:first-of-type .active .descripcion textarea{
+    .tabs .tab-body .banners section:first-of-type .active .descripcion textarea{
         height: 5.5rem;
     }
 
-    .tabs .tab-body .personalizar section:last-of-type .active .descripcion textarea{
+    .tabs .tab-body .banners section:last-of-type .active .descripcion textarea{
+        height: 4.5rem;
+    }
+
+    .tabs .tab-body .informacion section:first-of-type .active .descripcion textarea{
+        height: 5.5rem;
+    }
+
+    .tabs .tab-body .informacion section:last-of-type .active .descripcion textarea{
         height: 4.5rem;
     }
 
@@ -762,7 +857,11 @@
         flex-basis: 80%;
     }
 
-    .tabs .tab-body .personalizar section .active .descripcion textarea{
+    .tabs .tab-body .banners section .active .descripcion textarea{
+        height: 4.5rem;
+    }
+
+    .tabs .tab-body .informacion section .active .descripcion textarea{
         height: 4.5rem;
     }
 }

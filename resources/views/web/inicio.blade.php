@@ -198,24 +198,28 @@
                     <h2 class="pb-4 my-4 pt-2 col-12 text-center">Últimos eventos</h2>
                     @if(count($eventos))
                         @foreach($eventos as $evento)
-                            <div class="card col-12 col-md-5 col-lg-4 px-0 mb-4">
-                                <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img-top" alt="foto">
-                                <div class="card-body">
-                                    <p class="card-text mb-4"><small class="text-muted">{{$evento->date}}</small></p>
-                                    <span class="section-title-border my-4"></span>
-                                    <h5 class="card-title text-dark">{{$evento->titulo}}</h5>
-                                    <p class="card-text">{!!$evento->descripcion!!}</p>
-                                    <a href="{{$evento->url}}" target="_blank" class="evento-url btn btn-primary">Ver más</a>
+                            <a href="{{$evento->url}}" target="_blank" class="card card-event col-12 col-md-5 col-lg-4 px-0 mb-5">
+                                <div class="card-body p-0">
+                                    <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
+                                    <div class="date text-center p-3">
+                                        <div class="day">{{$evento->date->day}}</div>
+                                        <div class="text">
+                                            <span class="month text-uppercase">{{$evento->date->month}}</span>
+                                            <span class="year text-uppercase">{{$evento->date->year}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-title px-3">
+                                        <span class="section-title-border my-4"></span>
+                                        <h5 class="card-title text-dark">{{$evento->titulo}}</h5>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         @endforeach
                     @else
                         <div class="card empty-card col-12 col-md-5 col-lg-4 px-0 mb-4">
                             <div class="empty-image"></div>
                             <div class="card-body empty-body">
-                                <div class="empty-date my-4"></div>
-                                <div class="empty-title"></div>
-                                <div class="empty-content mt-4"></div>
+                                <div class="empty-content"></div>
                             </div>
                         </div>
                     @endif

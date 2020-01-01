@@ -23,7 +23,7 @@
             $banners = Banner::all();
             $habitaciones = Galeria::where('id_tipo', '=', 1)->orderBY('posicion', 'asc')->get();
             $instalaciones = Galeria::where('id_tipo', '=', 2)->orderBY('posicion', 'asc')->get();
-            $eventos = Evento::limit(6)->get();
+            $eventos = Evento::whereDate('fecha', '<=', now())->orderBy('fecha', 'ASC')->limit(3)->get();
             
             $galeria = collect([]);
             foreach($habitaciones as $habitacion){
@@ -34,7 +34,7 @@
             }
 
             foreach($eventos as $evento){
-                $evento->date = $this->createDate('es', $evento);
+                $evento->date = $this->transformDate('es', $evento);
             }
 
             if(File::get('storage/archivos/titulo.txt')){

@@ -202,7 +202,7 @@
                                 <div class="card-body p-0">
                                     <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
                                     <div class="date text-center p-3">
-                                        <div class="day text text">{{$evento->date->day text}}</div>
+                                        <div class="day text">{{$evento->date->day}}</div>
                                         <div class="text">
                                             <span class="month text-uppercase">{{$evento->date->month}}</span>
                                             <span class="year text-uppercase">{{$evento->date->year}}</span>
@@ -336,6 +336,7 @@
     <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
     
     
@@ -349,7 +350,7 @@
                     format: "dd-mm-yyyy",
                     language: "es",
                     autoclose: true, 
-                    today textHighlight: true                    
+                    todayHighlight: true                    
             }).datepicker('update', new Date());
         });
 
@@ -358,7 +359,7 @@
                    format: "dd-mm-yyyy",
                     language: "es",
                     autoclose: true, 
-                    today textHighlight: true
+                    todayHighlight: true
             }).datepicker('update', new Date());
         });
 

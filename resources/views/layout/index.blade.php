@@ -27,7 +27,7 @@
     </head>
 
     <body>
-        <header>
+        <header id="header"></header>
             @yield('nav')
         </header>
 
@@ -65,6 +65,7 @@
         <!-- Mi JS -->
         <script type="text/javascript" src="{{ asset('js/PopUpNotification.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/Navmenu.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>
         @yield('js')
     </body>

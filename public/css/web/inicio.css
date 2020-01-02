@@ -318,7 +318,7 @@
     height: fit-content;
 }
 
-.day .text{
+.day.text{
     font-size: 4rem;
 }
 

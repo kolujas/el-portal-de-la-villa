@@ -336,6 +336,7 @@
     <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
     
     

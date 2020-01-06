@@ -46,6 +46,7 @@ a:hover{
 .nav-menu{
     background: transparent;
     --primary-color: var(--color-uno);
+    --secondary-color: white;
     --color-tres: #C6C6C6;
     --color-cuatro: #222222;
     flex-wrap: nowrap;

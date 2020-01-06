@@ -663,6 +663,23 @@
         display: block;
         margin: auto;
     }
+
+    .fecha-col{
+        height: calc(148px + 1rem);
+    }
+
+    .fecha-col .row{
+        height: 100%;
+        border-radius: .5rem;
+        transition: 500ms;
+    }
+
+    .fecha-col .row:hover,
+    .fecha-col .row:focus{
+        background: white;
+        color: var(--color-uno);
+        outline: none;
+    }
 }
 
 /* LG */

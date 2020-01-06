@@ -204,7 +204,7 @@
                                     <div class="date text-center p-3">
                                         <div class="day text">{{$evento->date->day}}</div>
                                         <div class="text">
-                                            <span class="month text-uppercase">{{$evento->date->month}}</span>
+                                            <span class="month text-uppercase mr-2">{{$evento->date->month}}</span>
                                             <span class="year text-uppercase">{{$evento->date->year}}</span>
                                         </div>
                                     </div>
@@ -235,8 +235,8 @@
                     </div>
 
                     <div class="col-12">
-                        <div class="row">
-                            <div class="form col-12 col-md-7 px-5 pb-3">
+                        <div class="row d-flex justify-content-center">
+                            <div class="form col-12 col-md-7 col-lg-6 px-5 px-md-0 pb-3">
                                 <div class="row">
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="nombre">Nombre</label>
@@ -273,14 +273,14 @@
                                 </div>
                             </div>
 
-                            <div class="fechas col-12 col-md-5 p-0 d-md-flex align-items-center">
+                            <div class="fechas col-12 col-md-3 col-lg-2 p-0">
                                 <div class="row m-auto d-flex justify-content-around text-center text-white">
-                                    <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
-                                        <label class="row" for="checkin">
-                                            <div class="col-12">Checkin</div>
-                                            <div class="col-12 day text">12</div>
-                                            <div class="col-12 text">
-                                                <span class="month text-uppercase">Diciembre</span>
+                                    <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
+                                        <label class="row mb-0" for="checkin">
+                                            <div class="col-12 d-flex justify-content-center align-items-center">Checkin</div>
+                                            <div class="col-12 day text d-flex justify-content-center align-items-center">12</div>
+                                            <div class="col-12 text d-flex justify-content-center align-items-center">
+                                                <span class="month text-uppercase mr-2">Diciembre</span>
                                                 <span class="year text-uppercase">2019</span>
                                             </div>
                                         </label>
@@ -289,12 +289,12 @@
                                     <div class="col-1 col-md-12 d-flex align-items-center my-3">
                                         <span class="section-addon-border mx-auto"></span>
                                     </div>
-                                    <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
-                                        <label class="row" for="checkout">
-                                            <div class="col-12">Checkout</div>
-                                            <div class="col-12 day text">05</div>
-                                            <div class="col-12 text">
-                                                <span class="month text-uppercase">Enero</span>
+                                    <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
+                                        <label class="row mb-0" for="checkout">
+                                            <div class="col-12 d-flex justify-content-center align-items-center">Checkout</div>
+                                            <div class="col-12 day text d-flex justify-content-center align-items-center">05</div>
+                                            <div class="col-12 text d-flex justify-content-center align-items-center">
+                                                <span class="month text-uppercase mr-2">Enero</span>
                                                 <span class="year text-uppercase">2020</span>
                                             </div>
                                         </label>

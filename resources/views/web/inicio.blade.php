@@ -202,7 +202,7 @@
                                 <div class="card-body p-0">
                                     <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
                                     <div class="date text-center p-3">
-                                        <div class="day">{{$evento->date->day}}</div>
+                                        <div class="day text">{{$evento->date->day}}</div>
                                         <div class="text">
                                             <span class="month text-uppercase">{{$evento->date->month}}</span>
                                             <span class="year text-uppercase">{{$evento->date->year}}</span>
@@ -278,7 +278,7 @@
                                     <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
                                         <label class="row" for="checkin">
                                             <div class="col-12">Checkin</div>
-                                            <div class="col-12 day">12</div>
+                                            <div class="col-12 day text">12</div>
                                             <div class="col-12 text">
                                                 <span class="month text-uppercase">Diciembre</span>
                                                 <span class="year text-uppercase">2019</span>
@@ -292,7 +292,7 @@
                                     <div class="col-5 col-md-12 pt-5 pb-3 py-md-0">
                                         <label class="row" for="checkout">
                                             <div class="col-12">Checkout</div>
-                                            <div class="col-12 day">05</div>
+                                            <div class="col-12 day text">05</div>
                                             <div class="col-12 text">
                                                 <span class="month text-uppercase">Enero</span>
                                                 <span class="year text-uppercase">2020</span>

@@ -8,7 +8,6 @@
     use Auth;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\File;
-    use Illuminate\Support\Facades\Validator;
     use Storage;
 
     class WebController extends Controller{
@@ -67,7 +66,7 @@
             return view('web.habitaciones', [
                 'banners' => $banners,
                 'habitaciones' => $habitaciones,
-                'validation' => json_encode(Web::$validation['contactar']),
+                'validation' => json_encode(Web::$reglas['contactar']),
             ]);
         }
 
@@ -79,7 +78,7 @@
             return view('web.instalaciones', [
                 'banners' => $banners,
                 'instalaciones' => $instalaciones,
-                'validation' => json_encode(Web::$validation['contactar']),
+                'validation' => json_encode(Web::$reglas['contactar']),
             ]);
         }
 
@@ -114,7 +113,7 @@
                     'instalaciones' => $instalaciones_totales,
                 ],
                 'eventos' => $eventos,
-                'validation' => json_encode(Web::$validation['editar']),
+                'validation' => json_encode(Web::$reglas['editar']),
             ]);
         }
 
@@ -126,7 +125,7 @@
         public function doEditar(Request $request){
             $inputData = $request->all();
 
-            $request->validate(Web::$validation['editar']['rules'], Web::$validation['editar']['messages']);
+            $request->validate(Web::$reglas['editar']['rules'], Web::$reglas['editar']['messages']);
 
             Storage::put('archivos/titulo.txt', $inputData['titulo']);
             Storage::put('archivos/descripcion.txt', $inputData['descripcion']);

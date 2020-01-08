@@ -5,22 +5,25 @@
 
     class Web extends Model{
         /** @var array Las reglas de validación y sus mensajes correspondientes. */
-        public static $validation = [
+        public static $reglas = [
             'contactar' => [
                 'rules' => [
-                    'nombre' => 'required|min:2|max:60',
+                    'nombre' => 'nullable|min:2|max:60',
                     'correo' => 'required|email|max:100',
                     'telefono' => 'required|numeric',
-                    'mensaje' => 'required',
+                    'checkin' => 'required|date',
+                    'checkout' => 'required|date',
                 ], 'messages' => [
-                    'nombre.required' => 'El nombre es obligatorio.',
                     'nombre.min' => 'El nombre no puede tener menos de :min caracteres.',
                     'nombre.max' => 'El nombre no puede tener más de :max caracteres.',
                     'correo.required' => 'El correo es obligatorio.',
                     'correo.max' => 'El correo no puede tener más de :max caracteres.',
                     'telefono.required' => 'El teléfono es obligatorio.',
                     'telefono.numeric' => 'El teléfono debe ser un valor numérico.',
-                    'mensaje.required' => 'El mensaje de no puede estar vacío.',
+                    'checkin.required' => 'El checkin es obligatorio.',
+                    'checkin.date' => 'El checkin debe ser una fecha valida.',
+                    'checkout.required' => 'El checkout es obligatorio.',
+                    'checkout.date' => 'El checkout debe ser una fecha valida.',
                 ],
             ],'editar' => [
                 'rules' => [

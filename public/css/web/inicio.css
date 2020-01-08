@@ -102,7 +102,6 @@
 }
 
 .carousel-inner{
-    background-color: #000;
     z-index: 999;
     height: 75vh;
 }
@@ -670,8 +669,9 @@
 
     .fecha-col .row{
         height: 100%;
-        border-radius: .5rem;
+        border-radius: 1.5rem;
         transition: 500ms;
+        cursor: pointer;
     }
 
     .fecha-col .row:hover,

@@ -54,7 +54,7 @@
                 'banners' => $banners,
                 'galeria' => $galeria,
                 'eventos' => $eventos,
-                'validation' => json_encode(Web::$validation['contactar']),
+                'validation' => json_encode(Web::$reglas['contactar']),
             ]);
         }
 

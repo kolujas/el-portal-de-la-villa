@@ -72,7 +72,7 @@
                 <p class="m-0 text-dark">{!!nl2br($archivos->descripcion)!!}</p>
             </div>
 
-            <div class="presentacion-div col-lg-12 col-md-10 px-3 mx-md-auto px-lg-0 my-4 text-center flex-wrap">
+            <div class="presentacion-div col-lg-12 col-md-10 px-3 mx-md-auto px-lg-0 mt-3 text-center flex-wrap">
                 <div class="card mb-3 mb-lg-0 position-lg-relative">
                     <img src="{{asset('img/recursos/banner-habitaciones.JPG')}}" class="card-img-top col-lg-6 px-0" alt="foto">
                     <div class="card-body position-lg-absolute pt-3 px-3 pb-0 p-lg-5">
@@ -146,7 +146,7 @@
                 </div>
             </div>
 
-            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mt-3 pt-4 mx-md-auto">
+            <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mt-3 pt-3 mx-md-auto">
                 <span class="section-title-border mx-auto"></span>
                 <h2 class="text-center mb-0 mt-4 pt-2">Galería de fotos</h2>
                 <div class="tz-gallery galeria px-3 pt-4 pb-0">
@@ -198,7 +198,7 @@
                     <h2 class="pb-4 my-4 pt-2 col-12 text-center">Últimos eventos</h2>
                     @if(count($eventos))
                         @foreach($eventos as $evento)
-                            <a href="{{$evento->url}}" target="_blank" class="card card-event col-12 col-md-5 col-lg-4 px-0 mb-5">
+                            <a href="{{$evento->url}}" target="_blank" class="card card-event col-12 col-md-5 col-lg-4 px-0 mb-4">
                                 <div class="card-body p-0">
                                     <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
                                     <div class="date text-center p-3">
@@ -226,9 +226,13 @@
                 </div>
             </div>
 
-            <div id="contacto" class="contacto col-12 mx-md-auto mt-3 pt-5">
-                <form class="form-validate row text-right"
+            <div id="contacto" class="contacto col-12 mx-md-auto mt-3 pt-4">
+                <form class="form-validate row text-right pt-3"
+                    action="/contactar"
+                    method="post"
                     data-validation="{{$validation}}">
+                    @csrf
+
                     <div class="col-12">
                         <span class="section-title-border mx-auto"></span>
                         <h3 class="text-center text-white pb-4 mt-4 pt-2 px-5">Contactanos</h3>
@@ -240,30 +244,114 @@
                                 <div class="row">
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="nombre">Nombre</label>
-                                        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Nombre">
+                                        <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre" value="{{old('nombre')}}">
+                                    </div>
+                                    <div @if($errors->has('nombre'))
+                                        class="invalid-tooltip showed"
+                                    @else
+                                        class="invalid-tooltip"
+                                    @endif>
+                                        @if($errors->has('nombre'))
+                                            <small>{{$errors->first('nombre')}}</small>
+                                        @endif
                                     </div>
                                     
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
-                                        <label class="font-weight-bold" for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <label class="font-weight-bold" for="email">Email *</label>
+                                        <input type="email" name="correo" class="form-control" value="{{old('correo')}}" id="email" placeholder="Email">
+                                    </div>
+                                    <div @if($errors->has('correo'))
+                                        class="invalid-tooltip showed"
+                                    @else
+                                        class="invalid-tooltip"
+                                    @endif>
+                                        @if($errors->has('correo'))
+                                            <small>{{$errors->first('correo')}}</small>
+                                        @endif
                                     </div>
 
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
-                                        <label class="font-weight-bold" for="telefono">Teléfono</label>
-                                        <input type="number" class="form-control" id="telefono" placeholder="Teléfono">
+                                        <label class="font-weight-bold" for="telefono">Teléfono *</label>
+                                        <input type="number" name="telefono" class="form-control" value="{{old('telefono')}}" id="telefono" placeholder="Teléfono">
+                                    </div>
+                                    <div @if($errors->has('telefono'))
+                                        class="invalid-tooltip showed"
+                                    @else
+                                        class="invalid-tooltip"
+                                    @endif>
+                                        @if($errors->has('telefono'))
+                                            <small>{{$errors->first('telefono')}}</small>
+                                        @endif
                                     </div>
 
                                     <div class="personas form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="huespedes">Huespedes</label>
                                         <div class="huespedes">
-                                            <select class="form-control huespedes custom-select" id="huespedes">
-                                                <option selected disabled>Huespedes</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="3">4</option>
-                                                <option value="3">5</option>
-                                                <option value="3">6 o más</option>
+                                            <select class="form-control huespedes custom-select" name="huespedes" id="huespedes">
+                                                @switch(old('huespedes'))
+                                                    @case('1')
+                                                        <option disabled>Huespedes</option>
+                                                        <option selected value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6 o más</option>
+                                                    @break
+                                                    @case('2')
+                                                        <option disabled>Huespedes</option>
+                                                        <option value="1">1</option>
+                                                        <option selected value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6 o más</option>
+                                                    @break
+                                                    @case('3')
+                                                        <option disabled>Huespedes</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option selected value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6 o más</option>
+                                                    @break
+                                                    @case('4')
+                                                        <option disabled>Huespedes</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option selected value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6 o más</option>
+                                                    @break
+                                                    @case('5')
+                                                        <option disabled>Huespedes</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option selected value="5">5</option>
+                                                        <option value="6">6 o más</option>
+                                                    @break
+                                                    @case('6')
+                                                        <option disabled>Huespedes</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option selected value="6">6 o más</option>
+                                                    @break
+                                                    @default
+                                                        <option selected disabled>Huespedes</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6 o más</option>
+                                                @endswitch
                                             </select>
                                             <label class="input-group-text px-0" for="huespedes">
                                                 <span class="input-group-addon"><i class="label-icon fas fa-user-plus"></i></span>
@@ -276,29 +364,29 @@
                             <div class="fechas col-12 col-md-3 col-lg-2 p-0">
                                 <div class="row m-auto d-flex justify-content-around text-center text-white">
                                     <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
-                                        <label class="row mb-0" for="checkin">
+                                        <label class="row mb-0 p-lg-3" for="checkin">
                                             <div class="col-12 d-flex justify-content-center align-items-center">Checkin</div>
-                                            <div class="col-12 day text d-flex justify-content-center align-items-center">12</div>
+                                            <div class="col-12 day text d-flex justify-content-center align-items-center"></div>
                                             <div class="col-12 text d-flex justify-content-center align-items-center">
-                                                <span class="month text-uppercase mr-2">Diciembre</span>
-                                                <span class="year text-uppercase">2019</span>
+                                                <span class="month text-uppercase mr-2"></span>
+                                                <span class="year text-uppercase"></span>
                                             </div>
                                         </label>
-                                        <input class="form-date form-control p-0" id="checkin" type="text" readonly />
+                                        <input class="form-date form-control p-0" value="{{old('checkin')}}" id="checkin" name="checkin" type="text" readonly />
                                     </div>
                                     <div class="col-1 col-md-12 d-flex align-items-center my-3">
                                         <span class="section-addon-border mx-auto"></span>
                                     </div>
                                     <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
-                                        <label class="row mb-0" for="checkout">
+                                        <label class="row mb-0 p-lg-3" for="checkout">
                                             <div class="col-12 d-flex justify-content-center align-items-center">Checkout</div>
-                                            <div class="col-12 day text d-flex justify-content-center align-items-center">05</div>
+                                            <div class="col-12 day text d-flex justify-content-center align-items-center"></div>
                                             <div class="col-12 text d-flex justify-content-center align-items-center">
-                                                <span class="month text-uppercase mr-2">Enero</span>
-                                                <span class="year text-uppercase">2020</span>
+                                                <span class="month text-uppercase mr-2"></span>
+                                                <span class="year text-uppercase"></span>
                                             </div>
                                         </label>
-                                        <input class="form-date form-control p-0" id="checkout" type="text" readonly />
+                                        <input class="form-date form-control p-0" value="{{old('checkout')}}" id="checkout" name="checkout" type="text" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -311,7 +399,7 @@
                 </form>
             </div>
 
-            <div class="col-12 text-center mt-5 gmaps px-0 px-0 mt-4">
+            <div class="col-12 text-center gmaps px-0 px-0">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13508.42240002282!2d-64.451797!3d-32.174427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb83237eb8a7521b!2sHotel%20El%20Portal%20de%20la%20Villa!5e0!3m2!1ses!2sar!4v1572380101216!5m2!1ses!2sar" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </div>
@@ -339,11 +427,31 @@
     <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
     
-    
     <script>
         baguetteBox.run('.tz-gallery', {
             buttons: true,
         });
+
+        let dat, month, year;
+        @if(old('checkin'))
+            let checkin = "{{old('checkin')}}";
+            day = checkin.split('-')[0];
+            month = checkin.split('-')[1] - 1;
+            year = checkin.split('-')[2];
+            checkin = new Date(year,month,day);
+        @else
+            let checkin = new Date();
+        @endif
+
+        @if(old('checkout'))
+            let checkout = "{{old('checkout')}}";
+            day = checkout.split('-')[0];
+            month = checkout.split('-')[1] - 1;
+            year = checkout.split('-')[2];
+            checkout = new Date(year,month,day);
+        @else
+            let checkout = new Date();
+        @endif
 
         $(function () {
             $("#checkin").datepicker({ 
@@ -351,7 +459,7 @@
                     language: "es",
                     autoclose: true, 
                     todayHighlight: true                    
-            }).datepicker('update', new Date());
+            }).datepicker('update', new Date(checkin));
         });
 
         $(function () {
@@ -360,13 +468,12 @@
                     language: "es",
                     autoclose: true, 
                     todayHighlight: true
-            }).datepicker('update', new Date());
+            }).datepicker('update', new Date(checkout));
         });
 
         $(".form-date").on('change', function(e){
             e.preventDefault();
             FormDate.change(this);
         });
-        
     </script>
 @endsection

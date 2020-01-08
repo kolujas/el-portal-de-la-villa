@@ -112,6 +112,10 @@ a:hover{
     min-height: 75vh;
 }
 
+.footer{
+    min-height: 25vh;
+}
+
 /* MD */
 @media(min-width: 768px){
     /**/

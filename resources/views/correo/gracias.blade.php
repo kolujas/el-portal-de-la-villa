@@ -13,7 +13,7 @@
     @endcomponent
 @endsection
 
-@section('main')
+@section('banner')
     <div class="jumbotron card card-image d-lg-block m-0 px-0 col-12"
     style="background: url(/img/recursos/banner-thanks.jpg) no-repeat center center;">
         <div class="text-white text-center py-3 p-0 gracias-div">

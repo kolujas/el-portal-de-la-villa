@@ -18,7 +18,7 @@
 @endsection
 
 @section('main')
-    <div class="ingresar col-12 col-md-10 col-lg-8">
+    <div class="ingresar col-12 col-md-10 col-lg-8 mt-5 pt-5">
         <div class="title">
             <h2>Iniciar Sesión</h2>
         </div>

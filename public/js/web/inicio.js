@@ -92,9 +92,7 @@ document.addEventListener('DOMContentLoaded', function(){
     FormDate.load();
 });
 
-
 /* headroom */
-
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
@@ -113,4 +111,3 @@ window.addEventListener('load', function(){
         }, false);
     });
 }, false);
-

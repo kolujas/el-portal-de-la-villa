@@ -13,6 +13,7 @@
                     'telefono' => 'required|numeric',
                     'checkin' => 'required|date',
                     'checkout' => 'required|date',
+                    'g-recaptcha-response' => 'required|captcha',
                 ], 'messages' => [
                     'nombre.min' => 'El nombre no puede tener menos de :min caracteres.',
                     'nombre.max' => 'El nombre no puede tener más de :max caracteres.',
@@ -24,6 +25,8 @@
                     'checkin.date' => 'El checkin debe ser una fecha valida.',
                     'checkout.required' => 'El checkout es obligatorio.',
                     'checkout.date' => 'El checkout debe ser una fecha valida.',
+                    'g-recaptcha-response.required' => 'Verifique que no es un robot',
+                    'g-recaptcha-response.captcha' => 'Verificación dudosa.',
                 ],
             ],'editar' => [
                 'rules' => [

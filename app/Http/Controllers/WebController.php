@@ -8,6 +8,7 @@
     use Auth;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\File;
+    use Illuminate\Support\Facades\Validator;
     use Storage;
 
     class WebController extends Controller{

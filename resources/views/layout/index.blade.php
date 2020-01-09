@@ -16,6 +16,7 @@
         <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Mi CSS -->
+        <link href="{{asset('ValidationJs/css/styles.css')}}" rel="stylesheet">
         <link href="{{asset('css/WhatsApp.css')}}" rel="stylesheet">
         <link href="{{asset('css/PopUpNotification.css')}}" rel="stylesheet">
         <link href="{{ asset('css/Navmenu.css') }}" rel="stylesheet">
@@ -63,6 +64,12 @@
         <script type="text/javascript" src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 
         <!-- Mi JS -->
+        <script src="{{asset('ValidationJS/js/Validation.js')}}"></script>
+        <script src="{{asset('ValidationJS/js/Rules.js')}}"></script>
+        <script src="{{asset('ValidationJS/js/Messages.js')}}"></script>
+        <script src="{{asset('ValidationJS/js/Requirements.js')}}"></script>
+        <script src="{{asset('ValidationJS/js/Validator.js')}}"></script>
+        <script src="{{asset('ValidationJS/js/Invalidator.js')}}"></script>
         <script type="text/javascript" src="{{ asset('js/PopUpNotification.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/Navmenu.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/index.js') }}"></script>

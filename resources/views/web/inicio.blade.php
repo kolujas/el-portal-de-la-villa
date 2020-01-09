@@ -246,43 +246,43 @@
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="nombre">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre" value="{{old('nombre')}}">
-                                    </div>
-                                    <div @if($errors->has('nombre'))
-                                        class="invalid-tooltip showed"
-                                    @else
-                                        class="invalid-tooltip"
-                                    @endif>
-                                        @if($errors->has('nombre'))
-                                            <small>{{$errors->first('nombre')}}</small>
-                                        @endif
+                                        <div @if($errors->has('nombre'))
+                                            class="invalid-tooltip showed"
+                                        @else
+                                            class="invalid-tooltip"
+                                        @endif>
+                                            @if($errors->has('nombre'))
+                                                <small>{{$errors->first('nombre')}}</small>
+                                            @endif
+                                        </div>
                                     </div>
                                     
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="email">Email *</label>
                                         <input type="email" name="correo" class="form-control" value="{{old('correo')}}" id="email" placeholder="Email">
-                                    </div>
-                                    <div @if($errors->has('correo'))
-                                        class="invalid-tooltip showed"
-                                    @else
-                                        class="invalid-tooltip"
-                                    @endif>
-                                        @if($errors->has('correo'))
-                                            <small>{{$errors->first('correo')}}</small>
-                                        @endif
+                                        <div @if($errors->has('correo'))
+                                            class="invalid-tooltip showed"
+                                        @else
+                                            class="invalid-tooltip"
+                                        @endif>
+                                            @if($errors->has('correo'))
+                                                <small>{{$errors->first('correo')}}</small>
+                                            @endif
+                                        </div>
                                     </div>
 
                                     <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="telefono">Teléfono *</label>
                                         <input type="number" name="telefono" class="form-control" value="{{old('telefono')}}" id="telefono" placeholder="Teléfono">
-                                    </div>
-                                    <div @if($errors->has('telefono'))
-                                        class="invalid-tooltip showed"
-                                    @else
-                                        class="invalid-tooltip"
-                                    @endif>
-                                        @if($errors->has('telefono'))
-                                            <small>{{$errors->first('telefono')}}</small>
-                                        @endif
+                                        <div @if($errors->has('telefono'))
+                                            class="invalid-tooltip showed"
+                                        @else
+                                            class="invalid-tooltip"
+                                        @endif>
+                                            @if($errors->has('telefono'))
+                                                <small>{{$errors->first('telefono')}}</small>
+                                            @endif
+                                        </div>
                                     </div>
 
                                     <div class="personas form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
@@ -397,15 +397,15 @@
                     <div class="col-12 mb-3">
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
-                    </div>
-                    <div @if($errors->has('g-recaptcha-response'))
-                        class="invalid-tooltip showed"
-                    @else
-                        class="invalid-tooltip"
-                    @endif>
-                        @if($errors->has('g-recaptcha-response'))
-                            <small>{{$errors->first('g-recaptcha-response')}}</small>
-                        @endif
+                        <div @if($errors->has('g-recaptcha-response'))
+                            class="invalid-tooltip showed"
+                        @else
+                            class="invalid-tooltip"
+                        @endif>
+                            @if($errors->has('g-recaptcha-response'))
+                                <small>{{$errors->first('g-recaptcha-response')}}</small>
+                            @endif
+                        </div>
                     </div>
 
                     <div class="form-group text-right text-uppercase col-12 mb-4 mt-md-3 d-flex justify-content-center">

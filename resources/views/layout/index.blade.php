@@ -16,7 +16,7 @@
         <link href="{{asset('css/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Mi CSS -->
-        <link href="{{asset('ValidationJs/css/styles.css')}}" rel="stylesheet">
+        <link href="{{asset('ValidationJS/css/styles.css')}}" rel="stylesheet">
         <link href="{{asset('css/WhatsApp.css')}}" rel="stylesheet">
         <link href="{{asset('css/PopUpNotification.css')}}" rel="stylesheet">
         <link href="{{ asset('css/Navmenu.css') }}" rel="stylesheet">

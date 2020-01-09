@@ -18,6 +18,7 @@
                     'nombre.min' => 'El nombre no puede tener menos de :min caracteres.',
                     'nombre.max' => 'El nombre no puede tener más de :max caracteres.',
                     'correo.required' => 'El correo es obligatorio.',
+                    'correo.email' => 'Debe ser un correo valido.',
                     'correo.max' => 'El correo no puede tener más de :max caracteres.',
                     'telefono.required' => 'El teléfono es obligatorio.',
                     'telefono.numeric' => 'El teléfono debe ser un valor numérico.',

@@ -115,7 +115,7 @@
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('https://unpkg.com/scrollreveal') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/scrollreveal.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('https://unpkg.com/scrollReveal') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/scrollReveal.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/web/habitaciones.js')}}"></script>
 @endsection

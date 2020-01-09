@@ -1,0 +1,74 @@
+/* MD */
+@media(min-width: 768px){
+    /**/
+}
+
+/* LG */
+@media(min-width: 1024px){
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        transition: all .4s cubic-bezier(0.01, 0.49, 0.44, 1);
+    }
+
+    header a{
+        transition: all .4s cubic-bezier(0.01, 0.49, 0.44, 1);
+    }
+
+    .bottom-menu{
+        background: white;
+        box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
+        z-index: 100;
+        transition: all .4s cubic-bezier(0.01, 0.49, 0.44, 1);
+    }
+
+    .bottom-menu .nav-menu{
+        background: white;
+        box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
+        
+    }
+
+    .bottom-menu:hover{
+        background: white;
+    }
+
+    .top-top-menu{
+        background: transparent;
+    }
+
+    .top-menu{
+        background: transparent;
+    }
+
+    .top-top-menu a{
+        color: white !important;
+    }
+
+    .top-menu a{
+        color: transparent !important;
+    }
+
+    .bottom-menu a{
+        color: black !important;
+    }
+
+    .headroom{
+        transition: transform .3s ease;
+    }
+      
+    .headroom--pinned{
+        transform: translateY(0%);
+    }
+    
+    .headroom--unpinned{
+        transform: translateY(-100%);
+    }
+}
+
+/* XL */
+@media(min-width: 1200px){
+    /**/
+}

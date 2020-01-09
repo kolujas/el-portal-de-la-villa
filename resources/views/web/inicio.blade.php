@@ -11,6 +11,7 @@
     <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/datepicker/datepicker.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
+    <link href="{{asset('css/Headroom.css')}}" rel="stylesheet">
     <link href="{{asset('css/web/inicio.css')}}" rel="stylesheet">
 @endsection
 
@@ -392,8 +393,22 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="col-12 mb-3">
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+                    </div>
+                    <div @if($errors->has('g-recaptcha-response'))
+                        class="invalid-tooltip showed"
+                    @else
+                        class="invalid-tooltip"
+                    @endif>
+                        @if($errors->has('g-recaptcha-response'))
+                            <small>{{$errors->first('g-recaptcha-response')}}</small>
+                        @endif
+                    </div>
 
-                    <div class="form-group text-right text-uppercase col-12 mb-5 mt-md-3 d-flex justify-content-center">
+                    <div class="form-group text-right text-uppercase col-12 mb-4 mt-md-3 d-flex justify-content-center">
                         <button type="submit" class="form-submit btn btn-primary enviar-contacto text-uppercase">Enviar</button>
                     </div>
                 </form>
@@ -425,6 +440,8 @@
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('https://unpkg.com/scrollreveal') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/scrollreveal.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
     
     <script>

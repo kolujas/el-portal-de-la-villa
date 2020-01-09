@@ -9,6 +9,7 @@
     <link href="{{asset('css/galeria/baguetteBox.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/datepicker/datepicker.css')}}" rel="stylesheet">
     <link href="{{asset('css/galeria/grid/gallery-grid.css')}}" rel="stylesheet">
+    <link href="{{asset('css/Headroom.css')}}" rel="stylesheet">
     <link href="{{asset('css/web/habitaciones.css')}}" rel="stylesheet">
 @endsection
 
@@ -113,5 +114,8 @@
     <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('https://unpkg.com/scrollreveal') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/scrollreveal.js') }}"></script>
     <script type="text/javascript" src="{{asset('js/web/habitaciones.js')}}"></script>
 @endsection

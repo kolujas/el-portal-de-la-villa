@@ -476,9 +476,9 @@
         let dat, month, year;
         @if(old('checkin'))
             let checkin = "{{old('checkin')}}";
-            day = checkin.split('-')[0];
+            day = checkin.split('-')[2];
             month = checkin.split('-')[1] - 1;
-            year = checkin.split('-')[2];
+            year = checkin.split('-')[0];
             checkin = new Date(year,month,day);
         @else
             let checkin = new Date();
@@ -486,9 +486,9 @@
 
         @if(old('checkout'))
             let checkout = "{{old('checkout')}}";
-            day = checkout.split('-')[0];
+            day = checkout.split('-')[2];
             month = checkout.split('-')[1] - 1;
-            year = checkout.split('-')[2];
+            year = checkout.split('-')[0];
             checkout = new Date(year,month,day);
         @else
             let checkout = new Date();

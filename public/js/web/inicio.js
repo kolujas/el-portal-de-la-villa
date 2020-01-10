@@ -23,9 +23,9 @@ let = FormDate = {
      * @param {HTMLElement} input - THe input.
      */
     change(input){
-        let day = input.value.split('-')[0];
+        let day = input.value.split('-')[2];
         let month = input.value.split('-')[1];
-        let year = input.value.split('-')[2];
+        let year = input.value.split('-')[0];
         let label = input.previousElementSibling.children;
         for(let i = 0; i < label.length; i++){
             if(label[i].classList.contains('day')){

@@ -186,7 +186,7 @@ let WebButtons = {
                         input.classList.add('mb-3', 'p-2');
                         input.type = 'text';
                         input.name = 'titulo';
-                        input.placeholder = 'Título';
+                        input.placeholder = 'Título *';
                         input.value = data.titulo;
                         
                         let tooltip = document.createElement('div');
@@ -201,7 +201,7 @@ let WebButtons = {
                         descripcion.appendChild(textarea);
                         textarea.classList.add('mb-3', 'p-2');
                         textarea.name = 'descripcion';
-                        textarea.placeholder = 'Descripción';
+                        textarea.placeholder = 'Descripción *';
                         textarea.innerHTML = data.descripcion;
                         
                         let tooltip2 = document.createElement('div');

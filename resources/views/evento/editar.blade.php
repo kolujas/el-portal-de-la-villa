@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="form-group form-group-sm col-12 mb-3">
                     <label for="titulo" class="input-name m-0 p-0">
-                        <span class="input-text">Título</span>
+                        <span class="input-text">Título *</span>
                     </label>
                     <input id="titulo"
                         name="titulo"
@@ -54,7 +54,7 @@
                 
                 <div class="form-group form-group-sm col-12 mb-3">
                     <label for="descripcion" class="input-name m-0 p-0">
-                        <span class="input-text">Descripción</span>
+                        <span class="input-text">Descripción *</span>
                     </label>
                     <textarea id="descripcion" 
                         name="descripcion" 
@@ -73,7 +73,7 @@
 
                 <div class="form-group form-group-sm col-12 mb-3">
                     <label for="organizador" class="input-name m-0 p-0">
-                        <span class="input-text">Organizador</span>
+                        <span class="input-text">Organizador *</span>
                     </label>
                     <input id="organizador" 
                         name="organizador"
@@ -94,7 +94,7 @@
 
                 <div class="form-group form-group-sm col-12 mb-3">
                     <label for="fecha" class="input-name m-0 p-0">
-                        <span class="input-text">Fecha</span>
+                        <span class="input-text">Fecha *</span>
                     </label>
                     <input id="fecha" 
                         name="fecha"
@@ -114,7 +114,7 @@
 
                 <div class="form-group form-group-sm col-12 mb-3">
                     <label for="url" class="input-name m-0 p-0">
-                        <span class="input-text">URL</span>
+                        <span class="input-text">URL *</span>
                     </label>
                     <input id="url" 
                         name="url"

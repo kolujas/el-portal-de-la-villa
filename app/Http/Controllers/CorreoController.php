@@ -22,16 +22,16 @@
             }else{
                 $checkin = explode('-', $inputData['checkin']);
                 $inputData['checkin'] = [];
-                $inputData['checkin']['day'] = $checkin[0];
+                $inputData['checkin']['day'] = $checkin[2];
                 $inputData['checkin']['month'] = $this->setMonth($checkin[1]);
-                $inputData['checkin']['year'] = $checkin[2];
+                $inputData['checkin']['year'] = $checkin[0];
                 $inputData['checkin'] = (object) $inputData['checkin'];
 
                 $checkout = explode('-', $inputData['checkout']);
                 $inputData['checkout'] = [];
-                $inputData['checkout']['day'] = $checkout[0];
+                $inputData['checkout']['day'] = $checkout[2];
                 $inputData['checkout']['month'] = $this->setMonth($checkout[1]);
-                $inputData['checkout']['year'] = $checkout[2];
+                $inputData['checkout']['year'] = $checkout[0];
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
     

@@ -536,6 +536,10 @@
     object-fit: cover;
 }
 
+.g-recaptcha-response.invalid-tooltip{
+    text-align: left;
+}
+
 /* MD */
 @media(min-width: 768px){
     .redes-sociales .icon{

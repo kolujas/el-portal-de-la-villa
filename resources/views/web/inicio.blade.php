@@ -247,9 +247,9 @@
                                         <label class="font-weight-bold" for="nombre">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre" value="{{old('nombre')}}">
                                         <div @if($errors->has('nombre'))
-                                            class="invalid-tooltip showed"
+                                            class="nombre invalid-tooltip showed"
                                         @else
-                                            class="invalid-tooltip"
+                                            class="nombre invalid-tooltip"
                                         @endif>
                                             @if($errors->has('nombre'))
                                                 <small>{{$errors->first('nombre')}}</small>
@@ -261,9 +261,9 @@
                                         <label class="font-weight-bold" for="email">Email *</label>
                                         <input type="email" name="correo" class="form-control" value="{{old('correo')}}" id="email" placeholder="Email">
                                         <div @if($errors->has('correo'))
-                                            class="invalid-tooltip showed"
+                                            class="correo invalid-tooltip showed"
                                         @else
-                                            class="invalid-tooltip"
+                                            class="correo invalid-tooltip"
                                         @endif>
                                             @if($errors->has('correo'))
                                                 <small>{{$errors->first('correo')}}</small>
@@ -275,9 +275,9 @@
                                         <label class="font-weight-bold" for="telefono">Teléfono *</label>
                                         <input type="number" name="telefono" class="form-control" value="{{old('telefono')}}" id="telefono" placeholder="Teléfono">
                                         <div @if($errors->has('telefono'))
-                                            class="invalid-tooltip showed"
+                                            class="telefono invalid-tooltip showed"
                                         @else
-                                            class="invalid-tooltip"
+                                            class="telefono invalid-tooltip"
                                         @endif>
                                             @if($errors->has('telefono'))
                                                 <small>{{$errors->first('telefono')}}</small>
@@ -374,6 +374,15 @@
                                             </div>
                                         </label>
                                         <input class="form-date form-control p-0" value="{{old('checkin')}}" id="checkin" name="checkin" type="text" readonly />
+                                        <div @if($errors->has('checkin'))
+                                            class="checkin invalid-tooltip showed"
+                                        @else
+                                            class="checkin invalid-tooltip"
+                                        @endif>
+                                            @if($errors->has('checkin'))
+                                                <small>{{$errors->first('checkin')}}</small>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="col-1 col-md-12 d-flex align-items-center my-3">
                                         <span class="section-addon-border mx-auto"></span>
@@ -388,19 +397,28 @@
                                             </div>
                                         </label>
                                         <input class="form-date form-control p-0" value="{{old('checkout')}}" id="checkout" name="checkout" type="text" readonly />
+                                        <div @if($errors->has('checkout'))
+                                            class="checkout invalid-tooltip showed"
+                                        @else
+                                            class="checkout invalid-tooltip"
+                                        @endif>
+                                            @if($errors->has('checkout'))
+                                                <small>{{$errors->first('checkout')}}</small>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-12 mb-3 d-flex justify-content-center">
+                    <div class="col-3 mb-3 mx-auto d-flex justify-content-center flex-wrap">
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
                         <div @if($errors->has('g-recaptcha-response'))
-                            class="invalid-tooltip showed"
+                            class="col-12 g-recaptcha-response invalid-tooltip showed"
                         @else
-                            class="invalid-tooltip"
+                            class="col-12 g-recaptcha-response invalid-tooltip"
                         @endif>
                             @if($errors->has('g-recaptcha-response'))
                                 <small>{{$errors->first('g-recaptcha-response')}}</small>

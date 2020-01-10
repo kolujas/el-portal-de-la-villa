@@ -243,7 +243,7 @@
                         <div class="row d-flex justify-content-center">
                             <div class="form col-12 col-md-7 col-lg-6 px-5 px-md-0 pb-3">
                                 <div class="row">
-                                    <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                    <div class="form-group text-left text-uppercase col-12 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="nombre">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" name="nombre" placeholder="Nombre" value="{{old('nombre')}}">
                                         <div @if($errors->has('nombre'))
@@ -257,7 +257,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                    <div class="form-group text-left text-uppercase col-12 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="email">Email *</label>
                                         <input type="email" name="correo" class="form-control" value="{{old('correo')}}" id="email" placeholder="Email">
                                         <div @if($errors->has('correo'))
@@ -271,7 +271,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                    <div class="form-group text-left text-uppercase col-12 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="telefono">Teléfono *</label>
                                         <input type="number" name="telefono" class="form-control" value="{{old('telefono')}}" id="telefono" placeholder="Teléfono">
                                         <div @if($errors->has('telefono'))
@@ -285,7 +285,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="personas form-group text-left text-uppercase col-12 col-md-10 col-lg-10 mb-3 mx-auto">
+                                    <div class="personas form-group text-left text-uppercase col-12 mb-3 mx-auto">
                                         <label class="font-weight-bold" for="huespedes">Huespedes</label>
                                         <div class="huespedes">
                                             <select class="form-control huespedes custom-select" name="huespedes" id="huespedes">
@@ -362,13 +362,13 @@
                                 </div>
                             </div>
 
-                            <div class="fechas col-12 col-md-3 col-lg-2 p-0">
+                            <div class="fechas col-12 col-md-3 col-lg-2 p-0 px-lg-3">
                                 <div class="row m-auto d-flex justify-content-around text-center text-white">
                                     <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
-                                        <label class="row mb-0 p-lg-3" for="checkin">
-                                            <div class="col-12 d-flex justify-content-center align-items-center">Checkin</div>
-                                            <div class="col-12 day text d-flex justify-content-center align-items-center"></div>
-                                            <div class="col-12 text d-flex justify-content-center align-items-center">
+                                        <label class="row mb-0 px-lg-3" for="checkin">
+                                            <div class="col-12 d-flex justify-content-center">Checkin</div>
+                                            <div class="col-12 day text d-flex justify-content-center"></div>
+                                            <div class="col-12 text d-flex justify-content-center">
                                                 <span class="month text-uppercase mr-2"></span>
                                                 <span class="year text-uppercase"></span>
                                             </div>
@@ -379,10 +379,10 @@
                                         <span class="section-addon-border mx-auto"></span>
                                     </div>
                                     <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
-                                        <label class="row mb-0 p-lg-3" for="checkout">
-                                            <div class="col-12 d-flex justify-content-center align-items-center">Checkout</div>
-                                            <div class="col-12 day text d-flex justify-content-center align-items-center"></div>
-                                            <div class="col-12 text d-flex justify-content-center align-items-center">
+                                        <label class="row mb-0 px-lg-3" for="checkout">
+                                            <div class="col-12 d-flex justify-content-center">Checkout</div>
+                                            <div class="col-12 day text d-flex justify-content-center"></div>
+                                            <div class="col-12 text d-flex justify-content-center">
                                                 <span class="month text-uppercase mr-2"></span>
                                                 <span class="year text-uppercase"></span>
                                             </div>
@@ -394,7 +394,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-12 mb-3">
+                    <div class="col-12 mb-3 d-flex justify-content-center">
                         {!! NoCaptcha::renderJs() !!}
                         {!! NoCaptcha::display() !!}
                         <div @if($errors->has('g-recaptcha-response'))

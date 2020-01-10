@@ -454,6 +454,12 @@
 @endsection
 
 @section('js')
+    <script src="{{asset('ValidationJS/js/Validation.js')}}"></script>
+    <script src="{{asset('ValidationJS/js/Rules.js')}}"></script>
+    <script src="{{asset('ValidationJS/js/Messages.js')}}"></script>
+    <script src="{{asset('ValidationJS/js/Requirements.js')}}"></script>
+    <script src="{{asset('ValidationJS/js/Validator.js')}}"></script>
+    <script src="{{asset('ValidationJS/js/Invalidator.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
     <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>

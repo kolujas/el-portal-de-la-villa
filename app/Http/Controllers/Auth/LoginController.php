@@ -31,11 +31,15 @@
         
         /** Carga la seccion "Iniciar Sesión". */
         public function showIngresar(){
-            $validation = User::$validation['ingresar'];
-
-            return view('auth.ingresar',[
-                'validation' => json_encode($validation),
-            ]);
+            if(Auth::check()){
+                return redirect()->route('web.panel');
+            }else{
+                $validation = User::$validation['ingresar'];
+    
+                return view('auth.ingresar',[
+                    'validation' => json_encode($validation),
+                ]);
+            }
         }
 
         /**
@@ -44,24 +48,28 @@
          * @param $request Request
          */
         public function doIngresar(Request $request){
-            $inputData = $request->input();
-            
-            $request->validate(User::$validation['ingresar']['rules'], User::$validation['ingresar']['messages']);
+            if(Auth::check()){
+                return redirect()->route('web.panel');
+            }else{
+                $inputData = $request->input();
+                
+                $request->validate(User::$validation['ingresar']['rules'], User::$validation['ingresar']['messages']);
 
-            if(isset($inputData['recordar'])){
-                if($inputData['recordar'] == 'on'){
-                    $recordar = true;
+                if(isset($inputData['recordar'])){
+                    if($inputData['recordar'] == 'on'){
+                        $recordar = true;
+                    }else{
+                        $recordar = false;
+                    }
                 }else{
                     $recordar = false;
                 }
-            }else{
-                $recordar = false;
-            }
 
-            if(Auth::attempt(['password' => $inputData['clave'], 'correo' => $inputData['correo']], $recordar)){
-                return redirect()->route('web.panel')->with('status', 'Sesión Iniciada.');
-            }else{
-                return redirect()->route('auth.showIngresar')->withInput()->with('status', 'Correo y/o clave incorrectos.');
+                if(Auth::attempt(['password' => $inputData['clave'], 'correo' => $inputData['correo']], $recordar)){
+                    return redirect()->route('web.panel')->with('status', 'Sesión Iniciada.');
+                }else{
+                    return redirect()->route('auth.showIngresar')->withInput()->with('status', 'Correo y/o clave incorrectos.');
+                }
             }
         }
         

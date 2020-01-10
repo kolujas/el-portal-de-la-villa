@@ -11,8 +11,8 @@
         public function run(){
             User::create([
                 'id_usuario' => 1,
-                'correo' => 'ejemplo@correo.com',
-                'clave' => \Hash::make('12345678'),
+                'correo' => 'info@elportaldelavilla.com.ar',
+                'clave' => \Hash::make('Hotel2020'),
             ]);
         }
     }

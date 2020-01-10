@@ -81,6 +81,20 @@ a:hover{
     font-size: 1.5rem;
 }
 
+.collapsable .collapsable-menu,
+.collapsable:hover .collapsable-menu::before,
+.collapsable.opened .collapsable-menu::before{
+    background: white;
+}
+
+.collapsable .collapsable-menu li{
+    border-color: var(--color-cuatro);
+}
+
+.collapsable .collapsable-menu .collapsable-link{
+    color: var(--color-cuatro) !important;
+}
+
 .sidebar{
     background: var(--color-tres);
 }

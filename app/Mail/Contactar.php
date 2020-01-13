@@ -17,8 +17,9 @@
          *
          * @return void
          */
-        public function __construct($inputData){
-            $this->data = $inputData;
+        public function __construct($objDemo){
+            dd($objDemo);
+            $this->data = $objDemo;
         }
 
         /**

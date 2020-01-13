@@ -39,7 +39,7 @@
 
                 dd($response);
     
-                Mail::to('info@elportaldelavilla.com.ar')->send($response);
+                Mail::to('juancarmentia@gmail.com')->send($response);
     
                 return redirect()->route('correo.gracias');
             }

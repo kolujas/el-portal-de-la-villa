@@ -35,8 +35,7 @@
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
     
-                Mail::to('prueba@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
-                dd('algo');
+                Mail::to('info@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
     
                 return redirect()->route('correo.gracias');
             }

@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME', 'prueba@elportaldelavilla.com.ar'),
+    'username' => env('MAIL_USERNAME', '75e75b0318b427'),
 
-    'password' => env('MAIL_PASSWORD', 'prueba2020'),
+    'password' => env('MAIL_PASSWORD', '62da9b8fc661a8'),
 
     /*
     |--------------------------------------------------------------------------

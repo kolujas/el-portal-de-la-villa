@@ -37,7 +37,7 @@
 
                 $response = new Contactar($objDemo);
     
-                Mail::to('juancarmentia@gmail.com')->send($response);
+                Mail::to('info@elportaldelavilla.com')->send($response);
     
                 return redirect()->route('correo.gracias');
             }

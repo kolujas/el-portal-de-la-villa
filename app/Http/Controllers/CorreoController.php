@@ -36,8 +36,6 @@
                 $objDemo = (object) $inputData;
 
                 $response = new Contactar($objDemo);
-
-                dd($response);
     
                 Mail::to('juancarmentia@gmail.com')->send($response);
     

@@ -35,11 +35,8 @@
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
     
-                try {
-                    $mailer = Mail::to('prueba@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
-                }catch (Swift_TransportException $e) {
-                    dd($e->getMessage());
-                }
+                Mail::to('prueba@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
+                dd('algo');
     
                 return redirect()->route('correo.gracias');
             }

@@ -35,7 +35,7 @@
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
     
-                Mail::to('ejemplo@correo.com')->send(new Contactar($objDemo));
+                Mail::to('prueba@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
     
                 return redirect()->route('correo.gracias');
             }

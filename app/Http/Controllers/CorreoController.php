@@ -35,11 +35,11 @@
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
     
-                // Mail::to('info@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
-                Mail::send(new Contactar($objDemo), $request->all(), function($msj) use($subject,$for){
-                    dd('funciona');
-                    $msj->to("info@elportaldelavilla.com.ar");
-                });
+                Mail::to('info@elportaldelavilla.com.ar')->send(new Contactar($objDemo));
+                // Mail::send(new Contactar($objDemo), $request->all(), function($msj) use($subject,$for){
+                //     dd('funciona');
+                //     $msj->to("info@elportaldelavilla.com.ar");
+                // });
     
                 return redirect()->route('correo.gracias');
             }

@@ -35,7 +35,12 @@
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
     
-                Mail::to('juancarmentia@gmail.com')->send(new Contactar($objDemo));
+                try {
+                    Mail::to('juancarmentia@gmail.com')->send(new Contactar($objDemo));
+                } 
+                catch (Swift_TransportException $e) {
+                    dd('error');
+                }
     
                 return redirect()->route('correo.gracias');
             }

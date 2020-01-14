@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.hostinger.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@elportaldelavilla.com.ar'),
+        'name' => env('MAIL_FROM_NAME', 'Portal de la Villa - sitio web'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME', '75e75b0318b427'),
+    'username' => env('MAIL_USERNAME', 'info@elportaldelavilla.com.ar'),
 
-    'password' => env('MAIL_PASSWORD', '62da9b8fc661a8'),
+    'password' => env('MAIL_PASSWORD', 'Elportaldelavilla2020'),
 
     /*
     |--------------------------------------------------------------------------

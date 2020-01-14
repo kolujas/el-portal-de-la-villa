@@ -34,10 +34,8 @@
                 $inputData['checkout']['year'] = $checkout[0];
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
-
-                $response = new Contactar($objDemo);
     
-                Mail::to('juancarmentia@gmail.com')->send($response);
+                Mail::to('juancarmentia@gmail.com')->send(new Contactar($objDemo));
     
                 return redirect()->route('correo.gracias');
             }

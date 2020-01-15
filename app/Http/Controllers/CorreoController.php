@@ -35,6 +35,7 @@
                 $inputData['checkout']['year'] = $checkout[0];
                 $inputData['checkout'] = (object) $inputData['checkout'];
                 $objDemo = (object) $inputData;
+                dd($objDemo);
 
                 $mail = new PHPMailer;
                 $mail->isSMTP();

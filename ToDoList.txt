@@ -1,0 +1,34 @@
+﻿FALTA
+    GENERAL
+        -Definir donde se ubican los Eventos
+
+    INICIO
+        -Poner textos e imagenes posta
+        -Hacer envio de formulario de contacto + reCAPTCHA
+        -Thank you page
+        -Hover en secciones debajo de la info principal
+
+    Las otras 2 secciones
+
+
+
+DOCUMENTACION A MODO TUTORIAL
+    -Para ir al panel de administrador escribir "/panel" en la url.
+    Te va a pedir que inicies sesión si es la primera vez que lo haces en cada dispositivo. Se recomienda mantener la sesión activa con "recordarme" en dispositivos de uso comun.
+        -Para ingresar: ejemplo@correo.com -> 12345678
+
+    -Si se desea personalizar el banner se debe acceder a "/panel#personalizar", acceder mediante el menu (una vez ingresado) o desde cualquier botón dentro del panel, su sección se titula "Banner principal".
+    Si se desea editar la información tanto del título o la descripción inicial se accede de la misma forma que se mencionó previamente, su sección se titula "Información inicial".
+        -Para subir una imagen se recomienda que sea de tamaño >= 1200*1200 para el Banner.
+
+    -Si se desea agregar, mover o eliminar alguna imagen de calquier Galeria se debe acceder a "/panel#galerias", acceder mediante el menu (una vez ingresado) o desde cualquier botón dentro del panel, en dicho sitio estaran ambas Galerias tituladas "Habitaciones" e "Instalaciones".
+        -Para agregar una imagen simplemente tocar el botón "Agregar", seleccionar la imagen y aceptar el cambio.
+        -Para mover una imagen seleccionarla y tocar la "Flecha" deseada.
+        -Para eliminar una imagen seleccionarla, tocar el "Tacho" y confirme.
+            -Para subir una imagen se recomienda que sea de tamaño >= 500*500 para las Galeria.
+    
+    -Si se desea agregar, editar o eliminar Eventos se debe acceder a "/panel#eventos", acceder mediante el menu (una vez ingresado) o desde cualquier botón dentro del panel.
+        -Para agregar un Evento tocar el botón "Agregar" (te redigirá a una nueva sección), una vez allí completar el formulario y enviar.
+        -Para editar un Evento tocar el botón "Editar" (te redigirá a una nueva sección), una vez allí completar el formulario y enviar.
+        -Para eliminar un Evento tocar el botón "Borrar" y confirme.
+            -Para subir una imagen se recomienda que sea de tamaño >= 500*500 para los Evento.

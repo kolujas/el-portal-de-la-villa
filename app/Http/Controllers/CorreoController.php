@@ -36,12 +36,12 @@
                     $mail = new PHPMailer;
                     $mail->isSMTP();
                     $mail->SMTPDebug = 2;
-                    $mail->Host = 'smtp.hostinger.com';
-                    $mail->Port = 587;
+                    $mail->Host = env('MAIL_HOST');
+                    $mail->Port = env('MAIL_PORT');
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'info@elportaldelavilla.com.ar';
-                    $mail->Password = 'Elportaldelavilla2020';
-                    $mail->setFrom('info@elportaldelavilla.com.ar', 'Portal de la villa - Sitio web');
+                    $mail->Username = env('MAIL_USERNAME');
+                    $mail->Password = env('MAIL_PASSWORD');
+                    $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
                     if(isset($objDemo->nombre)){
                         $mail->addAddress($objDemo->correo, $objDemo->nombre);
                         $mail->Subject = "$objDemo->nombre quiere contactar a alguien";
@@ -59,7 +59,8 @@
     
                     $mail->msgHTML($message);
                     $mail->AltBody = 'Esto es un texto de test';
-                    $mail->send();
+                    // $mail->send();
+                    dd($mail);
                     return redirect()->route('correo.gracias');
                 }catch(phpmailerException $e){
                     dd($e);

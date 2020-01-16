@@ -43,11 +43,11 @@
                     $mail->Password = env('MAIL_PASSWORD');
                     $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
                     if(isset($objDemo->nombre)){
-                        $mail->addAddress($objDemo->correo, $objDemo->nombre);
+                        $mail->addAddress(env('MAIL_USERNAME'));
                         $mail->Subject = "$objDemo->nombre quiere contactar a alguien";
                         $objDemo->nombre = "$objDemo->nombre, desde tu sitio web.";
                     }else{
-                        $mail->addAddress($objDemo->correo);
+                        $mail->addAddress(env('MAIL_USERNAME'));
                         $mail->Subject = "$objDemo->correo quiere contactar a alguien";
                         $objDemo->nombre = "alguien, sin dejar su nombre, desde tu sitio web.";
                     }

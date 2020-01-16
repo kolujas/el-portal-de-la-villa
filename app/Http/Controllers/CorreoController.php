@@ -42,12 +42,11 @@
                     $mail->Username = env('MAIL_USERNAME');
                     $mail->Password = env('MAIL_PASSWORD');
                     $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+                    $mail->addAddress(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
                     if(isset($objDemo->nombre)){
-                        $mail->addAddress(env('MAIL_USERNAME'));
                         $mail->Subject = "$objDemo->nombre quiere contactar a alguien";
                         $objDemo->nombre = "$objDemo->nombre, desde tu sitio web.";
                     }else{
-                        $mail->addAddress(env('MAIL_USERNAME'));
                         $mail->Subject = "$objDemo->correo quiere contactar a alguien";
                         $objDemo->nombre = "alguien, sin dejar su nombre, desde tu sitio web.";
                     }
@@ -59,7 +58,7 @@
     
                     $mail->msgHTML($message);
                     $mail->AltBody = 'Esto es un texto de test';
-                    dd($mail);
+                    // dd($mail);
                     $mail->send();
                     return redirect()->route('correo.gracias');
                 }catch(phpmailerException $e){

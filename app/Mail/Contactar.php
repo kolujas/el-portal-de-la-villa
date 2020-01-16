@@ -17,8 +17,8 @@
          *
          * @return void
          */
-        public function __construct($inputData){
-            $this->data = $inputData;
+        public function __construct($objDemo){
+            $this->data = $objDemo;
         }
 
         /**
@@ -30,6 +30,7 @@
             $correo = $this->data->correo;
             $nombre = $this->data->nombre;
             $asunto = "$nombre quiere contactar a alguien";
+            // dd($this->data);
             return $this->view('correo.contacto')
                 ->from($correo, $nombre)
                 ->subject($asunto);

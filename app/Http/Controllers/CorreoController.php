@@ -60,8 +60,8 @@
                     $mail->msgHTML($message);
                     $mail->AltBody = 'Esto es un texto de test';
                     $mail->to = env('MAIL_USERNAME');
-                    // $mail->send();
-                    dd($mail);
+                    $mail->send();
+                    // dd($mail);
                     return redirect()->route('correo.gracias');
                 }catch(phpmailerException $e){
                     dd($e);

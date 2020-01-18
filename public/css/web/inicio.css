@@ -149,7 +149,7 @@
 
 .separador-iconos .separador-icon{
     font-size: 3rem;
-    color: #197c5cc2;
+    color: var(--color-uno);
     transition: 500ms;
 }
 
@@ -732,7 +732,7 @@
     }
 
     .icon-text:hover:hover .separador-icon{
-        color: var(--color-uno);
+        color: #197c5cc2;
     }
     
     .icon-text{

@@ -6,7 +6,9 @@
         </div>
         <div class="col-12 col-lg-5 col-xl-5 pb-4 pt-2 py-md-4 reservas">
         <h3 class="text-white">Reservas</h3>
-            <p class="text-center text-break">03546 49-7995‬ <br> reservas@villadelparque.com.ar</p>   
+            <p class="text-center">03546 49-7995‬</p>
+            <p><i class="fab fa-whatsapp"> +54 93515915128</i></p>
+            <p>Reservas@portalhotel.com.ar</p>  
         </div>
     </div>
 

@@ -44,7 +44,7 @@
                             <h5 class="text-white slider-heading">{{$banner->titulo}}</h5>
                             <p class="slider-text">{!!nl2br($banner->descripcion)!!}</p>
                             <div class="carousel-footer d-flex justify-content-center">
-                                <a href="#contacto" class="btn btn-primary redirigirBtn">Contactar</a>
+                                <a href="#contacto" class="btn btn-primary redirigirBtn">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -97,11 +97,11 @@
                     <div class="d-flex justify-content-center justify-content-md-center flex-wrap">
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-coffee"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Desayuno gratuito</p>
+                            <p class="m-0 mt-3 font-weight-bold">Desayuno completo</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-parking"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Parking gratuito</p>
+                            <p class="m-0 mt-3 font-weight-bold">Cochera cubierta</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-snowflake"></i>
@@ -112,16 +112,18 @@
                             <p class="m-0 mt-3 font-weight-bold">Restaurante</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-baby-carriage"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Apto para niños</p>
+                            <i class="separador-icon fas fa-child"></i>
+                            <!-- <i class="separador-icon fas fa-baby-carriage"></i> -->
+                            <p class="m-0 mt-3 font-weight-bold">Juegos para niños</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-swimmer"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Pileta exterior y climatizada</p>
+                            <p class="m-0 mt-3 font-weight-bold">Pileta con solarium</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
-                            <i class="separador-icon fas fa-tshirt"></i>
-                            <p class="m-0 mt-3 font-weight-bold">Servicio completo de lavandería</p>
+                            <i class="separador-icon fas fa-swimming-pool"></i>
+                            <!-- <i class="separador-icon fas fa-tshirt"></i> -->
+                            <p class="m-0 mt-3 font-weight-bold">Pileta interior climatizada</p>
                         </div>
                         <div class="icon-text col-4 col-xl-3 mb-5 mb-xl-5">
                             <i class="separador-icon fas fa-glass-martini-alt"></i>
@@ -148,7 +150,6 @@
             </div>
 
             <div id="galeria" class="gallery-container col-12 col-lg-10 p-0 mt-3 pt-3 mx-md-auto">
-                <span class="section-title-border mx-auto"></span>
                 <h2 class="text-center mb-0 mt-4 pt-2">Galería de fotos</h2>
                 <div class="tz-gallery galeria px-3 pt-4 pb-0">
                     <div class="row">

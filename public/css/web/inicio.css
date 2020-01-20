@@ -435,7 +435,7 @@
     position: relative;
     height: 5px;
     width: 30px;
-<    background: var(--color-uno);
+    background: var(--color-uno);
     border-radius: 10px;
     display: block;
     transform: translateX(-95%);

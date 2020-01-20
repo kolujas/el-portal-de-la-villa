@@ -360,12 +360,26 @@
                                             </label>
                                         </div>
                                     </div>
+
+                                    <div class="form-group text-left text-uppercase col-12 mb-3 mx-auto">
+                                        <label class="font-weight-bold" for="mensaje">Mensaje</label>
+                                        <textarea name="mensaje" class="form-control" value="{{old('mensaje')}}" id="mensaje" placeholder="Mensaje"></textarea>
+                                        <div @if($errors->has('mensaje'))
+                                            class="mensaje invalid-tooltip showed"
+                                        @else
+                                            class="mensaje invalid-tooltip"
+                                        @endif>
+                                            @if($errors->has('mensaje'))
+                                                <small>{{$errors->first('mensaje')}}</small>
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="fechas col-12 col-md-3 col-lg-2 p-0 px-lg-3">
-                                <div class="row m-auto d-flex justify-content-around text-center text-white">
-                                    <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
+                                <div class="row m-auto d-flex justify-content-center text-center text-white">
+                                    <div class="fecha-col col-4 col-md-12 col-lg-10 pb-3 py-md-0">
                                         <label class="row mb-0 px-lg-3" for="checkin">
                                             <div class="col-12 d-flex justify-content-center">Checkin</div>
                                             <div class="col-12 day text d-flex justify-content-center"></div>
@@ -388,7 +402,7 @@
                                     <div class="col-1 col-md-12 d-flex align-items-center my-3">
                                         <span class="section-addon-border mx-auto"></span>
                                     </div>
-                                    <div class="fecha-col col-5 col-md-12 pb-3 py-md-0">
+                                    <div class="fecha-col col-4 col-md-12 col-lg-10 pb-3 py-md-0">
                                         <label class="row mb-0 px-lg-3" for="checkout">
                                             <div class="col-12 d-flex justify-content-center">Checkout</div>
                                             <div class="col-12 day text d-flex justify-content-center"></div>
@@ -461,13 +475,13 @@
     <script src="{{asset('ValidationJS/js/Requirements.js')}}"></script>
     <script src="{{asset('ValidationJS/js/Validator.js')}}"></script>
     <script src="{{asset('ValidationJS/js/Invalidator.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
-    <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
-    <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('https://unpkg.com/scrollreveal') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/scrollReveal.js') }}"></script>
-    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
+    <script src="{{asset('js/datepicker/datepicker.js')}}"></script>     
+    <script src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
+    <script src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script src="{{asset('js/headroom.js')}}"></script>
+    <script src="{{asset('https://unpkg.com/scrollreveal')}}"></script>
+    <script src="{{asset('js/scrollReveal.js')}}"></script>
+    <script src="{{asset('js/web/inicio.js')}}"></script>
     
     <script>
         baguetteBox.run('.tz-gallery', {
@@ -493,6 +507,7 @@
             checkout = new Date(year,month,day);
         @else
             let checkout = new Date();
+            checkout.setDate(checkout.getDate() + 1);
         @endif
 
         $(function () {

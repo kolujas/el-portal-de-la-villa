@@ -435,7 +435,7 @@
     position: relative;
     height: 5px;
     width: 30px;
-    background: #197c5cc2;
+<    background: var(--color-uno);
     border-radius: 10px;
     display: block;
     transform: translateX(-95%);
@@ -446,7 +446,7 @@
     content: "";
     height: 100%;
     width: 50%;
-    background: #197c5cc2;
+    background: var(--color-uno);
     border-radius: 10px;
     right: -60%;
     top: 0;
@@ -457,7 +457,7 @@
     content: "";
     height: 100%;
     width: 100%;
-    background: #197c5cc2;
+    background: var(--color-uno);
     border-radius: 10px;
     right: -170%;
     top: 0;

@@ -475,13 +475,13 @@
     <script src="{{asset('ValidationJS/js/Requirements.js')}}"></script>
     <script src="{{asset('ValidationJS/js/Validator.js')}}"></script>
     <script src="{{asset('ValidationJS/js/Invalidator.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/datepicker/datepicker.js')}}"></script>     
-    <script type="text/javascript" src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
-    <script type="text/javascript" src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/headroom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('https://unpkg.com/scrollReveal') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/scrollReveal.js') }}"></script>
-    <script type="text/javascript" src="{{asset('js/web/inicio.js')}}"></script>
+    <script src="{{asset('js/datepicker/datepicker.js')}}"></script>     
+    <script src="{{asset('js/datepicker/locales/ES-es.js')}}"></script>     
+    <script src="{{asset('js/galeria/baguetteBox.min.js')}}"></script>
+    <script src="{{asset('js/headroom.js')}}"></script>
+    <script src="{{asset('https://unpkg.com/scrollReveal')}}"></script>
+    <script src="{{asset('js/scrollReveal.js')}}"></script>
+    <script src="{{asset('js/web/inicio.js')}}"></script>
     
     <script>
         baguetteBox.run('.tz-gallery', {

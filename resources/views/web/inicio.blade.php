@@ -378,7 +378,7 @@
                             </div>
 
                             <div class="fechas col-12 col-md-3 col-lg-2 p-0 px-lg-3">
-                                <div class="row m-auto d-flex justify-content-center text-center text-white">
+                                <div class="row m-auto d-flex justify-content-center text-center text-white checkins">
                                     <div class="fecha-col col-4 col-md-12 col-lg-10 pb-3 py-md-0">
                                         <label class="row mb-0 px-lg-3" for="checkin">
                                             <div class="col-12 d-flex justify-content-center">Checkin</div>

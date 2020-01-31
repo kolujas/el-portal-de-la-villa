@@ -206,7 +206,7 @@
     height: calc(100% + 3rem);
     z-index: 0;
     opacity: .5;
-    background: url(/img/recursos/banner-contacto.jpg) no-repeat center center;
+    background: url(/img/recursos/bg-03.jpeg) no-repeat center center;
     background-attachment: fixed;
 }
 
@@ -689,6 +689,11 @@
         border: 1px solid white;
         outline: none;
     }
+
+    .fechas .checkins{
+        margin-top: 4.5rem !important;
+        margin-left: 2rem !important;
+    }
 }
 
 /* LG */
@@ -762,6 +767,10 @@
     .eventos .card.col-lg-4{
         flex: 0 0 30%;
         max-width: 30%;
+    }
+
+    .fechas .checkins{
+        margin-top: 4.5rem !important;
     }
 }
 

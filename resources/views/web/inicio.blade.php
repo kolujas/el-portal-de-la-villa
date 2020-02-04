@@ -463,6 +463,13 @@
     </div>
 @endsection
 
+@section('extras')
+    @component('components.whatsapp')
+    @endcomponent
+@endsection
+
+
+
 @section('footer')
     @component('components.footer')
     @endcomponent

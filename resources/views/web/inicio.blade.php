@@ -217,13 +217,6 @@
                                 </div>
                             </a>
                         @endforeach
-                    @else
-                        <div class="card empty-card col-12 col-md-5 col-lg-4 px-0 mb-4">
-                            <div class="empty-image"></div>
-                            <div class="card-body empty-body">
-                                <div class="empty-content"></div>
-                            </div>
-                        </div>
                     @endif
                 </div>
             </div>

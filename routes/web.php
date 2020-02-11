@@ -1,7 +1,7 @@
 <?php
 /** WebController */
-    Route::get('/', 'WebController@construccion')->name('web.construccion');
-    Route::get('/demo', 'WebController@inicio')->name('web.inicio');
+    Route::get('/demo', 'WebController@construccion')->name('web.construccion');
+    Route::get('/', 'WebController@inicio')->name('web.inicio');
     Route::get('/habitaciones', 'WebController@habitaciones')->name('web.habitaciones');
     Route::get('/instalaciones', 'WebController@instalaciones')->name('web.instalaciones');
 

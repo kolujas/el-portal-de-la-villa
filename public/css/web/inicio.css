@@ -618,7 +618,7 @@
     .section-addon-border{
         height: 5px;
         width: 30px;
-        transform: translateX(-85%);
+        transform: translateX(100%);
     }
 
     .section-addon-border::before{
@@ -680,6 +680,7 @@
         cursor: pointer;
         background: white;
         color: var(--color-uno);
+        width: 250%;
     }
 
     .fecha-col .row:hover,
@@ -771,6 +772,10 @@
 
     .fechas .checkins{
         margin-top: 4.5rem !important;
+    }
+
+    .fecha-col .row{
+        width: 315%;
     }
 }
 

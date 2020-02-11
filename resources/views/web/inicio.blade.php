@@ -194,39 +194,32 @@
                 </div>
             @endif
 
-            <div class="card-group mt-3 pt-4 eventos col-12">
-                <div class="row d-flex justify-content-around px-3 ml-0">
-                    <span class="section-title-border mx-auto"></span>
-                    <h2 class="pb-4 my-4 pt-2 col-12 text-center">Últimos eventos</h2>
-                    @if(count($eventos))
-                        @foreach($eventos as $evento)
-                            <a href="{{$evento->url}}" target="_blank" class="card card-event col-12 col-md-5 col-lg-4 px-0 mb-4">
-                                <div class="card-body p-0">
-                                    <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
-                                    <div class="date text-center p-3">
-                                        <div class="day text">{{$evento->date->day}}</div>
-                                        <div class="text">
-                                            <span class="month text-uppercase mr-2">{{$evento->date->month}}</span>
-                                            <span class="year text-uppercase">{{$evento->date->year}}</span>
+            @if(count($eventos))
+                <div class="card-group mt-3 pt-4 eventos col-12">
+                    <div class="row d-flex justify-content-around px-3 ml-0">
+                        <span class="section-title-border mx-auto"></span>
+                        <h2 class="pb-4 my-4 pt-2 col-12 text-center">Últimos eventos</h2>
+                            @foreach($eventos as $evento)
+                                <a href="{{$evento->url}}" target="_blank" class="card card-event col-12 col-md-5 col-lg-4 px-0 mb-4">
+                                    <div class="card-body p-0">
+                                        <img src="{{asset('storage/' . $evento->imagen)}}" class="card-img" alt="foto">
+                                        <div class="date text-center p-3">
+                                            <div class="day text">{{$evento->date->day}}</div>
+                                            <div class="text">
+                                                <span class="month text-uppercase mr-2">{{$evento->date->month}}</span>
+                                                <span class="year text-uppercase">{{$evento->date->year}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-title px-3">
+                                            <span class="section-title-border my-4"></span>
+                                            <h5 class="card-title text-dark">{{$evento->titulo}}</h5>
                                         </div>
                                     </div>
-                                    <div class="card-title px-3">
-                                        <span class="section-title-border my-4"></span>
-                                        <h5 class="card-title text-dark">{{$evento->titulo}}</h5>
-                                    </div>
-                                </div>
-                            </a>
-                        @endforeach
-                    @else
-                        <div class="card empty-card col-12 col-md-5 col-lg-4 px-0 mb-4">
-                            <div class="empty-image"></div>
-                            <div class="card-body empty-body">
-                                <div class="empty-content"></div>
-                            </div>
-                        </div>
-                    @endif
+                                </a>
+                            @endforeach
+                    </div>
                 </div>
-            </div>
+            @endif
 
             <div id="contacto" class="contacto col-12 mx-md-auto mt-3 pt-4">
                 <form class="form-validate row text-right pt-3"

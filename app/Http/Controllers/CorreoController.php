@@ -19,7 +19,7 @@
             $validator = Validator::make($request->all(), Web::$reglas['contactar']['rules'], Web::$reglas['contactar']['messages']);
             
             if($validator->fails()){
-                return redirect('/demo#contacto')->withErrors($validator)->withInput();
+                return redirect('/#contacto')->withErrors($validator)->withInput();
             }else{
                 $checkin = explode('-', $inputData['checkin']);
                 $inputData['in_day'] = $checkin[2];
@@ -63,10 +63,10 @@
                     return redirect()->route('correo.gracias');
                 }catch(phpmailerException $e){
                     dd($e);
-                    return redirect('/demo#contacto')->withInput()->with('status', $e->getMessage());
+                    return redirect('/#contacto')->withInput()->with('status', $e->getMessage());
                 }catch(Exception $e){
                     dd($e);
-                    return redirect('/demo#contacto')->withInput()->with('status', $e->getMessage());
+                    return redirect('/#contacto')->withInput()->with('status', $e->getMessage());
                 }
 
                 // $response = new Contactar($objDemo);

@@ -4,17 +4,17 @@
     </a>
 
     <div class="nav-row">
-        <a href="/demo" class="nav-title">
+        <a href="/" class="nav-title">
             <h1 class="text-md-center">Hotel EL Portal de la Villa</h1>
         </a>
     </div>
 
     <div class="nav-row">
         <ul class="menu-list">
-            <li><a href="/demo" class="nav-link">
+            <li><a href="/" class="nav-link">
                 Inicio
             </a></li>
-            <li><a href="/demo#informacion" class="nav-link">
+            <li><a href="/#informacion" class="nav-link">
                 El Hotel
             </a></li>
             <li><a href="/habitaciones" class="nav-link">
@@ -23,10 +23,10 @@
             <li><a href="/instalaciones" class="nav-link">
                 Instalaciones
             </a></li>
-            <li><a href="/demo#galeria" class="nav-link">
+            <li><a href="/#galeria" class="nav-link">
                 Galeria
             </a></li>
-            <li><a href="/demo#contacto" class="nav-link">
+            <li><a href="/#contacto" class="nav-link">
                 Contacto
             </a></li>
             @if(Auth::check())

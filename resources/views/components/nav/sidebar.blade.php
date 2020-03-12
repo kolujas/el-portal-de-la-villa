@@ -7,10 +7,10 @@
 
     <div class="sidebar-content">
         <ul class="sidebar-menu">
-            <li><a href="/demo" class="nav-link text-white">
+            <li><a href="/" class="nav-link text-white">
                 Inicio
             </a></li>
-            <li><a href="/demo#informacion" class="nav-link text-white">
+            <li><a href="/#informacion" class="nav-link text-white">
                 El Hotel
             </a></li>
             <li><a href="/habitaciones" class="nav-link text-white">
@@ -19,10 +19,10 @@
             <li><a href="/instalaciones" class="nav-link text-white">
                 Instalaciones
             </a></li>
-            <li><a href="/demo#galeria" class="nav-link text-white">
+            <li><a href="/#galeria" class="nav-link text-white">
                 Galeria
             </a></li>
-            <li><a href="/demo#contacto" class="nav-link text-white">
+            <li><a href="/#contacto" class="nav-link text-white">
                 Contacto
             </a></li>
             @if(Auth::check())

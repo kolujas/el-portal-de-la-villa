@@ -618,7 +618,7 @@
     .section-addon-border{
         height: 5px;
         width: 30px;
-        transform: translateX(-85%);
+        transform: translateX(0%);
     }
 
     .section-addon-border::before{
@@ -680,6 +680,7 @@
         cursor: pointer;
         background: white;
         color: var(--color-uno);
+        width: 250%;
     }
 
     .fecha-col .row:hover,
@@ -772,6 +773,16 @@
     .fechas .checkins{
         margin-top: 4.5rem !important;
     }
+
+    .section-addon-border{
+        height: 5px;
+        width: 30px;
+        transform: translateX(15%);
+    }
+
+    .fecha-col .row{
+        width: 315%;
+    }
 }
 
 /* XL */
@@ -820,5 +831,20 @@
     
     .icon-text{
         font-size: 1.15rem;
+    }
+
+    .section-addon-border{
+        transform: translateX(-40%);
+    }
+
+    .fecha-col .row{
+        width: 160%;
+    }
+}
+
+
+@media(min-width: 1400px){
+    .section-addon-border{
+        transform: translateX(0%);
     }
 }
